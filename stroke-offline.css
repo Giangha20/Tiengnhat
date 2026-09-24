@@ -1,0 +1,9 @@
+.stroke-local-svg{display:block;overflow:visible;filter:drop-shadow(0 8px 18px rgba(9,132,227,.10))}
+.stroke-local-path{fill:#d63031;transition:opacity .18s ease,transform .18s ease}
+.stroke-local-path[style*="opacity: 1"]{animation:strokePop .22s ease-out}
+@keyframes strokePop{from{opacity:.15;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.stroke-local-path{transition:none}.stroke-local-path[style*="opacity: 1"]{animation:none}}
+
+/* Chế độ luyện viết nghiêm ngặt: đường tâm + mũi tên hướng nét */
+#handwriting-canvas { touch-action: none; }
+#stroke-step-text { min-height: 24px; font-weight: 700; }

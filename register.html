@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký - Tiếng Trung</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #ff7675 0,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #74b9ff 0,
+                    transparent 35%
+                ),
+                #f5f7fb;
+        }
+
+        .register-box {
+            width: 100%;
+            max-width: 430px;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            padding: 35px 30px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.15);
+
+            animation: showBox 0.6s ease;
+        }
+
+        @keyframes showBox {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo img {
+            width: 85px;
+            height: 85px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid white;
+
+            box-shadow:
+                0 8px 25px rgba(214, 48, 49, 0.25);
+        }
+
+        .logo-default {
+            width: 85px;
+            height: 85px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+
+            font-size: 38px;
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d63031,
+                    #ff7675
+                );
+        }
+
+        h1 {
+            margin-top: 15px;
+
+            color: #2d3436;
+
+            font-size: 25px;
+
+            font-weight: 800;
+        }
+
+        .subtitle {
+            margin-top: 6px;
+
+            color: #636e72;
+
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #2d3436;
+
+            font-size: 14px;
+
+            font-weight: 700;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input {
+            width: 100%;
+
+            height: 50px;
+
+            padding: 0 48px 0 15px;
+
+            border: 2px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            outline: none;
+
+            background: white;
+
+            font-size: 15px;
+
+            transition: 0.25s;
+        }
+
+        .input:focus {
+            border-color: #d63031;
+
+            box-shadow:
+                0 0 0 4px rgba(214, 48, 49, 0.08);
+        }
+
+        .show-password {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 38px;
+            height: 38px;
+            padding: 0;
+
+            border: none;
+            outline: none;
+            background: transparent;
+
+            cursor: pointer;
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 19px;
+            line-height: 1;
+            color: #2d3436;
+            opacity: 1;
+        }
+
+        .show-password:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .show-password:focus-visible {
+            border-radius: 8px;
+            box-shadow: 0 0 0 3px rgba(214, 48, 49, 0.15);
+        }
+
+        .register-btn {
+            width: 100%;
+
+            height: 52px;
+
+            margin-top: 5px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d63031,
+                    #ff7675
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px rgba(214, 48, 49, 0.25);
+
+            transition: 0.25s;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(214, 48, 49, 0.3);
+        }
+
+        .message {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+        .message.error {
+            display: block;
+
+            color: #c0392b;
+
+            background: #fff0f0;
+
+            border: 1px solid #ffd6d6;
+        }
+
+        .message.success {
+            display: block;
+
+            color: #008f6f;
+
+            background: #edfff8;
+
+            border: 1px solid #c9f5e6;
+        }
+
+        .login-text {
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #636e72;
+
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: #d63031;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 25px;
+
+            text-align: center;
+
+            color: #95a5a6;
+
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .register-box {
+                padding: 28px 20px;
+
+                border-radius: 22px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .logo img,
+            .logo-default {
+                width: 78px;
+                height: 78px;
+            }
+
+            .input {
+                height: 48px;
+            }
+
+            .register-btn {
+                height: 50px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+
+            body {
+                background: #151719;
+            }
+
+            .register-box {
+                background: #1e2023;
+            }
+
+            h1 {
+                color: #f5f6fa;
+            }
+
+            .subtitle {
+                color: #b2bec3;
+            }
+
+            label {
+                color: #f5f6fa;
+            }
+
+            .input {
+                background: #25282c;
+
+                border-color: #3d4147;
+
+                color: white;
+            }
+
+            .input::placeholder {
+                color: #747d85;
+            }
+
+            .show-password {
+                color: #f5f6fa;
+            }
+
+            .login-text {
+                color: #b2bec3;
+            }
+
+            .footer {
+                color: #747d85;
+            }
+        }
+    </style>
+
+<svg id="inline-icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+<symbol id="icon-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M10.6 6.2C11.05 6.07 11.52 6 12 6c6 0 9.5 6 9.5 6a17 17 0 0 1-3.2 3.6M6.2 6.9C3.8 8.6 2.5 12 2.5 12S6 18 12 18c1.2 0 2.3-.2 3.3-.6"/></symbol>
+<symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+<symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9m-3 3 2 2m-5-1 2 2"/></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="icon-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 4 21 20H3L12 4Z"/><path d="M12 9v5m0 3h.01"/></symbol>
+<symbol id="icon-loading" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/></symbol>
+<symbol id="icon-volume" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M16 9.5a4 4 0 0 1 0 5m2.5-7.5a8 8 0 0 1 0 10"/></symbol>
+<symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 3 1.5 6.5L20 12l-6.5 1.5L12 20l-1.5-6.5L4 12l6.5-2.5L12 3Z"/></symbol>
+<symbol id="icon-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4M8 15c-1.2-.9-2-2.4-2-4a6 6 0 0 1 12 0c0 1.6-.8 3.1-2 4-.7.5-1 1.2-1 2h-6c0-.8-.3-1.5-1-2Z"/></symbol>
+<symbol id="icon-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.9 1.6c-1 .9-1.7 1.3-1.7 2.8m0 3h.01"/></symbol>
+<symbol id="icon-chat" viewBox="0 0 24 24"><path d="M5 18.5 3.5 21l4-1.5A9 9 0 1 0 5 18.5Z"/><path d="M8 10h8M8 14h5"/></symbol>
+<symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+<symbol id="icon-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 11.5 3.5 3.5 0 0 0 7 18Z"/></symbol>
+<symbol id="icon-package" viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4 8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></symbol>
+<symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+<symbol id="icon-hand" viewBox="0 0 24 24"><path d="M8 13V7a1.5 1.5 0 0 1 3 0v5m0-4a1.5 1.5 0 0 1 3 0v4m0-3a1.5 1.5 0 0 1 3 0v5m0-2a1.5 1.5 0 0 1 3 0v3c0 4-2.5 6-6.5 6H10c-2 0-3-1-4-2l-2-3a1.5 1.5 0 0 1 2.5-1.7L8 16"/></symbol>
+</defs></svg>
+
+<style>.ui-icon{width:20px;height:20px;display:inline-block;vertical-align:-.22em;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}.ui-icon-lg{width:24px;height:24px}.ui-icon-xl{width:32px;height:32px}.icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px}</style>
+</head>
+
+<body>
+
+<div class="register-box">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <img
+            src="avatar192.jpg"
+            alt="Tiếng Trung Giang Hà"
+            id="logoImage"
+            onerror="
+                this.style.display='none';
+                document.getElementById('logoDefault').style.display='flex';
+            "
+        >
+
+        <div
+            class="logo-default"
+            id="logoDefault"
+            style="display:none;"
+        >
+            中
+        </div>
+
+        <h1>
+            Tạo tài khoản
+        </h1>
+
+        <p class="subtitle">
+            Tiếng Trung
+        </p>
+
+    </div>
+
+
+    <!-- FORM ĐĂNG KÝ -->
+
+    <form id="registerForm">
+
+        <!-- TÀI KHOẢN -->
+
+        <div class="form-group">
+
+            <label for="username">
+                Tên tài khoản
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                class="input"
+                placeholder="Ví dụ: abc"
+                minlength="3"
+                maxlength="30"
+                autocomplete="username"
+                required
+            >
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                class="input"
+                placeholder="example@gmail.com"
+                autocomplete="email"
+                required
+            >
+
+        </div>
+
+
+        <!-- MẬT KHẨU -->
+
+        <div class="form-group">
+
+            <label for="password">
+                Mật khẩu
+            </label>
+
+            <div class="input-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    class="input"
+                    placeholder="Ít nhất 6 ký tự"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword('password', this)"
+                    aria-label="Hiện hoặc ẩn mật khẩu"
+                    title="Hiện/ẩn mật khẩu"
+                >
+                    <svg class="ui-icon" aria-hidden="true"><use href="#icon-eye-off"></use></svg>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- NHẬP LẠI MẬT KHẨU -->
+
+        <div class="form-group">
+
+            <label for="confirmPassword">
+                Nhập lại mật khẩu
+            </label>
+
+            <div class="input-box">
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    class="input"
+                    placeholder="Nhập lại mật khẩu"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword('confirmPassword', this)"
+                    aria-label="Hiện hoặc ẩn mật khẩu nhập lại"
+                    title="Hiện/ẩn mật khẩu nhập lại"
+                >
+                    <svg class="ui-icon" aria-hidden="true"><use href="#icon-eye-off"></use></svg>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="register-btn"
+        >
+            Đăng ký tài khoản
+        </button>
+
+    </form>
+
+
+    <!-- THÔNG BÁO -->
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+
+    <!-- QUAY LẠI ĐĂNG NHẬP -->
+
+    <div class="login-text">
+
+        Đã có tài khoản?
+
+        <a href="login.html">
+            Đăng nhập
+        </a>
+
+    </div>
+
+
+    <div class="footer">
+        © 2026 Tiếng Trung - Giang Hà
+    </div>
+
+</div>
+
+
+<script>
+(function () {
+    const firebaseScripts = [
+        "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js",
+        "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js",
+        "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"
+    ];
+
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = () => reject(new Error("Không tải được Firebase SDK: " + src));
+            document.head.appendChild(s);
+        });
+    }
+
+    function showMessage(text, type) {
+        const message = document.getElementById("message");
+        if (!message) return;
+        message.textContent = text;
+        message.className = "message " + type;
+    }
+
+    async function boot() {
+        try {
+            for (const src of firebaseScripts) await loadScript(src);
+            await loadScript("./firebase-config.js");
+            await loadScript("./auth.js");
+
+            const readyUser = await window.ghAuthReady;
+            if (readyUser) {
+                // Không để tài khoản cũ tự nhảy vào trang học khi người dùng đang ở trang đăng ký.
+                await window.ghAuth.logout();
+            }
+            if (!window.ghFirebaseConfigured) {
+                throw new Error("Firebase chưa được khởi tạo. Kiểm tra firebase-config.js và Authorized domains.");
+            }
+
+            document.getElementById("registerForm").addEventListener("submit", async function (event) {
+                event.preventDefault();
+                const username = document.getElementById("username").value.trim();
+                const email = document.getElementById("email").value.trim().toLowerCase();
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirmPassword").value;
+                const btn = this.querySelector('button[type="submit"]');
+
+                if (username.length < 3) return showMessage("Tên tài khoản phải có ít nhất 3 ký tự.", "error");
+                if (password.length < 6) return showMessage("Mật khẩu phải có ít nhất 6 ký tự.", "error");
+                if (password !== confirmPassword) return showMessage("Mật khẩu nhập lại không khớp.", "error");
+
+                if (btn) { btn.disabled = true; btn.dataset.oldText = btn.textContent; btn.textContent = "Đang tạo tài khoản..."; }
+                try {
+                    await window.ghAuth.register(email, password, username);
+                    showMessage("Tạo tài khoản thành công! Đang chuyển sang đăng nhập...", "success");
+                    setTimeout(() => window.location.replace("./login.html"), 900);
+                } catch (error) {
+                    console.error("Firebase register error:", error);
+                    const messages = {
+                        "auth/email-already-in-use": "Email này đã được đăng ký.",
+                        "auth/invalid-email": "Email không hợp lệ.",
+                        "auth/weak-password": "Mật khẩu quá yếu.",
+                        "auth/operation-not-allowed": "Firebase Email/Password chưa được bật.",
+                        "auth/network-request-failed": "Không có kết nối mạng hoặc Firebase bị chặn."
+                    };
+                    showMessage(messages[error.code] || ("Đăng ký thất bại: " + (error.message || error)), "error");
+                    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.oldText || "Đăng ký"; }
+                }
+            });
+        } catch (error) {
+            console.error("Firebase bootstrap error:", error);
+            showMessage("Không thể khởi tạo Firebase. Kiểm tra firebase-config.js, Firebase SDK và Authorized domains.", "error");
+        }
+    }
+
+    boot();
+})();
+</script>
+
+</body>
+</html>

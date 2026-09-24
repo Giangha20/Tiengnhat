@@ -1,0 +1,27 @@
+{
+  "name": "Học Tiếng Nhật — JLPT N5–N1",
+  "short_name": "Tiếng Nhật",
+  "description": "Hệ thống học tiếng Nhật theo lộ trình Hiragana và JLPT N5–N1",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f7fb",
+  "theme_color": "#d63031",
+  "icons": [
+    {
+      "src": "./avatar192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./avatar.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

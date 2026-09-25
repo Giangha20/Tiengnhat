@@ -3188,3 +3188,6 @@ html body.dark-mode .container > header .brand-row h1 .brand-h {
 @media(max-width:560px){.jp-roadmap{grid-template-columns:1fr}.jp-milestone{padding:18px}}
 .dark-mode .jp-milestone{background:#171b22;border-color:#303743}
 .dark-mode .jp-study-cycle{background:rgba(255,118,117,.10)}
+
+/* Account UI removed: learning app opens directly. */
+#online-auth-loader,#online-user-chip,#logout-btn,.logout-btn{display:none!important;}

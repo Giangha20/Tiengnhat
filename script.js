@@ -983,7 +983,7 @@ function updateProgressUI() {
     const exams = Array.isArray(p.exams) ? p.exams : [];
 
     const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
-    set('progress-account', user ? (user.username || user.email || 'Tài khoản') : 'Chưa đăng nhập');
+    set('progress-account', 'Thiết bị này');
     set('progress-level', JLPT_LEVEL_NAMES[String(level)] || `JLPT N${level}`);
     set('progress-level-detail', `${total} từ trong cấp độ này`);
     set('progress-typing', `${typingPercent}%`);
@@ -1002,7 +1002,7 @@ function updateProgressUI() {
 }
 
 async function resetMyProgress() {
-    if (!confirm('Xóa toàn bộ tiến trình học online của tài khoản này?')) return;
+    if (!confirm('Xóa toàn bộ tiến trình học trên thiết bị này?')) return;
     if (!window.ghAuth?.deleteProgress) return;
     const ok = await window.ghAuth.deleteProgress();
     if (!ok) { alert('Không thể xóa tiến trình online. Hãy kiểm tra kết nối.'); return; }
@@ -1011,7 +1011,7 @@ async function resetMyProgress() {
     const select = document.getElementById('jlpt-level');
     if (select) select.value = '1';
     renderList(); initTyping(); renderCommunication(); updateProgressUI();
-    alert('Đã xóa tiến trình online của tài khoản này.');
+    alert('Đã xóa toàn bộ tiến trình học trên thiết bị này.');
 }
 
 // ============================================================

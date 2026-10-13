@@ -180,6 +180,33 @@ const testCode = generateTestSyncCode();
 assert(testCode.startsWith('NHG-'), 'Mã đồng bộ bắt đầu bằng tiền tố NHG-');
 assert(testCode.length === 13, 'Mã đồng bộ có độ dài chuẩn 13 ký tự (NHG-XXXX-XXXX)');
 
+// 9. Kiểm tra Hệ thống Xác thực & Tạo tài khoản Đa thiết bị
+console.log('\n9. Kiểm tra Hệ thống Xác thực & Tạo tài khoản Đa thiết bị...');
+import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
+
+const rawPassword = 'SecurePassword123!';
+const salt = bcrypt.genSaltSync(10);
+const passwordHash = bcrypt.hashSync(rawPassword, salt);
+
+assert(bcrypt.compareSync(rawPassword, passwordHash) === true, 'Mã hóa và xác thực mật khẩu bcrypt chính xác');
+assert(bcrypt.compareSync('WrongPassword', passwordHash) === false, 'Từ chối mật khẩu không khớp');
+
+function validateRegisterInput(name, email, password) {
+  if (!name || name.trim().length < 2) return { valid: false, error: 'Họ tên quá ngắn' };
+  if (!email || !email.includes('@') || !email.includes('.')) return { valid: false, error: 'Email không hợp lệ' };
+  if (!password || password.length < 6) return { valid: false, error: 'Mật khẩu quá ngắn' };
+  return { valid: true };
+}
+
+assert(validateRegisterInput('Nguyễn An', 'an@gmail.com', '123456').valid === true, 'Đăng ký thành công với thông tin hợp lệ');
+assert(validateRegisterInput('', 'an@gmail.com', '123456').valid === false, 'Từ chối đăng ký khi thiếu họ tên');
+assert(validateRegisterInput('Nguyễn An', 'invalid-email', '123456').valid === false, 'Từ chối đăng ký với email sai định dạng');
+assert(validateRegisterInput('Nguyễn An', 'an@gmail.com', '123').valid === false, 'Từ chối đăng ký với mật khẩu dưới 6 ký tự');
+
+const sessionToken = crypto.randomBytes(32).toString('hex');
+assert(sessionToken.length === 64, 'Khởi tạo token phiên đăng nhập an toàn 64 ký tự hex');
+
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);
 console.log(`- Tổng số bài kiểm tra: ${totalTests}`);

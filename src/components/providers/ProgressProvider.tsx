@@ -9,6 +9,7 @@ import {
   loadProgressOnline,
   generateRandomSyncCode,
 } from '@/lib/sync';
+import { useAuth } from './AuthProvider';
 
 const DEFAULT_PROGRESS: UserProgress = {
   totalWordsLearned: 0,
@@ -128,10 +129,28 @@ function isSameDay(date1: string, date2: string): boolean {
 }
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
+  const { user, getAccountProgress, syncWithAccount } = useAuth();
   const [progress, setProgress] = useState<UserProgress>(DEFAULT_PROGRESS);
   const [syncCode, setSyncCodeState] = useState<string>('');
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // Auto-sync with server account when logged in across devices
+  useEffect(() => {
+    if (user && isLoaded) {
+      getAccountProgress().then((cloudProgress) => {
+        if (cloudProgress) {
+          if ((cloudProgress.totalWordsLearned || 0) >= (progress.totalWordsLearned || 0)) {
+            setProgress(cloudProgress);
+          } else {
+            syncWithAccount(progress);
+          }
+        } else {
+          syncWithAccount(progress);
+        }
+      });
+    }
+  }, [user, isLoaded]);
 
   // Load from localStorage on mount
   useEffect(() => {

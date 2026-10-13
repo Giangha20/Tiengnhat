@@ -3,13 +3,16 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useProgress } from '@/components/providers/ProgressProvider';
+import { useAuth } from '@/components/providers/AuthProvider';
 import type { JLPTLevel } from '@/types';
 
 export default function HoSoPage() {
   const { progress, updateProgress, isLoaded } = useProgress();
+  const { user, isAuthenticated, logout, syncWithAccount } = useAuth();
   const [editingGoal, setEditingGoal] = useState(false);
   const [goalInput, setGoalInput] = useState(progress.dailyGoal);
   const [mounted, setMounted] = useState(false);
+  const [syncStatus, setSyncStatus] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -32,6 +35,17 @@ export default function HoSoPage() {
     updateProgress({ currentLevel: lvl });
   };
 
+  const handleSyncAccount = async () => {
+    setSyncStatus('Đang đồng bộ...');
+    const res = await syncWithAccount(progress);
+    if (res.success) {
+      setSyncStatus('✓ Đã đồng bộ lên tài khoản máy chủ thành công!');
+    } else {
+      setSyncStatus('❌ Không thể đồng bộ: ' + (res.message || 'Lỗi'));
+    }
+    setTimeout(() => setSyncStatus(null), 3000);
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Breadcrumb */}
@@ -46,30 +60,79 @@ export default function HoSoPage() {
         <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
           {/* Avatar Icon */}
           <div className="w-24 h-24 rounded-3xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center text-5xl flex-shrink-0">
-            🌸
+            {isAuthenticated && user ? user.name.charAt(0).toUpperCase() : '🌸'}
           </div>
 
-          <div className="space-y-1 flex-1">
+          <div className="space-y-1.5 flex-1">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Học Viên Tiếng Nhật
+                {isAuthenticated && user ? user.name : 'Học Viên Tiếng Nhật'}
               </h1>
-              <span className="text-xs px-3 py-1 rounded-full bg-success/10 text-success font-semibold self-center sm:self-auto">
-                Tài khoản cục bộ (Thiết bị này)
-              </span>
+              {isAuthenticated && user ? (
+                <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20 self-center sm:self-auto">
+                  ☁️ Tài khoản Đám mây (Đồng bộ nhiều máy)
+                </span>
+              ) : (
+                <span className="text-xs px-3 py-1 rounded-full bg-secondary text-muted-foreground font-semibold self-center sm:self-auto">
+                  Thiết bị này (Chưa liên kết tài khoản)
+                </span>
+              )}
             </div>
+            {isAuthenticated && user && (
+              <p className="text-xs font-mono text-muted-foreground">
+                Email: {user.email} • Thành viên từ {new Date(user.createdAt).toLocaleDateString('vi-VN')}
+              </p>
+            )}
             <p className="text-xs text-muted-foreground">
               Mục tiêu học tập hiện tại: <strong>JLPT {progress.currentLevel}</strong>
             </p>
-            <div className="pt-2 flex flex-wrap items-center gap-2">
+
+            <div className="pt-3 flex flex-wrap items-center gap-2.5">
+              {isAuthenticated ? (
+                <>
+                  <button
+                    onClick={handleSyncAccount}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary text-primary-foreground text-xs font-bold hover:opacity-90 transition-all cursor-pointer shadow-xs"
+                  >
+                    <span>🔄</span>
+                    <span>Đồng bộ tiến độ lên máy chủ</span>
+                  </button>
+                  <button
+                    onClick={() => logout()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-error/30 bg-error/10 text-error text-xs font-bold hover:bg-error/20 transition-all cursor-pointer"
+                  >
+                    <span>🚪</span>
+                    <span>Đăng xuất</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/dang-ky"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-bold hover:opacity-90 transition-all shadow-xs"
+                  >
+                    <span>🚀 Tạo tài khoản đồng bộ nhiều máy</span>
+                  </Link>
+                  <Link
+                    href="/dang-nhap"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground text-xs font-bold transition-all"
+                  >
+                    <span>🔑 Đăng nhập</span>
+                  </Link>
+                </>
+              )}
+
               <Link
                 href="/cai-dat"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-secondary text-muted-foreground hover:text-foreground text-xs font-medium transition-colors"
               >
-                <span>💾</span>
-                <span>Sao lưu tệp & Đồng bộ Online</span>
+                <span>⚙️ Cài đặt & Tệp tin</span>
               </Link>
             </div>
+
+            {syncStatus && (
+              <p className="text-xs font-semibold text-primary pt-1 animate-fade-in">{syncStatus}</p>
+            )}
           </div>
         </div>
       </div>

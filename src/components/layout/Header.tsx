@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/components/providers/ThemeProvider';
+import { useAuth } from '@/components/providers/AuthProvider';
 
 interface SubNavItem {
   label: string;
@@ -73,6 +74,7 @@ export default function Header() {
   const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
   const pathname = usePathname();
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const { user, isAuthenticated, logout } = useAuth();
   const navRef = useRef<HTMLDivElement | null>(null);
 
   const isActive = (href: string) =>
@@ -252,21 +254,34 @@ export default function Header() {
               )}
             </button>
 
-            {/* Profile quick link */}
-            <Link
-              href="/ho-so"
-              className="hidden sm:flex p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all shadow-2xs"
-              title="Hồ sơ học tập"
-            >
-              <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-            </Link>
+            {/* Auth Actions (Login / Register / User Avatar) */}
+            {isAuthenticated && user ? (
+              <Link
+                href="/ho-so"
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-foreground transition-all text-xs font-bold"
+                title="Hồ sơ học tập của bạn"
+              >
+                <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-black">
+                  {user.name.charAt(0).toUpperCase()}
+                </span>
+                <span className="max-w-[90px] truncate">{user.name}</span>
+              </Link>
+            ) : (
+              <div className="hidden sm:flex items-center gap-1.5">
+                <Link
+                  href="/dang-nhap"
+                  className="px-3 py-1.5 rounded-xl text-xs font-semibold text-foreground/85 hover:text-foreground hover:bg-secondary transition-all"
+                >
+                  Đăng nhập
+                </Link>
+                <Link
+                  href="/dang-ky"
+                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-xs flex items-center gap-1"
+                >
+                  <span>Tạo tài khoản</span>
+                </Link>
+              </div>
+            )}
 
             {/* Mobile menu hamburger toggle button */}
             <button
@@ -297,6 +312,48 @@ export default function Header() {
           aria-label="Menu di động"
         >
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+            {/* Mobile Auth Status Box */}
+            <div className="p-3.5 rounded-2xl bg-secondary/60 border border-border mb-3">
+              {isAuthenticated && user ? (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
+                      {user.name.charAt(0).toUpperCase()}
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-foreground">{user.name}</p>
+                      <p className="text-[10px] text-muted-foreground">{user.email}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-[11px] font-bold text-error hover:underline px-2.5 py-1 rounded-lg bg-error/10 cursor-pointer"
+                  >
+                    Đăng xuất
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    href="/dang-nhap"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-2.5 text-center text-xs font-bold rounded-xl border border-border bg-card text-foreground hover:bg-secondary"
+                  >
+                    🔑 Đăng nhập
+                  </Link>
+                  <Link
+                    href="/dang-ky"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-2.5 text-center text-xs font-bold rounded-xl bg-primary text-primary-foreground shadow-xs hover:opacity-90"
+                  >
+                    🚀 Tạo tài khoản
+                  </Link>
+                </div>
+              )}
+            </div>
             {NAV_ITEMS.map((item) => {
               const hasChildren = Boolean(item.children && item.children.length > 0);
               const isExpanded = mobileExpanded[item.href] ?? true; // Default expanded for ease of access

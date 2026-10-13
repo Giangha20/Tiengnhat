@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { AuthProvider } from "@/components/providers/AuthProvider";
 import { ProgressProvider } from "@/components/providers/ProgressProvider";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -48,11 +49,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <ThemeProvider>
-          <ProgressProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </ProgressProvider>
+          <AuthProvider>
+            <ProgressProvider>
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </ProgressProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

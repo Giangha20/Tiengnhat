@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-6.19-2d3748?logo=prisma)](https://www.prisma.io/)
 [![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite)](https://www.sqlite.org/)
-[![Tests](https://img.shields.io/badge/Tests-807%20Passed-success)](#kiểm-thử-toàn-diện)
+[![Tests](https://img.shields.io/badge/Tests-814%20Passed-success)](#kiểm-thử-toàn-diện)
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://temporary-swift-dune-p3es13o.vercel.app)
 [![Repo](https://img.shields.io/badge/GitHub-Giangha20%2FTiengnhat-181717?logo=github)](https://github.com/Giangha20/Tiengnhat)
 
@@ -15,12 +15,12 @@
 
 ## 📌 1. Giới thiệu dự án
 
-**NihongoMaster** là nền tảng học tiếng Nhật trực tuyến được biên soạn bài bản dành riêng cho người Việt Nam chưa từng tiếp xúc với tiếng Nhật. Hệ thống xây dựng lộ trình học khoa học từ bảng chữ cái, phát âm, từ vựng theo ngữ cảnh, chữ Hán (Kanji), ngữ pháp logic, hệ thống ôn tập lặp lại ngắt quãng (SRS), bài tập trắc nghiệm, mô phỏng đề thi JLPT N5, cùng tính năng **Lưu Trữ Tệp Tin (.JSON) & Đồng Bộ Trực Tuyến Đám Mây (Cloud Sync)**.
+**NihongoMaster** là nền tảng học tiếng Nhật trực tuyến được biên soạn bài bản dành riêng cho người Việt Nam chưa từng tiếp xúc với tiếng Nhật. Hệ thống xây dựng lộ trình học khoa học từ bảng chữ cái, phát âm, từ vựng theo ngữ cảnh, chữ Hán (Kanji), ngữ pháp logic, hệ thống ôn tập lặp lại ngắt quãng (SRS), bài tập trắc nghiệm, mô phỏng đề thi JLPT N5, **Đăng Ký & Đăng Nhập Tài Khoản Đồng Bộ Nhiều Thiết Bị**, cùng tính năng **Lưu Trữ Tệp Tin (.JSON) & Đồng Bộ Trực Tuyến Đám Mây (Cloud Sync)**.
 
 ### 🌟 Triết lý phát triển & Nguyên tắc trung thực bắt buộc:
 1. **Không dữ liệu giả**: 100% từ vựng, chữ Hán, ngữ pháp và ví dụ là tiếng Nhật thực tế, có phiên âm Hiragana, Romaji chuẩn Hepburn và giải thích sắc thái văn hóa.
-2. **Không chức năng ảo**: Toàn bộ nút bấm, bộ lọc, tìm kiếm, phát âm TTS, thu âm micro, chấm điểm trắc nghiệm, thuật toán SRS, xuất/nhập tệp tin và lưu tiến độ đám mây đều hoạt động thực sự.
-3. **Lưu trữ linh hoạt & an toàn**: Hỗ trợ xuất tệp `.json` lưu về thiết bị cá nhân và đồng bộ đám mây qua Mã Đồng Bộ (Sync Key) giữa nhiều thiết bị (PC, điện thoại, tablet).
+2. **Không chức năng ảo**: Toàn bộ nút bấm, bộ lọc, tìm kiếm, phát âm TTS, thu âm micro, chấm điểm trắc nghiệm, thuật toán SRS, tạo tài khoản, đăng nhập, xuất/nhập tệp tin và lưu tiến độ đám mây đều hoạt động thực sự.
+3. **Đăng nhập đa thiết bị & Lưu trữ an toàn**: Người dùng có thể tạo tài khoản, đăng nhập trên nhiều máy tính/điện thoại và tự động đồng bộ tiến độ, hoặc xuất file `.json` lưu về thiết bị cá nhân.
 4. **Minh bạch tình trạng**: Các phần đang tiếp tục biên soạn (N4 - N1) được gắn nhãn trạng thái trung thực, không quảng cáo phóng đại.
 
 ---

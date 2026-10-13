@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "level": "N5",
+    "title": "Hội Thoại Thực Tế Hằng Ngày",
+    "description": "Các tình huống giao tiếp đời sống tại Nhật Bản: Chào hỏi, mua sắm ở cửa hàng tiện lợi, gọi món ở quán ăn, hỏi đường tại nhà ga.",
+    "totalDialogues": 4,
+    "verificationStatus": "verified",
+    "sources": ["Minna no Nihongo Kaiwa", "Japan Foundation Irodori"],
+    "lastUpdated": "2026-10-13"
+  },
+  "dialogues": [
+    {
+      "id": "dia_01",
+      "title": "Lần đầu gặp mặt & Chào hỏi",
+      "titleJa": "はじめまして (Lần đầu gặp mặt)",
+      "situation": "Bạn Nam (du học sinh Việt Nam) lần đầu đến trường và gặp gỡ bạn cùng lớp Sato.",
+      "characters": ["Nam", "Sato"],
+      "lines": [
+        {
+          "speaker": "Nam",
+          "japanese": "はじめまして。ナムです。ベトナムから来ました。",
+          "reading": "はじめまして。ナムです。ベトナムからきました。",
+          "romaji": "Hajimemashite. Namu desu. Betonamu kara kimashita.",
+          "vietnamese": "Chào bạn, rất vui được gặp bạn lần đầu. Mình là Nam, mình đến từ Việt Nam."
+        },
+        {
+          "speaker": "Sato",
+          "japanese": "はじめまして。佐藤です。よろしくお願いします。",
+          "reading": "はじめまして。さとうです。よろしくおねがいします。",
+          "romaji": "Hajimemashite. Satou desu. Yoroshiku onegaishimasu.",
+          "vietnamese": "Chào Nam, mình là Sato. Rất mong được giúp đỡ và học cùng bạn nhé."
+        },
+        {
+          "speaker": "Nam",
+          "japanese": "こちらこそ、よろしくお願いします。",
+          "reading": "こちらこそ、よろしくおねがいします。",
+          "romaji": "Kochira koso, yoroshiku onegaishimasu.",
+          "vietnamese": "Chính mình mới là người mong nhận được sự giúp đỡ của bạn."
+        }
+      ],
+      "culturalNotes": "Tại Nhật Bản, khi nói câu 'Yoroshiku onegaishimasu', người ta thường hơi cúi nhẹ người (Ojigi) một góc khoảng 15 độ để thể hiện sự khiêm nhường."
+    },
+    {
+      "id": "dia_02",
+      "title": "Mua sắm tại Konbini (Cửa hàng tiện lợi)",
+      "titleJa": "コンビニで (Ở cửa hàng tiện lợi)",
+      "situation": "Khách hàng mua một phần cơm hộp (bento) và nước suối tại cửa hàng Lawson/7-Eleven.",
+      "characters": ["Nhân viên", "Khách hàng"],
+      "lines": [
+        {
+          "speaker": "Nhân viên",
+          "japanese": "いらっしゃいませ。お弁当を温めますか。",
+          "reading": "いらっしゃいませ。おべんとうをあたためますか。",
+          "romaji": "Irasshaimase. Obentou o atatamemasu ka.",
+          "vietnamese": "Xin kính chào quý khách! Cơm hộp có cần quay nóng lò vi sóng không ạ?"
+        },
+        {
+          "speaker": "Khách hàng",
+          "japanese": "はい、お願いします。",
+          "reading": "はい、おねがいします。",
+          "romaji": "Hai, onegaishimasu.",
+          "vietnamese": "Dạ có, phiền bạn quay nóng giúp mình với ạ."
+        },
+        {
+          "speaker": "Nhân viên",
+          "japanese": "レジ袋はご利用になりますか。",
+          "reading": "レジぶくろはごりようになりますか。",
+          "romaji": "Rejibukuro wa goriyou ni narimasu ka.",
+          "vietnamese": "Quý khách có cần dùng túi nilon đựng đồ không ạ?"
+        },
+        {
+          "speaker": "Khách hàng",
+          "japanese": "いいえ、大丈夫です。",
+          "reading": "いいえ、だいじょうぶです。",
+          "romaji": "Iie, daijoubu desu.",
+          "vietnamese": "Dạ không cần, mình mang túi rồi ạ."
+        },
+        {
+          "speaker": "Nhân viên",
+          "japanese": "全部で650円になります。",
+          "reading": "ぜんぶでろっぴゃくごじゅうえんになります。",
+          "romaji": "Zenbu de roppyaku gojuu-en ni narimasu.",
+          "vietnamese": "Tổng cộng hết 650 Yên ạ."
+        }
+      ],
+      "culturalNotes": "Tại Nhật Bản, túi nilon (レジ袋) tại các cửa hàng đều tính phí từ 3-5 Yên. Nếu không cần, bạn chỉ cần nói 'Daijoubu desu' (Tôi ổn) hoặc 'Kekkou desu'."
+    },
+    {
+      "id": "dia_03",
+      "title": "Gọi món tại nhà hàng / Quán Ramen",
+      "titleJa": "レストランで注文 (Gọi món ở quán ăn)",
+      "situation": "Khách gọi nhân viên phục vụ để gọi một bát mì Ramen và một phần há cảo Gyoza.",
+      "characters": ["Khách hàng", "Phục vụ"],
+      "lines": [
+        {
+          "speaker": "Khách hàng",
+          "japanese": "すみません！注文をお願いします。",
+          "reading": "すみません！ちゅうもんをおねがいします。",
+          "romaji": "Sumimasen! Chuumon o onegaishimasu.",
+          "vietnamese": "Bạn ơi cho mình gọi món với ạ!"
+        },
+        {
+          "speaker": "Phục vụ",
+          "japanese": "はい、ご注文をお伺いします。",
+          "reading": "はい、ごちゅうもんをおうかがいします。",
+          "romaji": "Hai, gochuumon o oukagai shimasu.",
+          "vietnamese": "Dạ vâng, quý khách muốn dùng món gì ạ?"
+        },
+        {
+          "speaker": "Khách hàng",
+          "japanese": "ラーメンを一つと、餃子を一つください。",
+          "reading": "ラーメンをひとつと、ぎょうざをひとつください。",
+          "romaji": "Raamen o hitotsu to, gyouza o hitotsu kudasai.",
+          "vietnamese": "Cho mình một bát Ramen và một đĩa há cảo Gyoza nhé."
+        },
+        {
+          "speaker": "Phục vụ",
+          "japanese": "かしこまりました。少々お待ちください。",
+          "reading": "かしこまりました。しょうしょうおまちください。",
+          "romaji": "Kashikomarimashita. Shoushou omachi kudasai.",
+          "vietnamese": "Dạ vâng tôi đã hiểu rồi ạ. Xin quý khách vui lòng đợi trong giây lát."
+        }
+      ],
+      "culturalNotes": "Từ chỉ số lượng đồ vật nhỏ: 1 cái (ひとつ - hitotsu), 2 cái (ふたつ - futatsu). Khi gọi nhân viên phục vụ, hãy giơ tay nhẹ và nói 'Sumimasen'."
+    },
+    {
+      "id": "dia_04",
+      "title": "Hỏi đường tại nhà ga Tokyo",
+      "titleJa": "駅で道を尋ねる (Hỏi đường ở ga)",
+      "situation": "Khách du lịch hỏi nhân viên soát vé đường đến tuyến tàu Yamanote Line.",
+      "characters": ["Du khách", "Nhân viên ga"],
+      "lines": [
+        {
+          "speaker": "Du khách",
+          "japanese": "すみません、山手線の乗り場はどこですか。",
+          "reading": "すみません、やまのてせんののりばはどこですか。",
+          "romaji": "Sumimasen, Yamanote-sen no noriba wa doko desu ka.",
+          "vietnamese": "Xin lỗi cho tôi hỏi, điểm đón tàu tuyến Yamanote ở đâu vậy ạ?"
+        },
+        {
+          "speaker": "Nhân viên ga",
+          "japanese": "あそこをまっすぐ行って、右に曲がってください。2番線です。",
+          "reading": "あそこをまっすぐいって、みぎにまがってください。にばんせんです。",
+          "romaji": "Asoko o massugu itte, migi ni magatte kudasai. Ni-bansen desu.",
+          "vietnamese": "Bạn hãy đi thẳng đằng kia rồi rẽ phải nhé. Là đường ray số 2 đó ạ."
+        },
+        {
+          "speaker": "Du khách",
+          "japanese": "わかりました。どうもありがとうございます。",
+          "reading": "わかりました。どうもありがとうございます。",
+          "romaji": "Wakarimashita. Doumo arigatou gozaimasu.",
+          "vietnamese": "Tôi hiểu rồi. Cảm ơn bác rất nhiều ạ!"
+        }
+      ],
+      "culturalNotes": "Tại các nhà ga lớn như Shinjuku hay Tokyo Station, biển chỉ dẫn bằng tiếng Nhật và tiếng Anh rất chi tiết. Nếu bị lạc, hãy tìm phòng 'Kobans' (đồn cảnh sát) hoặc cửa soát vé (改札口) để được hướng dẫn."
+    }
+  ]
+}

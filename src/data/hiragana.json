@@ -1,0 +1,1370 @@
+{
+  "metadata": {
+    "title": "Bảng chữ Hiragana",
+    "description": "Bảng chữ cái Hiragana đầy đủ",
+    "verificationStatus": "verified",
+    "sources": [
+      "JF Standard",
+      "Genki Textbook"
+    ],
+    "lastUpdated": "2026-10-13"
+  },
+  "groups": [
+    {
+      "name": "Nguyên âm",
+      "nameJa": "母音",
+      "characters": [
+        {
+          "character": "あ",
+          "romaji": "a",
+          "pronunciationGuideVi": "Đọc rõ ràng như 'a' trong tiếng Việt, mở khẩu hình vừa phải và ngắt âm dứt khoát",
+          "strokeCount": 3,
+          "exampleWord": "あめ",
+          "exampleReading": "ame",
+          "exampleMeaning": "mưa / kẹo",
+          "group": "vowel",
+          "order": 1,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "い",
+          "romaji": "i",
+          "pronunciationGuideVi": "Đọc như 'i' trong tiếng Việt, khóe môi hơi kéo bè sang hai bên",
+          "strokeCount": 2,
+          "exampleWord": "いぬ",
+          "exampleReading": "inu",
+          "exampleMeaning": "con chó",
+          "group": "vowel",
+          "order": 2,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "う",
+          "romaji": "u",
+          "pronunciationGuideVi": "Đọc giữa 'u' và 'ư' tiếng Việt, môi thả lỏng không chu tròn ra phía trước",
+          "strokeCount": 2,
+          "exampleWord": "うみ",
+          "exampleReading": "umi",
+          "exampleMeaning": "biển",
+          "group": "vowel",
+          "order": 3,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "え",
+          "romaji": "e",
+          "pronunciationGuideVi": "Đọc giữa 'e' và 'ê' tiếng Việt, hơi thiên về âm 'ê' ngắn gọn",
+          "strokeCount": 2,
+          "exampleWord": "えき",
+          "exampleReading": "eki",
+          "exampleMeaning": "nhà ga",
+          "group": "vowel",
+          "order": 4,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "お",
+          "romaji": "o",
+          "pronunciationGuideVi": "Đọc giữa 'ô' và 'o' tiếng Việt, tròn môi vừa phải và dứt khoát",
+          "strokeCount": 3,
+          "exampleWord": "おかね",
+          "exampleReading": "okane",
+          "exampleMeaning": "tiền",
+          "group": "vowel",
+          "order": 5,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng K",
+      "nameJa": "か行",
+      "characters": [
+        {
+          "character": "か",
+          "romaji": "ka",
+          "pronunciationGuideVi": "Đọc như 'ca' trong tiếng Việt, bật hơi nhẹ nhàng",
+          "strokeCount": 3,
+          "exampleWord": "かさ",
+          "exampleReading": "kasa",
+          "exampleMeaning": "cái ô (cây dù)",
+          "group": "k-row",
+          "order": 6,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "き",
+          "romaji": "ki",
+          "pronunciationGuideVi": "Đọc như 'ki' trong tiếng Việt, âm phát ra trong trẻo",
+          "strokeCount": 4,
+          "exampleWord": "き",
+          "exampleReading": "ki",
+          "exampleMeaning": "cây cối",
+          "group": "k-row",
+          "order": 7,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "く",
+          "romaji": "ku",
+          "pronunciationGuideVi": "Đọc như 'cu' nhưng môi thả lỏng, hơi nghiêng về 'cư'",
+          "strokeCount": 1,
+          "exampleWord": "くるま",
+          "exampleReading": "kuruma",
+          "exampleMeaning": "xe hơi, ô tô",
+          "group": "k-row",
+          "order": 8,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "け",
+          "romaji": "ke",
+          "pronunciationGuideVi": "Đọc như 'kê' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "けさ",
+          "exampleReading": "kesa",
+          "exampleMeaning": "sáng nay",
+          "group": "k-row",
+          "order": 9,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "こ",
+          "romaji": "ko",
+          "pronunciationGuideVi": "Đọc như 'cô' trong tiếng Việt, phát âm ngắn gọn",
+          "strokeCount": 2,
+          "exampleWord": "こども",
+          "exampleReading": "kodomo",
+          "exampleMeaning": "trẻ em, đứa trẻ",
+          "group": "k-row",
+          "order": 10,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng S",
+      "nameJa": "さ行",
+      "characters": [
+        {
+          "character": "さ",
+          "romaji": "sa",
+          "pronunciationGuideVi": "Đọc như 'xa' trong tiếng Việt, luồng hơi thoát nhẹ qua kẽ răng",
+          "strokeCount": 3,
+          "exampleWord": "さかな",
+          "exampleReading": "sakana",
+          "exampleMeaning": "con cá",
+          "group": "s-row",
+          "order": 11,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "し",
+          "romaji": "shi",
+          "pronunciationGuideVi": "Đọc gần như 'si' nhưng khép hai răng lại, uốn cong đầu lưỡi sát vòm họng trên, giống 'shi' trong tiếng Anh",
+          "strokeCount": 1,
+          "exampleWord": "しお",
+          "exampleReading": "shio",
+          "exampleMeaning": "muối",
+          "group": "s-row",
+          "order": 12,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "す",
+          "romaji": "su",
+          "pronunciationGuideVi": "Đọc như 'xư' hoặc 'xu' không tròn môi, răng khép nhẹ và đẩy luồng hơi xì qua kẽ răng",
+          "strokeCount": 2,
+          "exampleWord": "すし",
+          "exampleReading": "sushi",
+          "exampleMeaning": "món sushi",
+          "group": "s-row",
+          "order": 13,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "せ",
+          "romaji": "se",
+          "pronunciationGuideVi": "Đọc như 'xê' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "せんせい",
+          "exampleReading": "sensei",
+          "exampleMeaning": "thầy cô giáo",
+          "group": "s-row",
+          "order": 14,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "そ",
+          "romaji": "so",
+          "pronunciationGuideVi": "Đọc như 'xô' trong tiếng Việt",
+          "strokeCount": 1,
+          "exampleWord": "そら",
+          "exampleReading": "sora",
+          "exampleMeaning": "bầu trời",
+          "group": "s-row",
+          "order": 15,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng T",
+      "nameJa": "た行",
+      "characters": [
+        {
+          "character": "た",
+          "romaji": "ta",
+          "pronunciationGuideVi": "Đọc như 'ta' trong tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "たまご",
+          "exampleReading": "tamago",
+          "exampleMeaning": "quả trứng",
+          "group": "t-row",
+          "order": 16,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ち",
+          "romaji": "chi",
+          "pronunciationGuideVi": "Đọc như 'chi' trong tiếng Việt, đầu lưỡi chạm vòm miệng rồi bật luồng hơi nhẹ",
+          "strokeCount": 2,
+          "exampleWord": "ちず",
+          "exampleReading": "chizu",
+          "exampleMeaning": "bản đồ",
+          "group": "t-row",
+          "order": 17,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "つ",
+          "romaji": "tsu",
+          "pronunciationGuideVi": "Đọc 'xư' có bật âm 't' nhẹ ở đầu lưỡi, không có âm tương đương chính xác trong tiếng Việt",
+          "strokeCount": 1,
+          "exampleWord": "つくえ",
+          "exampleReading": "tsukue",
+          "exampleMeaning": "cái bàn",
+          "group": "t-row",
+          "order": 18,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "て",
+          "romaji": "te",
+          "pronunciationGuideVi": "Đọc như 'tê' trong tiếng Việt",
+          "strokeCount": 1,
+          "exampleWord": "て",
+          "exampleReading": "te",
+          "exampleMeaning": "bàn tay",
+          "group": "t-row",
+          "order": 19,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "と",
+          "romaji": "to",
+          "pronunciationGuideVi": "Đọc như 'tô' trong tiếng Việt",
+          "strokeCount": 2,
+          "exampleWord": "とり",
+          "exampleReading": "tori",
+          "exampleMeaning": "con chim",
+          "group": "t-row",
+          "order": 20,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng N",
+      "nameJa": "な行",
+      "characters": [
+        {
+          "character": "な",
+          "romaji": "na",
+          "pronunciationGuideVi": "Đọc như 'na' trong tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "なつ",
+          "exampleReading": "natsu",
+          "exampleMeaning": "mùa hè",
+          "group": "n-row",
+          "order": 21,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "に",
+          "romaji": "ni",
+          "pronunciationGuideVi": "Đọc như 'ni' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "にほん",
+          "exampleReading": "nihon",
+          "exampleMeaning": "nước Nhật Bản",
+          "group": "n-row",
+          "order": 22,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぬ",
+          "romaji": "nu",
+          "pronunciationGuideVi": "Đọc như 'nu' trong tiếng Việt nhưng môi không chu tròn ra phía trước",
+          "strokeCount": 2,
+          "exampleWord": "ぬいぐるみ",
+          "exampleReading": "nuigurumi",
+          "exampleMeaning": "thú nhồi bông",
+          "group": "n-row",
+          "order": 23,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ね",
+          "romaji": "ne",
+          "pronunciationGuideVi": "Đọc như 'nê' trong tiếng Việt",
+          "strokeCount": 2,
+          "exampleWord": "ねこ",
+          "exampleReading": "neko",
+          "exampleMeaning": "con mèo",
+          "group": "n-row",
+          "order": 24,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "の",
+          "romaji": "no",
+          "pronunciationGuideVi": "Đọc như 'nô' trong tiếng Việt",
+          "strokeCount": 1,
+          "exampleWord": "のみもの",
+          "exampleReading": "nomimono",
+          "exampleMeaning": "đồ uống, thức uống",
+          "group": "n-row",
+          "order": 25,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng H",
+      "nameJa": "は行",
+      "characters": [
+        {
+          "character": "は",
+          "romaji": "ha",
+          "pronunciationGuideVi": "Đọc như 'ha' trong tiếng Việt (khi làm trợ từ đọc là 'wa')",
+          "strokeCount": 3,
+          "exampleWord": "はな",
+          "exampleReading": "hana",
+          "exampleMeaning": "hoa / bông hoa",
+          "group": "h-row",
+          "order": 26,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ひ",
+          "romaji": "hi",
+          "pronunciationGuideVi": "Đọc như 'hi' trong tiếng Việt, hơi ép nhẹ qua vòm miệng",
+          "strokeCount": 1,
+          "exampleWord": "ひかり",
+          "exampleReading": "hikari",
+          "exampleMeaning": "ánh sáng",
+          "group": "h-row",
+          "order": 27,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ふ",
+          "romaji": "fu",
+          "pronunciationGuideVi": "Đọc giữa 'phu' và 'hu', khép hờ hai môi lại và thổi nhẹ hơi ra, không cắn răng vào môi dưới như 'f' tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "ふね",
+          "exampleReading": "fune",
+          "exampleMeaning": "con thuyền, tàu thuyền",
+          "group": "h-row",
+          "order": 28,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "へ",
+          "romaji": "he",
+          "pronunciationGuideVi": "Đọc như 'hê' trong tiếng Việt (khi làm trợ từ chỉ phương hướng đọc là 'e')",
+          "strokeCount": 1,
+          "exampleWord": "へや",
+          "exampleReading": "heya",
+          "exampleMeaning": "căn phòng",
+          "group": "h-row",
+          "order": 29,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ほ",
+          "romaji": "ho",
+          "pronunciationGuideVi": "Đọc như 'hô' trong tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "ほし",
+          "exampleReading": "hoshi",
+          "exampleMeaning": "ngôi sao",
+          "group": "h-row",
+          "order": 30,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng M",
+      "nameJa": "ま行",
+      "characters": [
+        {
+          "character": "ま",
+          "romaji": "ma",
+          "pronunciationGuideVi": "Đọc như 'ma' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "まち",
+          "exampleReading": "machi",
+          "exampleMeaning": "thành phố, thị trấn",
+          "group": "m-row",
+          "order": 31,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "み",
+          "romaji": "mi",
+          "pronunciationGuideVi": "Đọc như 'mi' trong tiếng Việt",
+          "strokeCount": 2,
+          "exampleWord": "みず",
+          "exampleReading": "mizu",
+          "exampleMeaning": "nước (nước uống, nước sinh hoạt)",
+          "group": "m-row",
+          "order": 32,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "む",
+          "romaji": "mu",
+          "pronunciationGuideVi": "Đọc như 'mu' trong tiếng Việt nhưng môi mở tự nhiên",
+          "strokeCount": 3,
+          "exampleWord": "むし",
+          "exampleReading": "mushi",
+          "exampleMeaning": "côn trùng, sâu bọ",
+          "group": "m-row",
+          "order": 33,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "め",
+          "romaji": "me",
+          "pronunciationGuideVi": "Đọc như 'mê' trong tiếng Việt",
+          "strokeCount": 2,
+          "exampleWord": "め",
+          "exampleReading": "me",
+          "exampleMeaning": "mắt (đôi mắt)",
+          "group": "m-row",
+          "order": 34,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "も",
+          "romaji": "mo",
+          "pronunciationGuideVi": "Đọc như 'mô' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "もり",
+          "exampleReading": "mori",
+          "exampleMeaning": "khu rừng",
+          "group": "m-row",
+          "order": 35,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng Y",
+      "nameJa": "や行",
+      "characters": [
+        {
+          "character": "や",
+          "romaji": "ya",
+          "pronunciationGuideVi": "Đọc như 'da' (giọng miền Nam) hoặc lướt nhanh từ 'i-a' thành 'ya'",
+          "strokeCount": 3,
+          "exampleWord": "やま",
+          "exampleReading": "yama",
+          "exampleMeaning": "ngọn núi",
+          "group": "y-row",
+          "order": 36,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ゆ",
+          "romaji": "yu",
+          "pronunciationGuideVi": "Đọc lướt nhanh từ 'i-u' thành 'yu', không chu tròn môi",
+          "strokeCount": 2,
+          "exampleWord": "ゆき",
+          "exampleReading": "yuki",
+          "exampleMeaning": "tuyết",
+          "group": "y-row",
+          "order": 37,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "よ",
+          "romaji": "yo",
+          "pronunciationGuideVi": "Đọc lướt nhanh từ 'i-ô' thành 'yô'",
+          "strokeCount": 2,
+          "exampleWord": "よる",
+          "exampleReading": "yoru",
+          "exampleMeaning": "ban đêm, buổi tối",
+          "group": "y-row",
+          "order": 38,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng R",
+      "nameJa": "ら行",
+      "characters": [
+        {
+          "character": "ら",
+          "romaji": "ra",
+          "pronunciationGuideVi": "Đọc giữa 'la' và 'ra' tiếng Việt, đầu lưỡi chạm nhẹ vòm họng trên rồi bật ra, không rung lưỡi",
+          "strokeCount": 2,
+          "exampleWord": "らいげつ",
+          "exampleReading": "raigetsu",
+          "exampleMeaning": "tháng sau",
+          "group": "r-row",
+          "order": 39,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "り",
+          "romaji": "ri",
+          "pronunciationGuideVi": "Đọc giữa 'li' và 'ri', lưỡi chạm nhẹ chân răng trên rồi buông",
+          "strokeCount": 2,
+          "exampleWord": "りんご",
+          "exampleReading": "ringo",
+          "exampleMeaning": "quả táo",
+          "group": "r-row",
+          "order": 40,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "る",
+          "romaji": "ru",
+          "pronunciationGuideVi": "Đọc giữa 'lu' và 'ru', lưỡi chạm nhẹ vòm họng trên, môi thả lỏng",
+          "strokeCount": 1,
+          "exampleWord": "るす",
+          "exampleReading": "rusu",
+          "exampleMeaning": "vắng nhà",
+          "group": "r-row",
+          "order": 41,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "れ",
+          "romaji": "re",
+          "pronunciationGuideVi": "Đọc giữa 'lê' và 'rê', đầu lưỡi chạm nhẹ chân răng trên",
+          "strokeCount": 2,
+          "exampleWord": "れきし",
+          "exampleReading": "rekishi",
+          "exampleMeaning": "lịch sử",
+          "group": "r-row",
+          "order": 42,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ろ",
+          "romaji": "ro",
+          "pronunciationGuideVi": "Đọc giữa 'lô' và 'rô', đầu lưỡi vỗ nhẹ vòm họng trên rồi mở ra âm 'ô'",
+          "strokeCount": 1,
+          "exampleWord": "ろうそく",
+          "exampleReading": "rousoku",
+          "exampleMeaning": "cây nến",
+          "group": "r-row",
+          "order": 43,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Hàng W + N",
+      "nameJa": "わ行",
+      "characters": [
+        {
+          "character": "わ",
+          "romaji": "wa",
+          "pronunciationGuideVi": "Đọc lướt nhanh từ 'oa' trong tiếng Việt, khẩu hình mở tròn",
+          "strokeCount": 2,
+          "exampleWord": "わたし",
+          "exampleReading": "watashi",
+          "exampleMeaning": "tôi (đại từ nhân xưng)",
+          "group": "w-row",
+          "order": 44,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "を",
+          "romaji": "wo",
+          "pronunciationGuideVi": "Phát âm giống hệt chữ 'お' (ô), chỉ dùng làm trợ từ tân ngữ trong ngữ pháp",
+          "strokeCount": 3,
+          "exampleWord": "ほんをよむ",
+          "exampleReading": "hon o yomu",
+          "exampleMeaning": "đọc sách (đóng vai trò trợ từ chỉ đối tượng)",
+          "group": "w-row",
+          "order": 45,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ん",
+          "romaji": "n",
+          "pronunciationGuideVi": "Âm mũi, tùy theo âm liền sau mà phát âm như 'n', 'm' hoặc 'ng' trong tiếng Việt",
+          "strokeCount": 1,
+          "exampleWord": "にほん",
+          "exampleReading": "nihon",
+          "exampleMeaning": "Nhật Bản",
+          "group": "w-row",
+          "order": 46,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm đục - Hàng G",
+      "nameJa": "が行",
+      "characters": [
+        {
+          "character": "が",
+          "romaji": "ga",
+          "pronunciationGuideVi": "Đọc như 'ga' trong tiếng Việt",
+          "strokeCount": 5,
+          "exampleWord": "がくせい",
+          "exampleReading": "gakusei",
+          "exampleMeaning": "học sinh, sinh viên",
+          "group": "g-row",
+          "order": 47,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぎ",
+          "romaji": "gi",
+          "pronunciationGuideVi": "Đọc như 'ghi' trong tiếng Việt",
+          "strokeCount": 6,
+          "exampleWord": "ぎんこう",
+          "exampleReading": "ginkou",
+          "exampleMeaning": "ngân hàng",
+          "group": "g-row",
+          "order": 48,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぐ",
+          "romaji": "gu",
+          "pronunciationGuideVi": "Đọc như 'gu' trong tiếng Việt nhưng môi thả lỏng",
+          "strokeCount": 3,
+          "exampleWord": "ぐあい",
+          "exampleReading": "guai",
+          "exampleMeaning": "tình trạng sức khỏe",
+          "group": "g-row",
+          "order": 49,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "げ",
+          "romaji": "ge",
+          "pronunciationGuideVi": "Đọc như 'ghê' trong tiếng Việt",
+          "strokeCount": 5,
+          "exampleWord": "げんき",
+          "exampleReading": "genki",
+          "exampleMeaning": "khỏe mạnh",
+          "group": "g-row",
+          "order": 50,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ご",
+          "romaji": "go",
+          "pronunciationGuideVi": "Đọc như 'gô' trong tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "ごはん",
+          "exampleReading": "gohan",
+          "exampleMeaning": "cơm, bữa ăn",
+          "group": "g-row",
+          "order": 51,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm đục - Hàng Z",
+      "nameJa": "ざ行",
+      "characters": [
+        {
+          "character": "ざ",
+          "romaji": "za",
+          "pronunciationGuideVi": "Đọc như 'da' (giọng Bắc) nhưng có độ rung thanh quản như âm 'z'",
+          "strokeCount": 5,
+          "exampleWord": "ざっし",
+          "exampleReading": "zasshi",
+          "exampleMeaning": "tạp chí",
+          "group": "z-row",
+          "order": 52,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "じ",
+          "romaji": "ji",
+          "pronunciationGuideVi": "Đọc như 'ji' với rung thanh quản mạnh, giống 'j' trong tiếng Anh (jump)",
+          "strokeCount": 3,
+          "exampleWord": "じかん",
+          "exampleReading": "jikan",
+          "exampleMeaning": "thời gian",
+          "group": "z-row",
+          "order": 53,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ず",
+          "romaji": "zu",
+          "pronunciationGuideVi": "Đọc như 'zư' với âm rung thanh quản, hai hàm răng khép nhẹ",
+          "strokeCount": 4,
+          "exampleWord": "ずぼん",
+          "exampleReading": "zubon",
+          "exampleMeaning": "quần dài",
+          "group": "z-row",
+          "order": 54,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぜ",
+          "romaji": "ze",
+          "pronunciationGuideVi": "Đọc như 'zê' với âm rung thanh quản",
+          "strokeCount": 5,
+          "exampleWord": "ぜんぶ",
+          "exampleReading": "zenbu",
+          "exampleMeaning": "tất cả, toàn bộ",
+          "group": "z-row",
+          "order": 55,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぞ",
+          "romaji": "zo",
+          "pronunciationGuideVi": "Đọc như 'zô' với âm rung thanh quản",
+          "strokeCount": 3,
+          "exampleWord": "ぞう",
+          "exampleReading": "zou",
+          "exampleMeaning": "con voi",
+          "group": "z-row",
+          "order": 56,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm đục - Hàng D",
+      "nameJa": "だ行",
+      "characters": [
+        {
+          "character": "だ",
+          "romaji": "da",
+          "pronunciationGuideVi": "Đọc như 'đa' trong tiếng Việt",
+          "strokeCount": 6,
+          "exampleWord": "だいがく",
+          "exampleReading": "daigaku",
+          "exampleMeaning": "trường đại học",
+          "group": "d-row",
+          "order": 57,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぢ",
+          "romaji": "di/ji",
+          "pronunciationGuideVi": "Phát âm giống hệt chữ 'じ' (ji), chỉ dùng trong từ ghép hoặc từ láy theo quy tắc biến âm",
+          "strokeCount": 4,
+          "exampleWord": "はなぢ",
+          "exampleReading": "hanaji",
+          "exampleMeaning": "chảy máu cam",
+          "group": "d-row",
+          "order": 58,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "づ",
+          "romaji": "du/zu",
+          "pronunciationGuideVi": "Phát âm giống hệt chữ 'ず' (zu), chỉ dùng trong từ ghép hoặc từ láy theo quy tắc biến âm",
+          "strokeCount": 3,
+          "exampleWord": "つづく",
+          "exampleReading": "tsuzuku",
+          "exampleMeaning": "tiếp tục",
+          "group": "d-row",
+          "order": 59,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "で",
+          "romaji": "de",
+          "pronunciationGuideVi": "Đọc như 'đê' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "でんしゃ",
+          "exampleReading": "densha",
+          "exampleMeaning": "tàu điện",
+          "group": "d-row",
+          "order": 60,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ど",
+          "romaji": "do",
+          "pronunciationGuideVi": "Đọc như 'đô' trong tiếng Việt",
+          "strokeCount": 4,
+          "exampleWord": "どうぶつ",
+          "exampleReading": "doubutsu",
+          "exampleMeaning": "động vật",
+          "group": "d-row",
+          "order": 61,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm đục - Hàng B",
+      "nameJa": "ば行",
+      "characters": [
+        {
+          "character": "ば",
+          "romaji": "ba",
+          "pronunciationGuideVi": "Đọc như 'ba' trong tiếng Việt",
+          "strokeCount": 5,
+          "exampleWord": "ばんごう",
+          "exampleReading": "bangou",
+          "exampleMeaning": "số hiệu, số điện thoại",
+          "group": "b-row",
+          "order": 62,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "び",
+          "romaji": "bi",
+          "pronunciationGuideVi": "Đọc như 'bi' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "びょういん",
+          "exampleReading": "byouin",
+          "exampleMeaning": "bệnh viện",
+          "group": "b-row",
+          "order": 63,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぶ",
+          "romaji": "bu",
+          "pronunciationGuideVi": "Đọc như 'bu' trong tiếng Việt",
+          "strokeCount": 6,
+          "exampleWord": "ぶんか",
+          "exampleReading": "bunka",
+          "exampleMeaning": "văn hóa",
+          "group": "b-row",
+          "order": 64,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "べ",
+          "romaji": "be",
+          "pronunciationGuideVi": "Đọc như 'bê' trong tiếng Việt",
+          "strokeCount": 3,
+          "exampleWord": "べんきょう",
+          "exampleReading": "benkyou",
+          "exampleMeaning": "học tập",
+          "group": "b-row",
+          "order": 65,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぼ",
+          "romaji": "bo",
+          "pronunciationGuideVi": "Đọc như 'bô' trong tiếng Việt",
+          "strokeCount": 6,
+          "exampleWord": "ぼうし",
+          "exampleReading": "boushi",
+          "exampleMeaning": "mũ, nón",
+          "group": "b-row",
+          "order": 66,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm bán đục - Hàng P",
+      "nameJa": "ぱ行",
+      "characters": [
+        {
+          "character": "ぱ",
+          "romaji": "pa",
+          "pronunciationGuideVi": "Đọc mím hai môi bật mạnh âm 'pa' (như 'pa' tiếng Việt)",
+          "strokeCount": 4,
+          "exampleWord": "ぱん",
+          "exampleReading": "pan",
+          "exampleMeaning": "bánh mì",
+          "group": "p-row",
+          "order": 67,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぴ",
+          "romaji": "pi",
+          "pronunciationGuideVi": "Đọc mím hai môi bật hơi tạo âm 'pi' dứt khoát",
+          "strokeCount": 2,
+          "exampleWord": "ぴあの",
+          "exampleReading": "piano",
+          "exampleMeaning": "đàn dương cầm (piano)",
+          "group": "p-row",
+          "order": 68,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぷ",
+          "romaji": "pu",
+          "pronunciationGuideVi": "Đọc mím hai môi bật hơi tạo âm 'pu' dứt khoát",
+          "strokeCount": 5,
+          "exampleWord": "ぷーる",
+          "exampleReading": "puuru",
+          "exampleMeaning": "hồ bơi, bể bơi",
+          "group": "p-row",
+          "order": 69,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぺ",
+          "romaji": "pe",
+          "pronunciationGuideVi": "Đọc mím hai môi bật hơi tạo âm 'pê' rõ ràng",
+          "strokeCount": 2,
+          "exampleWord": "ぺん",
+          "exampleReading": "pen",
+          "exampleMeaning": "cây bút mực",
+          "group": "p-row",
+          "order": 70,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぽ",
+          "romaji": "po",
+          "pronunciationGuideVi": "Đọc mím hai môi bật hơi tạo âm 'pô' rõ ràng",
+          "strokeCount": 5,
+          "exampleWord": "ぽけっと",
+          "exampleReading": "poketto",
+          "exampleMeaning": "túi áo, túi quần",
+          "group": "p-row",
+          "order": 71,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm ghép - YA",
+      "nameJa": "拗音-ya",
+      "characters": [
+        {
+          "character": "きゃ",
+          "romaji": "kya",
+          "pronunciationGuideVi": "Ghép 'ki' lướt nhanh sang 'ya' tạo thành âm tiết 'kya' liền mạch",
+          "strokeCount": 7,
+          "exampleWord": "きゃく",
+          "exampleReading": "kyaku",
+          "exampleMeaning": "khách hàng, khách trọ",
+          "group": "ya-combo",
+          "order": 72,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "しゃ",
+          "romaji": "sha",
+          "pronunciationGuideVi": "Ghép âm 'shi' và 'ya' đọc uốn cong lưỡi sát vòm trên thành 'sha' (như 'sha' tiếng Anh)",
+          "strokeCount": 4,
+          "exampleWord": "しゃしん",
+          "exampleReading": "shashin",
+          "exampleMeaning": "bức ảnh",
+          "group": "ya-combo",
+          "order": 73,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ちゃ",
+          "romaji": "cha",
+          "pronunciationGuideVi": "Ghép 'chi' và 'ya' đọc như 'cha' trong tiếng Việt, có bật hơi nhẹ",
+          "strokeCount": 5,
+          "exampleWord": "おちゃ",
+          "exampleReading": "ocha",
+          "exampleMeaning": "trà xanh",
+          "group": "ya-combo",
+          "order": 74,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "にゃ",
+          "romaji": "nya",
+          "pronunciationGuideVi": "Ghép 'ni' và 'ya' đọc tương đương 'nha' trong tiếng Việt",
+          "strokeCount": 6,
+          "exampleWord": "にゃんこ",
+          "exampleReading": "nyanko",
+          "exampleMeaning": "chú mèo con (tiếng mèo kêu)",
+          "group": "ya-combo",
+          "order": 75,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ひゃ",
+          "romaji": "hya",
+          "pronunciationGuideVi": "Ghép 'hi' lướt sang 'ya' đọc liền mạch thành 'hya'",
+          "strokeCount": 4,
+          "exampleWord": "ひゃく",
+          "exampleReading": "hyaku",
+          "exampleMeaning": "một trăm (100)",
+          "group": "ya-combo",
+          "order": 76,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "みゃ",
+          "romaji": "mya",
+          "pronunciationGuideVi": "Ghép 'mi' lướt sang 'ya' đọc liền mạch thành 'mya'",
+          "strokeCount": 5,
+          "exampleWord": "みゃく",
+          "exampleReading": "myaku",
+          "exampleMeaning": "mạch đập, huyết mạch",
+          "group": "ya-combo",
+          "order": 77,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "りゃ",
+          "romaji": "rya",
+          "pronunciationGuideVi": "Ghép 'ri' lướt sang 'ya' đọc thành 'rya', đầu lưỡi chạm nhẹ vòm họng trên",
+          "strokeCount": 5,
+          "exampleWord": "りゃくご",
+          "exampleReading": "ryakugo",
+          "exampleMeaning": "từ viết tắt",
+          "group": "ya-combo",
+          "order": 78,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぎゃ",
+          "romaji": "gya",
+          "pronunciationGuideVi": "Ghép 'ghi' lướt sang 'ya' tạo thành âm đục 'gya'",
+          "strokeCount": 9,
+          "exampleWord": "ぎゃくてん",
+          "exampleReading": "gyakuten",
+          "exampleMeaning": "xoay chuyển tình thế, đảo ngược",
+          "group": "ya-combo",
+          "order": 79,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "じゃ",
+          "romaji": "ja",
+          "pronunciationGuideVi": "Ghép 'ji' và 'ya' đọc như 'gia' rung âm mạnh, tương đương 'ja' tiếng Anh",
+          "strokeCount": 6,
+          "exampleWord": "じゃま",
+          "exampleReading": "jama",
+          "exampleMeaning": "cản trở, làm phiền",
+          "group": "ya-combo",
+          "order": 80,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "びゃ",
+          "romaji": "bya",
+          "pronunciationGuideVi": "Ghép 'bi' lướt sang 'ya' tạo thành âm đục 'bya'",
+          "strokeCount": 6,
+          "exampleWord": "びゃくだん",
+          "exampleReading": "byakudan",
+          "exampleMeaning": "gỗ đàn hương",
+          "group": "ya-combo",
+          "order": 81,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぴゃ",
+          "romaji": "pya",
+          "pronunciationGuideVi": "Ghép bật môi 'pi' lướt sang 'ya' tạo thành 'pya'",
+          "strokeCount": 5,
+          "exampleWord": "ろっぴゃく",
+          "exampleReading": "roppyaku",
+          "exampleMeaning": "sáu trăm (600)",
+          "group": "ya-combo",
+          "order": 82,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm ghép - YU",
+      "nameJa": "拗音-yu",
+      "characters": [
+        {
+          "character": "きゅ",
+          "romaji": "kyu",
+          "pronunciationGuideVi": "Ghép 'ki' lướt nhanh sang 'yu' tạo thành 'kyu'",
+          "strokeCount": 6,
+          "exampleWord": "きゅう",
+          "exampleReading": "kyuu",
+          "exampleMeaning": "số chín (9)",
+          "group": "yu-combo",
+          "order": 83,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "しゅ",
+          "romaji": "shu",
+          "pronunciationGuideVi": "Ghép 'shi' lướt sang 'yu' đọc uốn lưỡi thành 'shu'",
+          "strokeCount": 3,
+          "exampleWord": "しゅくだい",
+          "exampleReading": "shukudai",
+          "exampleMeaning": "bài tập về nhà",
+          "group": "yu-combo",
+          "order": 84,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ちゅ",
+          "romaji": "chu",
+          "pronunciationGuideVi": "Ghép 'chi' lướt sang 'yu' đọc bật hơi nhẹ thành 'chu'",
+          "strokeCount": 4,
+          "exampleWord": "ちゅうごく",
+          "exampleReading": "chuugoku",
+          "exampleMeaning": "nước Trung Quốc",
+          "group": "yu-combo",
+          "order": 85,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "にゅ",
+          "romaji": "nyu",
+          "pronunciationGuideVi": "Ghép 'ni' lướt sang 'yu' đọc tương đương 'nhu' trong tiếng Việt",
+          "strokeCount": 5,
+          "exampleWord": "にゅうがく",
+          "exampleReading": "nyuugaku",
+          "exampleMeaning": "nhập học",
+          "group": "yu-combo",
+          "order": 86,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ひゅ",
+          "romaji": "hyu",
+          "pronunciationGuideVi": "Ghép 'hi' lướt sang 'yu' đọc thành 'hyu' trong một hơi thở",
+          "strokeCount": 3,
+          "exampleWord": "ひゅうが",
+          "exampleReading": "hyuuga",
+          "exampleMeaning": "địa danh cổ tỉnh Hyuga / họ người Nhật",
+          "group": "yu-combo",
+          "order": 87,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "みゅ",
+          "romaji": "myu",
+          "pronunciationGuideVi": "Ghép 'mi' lướt sang 'yu' đọc liền mạch thành 'myu'",
+          "strokeCount": 4,
+          "exampleWord": "みゅーじかる",
+          "exampleReading": "myuujikaru",
+          "exampleMeaning": "vở nhạc kịch (musical)",
+          "group": "yu-combo",
+          "order": 88,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "りゅ",
+          "romaji": "ryu",
+          "pronunciationGuideVi": "Ghép 'ri' lướt sang 'yu' đọc thành 'ryu', lưỡi chạm nhẹ vòm họng",
+          "strokeCount": 4,
+          "exampleWord": "りゅうがくせい",
+          "exampleReading": "ryuugakusei",
+          "exampleMeaning": "du học sinh",
+          "group": "yu-combo",
+          "order": 89,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぎゅ",
+          "romaji": "gyu",
+          "pronunciationGuideVi": "Ghép 'ghi' lướt sang 'yu' tạo âm đục 'gyu'",
+          "strokeCount": 8,
+          "exampleWord": "ぎゅうにゅう",
+          "exampleReading": "gyuunyuu",
+          "exampleMeaning": "sữa bò tươi",
+          "group": "yu-combo",
+          "order": 90,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "じゅ",
+          "romaji": "ju",
+          "pronunciationGuideVi": "Ghép 'ji' lướt sang 'yu' đọc thành 'ju' với âm rung mạnh ở thanh quản",
+          "strokeCount": 5,
+          "exampleWord": "じゅぎょう",
+          "exampleReading": "jugyou",
+          "exampleMeaning": "tiết học, giờ học",
+          "group": "yu-combo",
+          "order": 91,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "びゅ",
+          "romaji": "byu",
+          "pronunciationGuideVi": "Ghép 'bi' lướt sang 'yu' tạo âm đục 'byu'",
+          "strokeCount": 5,
+          "exampleWord": "びゅうびゅう",
+          "exampleReading": "byuubyuu",
+          "exampleMeaning": "(gió) thổi vù vù",
+          "group": "yu-combo",
+          "order": 92,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぴゅ",
+          "romaji": "pyu",
+          "pronunciationGuideVi": "Ghép bật môi 'pi' lướt sang 'yu' tạo thành 'pyu'",
+          "strokeCount": 4,
+          "exampleWord": "ぴゅあ",
+          "exampleReading": "pyua",
+          "exampleMeaning": "trong sáng, thuần khiết (pure)",
+          "group": "yu-combo",
+          "order": 93,
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "name": "Âm ghép - YO",
+      "nameJa": "拗音-yo",
+      "characters": [
+        {
+          "character": "きょ",
+          "romaji": "kyo",
+          "pronunciationGuideVi": "Ghép 'ki' lướt nhanh sang 'yo' đọc thành 'kyô'",
+          "strokeCount": 6,
+          "exampleWord": "きょう",
+          "exampleReading": "kyou",
+          "exampleMeaning": "hôm nay",
+          "group": "yo-combo",
+          "order": 94,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "しょ",
+          "romaji": "sho",
+          "pronunciationGuideVi": "Ghép 'shi' lướt sang 'yo' đọc uốn cong lưỡi thành 'shô'",
+          "strokeCount": 3,
+          "exampleWord": "しょくどう",
+          "exampleReading": "shokudou",
+          "exampleMeaning": "nhà ăn, quán ăn",
+          "group": "yo-combo",
+          "order": 95,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ちょ",
+          "romaji": "cho",
+          "pronunciationGuideVi": "Ghép 'chi' lướt sang 'yo' đọc bật hơi nhẹ thành 'chô'",
+          "strokeCount": 4,
+          "exampleWord": "ちょっと",
+          "exampleReading": "chotto",
+          "exampleMeaning": "một chút, một lát",
+          "group": "yo-combo",
+          "order": 96,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "にょ",
+          "romaji": "nyo",
+          "pronunciationGuideVi": "Ghép 'ni' lướt sang 'yo' đọc tương đương 'nhô' trong tiếng Việt",
+          "strokeCount": 5,
+          "exampleWord": "にょうぼう",
+          "exampleReading": "nyoubou",
+          "exampleMeaning": "người vợ",
+          "group": "yo-combo",
+          "order": 97,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ひょ",
+          "romaji": "hyo",
+          "pronunciationGuideVi": "Ghép 'hi' lướt sang 'yo' đọc liền mạch thành 'hyô'",
+          "strokeCount": 3,
+          "exampleWord": "ひょう",
+          "exampleReading": "hyou",
+          "exampleMeaning": "bảng biểu / con báo hoa",
+          "group": "yo-combo",
+          "order": 98,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "みょ",
+          "romaji": "myo",
+          "pronunciationGuideVi": "Ghép 'mi' lướt sang 'yo' đọc liền mạch thành 'myô'",
+          "strokeCount": 4,
+          "exampleWord": "みょうじ",
+          "exampleReading": "myouji",
+          "exampleMeaning": "họ (trong họ và tên)",
+          "group": "yo-combo",
+          "order": 99,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "りょ",
+          "romaji": "ryo",
+          "pronunciationGuideVi": "Ghép 'ri' lướt sang 'yo' đọc thành 'ryô', lưỡi chạm nhẹ chân răng trên",
+          "strokeCount": 4,
+          "exampleWord": "りょこう",
+          "exampleReading": "ryokou",
+          "exampleMeaning": "du lịch, chuyến đi",
+          "group": "yo-combo",
+          "order": 100,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぎょ",
+          "romaji": "gyo",
+          "pronunciationGuideVi": "Ghép 'ghi' lướt sang 'yo' tạo thành âm đục 'gyô'",
+          "strokeCount": 8,
+          "exampleWord": "ぎょぎょう",
+          "exampleReading": "gyogyou",
+          "exampleMeaning": "ngành ngư nghiệp, đánh bắt cá",
+          "group": "yo-combo",
+          "order": 101,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "じょ",
+          "romaji": "jo",
+          "pronunciationGuideVi": "Ghép 'ji' lướt sang 'yo' đọc thành 'jô' với âm rung mạnh ở thanh quản",
+          "strokeCount": 5,
+          "exampleWord": "じょせい",
+          "exampleReading": "josei",
+          "exampleMeaning": "phụ nữ, phái nữ",
+          "group": "yo-combo",
+          "order": 102,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "びょ",
+          "romaji": "byo",
+          "pronunciationGuideVi": "Ghép 'bi' lướt sang 'yo' tạo thành âm đục 'byô'",
+          "strokeCount": 5,
+          "exampleWord": "びょうき",
+          "exampleReading": "byouki",
+          "exampleMeaning": "bệnh tật, ốm đau",
+          "group": "yo-combo",
+          "order": 103,
+          "verificationStatus": "verified"
+        },
+        {
+          "character": "ぴょ",
+          "romaji": "pyo",
+          "pronunciationGuideVi": "Ghép bật môi 'pi' lướt sang 'yo' tạo thành 'pyô'",
+          "strokeCount": 4,
+          "exampleWord": "ぴょんぴょん",
+          "exampleReading": "pyonpyon",
+          "exampleMeaning": "(nhảy) thoăn thoắt, tưng tưng",
+          "group": "yo-combo",
+          "order": 104,
+          "verificationStatus": "verified"
+        }
+      ]
+    }
+  ]
+}

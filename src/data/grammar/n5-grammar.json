@@ -1,0 +1,1735 @@
+{
+  "metadata": {
+    "level": "N5",
+    "title": "Ngữ pháp N5",
+    "description": "Các cấu trúc ngữ pháp theo định hướng JLPT N5. Nội dung được biên soạn dựa trên tài liệu tham khảo, không phải danh sách chính thức của JLPT.",
+    "totalPoints": 30,
+    "verificationStatus": "reviewed",
+    "sources": [
+      "Minna no Nihongo",
+      "Genki",
+      "Tae Kim's Japanese Grammar Guide"
+    ],
+    "lastUpdated": "2026-10-13"
+  },
+  "grammarPoints": [
+    {
+      "id": "n5_g001",
+      "name": "AはBです",
+      "nameVi": "A là B (Khẳng định danh từ)",
+      "level": "N5",
+      "order": 1,
+      "formula": "Danh từ A + は + Danh từ B + です",
+      "meaning": "A là B. Dùng để giới thiệu tên tuổi, quốc tịch, nghề nghiệp hoặc xác nhận danh tính, đặc tính của chủ đề A.",
+      "usage": "Trợ từ は (phát âm là 'wa', không đọc là 'ha') dùng để đánh dấu chủ đề của câu. です là trợ động từ lịch sự thể hiện sự khẳng định ở thời hiện tại hoặc tương lai.",
+      "conjugation": "Danh từ B + です (danh từ giữ nguyên, không biến đổi hình thái).",
+      "examples": [
+        {
+          "japanese": "私は学生です。",
+          "reading": "わたしはがくせいです。",
+          "romaji": "Watashi wa gakusei desu.",
+          "vietnamese": "Tôi là học sinh.",
+          "explanation": "私 (tôi) là chủ đề đứng trước は, 学生 (học sinh) là vị ngữ đi với です để khẳng định."
+        },
+        {
+          "japanese": "田中さんは日本人です。",
+          "reading": "たなかさんはにほんじんです。",
+          "romaji": "Tanaka-san wa nihonjin desu.",
+          "vietnamese": "Anh/Chị Tanaka là người Nhật Bản.",
+          "explanation": "田中さん là chủ đề câu, 日本人 là quốc tịch đi với です tạo thành câu khẳng định trang trọng."
+        },
+        {
+          "japanese": "これは辞書です。",
+          "reading": "これはじしょです。",
+          "romaji": "Kore wa jisho desu.",
+          "vietnamese": "Đây là cuốn từ điển.",
+          "explanation": "これ (cái này) là chủ đề, 辞書 (từ điển) là sự vật được xác định bởi です."
+        }
+      ],
+      "commonMistakes": [
+        "Phát âm ký tự は là 'ha' thay vì 'wa' khi đóng vai trò là trợ từ chủ đề.",
+        "Lược bỏ です trong giao tiếp thông thường lịch sự, chỉ nói cộc lốc '私、学生'."
+      ],
+      "comparisonWith": "AはBじゃないです / ではありません (dạng phủ định tương ứng của danh từ)",
+      "exercises": [
+        {
+          "question": "私____ベトナム人です。(Tôi là người Việt Nam)",
+          "options": [
+            "は",
+            "が",
+            "を",
+            "に"
+          ],
+          "answer": "は",
+          "explanation": "Trợ từ は đánh dấu chủ đề của câu (ở đây là 私)."
+        },
+        {
+          "question": "マイクさんはアメリカ人____。(Anh Mike là người Mỹ)",
+          "options": [
+            "です",
+            "でした",
+            "ません",
+            "ます"
+          ],
+          "answer": "です",
+          "explanation": "Sau danh từ chỉ quốc tịch (アメリカ人) dùng です để khẳng định lịch sự ở hiện tại."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g002",
+      "name": "AはBじゃないです / ではありません",
+      "nameVi": "A không phải là B (Phủ định danh từ)",
+      "level": "N5",
+      "order": 2,
+      "formula": "Danh từ A + は + Danh từ B + じゃないです / ではありません",
+      "meaning": "A không phải là B. Dùng để phủ định thông tin về danh từ ở thời hiện tại hoặc tương lai.",
+      "usage": "じゃないです là dạng phủ định lịch sự thông dụng trong hội thoại hàng ngày. ではありません (hoặc じゃありません) mang sắc thái trang trọng, lịch sự hơn, hay dùng trong văn viết và bài phát biểu chính thức.",
+      "conjugation": "Danh từ B + じゃないです (khẩu ngữ lịch sự) / ではありません (trang trọng).",
+      "examples": [
+        {
+          "japanese": "私は先生ではありません。",
+          "reading": "わたしわせんせいではありません。",
+          "romaji": "Watashi wa sensei dewa arimasen.",
+          "vietnamese": "Tôi không phải là giáo viên.",
+          "explanation": "Danh từ 先生 đi cùng ではありません để phủ định danh tính một cách trang trọng."
+        },
+        {
+          "japanese": "彼は医者じゃないです。",
+          "reading": "かれはいしゃじゃないです。",
+          "romaji": "Kare wa isha janai desu.",
+          "vietnamese": "Anh ấy không phải là bác sĩ.",
+          "explanation": "Danh từ 医者 kết hợp với じゃないです thể hiện phủ định tự nhiên trong văn nói thân mật lịch sự."
+        }
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa phủ định danh từ (ではありません / じゃないです) với phủ định tính từ đuôi い (～くないです).",
+        "Phát âm では thành 'de ha' thay vì 'de wa'."
+      ],
+      "comparisonWith": "AはBです (dạng khẳng định tương ứng)",
+      "exercises": [
+        {
+          "question": "あの人は学生____。(Người kia không phải là học sinh - văn phong trang trọng)",
+          "options": [
+            "ではありません",
+            "ではありませんでした",
+            "です",
+            "くないです"
+          ],
+          "answer": "ではありません",
+          "explanation": "Dạng phủ định trang trọng hiện tại của danh từ là ではありません."
+        },
+        {
+          "question": "これは私の傘____。(Đây không phải là ô của tôi - khẩu ngữ lịch sự)",
+          "options": [
+            "じゃないです",
+            "くないです",
+            "でした",
+            "ます"
+          ],
+          "answer": "じゃないです",
+          "explanation": "Trong giao tiếp thường ngày lịch sự, phủ định danh từ dùng じゃないです."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g003",
+      "name": "AはBですか",
+      "nameVi": "A có phải là B không? (Câu hỏi nghi vấn danh từ)",
+      "level": "N5",
+      "order": 3,
+      "formula": "Danh từ A + は + Danh từ B + ですか",
+      "meaning": "A có phải là B không? Dùng để hỏi thông tin hoặc xác nhận xem A có phải là B hay không.",
+      "usage": "Thêm trợ từ nghi vấn か vào cuối câu khẳng định. Trong tiếng Nhật chuẩn, trật tự từ không đổi. Khi nói lên giọng nhẹ ở âm か. Trả lời khẳng định dùng 'はい、Bです', trả lời phủ định dùng 'いいえ、Bではありません / じゃないです'.",
+      "conjugation": "Câu khẳng định AはBです + か",
+      "examples": [
+        {
+          "japanese": "あなたは学生ですか。",
+          "reading": "あなたはがくせいですか。",
+          "romaji": "Anata wa gakusei desu ka.",
+          "vietnamese": "Bạn có phải là học sinh không?",
+          "explanation": "Thêm か vào cuối câu khẳng định để biến thành câu hỏi xác nhận."
+        },
+        {
+          "japanese": "鈴木さんは会社員ですか。",
+          "reading": "すずきさんはかいしゃいんですか。",
+          "romaji": "Suzuki-san wa kaishain desu ka.",
+          "vietnamese": "Anh Suzuki có phải là nhân viên công ty không?",
+          "explanation": "Dùng để hỏi nghề nghiệp của anh Suzuki."
+        }
+      ],
+      "commonMistakes": [
+        "Đảo vị trí từ ngữ như tiếng Anh. Tiếng Nhật giữ nguyên trật tự từ và chỉ thêm trợ từ か ở cuối câu.",
+        "Dùng dấu hỏi chấm '?' trong văn bản chính quy tiếng Nhật thay cho dấu chấm tròn '。'."
+      ],
+      "comparisonWith": "何ですか (Câu hỏi có từ để hỏi 'Là cái gì?')",
+      "exercises": [
+        {
+          "question": "ミラーさんはアメリカ人____。(Anh Miller có phải là người Mỹ không?)",
+          "options": [
+            "ですか",
+            "ですね",
+            "ですよ",
+            "でしたか"
+          ],
+          "answer": "ですか",
+          "explanation": "Trợ từ nghi vấn đặt ở cuối câu để tạo câu hỏi là か."
+        },
+        {
+          "question": "「あなたは医者ですか。」ー「いいえ、医者____。」",
+          "options": [
+            "ではありません",
+            "です",
+            "でした",
+            "ます"
+          ],
+          "answer": "ではありません",
+          "explanation": "Khi trả lời phủ định 'いいえ' cho câu hỏi danh từ, vị ngữ dùng ではありません."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g004",
+      "name": "Danh từ 1 + の + Danh từ 2",
+      "nameVi": "Trợ từ の (Sở hữu, nguồn gốc, chủng loại, thuộc tính)",
+      "level": "N5",
+      "order": 4,
+      "formula": "Danh từ 1 + の + Danh từ 2",
+      "meaning": "Của / Về / Thuộc về. Danh từ 1 bổ nghĩa làm rõ nghĩa cho Danh từ 2.",
+      "usage": "Biểu thị quan hệ sở hữu (người/vật sở hữu đứng trước, vật được sở hữu đứng sau), xuất xứ (xe của Nhật: 日本の車), chủng loại/chủ đề (sách tiếng Nhật: 日本語の本), hoặc tổ chức trực thuộc (sinh viên đại học Tokyo: 東京大学の学生).",
+      "conjugation": "Danh từ 1 + の + Danh từ 2",
+      "examples": [
+        {
+          "japanese": "これは私の本です。",
+          "reading": "これはわたしのほんです。",
+          "romaji": "Kore wa watashi no hon desu.",
+          "vietnamese": "Đây là cuốn sách của tôi.",
+          "explanation": "私 (tôi) sở hữu 本 (sách), nối với nhau bằng trợ từ sở hữu の."
+        },
+        {
+          "japanese": "日本語の辞書を買いました。",
+          "reading": "にほんごのじしょをかいました。",
+          "romaji": "Nihongo no jisho o kaimashita.",
+          "vietnamese": "Tôi đã mua cuốn từ điển tiếng Nhật.",
+          "explanation": "日本語 bổ nghĩa cho danh từ 辞書 để chỉ loại từ điển."
+        }
+      ],
+      "commonMistakes": [
+        "Đảo ngược trật tự từ theo tư duy tiếng Việt (nói '本の名' thay vì '私の本'). Trong tiếng Nhật, đối tượng sở hữu luôn đứng trước の.",
+        "Lược bỏ の khi nối 2 danh từ. Trong tiếng Nhật, hai danh từ đứng liền nhau bổ nghĩa bắt buộc phải có trợ từ の."
+      ],
+      "comparisonWith": "の thay thế danh từ (như '赤いのが好き' - Tôi thích cái màu đỏ)",
+      "exercises": [
+        {
+          "question": "あれは誰____車ですか。(Kia là xe ô tô của ai vậy?)",
+          "options": [
+            "の",
+            "は",
+            "が",
+            "を"
+          ],
+          "answer": "の",
+          "explanation": "Nối 誰 (ai) và 車 (ô tô) để biểu thị quan hệ sở hữu dùng trợ từ の."
+        },
+        {
+          "question": "彼はソニー____社員です。(Anh ấy là nhân viên của công ty Sony)",
+          "options": [
+            "の",
+            "に",
+            "へ",
+            "で"
+          ],
+          "answer": "の",
+          "explanation": "Chỉ mối quan hệ trực thuộc tổ chức/công ty dùng Danh từ 1 + の + Danh từ 2."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g005",
+      "name": "これ / それ / あれ / どれ",
+      "nameVi": "Đại từ chỉ thị đồ vật (Cái này / Cái đó / Cái kia / Cái nào)",
+      "level": "N5",
+      "order": 5,
+      "formula": "これ / それ / あれ / どれ + は + ...",
+      "meaning": "Cái này (gần người nói) / Cái đó (gần người nghe) / Cái kia (xa cả hai) / Cái nào (từ để hỏi).",
+      "usage": "Đây là các đại từ độc lập, đóng vai trò chủ ngữ hoặc tân ngữ trong câu. Đi theo hệ thống Ko-So-A-Do: これ (vật ở gần người nói), それ (vật ở gần người nghe), あれ (vật ở xa cả người nói và người nghe), どれ (từ để hỏi: cái nào). Tuyệt đối KHÔNG ghép trực tiếp danh từ sau các từ này.",
+      "conjugation": "Đại từ chỉ thị đứng độc lập + trợ từ (は, が, を,...)",
+      "examples": [
+        {
+          "japanese": "これはペンです。",
+          "reading": "これはぺんです。",
+          "romaji": "Kore wa pen desu.",
+          "vietnamese": "Đây là cây bút.",
+          "explanation": "これ chỉ cây bút đang ở vị trí gần người nói."
+        },
+        {
+          "japanese": "あれは富士山です。",
+          "reading": "あれはふじさんです。",
+          "romaji": "Are wa Fujisan desu.",
+          "vietnamese": "Kia là núi Phú Sĩ.",
+          "explanation": "あれ chỉ ngọn núi ở vị trí xa cả người nói lẫn người nghe."
+        }
+      ],
+      "commonMistakes": [
+        "Ghép trực tiếp danh từ ngay sau これ (nói 'これ本' là sai, bắt buộc phải là 'この本' hoặc 'これは本').",
+        "Nhầm vị trí giữa それ (gần người đối diện) và あれ (xa cả hai bên)."
+      ],
+      "comparisonWith": "この / その / あの (bắt buộc phải có danh từ đi liền sau)",
+      "exercises": [
+        {
+          "question": "（Vật ở gần người nghe）「____は何ですか。」",
+          "options": [
+            "それ",
+            "これ",
+            "あれ",
+            "どれ"
+          ],
+          "answer": "それ",
+          "explanation": "Đồ vật ở gần người nghe thì người nói phải dùng それ."
+        },
+        {
+          "question": "「あなたの鍵は____ですか。」ー「これです。」",
+          "options": [
+            "どれ",
+            "それ",
+            "あれ",
+            "この"
+          ],
+          "answer": "どれ",
+          "explanation": "Từ để hỏi đại từ đồ vật 'cái nào' giữa nhiều sự vật là どれ."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g006",
+      "name": "この / その / あの / どの + Danh từ",
+      "nameVi": "Từ chỉ định bổ nghĩa danh từ (...này / ...đó / ...kia / ...nào)",
+      "level": "N5",
+      "order": 6,
+      "formula": "この / その / あの / どの + Danh từ",
+      "meaning": "Cái N này / Cái N đó / Cái N kia / Cái N nào.",
+      "usage": "Khác với これ/それ/あれ (đứng độc lập), この/その/あの/どの là liên thể từ (rentaishi), BẮT BUỘC phải có một danh từ đứng liền ngay sau nó để bổ nghĩa. Tuân theo hệ thống Ko-So-A-Do: この (gần người nói), その (gần người nghe), あの (xa cả hai người), どの (nghi vấn: cái nào).",
+      "conjugation": "この/その/あの/どの + Danh từ (không thêm trợ từ vào giữa)",
+      "examples": [
+        {
+          "japanese": "この傘は私のです。",
+          "reading": "このかさはわたしのです。",
+          "romaji": "Kono kasa wa watashi no desu.",
+          "vietnamese": "Chiếc ô này là của tôi.",
+          "explanation": "この đi liền trước danh từ 傘 (cây ô) để chỉ rõ 'chiếc ô này'."
+        },
+        {
+          "japanese": "あの人は誰ですか。",
+          "reading": "あのひとはだれですか。",
+          "romaji": "Ano hito wa dare desu ka.",
+          "vietnamese": "Người kia là ai vậy?",
+          "explanation": "あの bổ nghĩa cho 人 (người) chỉ người ở xa cả hai bên đối thoại."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng đứng một mình không có danh từ (ví dụ: 'このはペンです' là sai, phải là 'これはペンです').",
+        "Thêm trợ từ の sau この (ví dụ: 'このの本' là sai, chỉ cần 'この本')."
+      ],
+      "comparisonWith": "これ / それ / あれ (đứng độc lập làm chủ ngữ/tân ngữ)",
+      "exercises": [
+        {
+          "question": "____本はとても面白いです。(Quyển sách này rất thú vị)",
+          "options": [
+            "この",
+            "これ",
+            "ここ",
+            "こんな"
+          ],
+          "answer": "この",
+          "explanation": "Đứng ngay trước danh từ 本 phải dùng liên thể từ この."
+        },
+        {
+          "question": "「____パソコンが田中さんのですか。」ー「あのパソコンです。」",
+          "options": [
+            "どの",
+            "どれ",
+            "どこ",
+            "これ"
+          ],
+          "answer": "どの",
+          "explanation": "Từ để hỏi đứng trực tiếp trước danh từ パソコン là どの."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g007",
+      "name": "ここ / そこ / あそこ / どこ",
+      "nameVi": "Đại từ chỉ địa điểm (Chỗ này / Chỗ đó / Chỗ kia / Đâu)",
+      "level": "N5",
+      "order": 7,
+      "formula": "ここ / そこ / あそこ / どこ + は + Danh từ + です",
+      "meaning": "Chỗ này (đây) / Chỗ đó (đó) / Chỗ kia (kia) / Ở đâu. Dùng để chỉ nơi chốn, vị trí không gian.",
+      "usage": "Thuộc hệ thống Ko-So-A-Do: ここ (gần người nói), そこ (gần người nghe), あそこ (xa cả hai người), どこ (từ để hỏi: ở đâu). Thường kết hợp với は và です hoặc trợ từ に/で.",
+      "conjugation": "Đại từ chỉ nơi chốn đứng độc lập + trợ từ (は, に, で,...)",
+      "examples": [
+        {
+          "japanese": "ここは教室です。",
+          "reading": "ここはきょうしつです。",
+          "romaji": "Koko wa kyoushitsu desu.",
+          "vietnamese": "Đây là phòng học.",
+          "explanation": "ここ chỉ vị trí nơi người nói đang đứng."
+        },
+        {
+          "japanese": "トイレはどこですか。",
+          "reading": "といれはどこですか。",
+          "romaji": "Toire wa doko desu ka.",
+          "vietnamese": "Nhà vệ sinh ở đâu vậy?",
+          "explanation": "どこ là từ để hỏi vị trí nơi chốn."
+        }
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn giữa これ (chỉ đồ vật) và ここ (chỉ nơi chốn/địa điểm).",
+        "Quên dạng lịch sự tương ứng: こちら / そちら / あちら / どちら (dùng trong bối cảnh trang trọng hoặc chỉ hướng)."
+      ],
+      "comparisonWith": "こちら / そちら / あちら / どちら (hướng đi hoặc nơi chốn dạng lịch sự hơn)",
+      "exercises": [
+        {
+          "question": "「事務所は____ですか。」ー「あそこです。」",
+          "options": [
+            "どこ",
+            "どれ",
+            "だれ",
+            "どの"
+          ],
+          "answer": "どこ",
+          "explanation": "Hỏi vị trí của văn phòng ở đâu dùng từ để hỏi どこ."
+        },
+        {
+          "question": "____は食堂です。(Chỗ này là nhà ăn)",
+          "options": [
+            "ここ",
+            "これ",
+            "この",
+            "こちらが"
+          ],
+          "answer": "ここ",
+          "explanation": "Chỉ vị trí địa điểm nơi người nói đang đứng dùng ここ."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g008",
+      "name": "Danh từ + も",
+      "nameVi": "Trợ từ も (Cũng / Cũng đều)",
+      "level": "N5",
+      "order": 8,
+      "formula": "Danh từ + も + Vị ngữ",
+      "meaning": "Cũng... Biểu thị sự đồng nhất về tính chất, hành động với sự vật/sự việc đã nêu trước đó.",
+      "usage": "Trợ từ も THAY THẾ hoàn toàn cho các trợ từ は, が, を. Đối với các trợ từ như に, で, と, も thường ghép đứng sau chúng (にも, でも, とも).",
+      "conjugation": "Danh từ + も (thay thế trực tiếp cho は, が, を)",
+      "examples": [
+        {
+          "japanese": "私もベトナム人です。",
+          "reading": "わたしもべとなむじんです。",
+          "romaji": "Watashi mo Betonamujin desu.",
+          "vietnamese": "Tôi cũng là người Việt Nam.",
+          "explanation": "も thay thế cho は để biểu thị 'tôi cũng vậy' giống người được nhắc đến trước đó."
+        },
+        {
+          "japanese": "りんごを買いました。みかんも買いました。",
+          "reading": "りんごをかいました。みかんもかいました。",
+          "romaji": "Ringo o kaimashita. Mikan mo kaimashita.",
+          "vietnamese": "Tôi đã mua táo. Tôi cũng đã mua quýt nữa.",
+          "explanation": "も thay thế cho を sau みかん để chỉ hành động mua thêm một thứ nữa tương tự."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng cả は và も cùng lúc (nói '私はも' là SAI, phải nói '私も').",
+        "Dùng cả を và も cùng lúc (nói 'パンをも' là SAI, phải nói 'パンも')."
+      ],
+      "comparisonWith": "と (và - liệt kê đồng thời các danh từ)",
+      "exercises": [
+        {
+          "question": "田中さんは日本人です。山田さん____日本人です。",
+          "options": [
+            "も",
+            "は",
+            "が",
+            "を"
+          ],
+          "answer": "も",
+          "explanation": "Để biểu thị 'Anh Yamada cũng là người Nhật' dùng trợ từ も."
+        },
+        {
+          "question": "昨日映画を見ました。今日____映画を見ます。",
+          "options": [
+            "も",
+            "に",
+            "で",
+            "へ"
+          ],
+          "answer": "も",
+          "explanation": "Hôm qua đã xem, hôm nay 'cũng' xem phim thì dùng trợ từ も."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g009",
+      "name": "Trợ từ は vs が",
+      "nameVi": "Phân biệt trợ từ は (Chủ đề) và が (Chủ ngữ ngữ pháp / Trọng tâm)",
+      "level": "N5",
+      "order": 9,
+      "formula": "Chủ đề + は + Thông tin mới / Chủ ngữ + が + Vị ngữ (Thông tin trọng tâm)",
+      "meaning": "は: Nhấn mạnh phần thông tin vị ngữ đứng sau (về phần A thì...). が: Nhấn mạnh chính danh từ đứng trước hoặc miêu tả hiện tượng khách quan mới phát hiện.",
+      "usage": "1) は đánh dấu chủ đề đã biết, thông tin trọng tâm nằm ở phía sau (A wa B desu: B là trọng tâm). 2) が đánh dấu chủ ngữ, thông tin mới nằm ở chính danh từ trước が (Ai là người làm? -> Tanaka ga...). 3) Trong câu có từ để hỏi làm chủ ngữ (誰, 何), BẮT BUỘC dùng が (誰が来ましたか). 4) Diễn tả hiện tượng tự nhiên, phát hiện trực tiếp: 雨が降っています.",
+      "conjugation": "Danh từ + は / Danh từ + が",
+      "examples": [
+        {
+          "japanese": "彼が田中さんです。",
+          "reading": "かれがたなかさんです。",
+          "romaji": "Kare ga Tanaka-san desu.",
+          "vietnamese": "Chính anh ấy là anh Tanaka.",
+          "explanation": "が nhấn mạnh vào danh từ phía trước (彼) để xác định danh tính khi người nghe hỏi 'Ai là Tanaka?'."
+        },
+        {
+          "japanese": "象は鼻が長いです。",
+          "reading": "ぞうははながながいです。",
+          "romaji": "Zou wa hana ga nagai desu.",
+          "vietnamese": "Con voi thì mũi dài.",
+          "explanation": "象 là chủ đề lớn của câu (đi với は), còn 鼻 (mũi) là chủ ngữ cụ thể của đặc điểm 長い (đi với が)."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng は sau từ để hỏi (ví dụ: '誰は来ましたか' là sai hoàn toàn, bắt buộc phải là '誰が来ましたか').",
+        "Không phân biệt được sắc thái: '私が学生です' (Tôi mới chính là học sinh - chọn lọc) khác với '私は学生です' (Tôi là học sinh - giới thiệu bình thường)."
+      ],
+      "comparisonWith": "は (chủ đề chung, tương phản) vs が (chủ ngữ tự nhiên, nhấn mạnh đối tượng)",
+      "exercises": [
+        {
+          "question": "誰____来ましたか。(Ai đã đến thế?)",
+          "options": [
+            "が",
+            "は",
+            "を",
+            "に"
+          ],
+          "answer": "が",
+          "explanation": "Khi từ để hỏi (誰, 何) làm chủ ngữ, bắt buộc phải dùng trợ từ が."
+        },
+        {
+          "question": "雨____降っています。(Trời đang mưa - miêu tả hiện tượng tự nhiên)",
+          "options": [
+            "が",
+            "は",
+            "を",
+            "で"
+          ],
+          "answer": "が",
+          "explanation": "Hiện tượng tự nhiên quan sát thấy trước mắt dùng trợ từ が gắn với chủ ngữ."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g010",
+      "name": "Danh từ + を + Tha động từ",
+      "nameVi": "Trợ từ を (Đối tượng trực tiếp của hành động)",
+      "level": "N5",
+      "order": 10,
+      "formula": "Danh từ + を + Động từ (Tha động từ)",
+      "meaning": "Tác động lên danh từ (Ăn cơm, uống nước, đọc sách...).",
+      "usage": "Trợ từ を (phát âm là 'o') chỉ tân ngữ trực tiếp chịu tác động của tha động từ. Ngoài ra を còn dùng chỉ điểm rời khỏi (xuống xe: 電車を降ります) hoặc không gian chuyển động qua (đi dạo trong công viên: 公園を散歩します).",
+      "conjugation": "Danh từ + を + Động từ",
+      "examples": [
+        {
+          "japanese": "ご飯を食べます。",
+          "reading": "ごはんをたべます。",
+          "romaji": "Gohan o tabemasu.",
+          "vietnamese": "Tôi ăn cơm.",
+          "explanation": "ご飯 (cơm) là đối tượng trực tiếp chịu tác động của hành động 食べます (ăn)."
+        },
+        {
+          "japanese": "毎朝新聞を読みます。",
+          "reading": "まいあさしんぶんをよみます。",
+          "romaji": "Maiasa shinbun o yomimasu.",
+          "vietnamese": "Mỗi sáng tôi đều đọc báo.",
+          "explanation": "新聞 (báo) là đối tượng của động từ 読みます (đọc)."
+        }
+      ],
+      "commonMistakes": [
+        "Viết sai ký tự kana: viết お thay vì ký tự trợ từ chuyên dụng を.",
+        "Dùng を với động từ chỉ sự tồn tại あります / います (phải dùng が).",
+        "Dùng を với tính từ chỉ sở thích hoặc khả năng ở sơ cấp như 好き, 上手, 分かる (thường dùng trợ từ が)."
+      ],
+      "comparisonWith": "が (dùng với động từ tự thân / khả năng / cảm xúc sở thích)",
+      "exercises": [
+        {
+          "question": "水を____。(Uống nước)",
+          "options": [
+            "飲みます",
+            "行きます",
+            "寝ます",
+            "会います"
+          ],
+          "answer": "飲みます",
+          "explanation": "Nước (水) là đối tượng trực tiếp của hành động uống (飲みます) đi với trợ từ を."
+        },
+        {
+          "question": "テレビ____見ます。(Xem TV)",
+          "options": [
+            "を",
+            "に",
+            "で",
+            "へ"
+          ],
+          "answer": "を",
+          "explanation": "Trợ từ を đánh dấu tân ngữ chịu tác động của hành động xem (見ます)."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g011",
+      "name": "Danh từ + に",
+      "nameVi": "Trợ từ に (Thời gian xác định, nơi tồn tại, đích đến, đối tượng)",
+      "level": "N5",
+      "order": 11,
+      "formula": "Thời gian có con số + に / Địa điểm + に + います・あります / Đối tượng + に + 会います",
+      "meaning": "Vào lúc... / Ở tại... / Cho/với ai đó.",
+      "usage": "Trợ từ に có các chức năng trọng điểm trong N5: 1) Mốc thời gian có con số cụ thể (7時に起きます). 2) Nơi chốn tồn tại tĩnh của người/vật đi với います/あります (部屋に猫がいます). 3) Đích đến của hành động di chuyển (日本に行きます). 4) Đối tượng tiếp nhận hành động (友達に手紙を送ります, 先生に聞きます).",
+      "conjugation": "Danh từ (thời gian / nơi chốn / người) + に",
+      "examples": [
+        {
+          "japanese": "毎朝七時に起きます。",
+          "reading": "まいあさしちじにおきます。",
+          "romaji": "Maiasa shichiji ni okimasu.",
+          "vietnamese": "Mỗi sáng tôi thức dậy vào lúc 7 giờ.",
+          "explanation": "七時 là mốc thời gian có con số cụ thể, bắt buộc đi với trợ từ に."
+        },
+        {
+          "japanese": "机の上に本があります。",
+          "reading": "つくえのうえにほんがあります。",
+          "romaji": "Tsukue no ue ni hon ga arimasu.",
+          "vietnamese": "Có quyển sách ở trên bàn.",
+          "explanation": "机の上 (trên bàn) là nơi tồn tại của quyển sách, đi với cấu trúc にあります."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng に với từ chỉ thời gian không có con số cụ thể như: 今日, 明日, 毎日, いつ (không nói '今日に').",
+        "Nhầm lẫn に (nơi tồn tại tĩnh) và で (nơi diễn ra hành động động tác)."
+      ],
+      "comparisonWith": "で (nơi diễn ra hành động) vs に (nơi tồn tại, điểm đến)",
+      "exercises": [
+        {
+          "question": "日曜日____映画を見に行きます。(Chủ nhật tôi sẽ đi xem phim)",
+          "options": [
+            "に",
+            "で",
+            "を",
+            "から"
+          ],
+          "answer": "に",
+          "explanation": "Thứ trong tuần có thể gắn trợ từ に để chỉ mốc thời gian diễn ra sự việc."
+        },
+        {
+          "question": "公園____犬がいます。(Có con chó ở công viên)",
+          "options": [
+            "に",
+            "で",
+            "を",
+            "へ"
+          ],
+          "answer": "に",
+          "explanation": "Nơi chốn tồn tại của động vật đi với います dùng trợ từ に."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g012",
+      "name": "Danh từ + で",
+      "nameVi": "Trợ từ で (Nơi diễn ra hành động, phương tiện, cách thức)",
+      "level": "N5",
+      "order": 12,
+      "formula": "Địa điểm + で + Động từ hành động / Phương tiện/Dụng cụ + で + Động từ",
+      "meaning": "Tại/Ở (nơi thực hiện hành động) / Bằng (phương tiện di chuyển, dụng cụ).",
+      "usage": "1) Địa điểm diễn ra hành động cụ thể (図書館で勉強します). 2) Phương tiện giao thông hoặc công cụ sử dụng (電車で行きます, はしで食べます). 3) Nguyên liệu tạo thành sản phẩm. 4) Số lượng tập hợp (全部で - tổng cộng).",
+      "conjugation": "Danh từ (địa điểm / phương tiện / dụng cụ) + で",
+      "examples": [
+        {
+          "japanese": "図書館で日本語を勉強します。",
+          "reading": "としょかんでにほんごをべんきょうします。",
+          "romaji": "Toshokan de nihongo o benkyou shimasu.",
+          "vietnamese": "Tôi học tiếng Nhật ở thư viện.",
+          "explanation": "図書館 (thư viện) là nơi diễn ra hành động học tập (勉強します), đi với で."
+        },
+        {
+          "japanese": "バスで会社へ行きます。",
+          "reading": "ばすでかいしゃへいきます。",
+          "romaji": "Basu de kaisha e ikimasu.",
+          "vietnamese": "Tôi đi đến công ty bằng xe buýt.",
+          "explanation": "バス (xe buýt) là phương tiện giao thông di chuyển, đi với trợ từ で."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng で với hành động đi bộ (đi bộ là 歩いて, không dùng trợ từ で: nói '歩いて行きます', không nói '歩きで行きます').",
+        "Nhầm に và で khi nói về nơi chốn (ở nhà có ai -> 家にいます; ở nhà ăn cơm -> 家で食べます)."
+      ],
+      "comparisonWith": "に (nơi tồn tại tĩnh: にあります / にいます)",
+      "exercises": [
+        {
+          "question": "レストラン____晩ご飯を食べました。(Tôi đã ăn tối ở nhà hàng)",
+          "options": [
+            "で",
+            "に",
+            "へ",
+            "を"
+          ],
+          "answer": "で",
+          "explanation": "Hành động ăn tối diễn ra tại nhà hàng nên dùng trợ từ で."
+        },
+        {
+          "question": "はし____ラーメンを食べます。(Ăn mì ramen bằng đũa)",
+          "options": [
+            "で",
+            "に",
+            "を",
+            "と"
+          ],
+          "answer": "で",
+          "explanation": "Chỉ công cụ, phương tiện thực hiện hành động dùng trợ từ で."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g013",
+      "name": "Danh từ (địa điểm) + へ",
+      "nameVi": "Trợ từ へ (Phương hướng di chuyển, đích đến)",
+      "level": "N5",
+      "order": 13,
+      "formula": "Địa điểm + へ + 行きます / 来ます / 帰ります",
+      "meaning": "Đến / Về / Hướng về... (Chỉ phương hướng di chuyển).",
+      "usage": "Trợ từ へ được phát âm là 'e' (không đọc là 'he'). Luôn đi cùng các động từ chỉ sự di chuyển như 行きます (đi), 来ます (đến), 帰ります (về). へ nhấn mạnh vào phương hướng di chuyển, trong khi に nhấn mạnh vào đích đến cuối cùng.",
+      "conjugation": "Địa danh / Hướng + へ + Động từ di chuyển",
+      "examples": [
+        {
+          "japanese": "来週日本へ行きます。",
+          "reading": "らいしゅうにほんへいきます。",
+          "romaji": "Raishuu Nihon e ikimasu.",
+          "vietnamese": "Tuần sau tôi sẽ đi Nhật Bản.",
+          "explanation": "日本へ行きます chỉ hướng di chuyển đến đất nước Nhật Bản."
+        },
+        {
+          "japanese": "午後五時にうちへ帰ります。",
+          "reading": "ごごごじにうちへかえります。",
+          "romaji": "Gogo goji ni uchi e kaerimasu.",
+          "vietnamese": "Tôi về nhà lúc 5 giờ chiều.",
+          "explanation": "うちへ帰ります biểu thị hướng di chuyển trở về ngôi nhà của mình."
+        }
+      ],
+      "commonMistakes": [
+        "Phát âm sai thành 'he' thay vì 'e'.",
+        "Dùng へ với động từ tĩnh không có tính chuyển động (ví dụ: '部屋へ寝ます' là sai, phải là '部屋で寝ます')."
+      ],
+      "comparisonWith": "に (に nhấn mạnh đích đến cụ thể, へ nhấn mạnh hướng di chuyển)",
+      "exercises": [
+        {
+          "question": "明日東京____行きます。(Ngày mai tôi đi Tokyo)",
+          "options": [
+            "へ",
+            "で",
+            "を",
+            "から"
+          ],
+          "answer": "へ",
+          "explanation": "Chỉ phương hướng di chuyển đến Tokyo dùng trợ từ へ."
+        },
+        {
+          "question": "Trợ từ 「へ」 trong câu 「国へ帰ります」 được phát âm là gì?",
+          "options": [
+            "e",
+            "he",
+            "we",
+            "ne"
+          ],
+          "answer": "e",
+          "explanation": "Khi làm trợ từ chỉ phương hướng, ký tự へ được phát âm là 'e'."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g014",
+      "name": "Danh từ + と + Danh từ / Người + と + Động từ",
+      "nameVi": "Trợ từ と (Và - Liệt kê toàn bộ / Cùng với ai)",
+      "level": "N5",
+      "order": 14,
+      "formula": "Danh từ 1 + と + Danh từ 2 / Người + と + Động từ",
+      "meaning": "Và (liệt kê toàn bộ danh từ) / Cùng với (bạn đồng hành thực hiện hành động).",
+      "usage": "1) Nối hai hoặc nhiều danh từ mang nghĩa 'và', mang tính chất liệt kê đầy đủ tất cả các vật. 2) Đi sau danh từ chỉ người/động vật để chỉ đối tượng cùng tham gia thực hiện hành động.",
+      "conjugation": "Danh từ + と + Danh từ / Danh từ (người) + と + V",
+      "examples": [
+        {
+          "japanese": "机の上に本とペンがあります。",
+          "reading": "つくえのうえにほんとぺんがあります。",
+          "romaji": "Tsukue no ue ni hon to pen ga arimasu.",
+          "vietnamese": "Trên bàn có sách và bút.",
+          "explanation": "と dùng để liên kết hai danh từ 本 và ペン (liệt kê toàn bộ)."
+        },
+        {
+          "japanese": "友達と映画を見ました。",
+          "reading": "ともだちとえいがをみました。",
+          "romaji": "Tomodachi to eiga o mimashita.",
+          "vietnamese": "Tôi đã xem phim cùng với bạn.",
+          "explanation": "友達 đi với と để chỉ người cùng thực hiện hành động xem phim."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng と để nối hai câu hoàn chỉnh (tiếng Nhật không dùng と để nối 2 mệnh đề với nghĩa 'và', mà dùng thể て hoặc liên từ そして).",
+        "Nhầm と (liệt kê toàn bộ) với や (liệt kê tiêu biểu, còn những vật khác)."
+      ],
+      "comparisonWith": "や (liệt kê tiêu biểu: A và B và một số thứ khác...)",
+      "exercises": [
+        {
+          "question": "パン____牛乳を買いました。(Tôi đã mua bánh mì và sữa)",
+          "options": [
+            "と",
+            "に",
+            "へ",
+            "で"
+          ],
+          "answer": "と",
+          "explanation": "Nối hai danh từ biểu thị liệt kê dùng trợ từ と."
+        },
+        {
+          "question": "家族____日本へ来ました。(Tôi đã đến Nhật Bản cùng với gia đình)",
+          "options": [
+            "と",
+            "を",
+            "に",
+            "で"
+          ],
+          "answer": "と",
+          "explanation": "Chỉ người cùng thực hiện hành động dùng trợ từ と."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g015",
+      "name": "～から～まで",
+      "nameVi": "Từ... đến... (Thời gian và Địa điểm)",
+      "level": "N5",
+      "order": 15,
+      "formula": "Danh từ 1 (Thời gian/Địa điểm) + から + Danh từ 2 (Thời gian/Địa điểm) + まで",
+      "meaning": "Từ... đến... Chỉ điểm bắt đầu và điểm kết thúc về mặt thời gian hoặc không gian địa lý.",
+      "usage": "から đánh dấu điểm xuất phát / thời gian bắt đầu. まで đánh dấu đích đến / thời gian kết thúc. Có thể dùng độc lập chỉ một vế (～から hoặc ～まで).",
+      "conjugation": "Danh từ (thời gian / địa điểm) + から / まで",
+      "examples": [
+        {
+          "japanese": "銀行は午前九時から午後三時までです。",
+          "reading": "ぎんこうはごぜんくじからごごさんじまでです。",
+          "romaji": "Ginkou wa gozen kuji kara gogo sanji made desu.",
+          "vietnamese": "Ngân hàng mở cửa từ 9 giờ sáng đến 3 giờ chiều.",
+          "explanation": "から chỉ thời điểm bắt đầu (9h), まで chỉ thời điểm kết thúc (15h)."
+        },
+        {
+          "japanese": "ハノイから東京まで飛行機で五時間かかります。",
+          "reading": "はのいからとうきょうまでひこうきでごじかんかかります。",
+          "romaji": "Hanoi kara Toukyou made hikouki de gojikan kakarimasu.",
+          "vietnamese": "Từ Hà Nội đến Tokyo đi máy bay mất 5 tiếng.",
+          "explanation": "から chỉ điểm xuất phát không gian (Hà Nội), まで chỉ đích đến (Tokyo)."
+        }
+      ],
+      "commonMistakes": [
+        "Đảo lộn vị trí của から và まで.",
+        "Nhầm lẫn まで (cho đến thời điểm) với までに (hạn chót, phải hoàn thành trước thời điểm đó)."
+      ],
+      "comparisonWith": "までに (chỉ hạn chót, hoàn thành trước thời điểm chỉ định)",
+      "exercises": [
+        {
+          "question": "会社は朝九時____夕方六時____です。(Công ty làm việc từ 9h sáng đến 6h chiều)",
+          "options": [
+            "から / まで",
+            "まで / から",
+            "に / へ",
+            "で / に"
+          ],
+          "answer": "から / まで",
+          "explanation": "Cấu trúc chỉ khoảng thời gian từ điểm bắt đầu đến kết thúc: から ～ まで."
+        },
+        {
+          "question": "家____駅まで歩いて十分です。(Từ nhà đến ga đi bộ mất 10 phút)",
+          "options": [
+            "から",
+            "まで",
+            "へ",
+            "に"
+          ],
+          "answer": "から",
+          "explanation": "Điểm xuất phát đi từ nhà dùng から."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g016",
+      "name": "Động từ thể ます (Masu form)",
+      "nameVi": "Thể lịch sự hiện tại / tương lai của động từ",
+      "level": "N5",
+      "order": 16,
+      "formula": "Động từ thể ます (V-masu)",
+      "meaning": "Làm... / Sẽ làm... Diễn tả thói quen, chân lý hiện tại hoặc hành động sẽ diễn ra trong tương lai một cách lịch sự.",
+      "usage": "Dùng trong giao tiếp xã hội lịch sự hàng ngày. Chia động từ theo 3 nhóm: Nhóm 1 (ngũ đoạn): đổi âm hàng u thành hàng i + ます. Nhóm 2 (nhất đoạn): bỏ đuôi る + ます. Nhóm 3 (bất quy tắc): します (từ する), きます (từ くる).",
+      "conjugation": "Nhóm 1: かく -> かきます, のむ -> のみます. Nhóm 2: たべる -> たべます, みる -> みます. Nhóm 3: する -> します, くる -> きます.",
+      "examples": [
+        {
+          "japanese": "私は毎日日本語を勉強します。",
+          "reading": "わたしはまいにちにほんごをべんきょうします。",
+          "romaji": "Watashi wa mainichi nihongo o benkyou shimasu.",
+          "vietnamese": "Tôi học tiếng Nhật mỗi ngày.",
+          "explanation": "勉強します diễn tả thói quen lặp đi lặp lại hàng ngày một cách lịch sự."
+        },
+        {
+          "japanese": "明日友達の手紙を書きます。",
+          "reading": "あしたともだちのてがみをかきます。",
+          "romaji": "Ashita tomodachi no tegami o kakimasu.",
+          "vietnamese": "Ngày mai tôi sẽ viết thư cho bạn.",
+          "explanation": "書きます kết hợp với trạng từ tương lai 明日 chỉ hành động sẽ thực hiện vào ngày mai."
+        }
+      ],
+      "commonMistakes": [
+        "Nhầm lẫn nhóm động từ đặc biệt nhóm 1 có đuôi iru/eru nhưng chia như nhóm 1 (ví dụ: かえります, はしります, しります).",
+        "Thêm です sau ます (như '食べますです' là SAI hoàn toàn, ます đã là trợ động từ kết thúc câu lịch sự)."
+      ],
+      "comparisonWith": "Động từ thể từ điển (辞書形 - Thể thông thường/thân mật)",
+      "exercises": [
+        {
+          "question": "Động từ 「のむ」 (uống - nhóm 1) chuyển sang thể ます là gì?",
+          "options": [
+            "のみます",
+            "のみますです",
+            "のめます",
+            "のまます"
+          ],
+          "answer": "のみます",
+          "explanation": "Nhóm 1 đổi âm đuôi u (mu) thành âm cột i (mi) rồi thêm ます -> のみます."
+        },
+        {
+          "question": "Động từ 「たべる」 (ăn - nhóm 2) chuyển sang thể ます là gì?",
+          "options": [
+            "たべます",
+            "たべります",
+            "たばます",
+            "たびます"
+          ],
+          "answer": "たべます",
+          "explanation": "Động từ nhóm 2 bỏ る và thêm ます -> たべます."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g017",
+      "name": "Động từ thể ません (Masen)",
+      "nameVi": "Thể phủ định lịch sự hiện tại / tương lai của động từ",
+      "level": "N5",
+      "order": 17,
+      "formula": "Động từ bỏ ます + ません",
+      "meaning": "Không làm... / Sẽ không làm... Phủ định hành động ở hiện tại hoặc tương lai trong văn phong lịch sự.",
+      "usage": "Thay thế đuôi ます bằng ません để tạo thể phủ định lịch sự của động từ.",
+      "conjugation": "V-masu -> bỏ ます + ません (Ví dụ: たべます -> たべません; 行きます -> 行きません)",
+      "examples": [
+        {
+          "japanese": "朝ご飯を食べません。",
+          "reading": "あさごはんをたべません。",
+          "romaji": "Asagohan o tabemasen.",
+          "vietnamese": "Tôi không ăn bữa sáng.",
+          "explanation": "食べません phủ định thói quen ăn sáng."
+        },
+        {
+          "japanese": "今日はお酒を飲みません。",
+          "reading": "きょうはおさけをのみません。",
+          "romaji": "Kyou wa osake o nomimasen.",
+          "vietnamese": "Hôm nay tôi sẽ không uống rượu.",
+          "explanation": "飲みません phủ định hành động trong ngày hôm nay."
+        }
+      ],
+      "commonMistakes": [
+        "Nhầm đuôi phủ định của động từ (ません) với phủ định của danh từ/tính từ đuôi な (じゃありません).",
+        "Nói '食べないです' trong tình huống cần văn phong chuẩn mực truyền thống '食べません'."
+      ],
+      "comparisonWith": "V-ない (Thể ngắn phủ định dùng trong giao tiếp thân mật)",
+      "exercises": [
+        {
+          "question": "「明日は学校へ行きますか。」ー「いいえ、____。」",
+          "options": [
+            "行きません",
+            "行きます",
+            "行きました",
+            "行きませんでした"
+          ],
+          "answer": "行きません",
+          "explanation": "Phủ định tương lai dùng ません -> 行きません (không đi)."
+        },
+        {
+          "question": "Động từ 「買います」 (mua) chuyển sang dạng phủ định là gì?",
+          "options": [
+            "買いません",
+            "買わないです",
+            "買いませんでした",
+            "買いますない"
+          ],
+          "answer": "買いません",
+          "explanation": "Bỏ ます thêm ません -> 買いません."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g018",
+      "name": "Động từ thể ました (Mashita)",
+      "nameVi": "Thể quá khứ khẳng định lịch sự của động từ",
+      "level": "N5",
+      "order": 18,
+      "formula": "Động từ bỏ ます + ました",
+      "meaning": "Đã làm... Biểu thị hành động đã hoàn thành trong quá khứ một cách lịch sự.",
+      "usage": "Thay thế đuôi ます bằng ました để biểu thị hành động đã xảy ra và kết thúc trong quá khứ.",
+      "conjugation": "V-masu -> bỏ ます + ました (Ví dụ: 買います -> 買いました; 見ます -> 見ました)",
+      "examples": [
+        {
+          "japanese": "昨日新しい靴を買いました。",
+          "reading": "きのうあたらしいくつをかいました。",
+          "romaji": "Kinou atarashii kutsu o kaimashita.",
+          "vietnamese": "Hôm qua tôi đã mua một đôi giày mới.",
+          "explanation": "買いました diễn tả hành động mua đã hoàn thành ngày hôm qua (昨日)."
+        },
+        {
+          "japanese": "友達と一緒に宿題をしました。",
+          "reading": "ともだちといっしょにしゅくだいをしました。",
+          "romaji": "Tomodachi to issho ni shukudai o shimashita.",
+          "vietnamese": "Tôi đã làm bài tập về nhà cùng với bạn.",
+          "explanation": "しました là quá khứ của động từ します (làm)."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng ました cho các sự việc đang diễn ra hoặc chưa xảy ra.",
+        "Lỗi sai thì: kết hợp trạng từ tương lai với động từ quá khứ (ví dụ '明日買いました' là sai ngữ pháp)."
+      ],
+      "comparisonWith": "V-た (Thể Ta - quá khứ thân mật)",
+      "exercises": [
+        {
+          "question": "昨日日本料理を____。(Hôm qua tôi đã ăn món Nhật)",
+          "options": [
+            "食べました",
+            "食べます",
+            "食べません",
+            "食べましょう"
+          ],
+          "answer": "食べました",
+          "explanation": "Có trạng từ thời gian quá khứ 昨日 (hôm qua) nên động từ phải chia về thì quá khứ: 食べました."
+        },
+        {
+          "question": "先週京都へ____。(Tuần trước tôi đã đi Kyoto)",
+          "options": [
+            "行きました",
+            "行きません",
+            "行きます",
+            "行く"
+          ],
+          "answer": "行きました",
+          "explanation": "Quá khứ của 行きます là 行きました."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g019",
+      "name": "Động từ thể ませんでした (Masen deshita)",
+      "nameVi": "Thể quá khứ phủ định lịch sự của động từ",
+      "level": "N5",
+      "order": 19,
+      "formula": "Động từ bỏ ます + ませんでした",
+      "meaning": "Đã không làm... Phủ định hành động trong quá khứ một cách lịch sự.",
+      "usage": "Thay thế đuôi ます bằng ませんでした khi muốn nói ai đó đã không thực hiện hành động nào đó trong quá khứ.",
+      "conjugation": "V-masu -> bỏ ます + ませんでした (Ví dụ: 行きます -> 行きませんでした; 食べます -> 食べませんでした)",
+      "examples": [
+        {
+          "japanese": "昨夜はあまり寝ませんでした。",
+          "reading": "ゆうべはあまりねませんでした。",
+          "romaji": "Yuube wa amari nemasen deshita.",
+          "vietnamese": "Đêm qua tôi không ngủ được nhiều.",
+          "explanation": "寝ませんでした là dạng quá khứ phủ định của động từ 寝ます (ngủ)."
+        },
+        {
+          "japanese": "日曜日どこも行きませんでした。",
+          "reading": "にちようびどこもいきませんでした。",
+          "romaji": "Nichiyoubi doko mo ikimasen deshita.",
+          "vietnamese": "Chủ nhật tôi đã không đi đâu cả.",
+          "explanation": "どこも + phủ định quá khứ (行きませんでした) biểu thị việc hoàn toàn không đi bất cứ nơi nào."
+        }
+      ],
+      "commonMistakes": [
+        "Nói nhầm thành 'ませんでしたです' (dư thừa です).",
+        "Nhầm lẫn với quá khứ phủ định của danh từ (ではありませんでした)."
+      ],
+      "comparisonWith": "V-なかった (Thể ngắn phủ định quá khứ)",
+      "exercises": [
+        {
+          "question": "今朝朝ご飯を____。(Sáng nay tôi đã không ăn sáng)",
+          "options": [
+            "食べませんでした",
+            "食べません",
+            "食べました",
+            "食べないでした"
+          ],
+          "answer": "食べませんでした",
+          "explanation": "Phủ định một hành động đã diễn ra trong quá khứ (今朝 - sáng nay) dùng ませんでした."
+        },
+        {
+          "question": "昨日はテレビを____。(Hôm qua tôi đã không xem TV)",
+          "options": [
+            "見ませんでした",
+            "見ました",
+            "見ません",
+            "見ない"
+          ],
+          "answer": "見ませんでした",
+          "explanation": "見ます chuyển sang quá khứ phủ định là 見ませんでした."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g020",
+      "name": "Động từ thể ます bỏ ます + たい",
+      "nameVi": "Muốn làm gì đó (Mong muốn của bản thân)",
+      "level": "N5",
+      "order": 20,
+      "formula": "Động từ (bỏ ます) + たい (です)",
+      "meaning": "Muốn làm... Diễn tả mong muốn, nguyện vọng thực hiện hành động của người nói (ngôi thứ nhất) hoặc hỏi người nghe (ngôi thứ hai).",
+      "usage": "1) Bỏ ます thêm たい. Sau khi thêm たい, từ này biến đổi chia đuôi y hệt như một tính từ đuôi い (たくない, たかった, たくなかった). 2) Tân ngữ trước たい có thể dùng trợ từ を hoặc が (nhấn mạnh mong muốn hơn). 3) Không dùng trực tiếp cho mong muốn của người thứ ba (ngôi thứ 3 dùng たがっている).",
+      "conjugation": "Khẳng định: V-tai desu. Phủ định: V-taku nai desu. Quá khứ: V-takatta desu. Phủ định quá khứ: V-taku nakatta desu.",
+      "examples": [
+        {
+          "japanese": "日本へ行きたいです。",
+          "reading": "にほんへいきたいです。",
+          "romaji": "Nihon e ikitai desu.",
+          "vietnamese": "Tôi muốn đi Nhật Bản.",
+          "explanation": "行きます bỏ ます thêm たい biểu thị mong muốn đi đến Nhật."
+        },
+        {
+          "japanese": "冷たい水が飲みたいです。",
+          "reading": "つめたいみずがのみたいです。",
+          "romaji": "Tsumetai mizu ga nomitai desu.",
+          "vietnamese": "Tôi muốn uống nước lạnh.",
+          "explanation": "飲みます thành 飲みたい, trợ từ có thể dùng が để nhấn mạnh đối tượng mong muốn."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng たい để diễn tả mong muốn của người thứ ba (nói '彼が行きたい' là thiếu tự nhiên, cần dùng たがっている hoặc そうです).",
+        "Dùng たい để mời mọc cấp trên hoặc người lớn tuổi một cách thiếu tế nhị (nên dùng ませんか thay vì hỏi trực tiếp 食べたいですか)."
+      ],
+      "comparisonWith": "ほしい (muốn có một danh từ/đồ vật) vs たい (muốn THỰC HIỆN một hành động)",
+      "exercises": [
+        {
+          "question": "映画を____です。(Tôi muốn xem phim)",
+          "options": [
+            "見たい",
+            "見ます",
+            "見る",
+            "見たく"
+          ],
+          "answer": "見たい",
+          "explanation": "見ます bỏ ます thêm たい -> 見たい (muốn xem)."
+        },
+        {
+          "question": "今何も____。(Bây giờ tôi không muốn ăn gì cả)",
+          "options": [
+            "食べたくないです",
+            "食べたいです",
+            "食べませんでした",
+            "食べるない"
+          ],
+          "answer": "食べたくないです",
+          "explanation": "Phủ định của たい chia như tính từ đuôi い: たく + ないです -> 食べたくないです."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g021",
+      "name": "Động từ thể て (Te form)",
+      "nameVi": "Thể て của động từ (Nối tiếp hành động, nguyên nhân, cách thức)",
+      "level": "N5",
+      "order": 21,
+      "formula": "V1-て, V2-て, V3 (thời thì của câu do động từ cuối cùng quyết định)",
+      "meaning": "Làm V1 rồi làm V2... Dùng để nối các hành động diễn ra theo trình tự thời gian liên tiếp.",
+      "usage": "Quy tắc chia thể て:\nNhóm 1:\n- う, つ, る -> って (買います -> 買って, 待ちます -> 待って, 帰ります -> 帰って)\n- む, ぶ, ぬ -> んで (飲みます -> 飲んで, 遊びます -> 遊んで, 死にます -> 死んで)\n- く -> いて (書きます -> 書いて) [Ngoại lệ: 行きます -> 行って]\n- ぐ -> いで (泳ぎます -> 泳いで)\n- す -> して (話します -> 話して)\nNhóm 2: Bỏ ます thêm て (食べます -> 食べて, 見ます -> 見て)\nNhóm 3: します -> して, 来ます -> きて",
+      "conjugation": "Nhóm 1 biến âm theo đuôi; Nhóm 2 bỏ ます + て; Nhóm 3: して, きて.",
+      "examples": [
+        {
+          "japanese": "朝起きて、顔を洗って、朝ご飯を食べます。",
+          "reading": "あさおきて、かおをあらって、あさごはんをたべます。",
+          "romaji": "Asa okite, kao o aratte, asagohan o tabemasu.",
+          "vietnamese": "Buổi sáng tôi thức dậy, rửa mặt rồi ăn sáng.",
+          "explanation": "Dùng thể て (起きて, 洗って) để liên kết chuỗi hành động diễn ra liên tiếp theo thời gian."
+        },
+        {
+          "japanese": "スーパーへ行って、りんごを買いました。",
+          "reading": "すーぱーへいって、りんごをかいました。",
+          "romaji": "Suupaa e itte, ringo o kaimashita.",
+          "vietnamese": "Tôi đã đi siêu thị rồi mua táo.",
+          "explanation": "行って là thể て của động từ ngoại lệ 行きます, nối với hành động tiếp theo 買いました."
+        }
+      ],
+      "commonMistakes": [
+        "Chia sai ngoại lệ của 行きます: nhầm thành 行いて (sai), phải là 行って.",
+        "Chia thời thì quá khứ ở từng động từ đứng trước (ví dụ: '起きましたて' là SAI, chỉ chia thì ở động từ cuối câu)."
+      ],
+      "comparisonWith": "～てから (sau khi làm V1 thì làm V2, nhấn mạnh thứ tự dứt khoát trước sau)",
+      "exercises": [
+        {
+          "question": "Động từ 「のみます」 (uống) chuyển sang thể て là gì?",
+          "options": [
+            "のんで",
+            "のみて",
+            "のって",
+            "のだて"
+          ],
+          "answer": "のんで",
+          "explanation": "Động từ nhóm 1 tận cùng bằng み đổi thành んで -> のんで."
+        },
+        {
+          "question": "Động từ 「いきます」 (đi) chuyển sang thể て là gì?",
+          "options": [
+            "いって",
+            "いいて",
+            "いきって",
+            "いかで"
+          ],
+          "answer": "いって",
+          "explanation": "いきます là ngoại lệ đặc biệt của nhóm 1, chuyển thành いって."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g022",
+      "name": "Động từ thể て + います",
+      "nameVi": "Đang làm gì đó / Trạng thái kéo dài",
+      "level": "N5",
+      "order": 22,
+      "formula": "Động từ thể て + います",
+      "meaning": "1) Đang làm... (hành động đang tiếp diễn). 2) Trạng thái kết quả của hành động còn lưu lại (kết hôn, sống ở đâu, biết, sở hữu).",
+      "usage": "1) Hành động đang diễn ra tại thời điểm nói (今、本を読んでいます). 2) Diễn tả trạng thái kết quả của động từ chỉ sự biến đổi (結婚しています - đã kết hôn và đang duy trì tình trạng hôn nhân, 住んでいます - đang cư trú, 知っています - biết, 持っています - sở hữu/cầm).",
+      "conjugation": "V-te + います / いません / いました / いませんでした",
+      "examples": [
+        {
+          "japanese": "今日本語を勉強しています。",
+          "reading": "いまにほんごをべんきょうしています。",
+          "romaji": "Ima nihongo o benkyou shite imasu.",
+          "vietnamese": "Bây giờ tôi đang học tiếng Nhật.",
+          "explanation": "勉強しています diễn tả hành động học tập đang trực tiếp diễn ra ngay lúc này."
+        },
+        {
+          "japanese": "私はハノイに住んでいます。",
+          "reading": "わたしははのいにすんでいます。",
+          "romaji": "Watashi wa Hanoi ni sunde imasu.",
+          "vietnamese": "Tôi đang sống ở Hà Nội.",
+          "explanation": "住んでいます diễn tả trạng thái sinh sống kéo dài tại một địa điểm cụ thể."
+        }
+      ],
+      "commonMistakes": [
+        "Phủ định của 知っています (biết) là 知りません (KHÔNG dùng 知っていません).",
+        "Dịch máy móc tất cả ています là 'đang' (ví dụ 結婚しています không phải 'đang tổ chức hôn lễ' mà là 'đã lập gia đình')."
+      ],
+      "comparisonWith": "ます form (thói quen lặp lại nói chung) vs ています (hành động đang diễn ra cụ thể)",
+      "exercises": [
+        {
+          "question": "「田中さんの電話番号を知っていますか。」ー「いいえ、____。」",
+          "options": [
+            "知りません",
+            "知っていません",
+            "知りませんでした",
+            "知るません"
+          ],
+          "answer": "知りません",
+          "explanation": "Phủ định đặc biệt của câu hỏi 知っていますか bắt buộc là 知りません."
+        },
+        {
+          "question": "雨が____。(Trời đang mưa)",
+          "options": [
+            "降っています",
+            "降ります",
+            "降りて",
+            "降った"
+          ],
+          "answer": "降っています",
+          "explanation": "Hiện tượng đang tiếp diễn dùng thể ています: 降っています."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g023",
+      "name": "Động từ thể ない + でください",
+      "nameVi": "Xin đừng làm gì đó (Yêu cầu / Nhờ vả tiêu cực lịch sự)",
+      "level": "N5",
+      "order": 23,
+      "formula": "Động từ thể ない + でください",
+      "meaning": "Xin đừng... / Vui lòng không làm... Dùng để yêu cầu hoặc khuyên người khác không làm điều gì một cách lịch sự.",
+      "usage": "Chia động từ sang thể ない (thể ngắn phủ định) rồi thêm でください.\nCách chia thể ない:\n- Nhóm 1: đổi âm hàng u thành hàng a + ない (書く -> 書かない, 飲む -> 飲まない, 買う -> 買わない [đuôi う đổi thành わ]).\n- Nhóm 2: bỏ る + ない (食べる -> 食べない, 見る -> 見ない).\n- Nhóm 3: する -> しない, くる -> こない.",
+      "conjugation": "V-nai + でください",
+      "examples": [
+        {
+          "japanese": "ここで写真を撮らないでください。",
+          "reading": "ここでしゃしんをとらないでください。",
+          "romaji": "Koko de shashin o toranaide kudasai.",
+          "vietnamese": "Xin đừng chụp ảnh ở đây.",
+          "explanation": "撮ります chia sang thể ない là 撮らない, thêm でください để yêu cầu không chụp ảnh."
+        },
+        {
+          "japanese": "図書館で大きな声で話さないでください。",
+          "reading": "としょかんでおおきなこえではなさなでください。",
+          "romaji": "Toshokan de ookina koe de hanasanaide kudasai.",
+          "vietnamese": "Xin đừng nói chuyện lớn tiếng trong thư viện.",
+          "explanation": "話します thành 話さない + でください yêu cầu người khác giữ trật tự."
+        }
+      ],
+      "commonMistakes": [
+        "Đuôi う nhóm 1 đổi thành あ thay vì わ (ví dụ: 吸う -> 吸わない, nói 'すあない' là sai).",
+        "Nhầm trợ từ: nói 'ないてください' thay vì 'ないでください'."
+      ],
+      "comparisonWith": "てください (Hãy làm... - đối lập)",
+      "exercises": [
+        {
+          "question": "危ないですから、そこに____。(Vì nguy hiểm, xin đừng vào đó)",
+          "options": [
+            "入らないでください",
+            "入ってください",
+            "入りません",
+            "入らないです"
+          ],
+          "answer": "入らないでください",
+          "explanation": "Yêu cầu lịch sự ai đó không làm gì: V-ない + でください."
+        },
+        {
+          "question": "パスポートを____。(Xin đừng làm mất hộ chiếu)",
+          "options": [
+            "なくさないでください",
+            "なくしないでください",
+            "なくさないてください",
+            "なくしてはいけません"
+          ],
+          "answer": "なくさないでください",
+          "explanation": "なくします (nhóm 1) chuyển sang thể ない là なくさない + でください."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g024",
+      "name": "Động từ thể て + ください",
+      "nameVi": "Hãy làm gì đó / Xin vui lòng làm gì đó",
+      "level": "N5",
+      "order": 24,
+      "formula": "Động từ thể て + ください",
+      "meaning": "Xin hãy... / Vui lòng... Dùng để yêu cầu, nhờ vả, hoặc hướng dẫn người nghe làm một hành động nào đó một cách lịch sự.",
+      "usage": "Chia động từ sang thể て rồi thêm ください. Thường dùng trong lớp học, công việc, chỉ đường, hoặc khi người nói muốn nhờ người nghe giúp đỡ.",
+      "conjugation": "V-te + ください (Ví dụ: 待ってください, 聞いてください)",
+      "examples": [
+        {
+          "japanese": "ちょっと待ってください。",
+          "reading": "ちょっとまってください。",
+          "romaji": "Chotto matte kudasai.",
+          "vietnamese": "Xin vui lòng đợi một chút.",
+          "explanation": "待つ chuyển sang thể て là 待って, đi cùng ください tạo thành lời nhờ vả lịch sự phổ biến."
+        },
+        {
+          "japanese": "日本語で話してください。",
+          "reading": "にほんごではなしてください。",
+          "romaji": "Nihongo de hanashite kudasai.",
+          "vietnamese": "Xin hãy nói bằng tiếng Nhật.",
+          "explanation": "話す chuyển sang thể て là 話して, thêm ください để đưa ra lời hướng dẫn."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng てください với cấp trên hoặc người có địa vị cao hơn khi nhờ việc quan trọng (vì vẫn mang sắc thái ra lệnh nhẹ, nên dùng ていただけませんか).",
+        "Chia sai thể て của động từ (ví dụ: '買いてください' thay vì '買ってください')."
+      ],
+      "comparisonWith": "ないでください (Xin đừng làm... - đối lập)",
+      "exercises": [
+        {
+          "question": "名前をここに____。(Xin vui lòng viết tên vào đây)",
+          "options": [
+            "書いてください",
+            "書かないでください",
+            "書きてください",
+            "書くください"
+          ],
+          "answer": "書いてください",
+          "explanation": "Yêu cầu hãy viết: 書く (nhóm 1) -> 書いて + ください."
+        },
+        {
+          "question": "窓を____。(Xin hãy mở cửa sổ)",
+          "options": [
+            "開けてください",
+            "開かないでください",
+            "開きてください",
+            "開くください"
+          ],
+          "answer": "開けてください",
+          "explanation": "開けます (nhóm 2) -> 開けて + ください."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g025",
+      "name": "Cách chia Tính từ đuôi い (i-Adjective)",
+      "nameVi": "Biến đổi tính từ đuôi い (Khẳng định, Phủ định, Quá khứ)",
+      "level": "N5",
+      "order": 25,
+      "formula": "Khẳng định: ～いです | Phủ định: ～くないです | Quá khứ: ～かったです | Phủ định quá khứ: ～くなかったです",
+      "meaning": "Biểu thị tính chất, đặc điểm của sự vật trong các thời thì khác nhau.",
+      "usage": "Tính từ đuôi い luôn tận cùng bằng い (trừ một số tính từ đuôi な đặc biệt như きれい, ゆうめい).\nBiến đổi:\n- Hiện tại khẳng định: giữ nguyên đuôi い + です (暑いです).\n- Hiện tại phủ định: bỏ い + くないです (暑くないです).\n- Quá khứ khẳng định: bỏ い + かったです (暑かったです).\n- Quá khứ phủ định: bỏ い + くなかったです (暑くなかったです).\nNgoại lệ đặc biệt quan trọng: いい (tốt) -> よく + ない / かった / なかった.",
+      "conjugation": "Ví dụ 高い: 高いです -> 高くないです -> 高かったです -> 高くなかったです. Ngoại lệ いい: いいです -> よくないです -> よかったです -> よくなかったです.",
+      "examples": [
+        {
+          "japanese": "昨日はとても寒かったです。",
+          "reading": "きのうはとてもさむかったです。",
+          "romaji": "Kinou wa totemo samukatta desu.",
+          "vietnamese": "Hôm qua trời đã rất lạnh.",
+          "explanation": "寒い chia về thì quá khứ: bỏ い thêm かったです -> 寒かったです."
+        },
+        {
+          "japanese": "この部屋はあまり広くないです。",
+          "reading": "このへやはあまりひろくないです。",
+          "romaji": "Kono heya wa amari hirokunai desu.",
+          "vietnamese": "Căn phòng này không rộng lắm.",
+          "explanation": "広い chia về phủ định hiện tại: bỏ い thêm くないです -> 広くないです."
+        }
+      ],
+      "commonMistakes": [
+        "Chia いい thành 'いくない' (SAI, bắt buộc chia theo gốc よい thành 'よくない').",
+        "Dùng じゃない cho tính từ đuôi い (ví dụ '高くないです' chứ không dùng '高いじゃないです')."
+      ],
+      "comparisonWith": "Tính từ đuôi な (chia với ではありません / でした)",
+      "exercises": [
+        {
+          "question": "Tính từ 「いい」 (tốt) chia sang dạng quá khứ khẳng định là gì?",
+          "options": [
+            "よかったです",
+            "いかったです",
+            "いいでした",
+            "よくでした"
+          ],
+          "answer": "よかったです",
+          "explanation": "いい lấy gốc よい, bỏ い thêm かったです -> よかったです."
+        },
+        {
+          "question": "昨日のテストは____。(Bài thi hôm qua không khó)",
+          "options": [
+            "難しくなかったです",
+            "難しくないです",
+            "難しいじゃなかったです",
+            "難しいませんでした"
+          ],
+          "answer": "難しくなかったです",
+          "explanation": "Quá khứ phủ định của 難しい: bỏ い thêm くなかったです."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g026",
+      "name": "Cách chia Tính từ đuôi な (na-Adjective)",
+      "nameVi": "Biến đổi tính từ đuôi な và cách bổ nghĩa danh từ",
+      "level": "N5",
+      "order": 26,
+      "formula": "Bổ nghĩa danh từ: Adj-な + N | Khẳng định: ～です | Phủ định: ～じゃないです | Quá khứ: ～でした | Phủ định quá khứ: ～じゃなかったです",
+      "meaning": "Biểu thị tính chất, trạng thái của sự vật, con người.",
+      "usage": "Khi đứng cuối câu làm vị ngữ, tính từ đuôi な bỏ な và chia giống hệt như danh từ (です, じゃないです, でした, じゃありませんでした). Khi đứng trước danh từ để bổ nghĩa, BẮT BUỘC phải giữ lại chữ な (ví dụ: 静かな町, 親切な人).",
+      "conjugation": "Ví dụ 静か: 静かです / 静かじゃないです / 静かでした / 静かじゃなかったです. Đứng trước danh từ: 静かな + N.",
+      "examples": [
+        {
+          "japanese": "田中さんはとても親切な人です。",
+          "reading": "たなかさんはとてもしんせつなひとです。",
+          "romaji": "Tanaka-san wa totemo shinsetsu na hito desu.",
+          "vietnamese": "Anh Tanaka là một người rất tốt bụng.",
+          "explanation": "親切 là tính từ đuôi な, khi bổ nghĩa cho danh từ 人 phải có chữ な -> 親切な人."
+        },
+        {
+          "japanese": "昔この町は静かでした。",
+          "reading": "むかしこのまちはしずかでした。",
+          "romaji": "Mukashi kono machi wa shizuka deshita.",
+          "vietnamese": "Ngày xưa thị trấn này đã rất yên tĩnh.",
+          "explanation": "昔 (ngày xưa) chỉ quá khứ nên vị ngữ 静か đi với でした."
+        }
+      ],
+      "commonMistakes": [
+        "Quên chữ な khi bổ nghĩa cho danh từ (nói '静か町' là SAI, phải là '静かな町').",
+        "Nhầm các tính từ tận cùng bằng chữ い nhưng thuộc nhóm tính từ đuôi な như: きれい (đẹp/sạch), ゆうめい (nổi tiếng), きらい (ghét) mà chia sai thành 'きれいかった' (SAI, phải là 'きれいでした')."
+      ],
+      "comparisonWith": "Tính từ đuôi い (bổ nghĩa danh từ giữ nguyên い, không bao giờ thêm な)",
+      "exercises": [
+        {
+          "question": "公園はとても____でした。(Công viên hôm qua đã rất yên tĩnh)",
+          "options": [
+            "静か",
+            "静かな",
+            "静かかった",
+            "静かで"
+          ],
+          "answer": "静か",
+          "explanation": "Trước でした chỉ cần thân từ của tính từ đuôi な (bỏ な) -> 静かでした."
+        },
+        {
+          "question": "桜はとても____花です。(Hoa anh đào là loài hoa rất đẹp)",
+          "options": [
+            "きれいな",
+            "きれいい",
+            "きれいく",
+            "きれい"
+          ],
+          "answer": "きれいな",
+          "explanation": "きれい là tính từ đuôi な, khi đứng trước danh từ 花 phải có な: きれいな花."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g027",
+      "name": "Danh từ + がほしい (Want something)",
+      "nameVi": "Muốn có cái gì đó (Mong muốn sở hữu danh từ)",
+      "level": "N5",
+      "order": 27,
+      "formula": "Danh từ + が + ほしい (です)",
+      "meaning": "Muốn có... Biểu thị mong muốn sở hữu một đồ vật, điều gì đó của người nói.",
+      "usage": "ほしい là một tính từ đuôi い. Đối tượng mong muốn đi với trợ từ が (không dùng を). Biến đổi thì như tính từ đuôi い (ほしくない, ほしかった, ほしくなかった). Giống như たい, chỉ dùng cho ngôi thứ nhất hoặc hỏi trực tiếp ngôi thứ hai, không dùng trực tiếp cho mong muốn của ngôi thứ ba.",
+      "conjugation": "Khẳng định: N が ほしいです. Phủ định: N が ほしくないです. Quá khứ: N が ほしかったです.",
+      "examples": [
+        {
+          "japanese": "今新しいパソコンがほしいです。",
+          "reading": "いまあたらしいぱそこんがほしいです。",
+          "romaji": "Ima atarashii pasokon ga hoshii desu.",
+          "vietnamese": "Bây giờ tôi muốn có một chiếc máy tính mới.",
+          "explanation": "パソコン là đồ vật mong muốn sở hữu, đi cùng trợ từ が và ほしいです."
+        },
+        {
+          "japanese": "誕生日に何がほしいですか。",
+          "reading": "たんじょうびになにがほしいですか。",
+          "romaji": "Tanjoubi ni nani ga hoshii desu ka.",
+          "vietnamese": "Vào ngày sinh nhật bạn muốn có món quà gì?",
+          "explanation": "Câu hỏi mong muốn của người đối diện, dùng 何 đi với がほしいですか."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng trợ từ を với ほしい (nói '車をほしい' là SAI trong ngữ pháp chuẩn, phải là '車がほしい').",
+        "Dùng ほしい sau động từ (nói '買いたい' chứ không được nói '買うほしい')."
+      ],
+      "comparisonWith": "～たい (muốn làm hành động) vs ほしい (muốn có vật thể/danh từ)",
+      "exercises": [
+        {
+          "question": "私は広い部屋____ほしいです。(Tôi muốn có một căn phòng rộng rãi)",
+          "options": [
+            "が",
+            "を",
+            "に",
+            "で"
+          ],
+          "answer": "が",
+          "explanation": "Đối tượng đi với tính từ ほしい mang trợ từ が."
+        },
+        {
+          "question": "子供の時、犬が____。(Hồi bé tôi đã muốn có một con chó)",
+          "options": [
+            "ほしかったです",
+            "ほしいでした",
+            "ほしくないです",
+            "ほしいでした"
+          ],
+          "answer": "ほしかったです",
+          "explanation": "Quá khứ của tính từ đuôi い ほしい là ほしかったです."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g028",
+      "name": "Động từ thể từ điển / thể ない + つもりです",
+      "nameVi": "Dự định làm / không làm gì đó",
+      "level": "N5",
+      "order": 28,
+      "formula": "V-ru (thể từ điển) / V-nai + つもりです",
+      "meaning": "Dự định... / Không có ý định... Diễn tả ý định, kế hoạch đã được người nói quyết định từ trước.",
+      "usage": "Dùng để biểu thị quyết tâm hoặc dự định của người nói trong tương lai. Trước つもり là động từ thể từ điển (nếu dự định làm) hoặc thể ない (nếu dự định không làm). Mức độ chắc chắn cao hơn so với suy nghĩ bộc phát tức thời.",
+      "conjugation": "Làm: V-(thể từ điển) + つもりです (Ví dụ: 行くつもりです). Không làm: V-ない + つもりです (Ví dụ: 行かないつもりです).",
+      "examples": [
+        {
+          "japanese": "来年日本へ留学するつもりです。",
+          "reading": "らいねんにほんへりゅうがくするつもりです。",
+          "romaji": "Rainen Nihon e ryuugaku suru tsumori desu.",
+          "vietnamese": "Tôi dự định năm sau sẽ đi du học Nhật Bản.",
+          "explanation": "留学する (thể từ điển) kết hợp với つもりです thể hiện kế hoạch đã định sẵn cho năm sau."
+        },
+        {
+          "japanese": "明日どこへも行かないつもりです。",
+          "reading": "あしたどこへもいかないつもりです。",
+          "romaji": "Ashita doko e mo ikanai tsumori desu.",
+          "vietnamese": "Ngày mai tôi dự định sẽ không đi đâu cả.",
+          "explanation": "行かない (thể ない) kết hợp với つもりです thể hiện ý định không ra ngoài."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng thể ます trước つもり (ví dụ: '行きますつもり' là SAI, phải dùng thể từ điển '行くつもり').",
+        "Dùng để hỏi người bề trên về kế hoạch một cách suồng sã (mang cảm giác dò xét ý định)."
+      ],
+      "comparisonWith": "予定 (よてい - lịch trình, kế hoạch khách quan đã lên lịch sẵn)",
+      "exercises": [
+        {
+          "question": "夏休みに国へ____つもりです。(Tôi dự định sẽ về nước vào kỳ nghỉ hè)",
+          "options": [
+            "帰る",
+            "帰ります",
+            "帰って",
+            "帰りたい"
+          ],
+          "answer": "帰る",
+          "explanation": "Trước つもり là động từ thể từ điển (nguyên mẫu): 帰るつもりです."
+        },
+        {
+          "question": "今日はお酒を____つもりです。(Hôm nay tôi dự định không uống rượu)",
+          "options": [
+            "飲まない",
+            "飲む",
+            "飲みません",
+            "飲んで"
+          ],
+          "answer": "飲まない",
+          "explanation": "Dự định không làm gì dùng động từ thể ない + つもりです."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g029",
+      "name": "Động từ thể từ điển + ことができる",
+      "nameVi": "Có thể làm gì đó (Khả năng / Năng lực / Điều kiện cho phép)",
+      "level": "N5",
+      "order": 29,
+      "formula": "Động từ thể từ điển (V-ru) + ことが できます",
+      "meaning": "Có thể làm... Diễn tả năng lực, khả năng của bản thân hoặc tình huống, hoàn cảnh cho phép thực hiện hành động.",
+      "usage": "Danh từ hóa động từ bằng cách thêm こと (việc...), sau đó kết hợp với が できます (có thể). Trước こと bắt buộc phải là động từ thể từ điển (thể từ điển/nguyên thể). Dạng phủ định là ことが できません (không thể).",
+      "conjugation": "V-(thể từ điển) + ことができます / できません / できました / できませんでした",
+      "examples": [
+        {
+          "japanese": "私は漢字を百個書くことができます。",
+          "reading": "わたしはかんじをひゃっこかくことができます。",
+          "romaji": "Watashi wa kanji o hyakko kaku koto ga dekimasu.",
+          "vietnamese": "Tôi có thể viết được 100 chữ Hán.",
+          "explanation": "書く (thể từ điển của 書きます) đi với ことができます để biểu thị năng lực cá nhân."
+        },
+        {
+          "japanese": "この部屋でWi-Fiを使うことができます。",
+          "reading": "このへやでわいふぁいをつかうことができます。",
+          "romaji": "Kono heya de Waifai o tsukau koto ga dekimasu.",
+          "vietnamese": "Ở căn phòng này có thể dùng được Wi-Fi.",
+          "explanation": "使う đi với ことができます biểu thị điều kiện khách quan cho phép."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng thể ます trước こと (nói '書きますことができます' là SAI, bắt buộc dùng thể từ điển '書くことができます').",
+        "Quên trợ từ が giữa こと và できます."
+      ],
+      "comparisonWith": "Động từ thể khả năng (可能形 - như 書ける, 食べられる ở trình độ N4)",
+      "exercises": [
+        {
+          "question": "田中さんはピアノを____ことができます。(Anh Tanaka có thể chơi đàn piano)",
+          "options": [
+            "弾く",
+            "弾きます",
+            "弾いて",
+            "弾いた"
+          ],
+          "answer": "弾く",
+          "explanation": "Trước ことができます phải là động từ thể từ điển: 弾く."
+        },
+        {
+          "question": "図書館で電話を____ことができません。(Không được gọi điện thoại ở thư viện)",
+          "options": [
+            "かける",
+            "かけます",
+            "かけて",
+            "かけない"
+          ],
+          "answer": "かける",
+          "explanation": "Cấu trúc phủ định khả năng/điều kiện: V-ru + ことができません."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    },
+    {
+      "id": "n5_g030",
+      "name": "Thể thông thường (Futsukei) + と思います",
+      "nameVi": "Tôi nghĩ rằng... (Bày tỏ ý kiến, quan điểm cá nhân)",
+      "level": "N5",
+      "order": 30,
+      "formula": "Thể thông thường (Thể ngắn / 普通形) + と 思います",
+      "meaning": "Tôi nghĩ rằng... / Tôi cho rằng... Dùng để bày tỏ ý kiến, quan điểm, dự đoán chủ quan của người nói.",
+      "usage": "と đóng vai trò là trợ từ trích dẫn ý nghĩ hoặc phát ngôn. Mệnh đề đứng trước と BẮT BUỘC phải ở thể thông thường (普通形 / Thể ngắn):\n- Động từ: Thể từ điển (ru), thể ない (nai), thể た (ta), thể なかった (nakatta).\n- Tính từ đuôi い: giữ nguyên tính từ (ví dụ: おいしい と思います).\n- Tính từ đuôi な / Danh từ: thêm だ ở khẳng định hiện tại (ví dụ: 便利だ と思います, 学生だ と思います).",
+      "conjugation": "V-(thể ngắn) / Adj-i / Adj-na だ / N だ + と思います",
+      "examples": [
+        {
+          "japanese": "明日はいい天気になると思います。",
+          "reading": "あしたはいいてんきになるとおもいます。",
+          "romaji": "Ashita wa ii tenki ni naru to omoimasu.",
+          "vietnamese": "Tôi nghĩ rằng ngày mai thời tiết sẽ trở nên đẹp.",
+          "explanation": "なる (thể từ điển) kết hợp với と思います để đưa ra phán đoán chủ quan về thời tiết ngày mai."
+        },
+        {
+          "japanese": "この映画はとても面白いと思います。",
+          "reading": "このえいがはとてもおもしろいとおもいます。",
+          "romaji": "Kono eiga wa totemo omoshiroi to omoimasu.",
+          "vietnamese": "Tôi nghĩ rằng bộ phim này rất hay.",
+          "explanation": "面白い (tính từ đuôi い thể thông thường) đi với と思います bày tỏ nhận xét cá nhân."
+        }
+      ],
+      "commonMistakes": [
+        "Dùng thể lịch sự です/ます trước と思います (nói '面白いですと思います' hoặc '行きますと思います' là chưa đúng ngữ pháp chuẩn, phải dùng thể ngắn '面白いと思います' / '行くと思います').",
+        "Quên だ đối với danh từ và tính từ đuôi な ở thể khẳng định hiện tại (nói '有名と思います' là sai, phải là '有名だと思います')."
+      ],
+      "comparisonWith": "と言いました (Đã nói rằng... - trích dẫn lời phát ngôn của ai đó)",
+      "exercises": [
+        {
+          "question": "日本は物価が____と思います。(Tôi nghĩ rằng vật giá ở Nhật Bản đắt đỏ)",
+          "options": [
+            "高い",
+            "高いです",
+            "高くて",
+            "高く"
+          ],
+          "answer": "高い",
+          "explanation": "Trước と思います phải là thể thông thường: tính từ đuôi い giữ nguyên 高い."
+        },
+        {
+          "question": "山田さんは親切____と思います。(Tôi nghĩ anh Yamada là người tốt bụng)",
+          "options": [
+            "だ",
+            "な",
+            "です",
+            "で"
+          ],
+          "answer": "だ",
+          "explanation": "Tính từ đuôi な ở thể thông thường khẳng định hiện tại phải đi với だ: 親切だ と思います."
+        }
+      ],
+      "verificationStatus": "reviewed"
+    }
+  ]
+}

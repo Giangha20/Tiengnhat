@@ -1,0 +1,906 @@
+{
+  "metadata": {
+    "level": "N5",
+    "title": "Chữ Hán Kanji N5 Cơ Bản",
+    "description": "Danh sách chữ Hán chuẩn JLPT N5 gồm âm On, âm Kun, nghĩa Hán Việt, bộ thủ, số nét, từ ghép và câu ví dụ ứng dụng.",
+    "totalKanji": 20,
+    "verificationStatus": "verified",
+    "sources": [
+      "Basic Kanji Book Vol.1",
+      "Kanji Look and Learn",
+      "JLPT Resources"
+    ],
+    "lastUpdated": "2026-10-13"
+  },
+  "kanji": [
+    {
+      "id": "k_001",
+      "character": "日",
+      "sinoVietnamese": "NHẬT",
+      "meaning": "Mặt trời, ngày, Nhật Bản",
+      "onReading": [
+        "ニチ",
+        "ジツ"
+      ],
+      "kunReading": [
+        "ひ",
+        "-び",
+        "-か"
+      ],
+      "radical": "日 (Nhật - mặt trời)",
+      "strokeCount": 4,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "日本",
+          "reading": "にほん",
+          "meaning": "Nhật Bản"
+        },
+        {
+          "word": "日曜日",
+          "reading": "にちようび",
+          "meaning": "Chủ nhật"
+        },
+        {
+          "word": "毎日",
+          "reading": "まいにち",
+          "meaning": "Mỗi ngày"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "今日はいい日ですね。",
+          "reading": "きょうはいいひですね。",
+          "vietnamese": "Hôm nay là một ngày đẹp trời nhỉ."
+        }
+      ],
+      "similarKanji": [
+        "目",
+        "白",
+        "田"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_002",
+      "character": "月",
+      "sinoVietnamese": "NGUYỆT",
+      "meaning": "Mặt trăng, tháng",
+      "onReading": [
+        "ゲツ",
+        "ガツ"
+      ],
+      "kunReading": [
+        "つき"
+      ],
+      "radical": "月 (Nguyệt - trăng)",
+      "strokeCount": 4,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "月曜日",
+          "reading": "げつようび",
+          "meaning": "Thứ hai"
+        },
+        {
+          "word": "今月",
+          "reading": "こんげつ",
+          "meaning": "Tháng này"
+        },
+        {
+          "word": "一月",
+          "reading": "いちがつ",
+          "meaning": "Tháng một"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "月がとても綺麗です。",
+          "reading": "つきがとてもつれいです。",
+          "vietnamese": "Mặt trăng tối nay rất đẹp."
+        }
+      ],
+      "similarKanji": [
+        "日",
+        "目",
+        "明"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_003",
+      "character": "木",
+      "sinoVietnamese": "MỘC",
+      "meaning": "Cây cối, gỗ",
+      "onReading": [
+        "モク",
+        "ボク"
+      ],
+      "kunReading": [
+        "き",
+        "こ-"
+      ],
+      "radical": "木 (Mộc - cây)",
+      "strokeCount": 4,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "木曜日",
+          "reading": "もくようび",
+          "meaning": "Thứ năm"
+        },
+        {
+          "word": "木の下",
+          "reading": "きのした",
+          "meaning": "Dưới bóng cây"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "庭に大きな木があります。",
+          "reading": "にわにおおきなきがあります。",
+          "vietnamese": "Trong vườn có một cái cây to."
+        }
+      ],
+      "similarKanji": [
+        "本",
+        "休",
+        "林",
+        "森"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_004",
+      "character": "山",
+      "sinoVietnamese": "SƠN",
+      "meaning": "Núi",
+      "onReading": [
+        "サン"
+      ],
+      "kunReading": [
+        "やま"
+      ],
+      "radical": "山 (Sơn - núi)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "富士山",
+          "reading": "ふじさん",
+          "meaning": "Núi Phú Sĩ"
+        },
+        {
+          "word": "山登り",
+          "reading": "やまのぼり",
+          "meaning": "Leo núi"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "休みに山へ行きました。",
+          "reading": "やすみにやまへいきました。",
+          "vietnamese": "Kỳ nghỉ tôi đã đi leo núi."
+        }
+      ],
+      "similarKanji": [
+        "川",
+        "出"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_005",
+      "character": "川",
+      "sinoVietnamese": "XUYÊN",
+      "meaning": "Dòng sông",
+      "onReading": [
+        "セン"
+      ],
+      "kunReading": [
+        "かわ"
+      ],
+      "radical": "川 (Xuyên - sông)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "川岸",
+          "reading": "かわぎし",
+          "meaning": "Bờ sông"
+        },
+        {
+          "word": "小川",
+          "reading": "おがわ",
+          "meaning": "Con suối nhỏ"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "この川で魚を釣ります。",
+          "reading": "このかわでさかなをつります。",
+          "vietnamese": "Tôi câu cá ở dòng sông này."
+        }
+      ],
+      "similarKanji": [
+        "州",
+        "三"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_006",
+      "character": "田",
+      "sinoVietnamese": "ĐIỀN",
+      "meaning": "Ruộng đồng",
+      "onReading": [
+        "デン"
+      ],
+      "kunReading": [
+        "た"
+      ],
+      "radical": "田 (Điền - ruộng)",
+      "strokeCount": 5,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "田中",
+          "reading": "たなか",
+          "meaning": "Tanaka (Họ người Nhật phổ biến)"
+        },
+        {
+          "word": "山田",
+          "reading": "やまだ",
+          "meaning": "Yamada (Họ người Nhật)"
+        },
+        {
+          "word": "水田",
+          "reading": "すいでん",
+          "meaning": "Ruộng lúa nước"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "田んぼに稲が育っています。",
+          "reading": "たんぼにいねがそだっています。",
+          "vietnamese": "Lúa đang lớn trên ruộng đồng."
+        }
+      ],
+      "similarKanji": [
+        "日",
+        "白",
+        "甲",
+        "由"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_007",
+      "character": "人",
+      "sinoVietnamese": "NHÂN",
+      "meaning": "Con người, người",
+      "onReading": [
+        "ジン",
+        "ニン"
+      ],
+      "kunReading": [
+        "ひと"
+      ],
+      "radical": "人 (Nhân - người)",
+      "strokeCount": 2,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "日本人",
+          "reading": "にほんじん",
+          "meaning": "Người Nhật Bản"
+        },
+        {
+          "word": "三人",
+          "reading": "さんにん",
+          "meaning": "3 người"
+        },
+        {
+          "word": "大人",
+          "reading": "おとな",
+          "meaning": "Người lớn"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "あの人は親切な人です。",
+          "reading": "あのひとはしんせつなひとです。",
+          "vietnamese": "Người kia là một người rất tốt bụng."
+        }
+      ],
+      "similarKanji": [
+        "入",
+        "八"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_008",
+      "character": "口",
+      "sinoVietnamese": "KHẨU",
+      "meaning": "Miệng, lối ra vào",
+      "onReading": [
+        "コウ",
+        "ク"
+      ],
+      "kunReading": [
+        "くち",
+        "-ぐち"
+      ],
+      "radical": "口 (Khẩu - miệng)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "入口",
+          "reading": "いりぐち",
+          "meaning": "Lối vào, cổng vào"
+        },
+        {
+          "word": "出口",
+          "reading": "でぐち",
+          "meaning": "Lối ra, cửa thoát"
+        },
+        {
+          "word": "改札口",
+          "reading": "かいさつぐち",
+          "meaning": "Cổng soát vé"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "駅の東口で会いましょう。",
+          "reading": "えきのひがしぐちであいましょう。",
+          "vietnamese": "Chúng ta hãy gặp nhau ở cổng phía Đông nhà ga nhé."
+        }
+      ],
+      "similarKanji": [
+        "日",
+        "目",
+        "品"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_009",
+      "character": "車",
+      "sinoVietnamese": "XA",
+      "meaning": "Xe cộ, ô tô",
+      "onReading": [
+        "シャ"
+      ],
+      "kunReading": [
+        "くるま"
+      ],
+      "radical": "車 (Xa - xe)",
+      "strokeCount": 7,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "電車",
+          "reading": "でんしゃ",
+          "meaning": "Tàu điện"
+        },
+        {
+          "word": "自転車",
+          "reading": "じてんしゃ",
+          "meaning": "Xe đạp"
+        },
+        {
+          "word": "自動車",
+          "reading": "じどうしゃ",
+          "meaning": "Xe ô tô"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "父は新しい車を買いました。",
+          "reading": "ちちはあたらしいくるまをかいました。",
+          "vietnamese": "Bố tôi đã mua một chiếc xe ô tô mới."
+        }
+      ],
+      "similarKanji": [
+        "東",
+        "重"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_010",
+      "character": "門",
+      "sinoVietnamese": "MÔN",
+      "meaning": "Cổng, cửa lớn",
+      "onReading": [
+        "モン"
+      ],
+      "kunReading": [
+        "かど"
+      ],
+      "radical": "門 (Môn - cổng)",
+      "strokeCount": 8,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "正門",
+          "reading": "せいもん",
+          "meaning": "Cổng chính"
+        },
+        {
+          "word": "校門",
+          "reading": "こうもん",
+          "meaning": "Cổng trường"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "学校の門の前に立っています。",
+          "reading": "がっこうのもんのまえにたっています。",
+          "vietnamese": "Tôi đang đứng trước cổng trường."
+        }
+      ],
+      "similarKanji": [
+        "間",
+        "聞",
+        "開"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_011",
+      "character": "学",
+      "sinoVietnamese": "HỌC",
+      "meaning": "Học tập, trường học",
+      "onReading": [
+        "ガク"
+      ],
+      "kunReading": [
+        "まな-ぶ"
+      ],
+      "radical": "子 (Tử - đứa con)",
+      "strokeCount": 8,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "学生",
+          "reading": "がくせい",
+          "meaning": "Học sinh, sinh viên"
+        },
+        {
+          "word": "学校",
+          "reading": "がっこう",
+          "meaning": "Trường học"
+        },
+        {
+          "word": "大学",
+          "reading": "だいがく",
+          "meaning": "Trường đại học"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "大学で日本語を勉強します。",
+          "reading": "だいがくでにほんごをべんきょうします。",
+          "vietnamese": "Tôi học tiếng Nhật ở trường đại học."
+        }
+      ],
+      "similarKanji": [
+        "字",
+        "校"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_012",
+      "character": "生",
+      "sinoVietnamese": "SINH",
+      "meaning": "Sống, sinh sôi, học sinh",
+      "onReading": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunReading": [
+        "い-きる",
+        "う-まれる",
+        "なま"
+      ],
+      "radical": "生 (Sinh)",
+      "strokeCount": 5,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "先生",
+          "reading": "せんせい",
+          "meaning": "Thầy cô giáo, bác sĩ"
+        },
+        {
+          "word": "生活",
+          "reading": "せいかつ",
+          "meaning": "Đời sống, sinh hoạt"
+        },
+        {
+          "word": "誕生日",
+          "reading": "たんじょうび",
+          "meaning": "Ngày sinh nhật"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "ベトナムで生まれました。",
+          "reading": "ベトナムでうまれました。",
+          "vietnamese": "Tôi được sinh ra tại Việt Nam."
+        }
+      ],
+      "similarKanji": [
+        "牛",
+        "年"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_013",
+      "character": "先",
+      "sinoVietnamese": "TIÊN",
+      "meaning": "Trước, tiên phong",
+      "onReading": [
+        "セン"
+      ],
+      "kunReading": [
+        "さき",
+        "ま-ず"
+      ],
+      "radical": "儿 (Nhi)",
+      "strokeCount": 6,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "先生",
+          "reading": "せんせい",
+          "meaning": "Giáo viên (người sinh trước, có tri thức)"
+        },
+        {
+          "word": "先週",
+          "reading": "せんしゅう",
+          "meaning": "Tuần trước"
+        },
+        {
+          "word": "お先に",
+          "reading": "おさきに",
+          "meaning": "Tôi xin phép về trước"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "お先に失礼します。",
+          "reading": "おさきにしつれいします。",
+          "vietnamese": "Tôi xin phép đi trước ạ."
+        }
+      ],
+      "similarKanji": [
+        "洗",
+        "元"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_014",
+      "character": "大",
+      "sinoVietnamese": "ĐẠI",
+      "meaning": "To lớn, vĩ đại",
+      "onReading": [
+        "ダイ",
+        "タイ"
+      ],
+      "kunReading": [
+        "おお-きい",
+        "おお-いに"
+      ],
+      "radical": "大 (Đại - to)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "大きい",
+          "reading": "おおきい",
+          "meaning": "To lớn"
+        },
+        {
+          "word": "大学",
+          "reading": "だいがく",
+          "meaning": "Đại học"
+        },
+        {
+          "word": "大変",
+          "reading": "たいへん",
+          "meaning": "Vất vả, khó khăn, rất"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "とても大きい家ですね。",
+          "reading": "とてもおおきいいえですね。",
+          "vietnamese": "Một ngôi nhà thật to lớn nhỉ."
+        }
+      ],
+      "similarKanji": [
+        "犬",
+        "太",
+        "天"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_015",
+      "character": "小",
+      "sinoVietnamese": "TIỂU",
+      "meaning": "Nhỏ bé",
+      "onReading": [
+        "ショウ"
+      ],
+      "kunReading": [
+        "ちい-さい",
+        "こ-",
+        "お-"
+      ],
+      "radical": "小 (Tiểu - nhỏ)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "小さい",
+          "reading": "ちいさい",
+          "meaning": "Nhỏ bé"
+        },
+        {
+          "word": "小学校",
+          "reading": "しょうがっこう",
+          "meaning": "Trường tiểu học"
+        },
+        {
+          "word": "小川",
+          "reading": "おがわ",
+          "meaning": "Suối nhỏ"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "小さい猫を飼っています。",
+          "reading": "ちいさいねこをかっています。",
+          "vietnamese": "Tôi đang nuôi một chú mèo con nhỏ nhắn."
+        }
+      ],
+      "similarKanji": [
+        "少",
+        "水"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_016",
+      "character": "中",
+      "sinoVietnamese": "TRUNG",
+      "meaning": "Ở giữa, bên trong, Trung Quốc",
+      "onReading": [
+        "チュウ"
+      ],
+      "kunReading": [
+        "なか"
+      ],
+      "radical": "丨 (Cổn)",
+      "strokeCount": 4,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "中国",
+          "reading": "ちゅうごく",
+          "meaning": "Trung Quốc"
+        },
+        {
+          "word": "中学校",
+          "reading": "ちゅうがっこう",
+          "meaning": "Trường cấp 2"
+        },
+        {
+          "word": "一日中",
+          "reading": "いちにちじゅう",
+          "meaning": "Cả ngày"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "部屋の中に誰がいますか。",
+          "reading": "へやのなかにはだれがいますか。",
+          "vietnamese": "Bên trong căn phòng có ai không?"
+        }
+      ],
+      "similarKanji": [
+        "申",
+        "串"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_017",
+      "character": "上",
+      "sinoVietnamese": "THƯỢNG",
+      "meaning": "Phía trên, lên",
+      "onReading": [
+        "ジョウ"
+      ],
+      "kunReading": [
+        "うえ",
+        "あ-がる",
+        "のぼ-る"
+      ],
+      "radical": "一 (Nhất)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "机の上",
+          "reading": "つくえのうえ",
+          "meaning": "Trên mặt bàn"
+        },
+        {
+          "word": "上手",
+          "reading": "じょうず",
+          "meaning": "Khéo léo, giỏi giang"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "本は机の上にあります。",
+          "reading": "ほんはつくえのうえにあります。",
+          "vietnamese": "Cuốn sách đang ở trên bàn."
+        }
+      ],
+      "similarKanji": [
+        "下",
+        "止"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_018",
+      "character": "下",
+      "sinoVietnamese": "HẠ",
+      "meaning": "Phía dưới, xuống",
+      "onReading": [
+        "カ",
+        "ゲ"
+      ],
+      "kunReading": [
+        "した",
+        "さ-がる",
+        "くだ-さる"
+      ],
+      "radical": "一 (Nhất)",
+      "strokeCount": 3,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "木の下",
+          "reading": "きのした",
+          "meaning": "Dưới bóng cây"
+        },
+        {
+          "word": "地下鉄",
+          "reading": "ちかてつ",
+          "meaning": "Tàu điện ngầm"
+        },
+        {
+          "word": "下手",
+          "reading": "へた",
+          "meaning": "Kém, vụng về"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "猫が椅子の下にいます。",
+          "reading": "ねこがいすのしたにいます。",
+          "vietnamese": "Con mèo đang ở dưới cái ghế."
+        }
+      ],
+      "similarKanji": [
+        "上",
+        "不"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_019",
+      "character": "前",
+      "sinoVietnamese": "TIỀN",
+      "meaning": "Phía trước, trước đây",
+      "onReading": [
+        "ゼン"
+      ],
+      "kunReading": [
+        "まえ"
+      ],
+      "radical": "刀 (Đao - dao)",
+      "strokeCount": 9,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "名前",
+          "reading": "なまえ",
+          "meaning": "Tên họ"
+        },
+        {
+          "word": "午前",
+          "reading": "ごぜん",
+          "meaning": "Buổi sáng (AM)"
+        },
+        {
+          "word": "三日前",
+          "reading": "みっかまえ",
+          "meaning": "3 ngày trước"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "駅の前で待っています。",
+          "reading": "えきのまえでまっています。",
+          "vietnamese": "Tôi đang đứng đợi ở phía trước nhà ga."
+        }
+      ],
+      "similarKanji": [
+        "後",
+        "剪"
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "k_020",
+      "character": "後",
+      "sinoVietnamese": "HẬU",
+      "meaning": "Phía sau, sau này",
+      "onReading": [
+        "ゴ",
+        "コウ"
+      ],
+      "kunReading": [
+        "うし-ろ",
+        "あと",
+        "おく-れる"
+      ],
+      "radical": "彳 (Xích)",
+      "strokeCount": 9,
+      "level": "N5",
+      "compounds": [
+        {
+          "word": "午後",
+          "reading": "ごご",
+          "meaning": "Buổi chiều (PM)"
+        },
+        {
+          "word": "後ろ",
+          "reading": "うしろ",
+          "meaning": "Phía sau lưng"
+        },
+        {
+          "word": "後で",
+          "reading": "あとで",
+          "meaning": "Lát nữa, sau đó"
+        }
+      ],
+      "exampleSentences": [
+        {
+          "japanese": "ご飯を食べた後で、薬を飲みます。",
+          "reading": "ごはんをたべたあとで、くすりをのみます。",
+          "vietnamese": "Sau khi ăn cơm xong tôi sẽ uống thuốc."
+        }
+      ],
+      "similarKanji": [
+        "前",
+        "待"
+      ],
+      "verificationStatus": "verified"
+    }
+  ]
+}

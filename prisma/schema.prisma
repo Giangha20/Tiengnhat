@@ -1,0 +1,301 @@
+// Prisma schema file for NihongoMaster Japanese Learning Platform
+// Documentation: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------------------------------
+// 1. User & Authentication
+// -----------------------------------------------------------------------------
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  passwordHash  String?
+  avatarUrl     String?
+  currentLevel  String    @default("N5") // JLPT levels: N5, N4, N3, N2, N1
+  dailyGoal     Int       @default(15)   // Daily study target in minutes
+  role          String    @default("USER") // Roles: USER, ADMIN
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // NextAuth relations
+  accounts      Account[]
+  sessions      Session[]
+
+  // Learning relations
+  progress        UserProgress[]
+  studySessions   StudySession[]
+  exerciseResults ExerciseResult[]
+  flashcardDecks  FlashcardDeck[]
+  bookmarkedItems BookmarkedItem[]
+  testResults     TestResult[]
+  achievements    Achievement[]
+  dailyStreaks    DailyStreak[]
+
+  @@index([email])
+}
+
+// NextAuth Account model (OAuth providers / credentials)
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+// NextAuth Session model
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// NextAuth VerificationToken model
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+
+  @@unique([identifier, token])
+}
+
+// -----------------------------------------------------------------------------
+// 2. User Learning Progress (SRS - Spaced Repetition System)
+// -----------------------------------------------------------------------------
+
+model UserProgress {
+  id             String    @id @default(cuid())
+  userId         String
+  itemType       String    // VOCABULARY, KANJI, GRAMMAR, HIRAGANA, KATAKANA
+  itemId         String    // Unique identifier of the learning item
+  status         String    @default("NEW") // NEW, LEARNING, REVIEWING, MASTERED
+  correctCount   Int       @default(0)
+  incorrectCount Int       @default(0)
+  lastReviewedAt DateTime?
+  nextReviewAt   DateTime?
+  easeFactor     Float     @default(2.5) // SuperMemo SM-2 ease factor (default: 2.5)
+  interval       Int       @default(0)   // SRS repetition interval in days
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemType, itemId])
+  @@index([userId])
+  @@index([itemType, itemId])
+  @@index([status])
+  @@index([nextReviewAt])
+}
+
+// -----------------------------------------------------------------------------
+// 3. Study Sessions
+// -----------------------------------------------------------------------------
+
+model StudySession {
+  id             String   @id @default(cuid())
+  userId         String
+  type           String   // LESSON, REVIEW, EXERCISE, FLASHCARD, TEST
+  itemsStudied   Int      @default(0)
+  correctAnswers Int      @default(0)
+  totalTime      Int      @default(0) // Duration in seconds
+  date           DateTime @default(now())
+  createdAt      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([date])
+  @@index([type])
+}
+
+// -----------------------------------------------------------------------------
+// 4. Exercise Results
+// -----------------------------------------------------------------------------
+
+model ExerciseResult {
+  id          String   @id @default(cuid())
+  userId      String
+  exerciseId  String   // Exercise identifier
+  questionId  String   // Question identifier
+  userAnswer  String   // Answer provided by the user
+  isCorrect   Boolean
+  timeTaken   Int?     // Time spent answering in seconds
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([exerciseId])
+  @@index([createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// 5. Custom Flashcard Decks
+// -----------------------------------------------------------------------------
+
+model FlashcardDeck {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  level       String?  // N5, N4, N3, N2, N1, ALL
+  topic       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user  User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items FlashcardItem[]
+
+  @@index([userId])
+}
+
+// -----------------------------------------------------------------------------
+// 6. Flashcard Deck Items
+// -----------------------------------------------------------------------------
+
+model FlashcardItem {
+  id           String   @id @default(cuid())
+  deckId       String
+  frontContent String   // Question, Kanji, Word, or Grammar pattern
+  backContent  String   // Reading, Meaning, Example, or Explanation
+  itemType     String?  // VOCABULARY, KANJI, GRAMMAR, CUSTOM
+  itemId       String?  // Optional reference ID to catalog content
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  deck FlashcardDeck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+
+  @@index([deckId])
+  @@index([order])
+}
+
+// -----------------------------------------------------------------------------
+// 7. Bookmarked Items
+// -----------------------------------------------------------------------------
+
+model BookmarkedItem {
+  id        String   @id @default(cuid())
+  userId    String
+  itemType  String   // VOCABULARY, KANJI, GRAMMAR, HIRAGANA, KATAKANA, SENTENCE
+  itemId    String   // Identifier of the bookmarked item
+  notes     String?  // Optional user study notes
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemType, itemId])
+  @@index([userId])
+  @@index([itemType, itemId])
+}
+
+// -----------------------------------------------------------------------------
+// 8. JLPT Test Results
+// -----------------------------------------------------------------------------
+
+model TestResult {
+  id             String   @id @default(cuid())
+  userId         String
+  testType       String   // FULL, VOCABULARY, GRAMMAR, READING, LISTENING
+  level          String   // JLPT level: N5, N4, N3, N2, N1
+  score          Int      // Total score achieved
+  totalQuestions Int      // Total number of questions
+  correctAnswers Int      // Number of correct answers
+  timeTaken      Int      // Time taken in seconds
+  details        String   // JSON string storing question breakdown and section scores
+  createdAt      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([level])
+  @@index([createdAt])
+}
+
+// -----------------------------------------------------------------------------
+// 9. Achievements
+// -----------------------------------------------------------------------------
+
+model Achievement {
+  id              String   @id @default(cuid())
+  userId          String
+  achievementType String   // STREAK_7, STREAK_30, VOCAB_100, KANJI_50, TEST_N5_PASS, etc.
+  achievedAt      DateTime @default(now())
+  metadata        String?  // JSON string storing extra achievement metadata (title, badge, points)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementType])
+  @@index([userId])
+}
+
+// -----------------------------------------------------------------------------
+// 10. Daily Streak
+// -----------------------------------------------------------------------------
+
+model DailyStreak {
+  id             String   @id @default(cuid())
+  userId         String
+  date           DateTime // Date truncated to midnight (00:00:00 UTC)
+  minutesStudied Int      @default(0)
+  itemsLearned   Int      @default(0)
+  itemsReviewed  Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId])
+  @@index([date])
+}
+
+// -----------------------------------------------------------------------------
+// 11. Content Verification Tracking
+// -----------------------------------------------------------------------------
+
+model ContentVerification {
+  id          String    @id @default(cuid())
+  contentType String    // VOCABULARY, KANJI, GRAMMAR, EXERCISE, TEST_QUESTION
+  contentId   String    // Unique identifier of the verified content piece
+  status      String    @default("VERIFIED") // DRAFT, REVIEWED, VERIFIED, REJECTED
+  reviewer    String?   // Name or ID of reviewer / verifying expert
+  notes       String?   // Verification notes or source reference
+  verifiedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([contentType, contentId])
+  @@index([status])
+  @@index([contentType])
+}

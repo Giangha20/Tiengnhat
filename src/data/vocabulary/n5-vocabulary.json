@@ -1,0 +1,1891 @@
+{
+  "metadata": {
+    "level": "N5",
+    "title": "Từ vựng N5",
+    "description": "Từ vựng theo định hướng JLPT N5. Nội dung được biên soạn dựa trên tài liệu tham khảo, không phải danh sách chính thức của JLPT.",
+    "totalWords": 85,
+    "verificationStatus": "reviewed",
+    "sources": [
+      "Minna no Nihongo",
+      "Genki",
+      "JLPT Study Resources"
+    ],
+    "lastUpdated": "2026-10-13"
+  },
+  "topics": [
+    {
+      "id": "greetings",
+      "name": "Chào hỏi",
+      "nameJa": "あいさつ",
+      "words": [
+        {
+          "id": "n5_001",
+          "word": "おはようございます",
+          "kanji": null,
+          "reading": "おはようございます",
+          "romaji": "ohayou gozaimasu",
+          "meaning": "Xin chào (buổi sáng, lịch sự)",
+          "wordType": "cụm từ",
+          "usage": "Dùng khi chào buổi sáng, thể lịch sự. Thường dùng từ sáng sớm cho đến khoảng 10-11 giờ trưa.",
+          "exampleJa": "先生、おはようございます。",
+          "exampleReading": "せんせい、おはようございます。",
+          "exampleRomaji": "Sensei, ohayou gozaimasu.",
+          "exampleVi": "Thầy/Cô ơi, chào buổi sáng ạ.",
+          "notes": "Với bạn bè, người thân hoặc cấp dưới, có thể rút gọn thành 'おはよう' (ohayou).",
+          "synonyms": [
+            "おはよう"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_002",
+          "word": "こんにちは",
+          "kanji": null,
+          "reading": "こんにちは",
+          "romaji": "konnichiwa",
+          "meaning": "Xin chào (buổi trưa / ban ngày)",
+          "wordType": "cụm từ",
+          "usage": "Lời chào phổ biến vào ban ngày (từ khoảng 11 giờ trưa đến trước khi trời tối).",
+          "exampleJa": "田中さん、こんにちは。",
+          "exampleReading": "たなかさん、こんにちは。",
+          "exampleRomaji": "Tanaka-san, konnichiwa.",
+          "exampleVi": "Chào anh Tanaka.",
+          "notes": "Chú ý chữ cuối viết là は (ha) nhưng phát âm là 'wa'. Không dùng để chào người trong gia đình khi gặp nhau trong nhà.",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_003",
+          "word": "こんばんは",
+          "kanji": null,
+          "reading": "こんばんは",
+          "romaji": "konbanwa",
+          "meaning": "Chào buổi tối",
+          "wordType": "cụm từ",
+          "usage": "Dùng khi gặp gỡ ai đó vào buổi tối (sau khi trời sập tối).",
+          "exampleJa": "皆さん、こんばんは。",
+          "exampleReading": "みなさん、こんばんは。",
+          "exampleRomaji": "Minasan, konbanwa.",
+          "exampleVi": "Chào mọi người, chúc mọi người một buổi tối tốt lành.",
+          "notes": "Tương tự như こんにちは, chữ cuối viết bằng trợ từ は nhưng phát âm là 'wa'.",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_004",
+          "word": "さようなら",
+          "kanji": null,
+          "reading": "さようなら",
+          "romaji": "sayounara",
+          "meaning": "Tạm biệt",
+          "wordType": "cụm từ",
+          "usage": "Dùng khi chia tay trong một thời gian dài hoặc trong bối cảnh trang trọng (học sinh chào thầy cô khi tan học).",
+          "exampleJa": "先生、さようなら。また明日。",
+          "exampleReading": "せんせい、さようなら。またあした。",
+          "exampleRomaji": "Sensei, sayounara. Mata ashita.",
+          "exampleVi": "Em chào thầy, tạm biệt thầy. Hẹn gặp lại vào ngày mai ạ.",
+          "notes": "Giữa bạn bè đồng trang lứa thường dùng 'じゃあね' (jaa ne) hoặc 'またね' (mata ne) thay vì さようなら vì từ này mang cảm giác chia tay lâu.",
+          "synonyms": [
+            "バイバイ",
+            "じゃあね"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_005",
+          "word": "ありがとうございます",
+          "kanji": null,
+          "reading": "ありがとうございます",
+          "romaji": "arigatou gozaimasu",
+          "meaning": "Cảm ơn (rất nhiều, lịch sự)",
+          "wordType": "cụm từ",
+          "usage": "Dùng để bày tỏ lòng biết ơn một cách lịch sự, trang trọng đối với người khác.",
+          "exampleJa": "手伝ってくれて、ありがとうございます。",
+          "exampleReading": "てつだってくれて、ありがとうございます。",
+          "exampleRomaji": "Tetsudatte kurete, arigatou gozaimasu.",
+          "exampleVi": "Cảm ơn bạn đã giúp đỡ tôi.",
+          "notes": "Khi cảm ơn hành động đã hoàn tất trong quá khứ có thể dùng 'ありがとうございました' (arigatou gozaimashita). Với bạn bè thân thiết có thể nói 'ありがとう'.",
+          "synonyms": [
+            "どうもありがとう",
+            "ありがとう"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_006",
+          "word": "すみません",
+          "kanji": null,
+          "reading": "すみません",
+          "romaji": "sumimasen",
+          "meaning": "Xin lỗi / Xin phép / Làm phiền một chút",
+          "wordType": "cụm từ",
+          "usage": "Dùng để xin lỗi khi mắc lỗi nhẹ, gọi nhân viên phục vụ, hoặc cảm ơn khi ai đó làm phiền vì mình.",
+          "exampleJa": "すみません、駅はどこですか。",
+          "exampleReading": "すみません、えきはどこですか。",
+          "exampleRomaji": "Sumimasen, eki wa doko desu ka.",
+          "exampleVi": "Xin lỗi cho tôi hỏi, nhà ga ở đâu vậy ạ?",
+          "notes": "Trong văn nói hàng ngày, người Nhật đôi khi phát âm biến âm nhẹ thành 'すいません' (suimasen).",
+          "synonyms": [
+            "ごめんなさい",
+            "失礼します"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_007",
+          "word": "はい",
+          "kanji": null,
+          "reading": "はい",
+          "romaji": "hai",
+          "meaning": "Vâng / Dạ / Đúng vậy",
+          "wordType": "thán từ",
+          "usage": "Dùng để đồng ý, khẳng định, hoặc trả lời khi được gọi tên một cách lịch sự.",
+          "exampleJa": "「田中さん」「はい、何ですか。」",
+          "exampleReading": "「たなかさん」「はい、なんですか。」",
+          "exampleRomaji": "\"Tanaka-san\" \"Hai, nan desu ka.\"",
+          "exampleVi": "\"Anh Tanaka ơi!\" - \"Vâng, có chuyện gì thế ạ?\"",
+          "notes": "Trong ngữ điệu thân mật bạn bè có thể dùng 'うん' (un).",
+          "synonyms": [
+            "ええ"
+          ],
+          "antonyms": [
+            "いいえ"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_008",
+          "word": "いいえ",
+          "kanji": null,
+          "reading": "いいえ",
+          "romaji": "iie",
+          "meaning": "Không / Không có chi / Không phải",
+          "wordType": "thán từ",
+          "usage": "Dùng để phủ định câu hỏi, hoặc đáp lại lời cảm ơn/xin lỗi với nghĩa 'không có gì đâu'.",
+          "exampleJa": "いいえ、違います。",
+          "exampleReading": "いいえ、ちがいます。",
+          "exampleRomaji": "Iie, chigaimasu.",
+          "exampleVi": "Không, không phải như vậy.",
+          "notes": "Khi đáp lại lời cảm ơn: 'いいえ、どういたしまして' (Không có gì đâu). Trong văn nói thân mật thường nói 'ううん' (uun).",
+          "synonyms": [
+            "いや"
+          ],
+          "antonyms": [
+            "はい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_009",
+          "word": "おやすみなさい",
+          "kanji": null,
+          "reading": "おやすみなさい",
+          "romaji": "oyasuminasai",
+          "meaning": "Chúc ngủ ngon (lịch sự)",
+          "wordType": "cụm từ",
+          "usage": "Dùng để chào trước khi đi ngủ hoặc khi chia tay nhau ra về lúc đêm muộn.",
+          "exampleJa": "母さん、おやすみなさい。",
+          "exampleReading": "かあさん、おやすみなさい。",
+          "exampleRomaji": "Kaasan, oyasuminasai.",
+          "exampleVi": "Mẹ ơi, chúc mẹ ngủ ngon ạ.",
+          "notes": "Với bạn bè hoặc người trong gia đình thân thiết, có thể nói gọn là 'おやすみ' (oyasumi).",
+          "synonyms": [
+            "おやすみ"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_010",
+          "word": "いただきます",
+          "kanji": null,
+          "reading": "いただきます",
+          "romaji": "itadakimasu",
+          "meaning": "Mời mọi người / Tôi xin phép nhận (nói trước khi ăn uống)",
+          "wordType": "cụm từ",
+          "usage": "Nói trước bữa ăn, chắp hai tay lại để bày tỏ lòng biết ơn với người nấu và các sinh mệnh tạo nên món ăn.",
+          "exampleJa": "ご飯を食べる前に、「いただきます」と言います。",
+          "exampleReading": "ごはんをたべるまえに、「いただきます」といいます。",
+          "exampleRomaji": "Gohan o taberu mae ni, \"itadakimasu\" to iimasu.",
+          "exampleVi": "Trước khi ăn cơm, chúng ta nói 'Itadakimasu'.",
+          "notes": "Vốn là thể khiêm nhường ngữ của động từ もらう (nhận) và たべる (ăn).",
+          "synonyms": [],
+          "antonyms": [
+            "ごちそうさまでした"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_011",
+          "word": "ごちそうさまでした",
+          "kanji": null,
+          "reading": "ごちそうさまでした",
+          "romaji": "gochisousama deshita",
+          "meaning": "Cảm ơn vì bữa ăn ngon (nói sau khi ăn xong)",
+          "wordType": "cụm từ",
+          "usage": "Nói sau khi dùng bữa xong để cảm ơn người chuẩn bị thức ăn hoặc người đãi tiệc.",
+          "exampleJa": "とても美味しかったです。ごちそうさまでした。",
+          "exampleReading": "とてもおいしかったです。ごちそうさまでした。",
+          "exampleRomaji": "Totemo oishikatta desu. Gochisousama deshita.",
+          "exampleVi": "Món ăn ngon lắm ạ. Cảm ơn vì bữa ăn.",
+          "notes": "Trong hoàn cảnh thân mật có thể nói ngắn gọn là 'ごちそうさま' (gochisousama).",
+          "synonyms": [
+            "ごちそうさま"
+          ],
+          "antonyms": [
+            "いただきます"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "pronouns_demonstratives",
+      "name": "Đại từ & Chỉ từ",
+      "nameJa": "代名詞・指示詞",
+      "words": [
+        {
+          "id": "n5_012",
+          "word": "私",
+          "kanji": "私",
+          "reading": "わたし",
+          "romaji": "watashi",
+          "meaning": "Tôi (ngôi thứ nhất phổ biến, lịch sự)",
+          "wordType": "đại từ",
+          "usage": "Dùng cho cả nam và nữ trong hầu hết các tình huống giao tiếp hàng ngày và công việc.",
+          "exampleJa": "私はベトナム人です。",
+          "exampleReading": "わたしはべとなむじんです。",
+          "exampleRomaji": "Watashi wa Betonamujin desu.",
+          "exampleVi": "Tôi là người Việt Nam.",
+          "notes": "Nam giới khi thân mật thường dùng ぼく (boku) hoặc おれ (ore). Phụ nữ trang trọng có thể dùng わたくし (watakushi).",
+          "synonyms": [
+            "僕",
+            "俺"
+          ],
+          "antonyms": [
+            "あなた"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_013",
+          "word": "あなた",
+          "kanji": "貴方",
+          "reading": "あなた",
+          "romaji": "anata",
+          "meaning": "Bạn / Anh / Chị (ngôi thứ hai)",
+          "wordType": "đại từ",
+          "usage": "Ngôi thứ hai. Tuy nhiên người Nhật hạn chế dùng 'あなた' trực tiếp nếu đã biết tên đối phương.",
+          "exampleJa": "あなたのお名前は何ですか。",
+          "exampleReading": "あなたのおなまえはなんですか。",
+          "exampleRomaji": "Anata no onamae wa nan desu ka.",
+          "exampleVi": "Tên của bạn là gì?",
+          "notes": "Nên gọi bằng [Họ/Tên] + さん thay cho あなた để thể hiện sự lịch sự và tự nhiên. Vợ cũng có thể gọi chồng là あなた (mình ơi/anh yêu).",
+          "synonyms": [],
+          "antonyms": [
+            "私"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_014",
+          "word": "彼",
+          "kanji": "彼",
+          "reading": "かれ",
+          "romaji": "kare",
+          "meaning": "Anh ấy / Cậu ấy / Bạn trai",
+          "wordType": "đại từ",
+          "usage": "Dùng để chỉ người nam ở ngôi thứ ba, hoặc chỉ bạn trai (người yêu nam).",
+          "exampleJa": "彼は日本語の先生です。",
+          "exampleReading": "かれはにほんごのせんせいです。",
+          "exampleRomaji": "Kare wa Nihongo no sensei desu.",
+          "exampleVi": "Anh ấy là giáo viên tiếng Nhật.",
+          "notes": "Nếu nói '彼がいる' (Kare ga iru) có nghĩa là 'Tôi có bạn trai rồi'.",
+          "synonyms": [
+            "彼氏"
+          ],
+          "antonyms": [
+            "彼女"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_015",
+          "word": "彼女",
+          "kanji": "彼女",
+          "reading": "かのじょ",
+          "romaji": "kanojo",
+          "meaning": "Cô ấy / Chị ấy / Bạn gái",
+          "wordType": "đại từ",
+          "usage": "Dùng để chỉ người nữ ở ngôi thứ ba, hoặc chỉ bạn gái (người yêu nữ).",
+          "exampleJa": "彼女は親切な人です。",
+          "exampleReading": "かのじょはしんせつなひとです。",
+          "exampleRomaji": "Kanojo wa shinsetsu na hito desu.",
+          "exampleVi": "Cô ấy là một người tốt bụng.",
+          "notes": "Nếu nói '彼女がいる' (Kanojo ga iru) nghĩa là 'Tôi có bạn gái rồi'.",
+          "synonyms": [],
+          "antonyms": [
+            "彼"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_016",
+          "word": "私たち",
+          "kanji": "私たち",
+          "reading": "わたしたち",
+          "romaji": "watashitachi",
+          "meaning": "Chúng tôi / Chúng ta",
+          "wordType": "đại từ",
+          "usage": "Số nhiều của わたし, chỉ nhóm người bao gồm người nói.",
+          "exampleJa": "私たちは学生です。",
+          "exampleReading": "わたしたちはがくせいです。",
+          "exampleRomaji": "Watashitachi wa gakusei desu.",
+          "exampleVi": "Chúng tôi là học sinh / sinh viên.",
+          "notes": "Hậu tố 〜たち (tachi) được gắn sau danh từ/đại từ để tạo số nhiều.",
+          "synonyms": [
+            "我々"
+          ],
+          "antonyms": [
+            "あなたたち"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_017",
+          "word": "これ",
+          "kanji": null,
+          "reading": "これ",
+          "romaji": "kore",
+          "meaning": "Cái này (vật ở gần người nói)",
+          "wordType": "chỉ từ",
+          "usage": "Đại từ chỉ đồ vật ở gần người nói. Đứng độc lập làm chủ ngữ hoặc tân ngữ.",
+          "exampleJa": "これは私の本です。",
+          "exampleReading": "これはわたしのほんです。",
+          "exampleRomaji": "Kore wa watashi no hon desu.",
+          "exampleVi": "Đây là cuốn sách của tôi.",
+          "notes": "Quy tắc Ko-So-A-Do: これ (gần người nói) → それ (gần người nghe) → あれ (xa cả hai) → どれ (nghi vấn: cái nào).",
+          "synonyms": [],
+          "antonyms": [
+            "それ",
+            "あれ"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_018",
+          "word": "それ",
+          "kanji": null,
+          "reading": "それ",
+          "romaji": "sore",
+          "meaning": "Cái đó (vật ở gần người nghe)",
+          "wordType": "chỉ từ",
+          "usage": "Đại từ chỉ đồ vật ở gần người nghe hoặc vừa được người nghe đề cập tới.",
+          "exampleJa": "それは何ですか。",
+          "exampleReading": "それはなんですか。",
+          "exampleRomaji": "Sore wa nan desu ka.",
+          "exampleVi": "Cái đó là cái gì vậy?",
+          "notes": "Đứng độc lập, không đi kèm trực tiếp danh từ (không nói それ本 mà phải là その本).",
+          "synonyms": [],
+          "antonyms": [
+            "これ",
+            "あれ"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_019",
+          "word": "あれ",
+          "kanji": null,
+          "reading": "あれ",
+          "romaji": "are",
+          "meaning": "Cái kia (vật ở xa cả người nói và người nghe)",
+          "wordType": "chỉ từ",
+          "usage": "Đại từ chỉ đồ vật ở xa cả hai người đang đối thoại.",
+          "exampleJa": "あれは富士山です。",
+          "exampleReading": "あれはふじさんです。",
+          "exampleRomaji": "Are wa Fujisan desu.",
+          "exampleVi": "Kia là núi Phú Sĩ.",
+          "notes": "Trong khẩu ngữ, 'あれ？' còn dùng như thán từ biểu thị sự bất ngờ, ngạc nhiên (Ủa? Ô kìa?).",
+          "synonyms": [],
+          "antonyms": [
+            "これ",
+            "それ"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_020",
+          "word": "この",
+          "kanji": null,
+          "reading": "この",
+          "romaji": "kono",
+          "meaning": "...này (bổ nghĩa cho danh từ, ở gần người nói)",
+          "wordType": "chỉ từ",
+          "usage": "Luôn đi kèm trực tiếp với một danh từ phía sau: [この + N].",
+          "exampleJa": "この傘は私のです。",
+          "exampleReading": "このかさはわたしのです。",
+          "exampleRomaji": "Kono kasa wa watashi no desu.",
+          "exampleVi": "Chiếc ô này là của tôi.",
+          "notes": "Khác với これ (đứng độc lập), この bắt buộc phải có danh từ theo sau.",
+          "synonyms": [],
+          "antonyms": [
+            "その",
+            "あの"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_021",
+          "word": "その",
+          "kanji": null,
+          "reading": "その",
+          "romaji": "sono",
+          "meaning": "...đó (bổ nghĩa cho danh từ, ở gần người nghe)",
+          "wordType": "chỉ từ",
+          "usage": "Luôn đi liền trước danh từ để chỉ vật/người ở gần người nghe: [その + N].",
+          "exampleJa": "そのペンを取ってください。",
+          "exampleReading": "そのぺんをとってください。",
+          "exampleRomaji": "Sono pen o totte kudasai.",
+          "exampleVi": "Làm ơn lấy giúp tôi cây bút đó với.",
+          "notes": "Trong văn nói, 'その〜' cũng hay dùng để ngập ngừng suy nghĩ (ờ, ừm).",
+          "synonyms": [],
+          "antonyms": [
+            "この",
+            "あの"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_022",
+          "word": "あの",
+          "kanji": null,
+          "reading": "あの",
+          "romaji": "ano",
+          "meaning": "...kia (bổ nghĩa cho danh từ, ở xa cả hai người)",
+          "wordType": "chỉ từ",
+          "usage": "Bổ nghĩa cho danh từ đứng sau, chỉ người/vật cách xa cả người nói và người nghe: [あの + N].",
+          "exampleJa": "あの人は誰ですか。",
+          "exampleReading": "あのひとはだれですか。",
+          "exampleRomaji": "Ano hito wa dare desu ka.",
+          "exampleVi": "Người kia là ai thế?",
+          "notes": "'あのう' (anou) kéo dài thường dùng khi ướm lời bắt đầu cuộc trò chuyện (Dạ xin lỗi...).",
+          "synonyms": [],
+          "antonyms": [
+            "この",
+            "その"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Gia đình",
+      "nameJa": "家族",
+      "words": [
+        {
+          "id": "n5_023",
+          "word": "家族",
+          "kanji": "家族",
+          "reading": "かぞく",
+          "romaji": "kazoku",
+          "meaning": "Gia đình",
+          "wordType": "danh từ",
+          "usage": "Chỉ gia đình nói chung hoặc gia đình của mình. Khi nói về gia đình người khác lịch sự dùng 'ご家族' (go-kazoku).",
+          "exampleJa": "私の家族は４人です。",
+          "exampleReading": "わたしのかぞくはよにんです。",
+          "exampleRomaji": "Watashi no kazoku wa yo-nin desu.",
+          "exampleVi": "Gia đình tôi có 4 người.",
+          "notes": "Người Nhật phân biệt rất rõ từ ngữ chỉ gia đình mình (khiêm tốn) và gia đình người khác (tôn kính).",
+          "synonyms": [
+            "ご家族"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_024",
+          "word": "父",
+          "kanji": "父",
+          "reading": "ちち",
+          "romaji": "chichi",
+          "meaning": "Bố / Ba (của mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng để nói về bố của bản thân mình khi nói chuyện với người ngoài gia đình.",
+          "exampleJa": "父は会社員です。",
+          "exampleReading": "ちちはかいしゃいんです。",
+          "exampleRomaji": "Chichi wa kaishain desu.",
+          "exampleVi": "Bố tôi là nhân viên công ty.",
+          "notes": "Không dùng '父' để gọi trực tiếp bố mình hoặc nói về bố của người khác.",
+          "synonyms": [],
+          "antonyms": [
+            "母",
+            "お父さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_025",
+          "word": "母",
+          "kanji": "母",
+          "reading": "はは",
+          "romaji": "haha",
+          "meaning": "Mẹ (của mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng để xưng hoặc kể về mẹ của mình khi nói chuyện với người khác.",
+          "exampleJa": "母は料理が上手です。",
+          "exampleReading": "はははりょうりがじょうずです。",
+          "exampleRomaji": "Haha wa ryouri ga jouzu desu.",
+          "exampleVi": "Mẹ tôi nấu ăn rất ngon.",
+          "notes": "Khi nói về mẹ của đối phương hoặc người khác phải dùng 'お母さん' (okaasan).",
+          "synonyms": [],
+          "antonyms": [
+            "父",
+            "お母さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_026",
+          "word": "お父さん",
+          "kanji": "お父さん",
+          "reading": "おとうさん",
+          "romaji": "otousan",
+          "meaning": "Bố (của người khác hoặc dùng để gọi bố mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng để gọi bố mình trong nhà, hoặc nói về bố của người đối diện/người khác một cách tôn kính.",
+          "exampleJa": "田中さんのお父さんはお元気ですか。",
+          "exampleReading": "たなかさんのおとうさんはおげんきですか。",
+          "exampleRomaji": "Tanaka-san no otousan wa ogenki desu ka.",
+          "exampleVi": "Bác trai (bố bạn Tanaka) có khỏe không?",
+          "notes": "Trang trọng hơn có thể dùng 'お父様' (otousama).",
+          "synonyms": [
+            "父"
+          ],
+          "antonyms": [
+            "お母さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_027",
+          "word": "お母さん",
+          "kanji": "お母さん",
+          "reading": "おかあさん",
+          "romaji": "okaasan",
+          "meaning": "Mẹ (của người khác hoặc dùng để gọi mẹ mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng để gọi mẹ trong gia đình hoặc nói về mẹ của người khác.",
+          "exampleJa": "お母さんは優しいです。",
+          "exampleReading": "おかあさんはやさしいです。",
+          "exampleRomaji": "Okaasan wa yasashii desu.",
+          "exampleVi": "Mẹ (của bạn) thật hiền từ / Mẹ ơi, mẹ hiền quá.",
+          "notes": "Khi nói về mẹ của bản thân với người ngoài, phải hạ thấp và dùng '母' (haha).",
+          "synonyms": [
+            "母"
+          ],
+          "antonyms": [
+            "お父さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_028",
+          "word": "兄",
+          "kanji": "兄",
+          "reading": "あに",
+          "romaji": "ani",
+          "meaning": "Anh trai (của mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng khi giới thiệu hoặc nói về anh trai của mình với người ngoài.",
+          "exampleJa": "兄は東京に住んでいます。",
+          "exampleReading": "あにはとうきょうにすんでいます。",
+          "exampleRomaji": "Ani wa Toukyou ni sunde imasu.",
+          "exampleVi": "Anh trai tôi đang sống ở Tokyo.",
+          "notes": "Anh trai của người khác hoặc khi em gọi anh mình thì gọi là 'お兄さん' (oniisan).",
+          "synonyms": [],
+          "antonyms": [
+            "姉",
+            "弟",
+            "お兄さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_029",
+          "word": "姉",
+          "kanji": "姉",
+          "reading": "あね",
+          "romaji": "ane",
+          "meaning": "Chị gái (của mình)",
+          "wordType": "danh từ",
+          "usage": "Dùng khi nói về chị gái của bản thân với người ngoài.",
+          "exampleJa": "姉は英語を教えています。",
+          "exampleReading": "あねはえいごをおしえています。",
+          "exampleRomaji": "Ane wa Eigo o oshiete imasu.",
+          "exampleVi": "Chị gái tôi đang dạy tiếng Anh.",
+          "notes": "Chị gái người khác hoặc em gọi chị mình trong nhà thì dùng 'お姉さん' (oneesan).",
+          "synonyms": [],
+          "antonyms": [
+            "兄",
+            "妹",
+            "お姉さん"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_030",
+          "word": "弟",
+          "kanji": "弟",
+          "reading": "おとうと",
+          "romaji": "otouto",
+          "meaning": "Em trai",
+          "wordType": "danh từ",
+          "usage": "Chỉ em trai của mình. Với em trai người khác lịch sự thêm さん thành '弟さん' (otoutosan).",
+          "exampleJa": "弟は高校生です。",
+          "exampleReading": "おとうとはこうこうせいです。",
+          "exampleRomaji": "Otouto wa koukousei desu.",
+          "exampleVi": "Em trai tôi là học sinh cấp 3.",
+          "notes": "Chú ý trường âm: おとうと (âm と có う).",
+          "synonyms": [],
+          "antonyms": [
+            "兄",
+            "妹"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_031",
+          "word": "妹",
+          "kanji": "妹",
+          "reading": "いもうと",
+          "romaji": "imouto",
+          "meaning": "Em gái",
+          "wordType": "danh từ",
+          "usage": "Chỉ em gái của mình. Với em gái người khác lịch sự dùng '妹さん' (imoutosan).",
+          "exampleJa": "妹は音楽が好きです。",
+          "exampleReading": "いもうとはおんがくがすきです。",
+          "exampleRomaji": "Imouto wa ongaku ga suki desu.",
+          "exampleVi": "Em gái tôi rất thích âm nhạc.",
+          "notes": "Chú ý trường âm: いもうと (âm も có う).",
+          "synonyms": [],
+          "antonyms": [
+            "姉",
+            "弟"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_032",
+          "word": "子供",
+          "kanji": "子供",
+          "reading": "こども",
+          "romaji": "kodomo",
+          "meaning": "Con cái / Đứa trẻ",
+          "wordType": "danh từ",
+          "usage": "Chỉ trẻ em nói chung hoặc con cái trong gia đình. Của người khác dùng 'お子さん' (okosan).",
+          "exampleJa": "公園で子供たちが遊んでいます。",
+          "exampleReading": "こうえんでこどもたちがあそんでいます。",
+          "exampleRomaji": "Kouen de kodomotachi ga asonde imasu.",
+          "exampleVi": "Lũ trẻ đang chơi đùa ở công viên.",
+          "notes": "Chữ 供 là dạng ateji phổ biến, thường viết kanji cả hai chữ hoặc 子ども.",
+          "synonyms": [
+            "お子さん"
+          ],
+          "antonyms": [
+            "大人"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "name": "Số đếm",
+      "nameJa": "数字",
+      "words": [
+        {
+          "id": "n5_033",
+          "word": "一",
+          "kanji": "一",
+          "reading": "いち",
+          "romaji": "ichi",
+          "meaning": "Một (số 1)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 1. Dùng ghép trong các số lớn hơn hoặc đếm đồ vật.",
+          "exampleJa": "リンゴを一つ買いました。",
+          "exampleReading": "りんごをひとつかいました。",
+          "exampleRomaji": "Ringo o hitotsu kaimashita.",
+          "exampleVi": "Tôi đã mua một quả táo.",
+          "notes": "Khi đếm đồ vật chung dùng cách đọc thuần Nhật là ひとつ (hitotsu). Đếm người là ひとり (hitori).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_034",
+          "word": "二",
+          "kanji": "二",
+          "reading": "に",
+          "romaji": "ni",
+          "meaning": "Hai (số 2)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 2.",
+          "exampleJa": "本が二冊あります。",
+          "exampleReading": "ほんがにさつあります。",
+          "exampleRomaji": "Hon ga ni-satsu arimasu.",
+          "exampleVi": "Có hai quyển sách.",
+          "notes": "Đếm vật chung là ふたつ (futatsu), đếm 2 người là ふたり (futari), ngày mồng 2 là ふつか (futsuka).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_035",
+          "word": "三",
+          "kanji": "三",
+          "reading": "さん",
+          "romaji": "san",
+          "meaning": "Ba (số 3)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 3.",
+          "exampleJa": "鉛筆が三本あります。",
+          "exampleReading": "えんぴつがさんぼんあります。",
+          "exampleRomaji": "San-bon enpitsu ga arimasu.",
+          "exampleVi": "Có ba chiếc bút chì.",
+          "notes": "Đếm vật chung là みっつ (mittsu), ngày mồng 3 là みっか (mikka).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_036",
+          "word": "四",
+          "kanji": "四",
+          "reading": "よん / し",
+          "romaji": "yon / shi",
+          "meaning": "Bốn (số 4)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 4. Thường đọc là 'よん' (yon) để tránh đồng âm với chữ 'tử' (死 - shi).",
+          "exampleJa": "テーブルの上にみかんが四つあります。",
+          "exampleReading": "てーぶるのうえにみかんがよっつあります。",
+          "exampleRomaji": "Teeburu no ue ni mikan ga yottsu arimasu.",
+          "exampleVi": "Trên bàn có bốn quả quýt.",
+          "notes": "Đọc 'し' trong tháng 4 (しがつ - shigatsu). 4 giờ đọc là よじ (yoji). 4 người đọc là よにん (yonin).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_037",
+          "word": "五",
+          "kanji": "五",
+          "reading": "ご",
+          "romaji": "go",
+          "meaning": "Năm (số 5)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 5.",
+          "exampleJa": "テストで五十五点を取りました。",
+          "exampleReading": "てすとでごじゅうごてんをとりました。",
+          "exampleRomaji": "Tesuto de gojuugo-ten o torimashita.",
+          "exampleVi": "Tôi đạt được 55 điểm trong bài kiểm tra.",
+          "notes": "Đếm vật chung là いつつ (itsutsu), ngày mồng 5 là いつか (itsuka).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_038",
+          "word": "六",
+          "kanji": "六",
+          "reading": "ろく",
+          "romaji": "roku",
+          "meaning": "Sáu (số 6)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 6.",
+          "exampleJa": "毎日六時に起きます。",
+          "exampleReading": "まいにちろくじにおきます。",
+          "exampleRomaji": "Mainichi roku-ji ni okimasu.",
+          "exampleVi": "Tôi thức dậy lúc sáu giờ mỗi ngày.",
+          "notes": "Đếm vật chung là むっつ (muttsu), ngày mồng 6 là むいか (muika), 600 là ろっぴゃく (roppyaku - biến âm).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_039",
+          "word": "七",
+          "kanji": "七",
+          "reading": "なな / しち",
+          "romaji": "nana / shichi",
+          "meaning": "Bảy (số 7)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 7. Thường đọc là 'なな' (nana) để tránh nhầm với いち (ichi) khi nghe điện thoại.",
+          "exampleJa": "教室に椅子が七つあります。",
+          "exampleReading": "きょうしつにいすがななつあります。",
+          "exampleRomaji": "Kyoushitsu ni isu ga nanatsu arimasu.",
+          "exampleVi": "Trong phòng học có 7 chiếc ghế.",
+          "notes": "Đọc 'しち' trong tháng 7 (しちがつ - shichigatsu), 7 giờ (しちじ - shichiji). Ngày mồng 7 là なのか (nanoka).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_040",
+          "word": "八",
+          "kanji": "八",
+          "reading": "はち",
+          "romaji": "hachi",
+          "meaning": "Tám (số 8)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 8.",
+          "exampleJa": "八月はとても暑いです。",
+          "exampleReading": "はちがつはとてもあついです。",
+          "exampleRomaji": "Hachigatsu wa totemo atsui desu.",
+          "exampleVi": "Tháng tám rất nóng.",
+          "notes": "Đếm vật chung là やっつ (yattsu), ngày mồng 8 là ようか (youka), 800 là はっぴゃく (happyaku - biến âm).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_041",
+          "word": "九",
+          "kanji": "九",
+          "reading": "きゅう / く",
+          "romaji": "kyuu / ku",
+          "meaning": "Chín (số 9)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 9. Đọc là 'きゅう' (kyuu) phổ biến hơn do âm 'く' (ku) trùng với chữ khổ (苦 - đau khổ).",
+          "exampleJa": "会議は九時から始まります。",
+          "exampleReading": "かいぎはくじからはじまります。",
+          "exampleRomaji": "Kaigi wa ku-ji kara hajimarimasu.",
+          "exampleVi": "Cuộc họp bắt đầu từ 9 giờ.",
+          "notes": "Đọc 'く' trong 9 giờ (くじ - kuji), tháng 9 (くがつ - kugatsu). Đếm vật chung là ここのつ (kokonotsu), ngày mồng 9 là ここのか (kokonoka).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_042",
+          "word": "十",
+          "kanji": "十",
+          "reading": "じゅう",
+          "romaji": "juu",
+          "meaning": "Mười (số 10)",
+          "wordType": "số từ",
+          "usage": "Số đếm cơ bản số 10. Ghép thành hàng chục: 20 (にじゅう), 30 (さんじゅう)...",
+          "exampleJa": "この箱にペンが十本入っています。",
+          "exampleReading": "このはこにぺんがじゅっぽんはいっています。",
+          "exampleRomaji": "Kono hako ni pen ga juppon haitte imasu.",
+          "exampleVi": "Trong chiếc hộp này có chứa mười cây bút.",
+          "notes": "Đếm vật chung 10 cái là とお (too). Ngày mồng 10 là とおか (tooka). 10 phút đọc là じゅっぷん (juppun / jippun).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Thời gian",
+      "nameJa": "時間",
+      "words": [
+        {
+          "id": "n5_043",
+          "word": "今",
+          "kanji": "今",
+          "reading": "いま",
+          "romaji": "ima",
+          "meaning": "Bây giờ / Hiện tại",
+          "wordType": "danh từ / phó từ",
+          "usage": "Chỉ thời điểm hiện tại khi đang nói.",
+          "exampleJa": "今、何時ですか。",
+          "exampleReading": "いま、なんじですか。",
+          "exampleRomaji": "Ima, nanji desu ka.",
+          "exampleVi": "Bây giờ là mấy giờ rồi?",
+          "notes": "Khi ghép kanji: 今週 (こんしゅう - tuần này), 今年 (ことし - năm nay), 今日 (きょう - hôm nay).",
+          "synonyms": [
+            "現在"
+          ],
+          "antonyms": [
+            "昔"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_044",
+          "word": "今日",
+          "kanji": "今日",
+          "reading": "きょう",
+          "romaji": "kyou",
+          "meaning": "Hôm nay",
+          "wordType": "danh từ",
+          "usage": "Chỉ ngày hiện tại.",
+          "exampleJa": "今日は天気がいいです。",
+          "exampleReading": "きょうはてんきがいいです。",
+          "exampleRomaji": "Kyou wa tenki ga ii desu.",
+          "exampleVi": "Hôm nay thời tiết rất đẹp.",
+          "notes": "Chữ 今日 là cách đọc đặc biệt (jukujikun), không đọc theo âm on hay âm kun thông thường.",
+          "synonyms": [
+            "本日"
+          ],
+          "antonyms": [
+            "昨日",
+            "明日"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_045",
+          "word": "明日",
+          "kanji": "明日",
+          "reading": "あした",
+          "romaji": "ashita",
+          "meaning": "Ngày mai",
+          "wordType": "danh từ",
+          "usage": "Chỉ ngày tiếp theo sau ngày hôm nay.",
+          "exampleJa": "明日、友達と映画を見ます。",
+          "exampleReading": "あした、ともだちとえいがをみます。",
+          "exampleRomaji": "Ashita, tomodachi to eiga o mimasu.",
+          "exampleVi": "Ngày mai tôi sẽ xem phim với bạn.",
+          "notes": "Trong bối cảnh trang trọng có thể đọc là 'あす' (asu) hoặc 'みょうにち' (myounichi).",
+          "synonyms": [
+            "あす",
+            "みょうにち"
+          ],
+          "antonyms": [
+            "昨日"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_046",
+          "word": "昨日",
+          "kanji": "昨日",
+          "reading": "きのう",
+          "romaji": "kinou",
+          "meaning": "Hôm qua",
+          "wordType": "danh từ",
+          "usage": "Chỉ ngày trước ngày hôm nay. Đi với thì quá khứ (〜ました/〜た).",
+          "exampleJa": "昨日は家で勉強しました。",
+          "exampleReading": "きのうはいえでべんきょうしました。",
+          "exampleRomaji": "Kinou wa ie de benkyou shimashita.",
+          "exampleVi": "Hôm qua tôi đã học bài ở nhà.",
+          "notes": "Trong văn viết hoặc phát thanh trang trọng còn đọc là 'さくじつ' (sakujitsu).",
+          "synonyms": [
+            "さくじつ"
+          ],
+          "antonyms": [
+            "明日"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_047",
+          "word": "朝",
+          "kanji": "朝",
+          "reading": "あさ",
+          "romaji": "asa",
+          "meaning": "Buổi sáng",
+          "wordType": "danh từ",
+          "usage": "Chỉ khoảng thời gian buổi sáng (từ lúc bình minh đến trưa).",
+          "exampleJa": "毎朝、コーヒーを飲みます。",
+          "exampleReading": "まいあさ、こーひーをのみます。",
+          "exampleRomaji": "Maiasa, koohii o nomimasu.",
+          "exampleVi": "Mỗi buổi sáng tôi đều uống cà phê.",
+          "notes": "Bữa sáng gọi là 朝ご飯 (あさごはん - asagohan).",
+          "synonyms": [
+            "午前"
+          ],
+          "antonyms": [
+            "夜",
+            "晩"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_048",
+          "word": "昼",
+          "kanji": "昼",
+          "reading": "ひる",
+          "romaji": "hiru",
+          "meaning": "Buổi trưa / Ban ngày",
+          "wordType": "danh từ",
+          "usage": "Chỉ buổi trưa (khoảng 11h - 13h) hoặc khoảng thời gian ban ngày khi có ánh mặt trời.",
+          "exampleJa": "お昼ご飯を一緒に食べましょう。",
+          "exampleReading": "おひるごはんをいっしょにたべましょう。",
+          "exampleRomaji": "Ohirugohan o issho ni tabemashou.",
+          "exampleVi": "Chúng ta cùng ăn trưa nhé.",
+          "notes": "Nghỉ trưa là 昼休み (ひるやすみ - hiruyasumi).",
+          "synonyms": [
+            "日中"
+          ],
+          "antonyms": [
+            "夜"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_049",
+          "word": "夜",
+          "kanji": "夜",
+          "reading": "よる",
+          "romaji": "yoru",
+          "meaning": "Buổi tối / Ban đêm",
+          "wordType": "danh từ",
+          "usage": "Chỉ khoảng thời gian từ lúc trời tối hẳn cho tới đêm khuya.",
+          "exampleJa": "夜十一時に寝ます。",
+          "exampleReading": "よるじゅういちじにねます。",
+          "exampleRomaji": "Yoru juuichi-ji ni nemasu.",
+          "exampleVi": "Tôi đi ngủ lúc 11 giờ đêm.",
+          "notes": "Phân biệt với 晩 (ばん - ban): ばん thường chỉ buổi tối muộn trước khi ngủ, よる bao gồm cả đêm khuya tối mịt.",
+          "synonyms": [
+            "晩"
+          ],
+          "antonyms": [
+            "朝",
+            "昼"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_050",
+          "word": "毎日",
+          "kanji": "毎日",
+          "reading": "まいにち",
+          "romaji": "mainichi",
+          "meaning": "Mỗi ngày / Hàng ngày",
+          "wordType": "danh từ / phó từ",
+          "usage": "Dùng để diễn tả thói quen hoặc sự việc diễn ra hàng ngày.",
+          "exampleJa": "毎日、日本語を練習します。",
+          "exampleReading": "まいにち、にほんごをれんしゅうします。",
+          "exampleRomaji": "Mainichi, Nihongo o renshuu shimasu.",
+          "exampleVi": "Mỗi ngày tôi đều luyện tập tiếng Nhật.",
+          "notes": "Là phó từ nên thường đứng trực tiếp trước vị ngữ không cần trợ từ に.",
+          "synonyms": [
+            "日々"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_051",
+          "word": "いつ",
+          "kanji": "何時",
+          "reading": "いつ",
+          "romaji": "itsu",
+          "meaning": "Khi nào / Bao giờ",
+          "wordType": "đại từ nghi vấn",
+          "usage": "Từ để hỏi về thời gian. Thường đứng không cần trợ từ に theo sau.",
+          "exampleJa": "日本へいつ行きますか。",
+          "exampleReading": "にほんへいついきますか。",
+          "exampleRomaji": "Nihon e itsu ikimasu ka.",
+          "exampleVi": "Khi nào bạn đi Nhật Bản vậy?",
+          "notes": "Khác với 何時 (なんじ - mấy giờ), いつ hỏi chung chung về thời điểm (ngày, tháng, năm hoặc lúc nào).",
+          "synonyms": [
+            "何時"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_052",
+          "word": "午前",
+          "kanji": "午前",
+          "reading": "ごぜん",
+          "romaji": "gozen",
+          "meaning": "Buổi sáng (AM / trước 12h trưa)",
+          "wordType": "danh từ",
+          "usage": "Chỉ nửa ngày đầu tiên từ 0:00 đến 12:00 trưa.",
+          "exampleJa": "午前九時に学校へ行きます。",
+          "exampleReading": "ごぜんくじにがっこうへいきます。",
+          "exampleRomaji": "Gozen ku-ji ni gakkou e ikimasu.",
+          "exampleVi": "Tôi đi học lúc 9 giờ sáng.",
+          "notes": "Đặt trước số giờ: 午前＋số giờ (ví dụ: 午前8時 = 8:00 AM).",
+          "synonyms": [],
+          "antonyms": [
+            "午後"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_053",
+          "word": "午後",
+          "kanji": "午後",
+          "reading": "ごご",
+          "romaji": "gogo",
+          "meaning": "Buổi chiều / Buổi tối (PM / sau 12h trưa)",
+          "wordType": "danh từ",
+          "usage": "Chỉ khoảng thời gian từ 12:00 trưa đến 24:00 đêm.",
+          "exampleJa": "午後二時から会議があります。",
+          "exampleReading": "ごごにじからかいぎがあります。",
+          "exampleRomaji": "Gogo ni-ji kara kaigi ga arimasu.",
+          "exampleVi": "Có cuộc họp từ 2 giờ chiều.",
+          "notes": "Đặt trước số giờ: 午後＋số giờ (ví dụ: 午後3時 = 3:00 PM).",
+          "synonyms": [],
+          "antonyms": [
+            "午前"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "basic_verbs",
+      "name": "Động từ cơ bản",
+      "nameJa": "基本の動詞",
+      "words": [
+        {
+          "id": "n5_054",
+          "word": "食べる",
+          "kanji": "食べる",
+          "reading": "たべる",
+          "romaji": "taberu",
+          "meaning": "Ăn",
+          "wordType": "động từ nhóm 2",
+          "usage": "Dùng để chỉ hành động ăn thực phẩm. Đi với tân ngữ qua trợ từ を.",
+          "exampleJa": "朝ご飯にパンを食べます。",
+          "exampleReading": "あさごはんにぱんをたべます。",
+          "exampleRomaji": "Asagohan ni pan o tabemasu.",
+          "exampleVi": "Tôi ăn bánh mì vào bữa sáng.",
+          "notes": "Thể lịch sự là 食べます (tabemasu). Thể quá khứ là 食べました (tabemashita).",
+          "synonyms": [
+            "いただく"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_055",
+          "word": "飲む",
+          "kanji": "飲む",
+          "reading": "のむ",
+          "romaji": "nomu",
+          "meaning": "Uống (hoặc uống thuốc)",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ việc uống nước, đồ uống, và cả việc 'uống thuốc' (薬を飲む).",
+          "exampleJa": "水をもっと飲みましょう。",
+          "exampleReading": "みずをもっとのみましょう。",
+          "exampleRomaji": "Mizu o motto nomimashou.",
+          "exampleVi": "Hãy uống thêm nhiều nước nhé.",
+          "notes": "Trong tiếng Nhật, uống thuốc dùng 飲む chứ không dùng 食べる.",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_056",
+          "word": "見る",
+          "kanji": "見る",
+          "reading": "みる",
+          "romaji": "miru",
+          "meaning": "Xem / Nhìn / Thấy",
+          "wordType": "động từ nhóm 2",
+          "usage": "Chỉ hành động dùng mắt để quan sát, nhìn hoặc xem (phim, tivi, tranh).",
+          "exampleJa": "テレビでニュースを見ました。",
+          "exampleReading": "てれびでにゅーすをみました。",
+          "exampleRomaji": "Terebi de nyuusu o mimashita.",
+          "exampleVi": "Tôi đã xem tin tức trên tivi.",
+          "notes": "Thể lịch sự: 見ます (mimasu). Phân biệt với 観る (xem biểu diễn, kịch) và 診る (khám bệnh).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_057",
+          "word": "聞く",
+          "kanji": "聞く",
+          "reading": "きく",
+          "romaji": "kiku",
+          "meaning": "Nghe / Lắng nghe / Hỏi",
+          "wordType": "động từ nhóm 1",
+          "usage": "Dùng với nghĩa nghe (âm thanh, âm nhạc) hoặc hỏi (hỏi đường, hỏi giáo viên: 先生に聞く).",
+          "exampleJa": "音楽を聞きながら勉強します。",
+          "exampleReading": "おんがくをききながらべんきょうします。",
+          "exampleRomaji": "Ongaku o kikinagara benkyou shimasu.",
+          "exampleVi": "Tôi vừa nghe nhạc vừa học bài.",
+          "notes": "Chú ý hai nghĩa khác biệt: 'nghe' (nghe nhạc) và 'hỏi' (hỏi người khác [người + に聞く]).",
+          "synonyms": [
+            "訊く"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_058",
+          "word": "読む",
+          "kanji": "読む",
+          "reading": "よむ",
+          "romaji": "yomu",
+          "meaning": "Đọc",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ hành động đọc chữ, sách, báo, truyện tranh...",
+          "exampleJa": "図書館で日本の本を読みます。",
+          "exampleReading": "としょかんでにほんのほんをよみます。",
+          "exampleRomaji": "Toshokan de Nihon no hon o yomimasu.",
+          "exampleVi": "Tôi đọc sách tiếng Nhật ở thư viện.",
+          "notes": "Thể lịch sự: 読みます (yomimasu). Thể Te: 読んで (yonde).",
+          "synonyms": [],
+          "antonyms": [
+            "書く"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_059",
+          "word": "書く",
+          "kanji": "書く",
+          "reading": "かく",
+          "romaji": "kaku",
+          "meaning": "Viết / Vẽ",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ hành động viết chữ, viết thư, ghi chép hoặc vẽ tranh (vẽ tranh thường viết kanji 描く).",
+          "exampleJa": "ノートに漢字を書きます。",
+          "exampleReading": "のーとにかんじをかきます。",
+          "exampleRomaji": "Nooto ni Kanji o kakimasu.",
+          "exampleVi": "Tôi viết chữ Hán vào vở.",
+          "notes": "Thể Te: 書いて (kaite). Đồng âm với 描く (vẽ), 掻く (gãi).",
+          "synonyms": [],
+          "antonyms": [
+            "読む"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_060",
+          "word": "話す",
+          "kanji": "話す",
+          "reading": "はなす",
+          "romaji": "hanasu",
+          "meaning": "Nói chuyện / Trò chuyện / Nói (một thứ tiếng)",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ hành động đối thoại, trao đổi thông tin bằng lời nói hoặc nói một ngôn ngữ nào đó.",
+          "exampleJa": "日本語でゆっくり話してください。",
+          "exampleReading": "にほんごでゆっくりはなしてください。",
+          "exampleRomaji": "Nihongo de yukkuri hanashite kudasai.",
+          "exampleVi": "Xin hãy nói chậm rãi bằng tiếng Nhật.",
+          "notes": "Phân biệt với 言う (iu - nói ra một từ/câu) và 喋る (shaberu - tán gẫu).",
+          "synonyms": [
+            "喋る"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_061",
+          "word": "行く",
+          "kanji": "行く",
+          "reading": "いく",
+          "romaji": "iku",
+          "meaning": "Đi (rời xa vị trí người nói để tới nơi khác)",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ sự di chuyển hướng ra xa khỏi người nói. Đi với trợ từ へ (e) hoặc に (ni).",
+          "exampleJa": "自転車でスーパーへ行きます。",
+          "exampleReading": "じてんしゃですーぱーへいきます。",
+          "exampleRomaji": "Jitensha de suupaa e ikimasu.",
+          "exampleVi": "Tôi đi đến siêu thị bằng xe đạp.",
+          "notes": "Biến âm đặc biệt ở thể Te: 行って (itte, không phải iite). Có khi đọc là ゆく (yuku) trong thơ ca nhạc hoạ.",
+          "synonyms": [],
+          "antonyms": [
+            "来る",
+            "帰る"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_062",
+          "word": "来る",
+          "kanji": "来る",
+          "reading": "くる",
+          "romaji": "kuru",
+          "meaning": "Đến / Tới (hướng về phía người nói)",
+          "wordType": "động từ nhóm 3",
+          "usage": "Chỉ hành động di chuyển hướng về phía vị trí của người nói.",
+          "exampleJa": "明日、私の家へ来てください。",
+          "exampleReading": "あした、わたしのいえへきてください。",
+          "exampleRomaji": "Ashita, watashi no ie e kite kudasai.",
+          "exampleVi": "Ngày mai, bạn hãy đến nhà tôi chơi nhé.",
+          "notes": "Động từ bất quy tắc nhóm 3: Thể Masu là きます (kimasu), thể Te là きて (kite), thể Nai là こない (konai).",
+          "synonyms": [],
+          "antonyms": [
+            "行く"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_063",
+          "word": "帰る",
+          "kanji": "帰る",
+          "reading": "かえる",
+          "romaji": "kaeru",
+          "meaning": "Về / Trở về (nhà, quê hương, đất nước mình)",
+          "wordType": "động từ nhóm 1",
+          "usage": "Chỉ việc trở về nơi chốn gốc gác, tổ ấm của bản thân (nhà, ký túc xá, nước mình).",
+          "exampleJa": "午後六時にうちへ帰ります。",
+          "exampleReading": "ごごろくじにうちへかえります。",
+          "exampleRomaji": "Gogo roku-ji ni uchi e kaerimasu.",
+          "exampleVi": "Tôi về nhà lúc 6 giờ chiều.",
+          "notes": "Dù có đuôi là える nhưng là động từ nhóm 1 (Godan), chia thể Te là 帰って (kaette), thể Masu là 帰ります (kaerimasu).",
+          "synonyms": [
+            "戻る"
+          ],
+          "antonyms": [
+            "行く",
+            "出る"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_064",
+          "word": "する",
+          "kanji": null,
+          "reading": "する",
+          "romaji": "suru",
+          "meaning": "Làm / Chơi (thể thao) / Đeo (phụ kiện)",
+          "wordType": "động từ nhóm 3",
+          "usage": "Động từ đa năng: làm bài tập (宿題をする), chơi bóng đá (サッカーをする), kết hợp với danh từ Hán tạo động từ (勉強する).",
+          "exampleJa": "日曜日によくスポーツをします。",
+          "exampleReading": "にちようびによくすぽーつをします。",
+          "exampleRomaji": "Nichiyoubi ni yoku supootsu o shimasu.",
+          "exampleVi": "Tôi thường chơi thể thao vào chủ nhật.",
+          "notes": "Động từ bất quy tắc nhóm 3: thể Masu là します (shimasu), thể Te là して (shite), thể Nai là しない (shinai).",
+          "synonyms": [
+            "やる",
+            "行う"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_065",
+          "word": "寝る",
+          "kanji": "寝る",
+          "reading": "ねる",
+          "romaji": "neru",
+          "meaning": "Ngủ / Đi ngủ / Nằm xuống",
+          "wordType": "động từ nhóm 2",
+          "usage": "Chỉ hành động lên giường đi ngủ hoặc nằm nghỉ ngơi.",
+          "exampleJa": "昨日は早く寝ました。",
+          "exampleReading": "きのうははやくねました。",
+          "exampleRomaji": "Kinou wa hayaku nemashita.",
+          "exampleVi": "Hôm qua tôi đã đi ngủ sớm.",
+          "notes": "Thể lịch sự: 寝ます (nemasu). Phân biệt với 眠る (nemuru - chìm vào giấc ngủ sâu).",
+          "synonyms": [
+            "眠る"
+          ],
+          "antonyms": [
+            "起きる"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "basic_adjectives",
+      "name": "Tính từ cơ bản",
+      "nameJa": "基本の形容詞",
+      "words": [
+        {
+          "id": "n5_066",
+          "word": "大きい",
+          "kanji": "大きい",
+          "reading": "おおきい",
+          "romaji": "ookii",
+          "meaning": "To / Lớn",
+          "wordType": "tính từ đuôi い",
+          "usage": "Dùng để miêu tả kích thước, kích cỡ to lớn của người, sự vật hoặc không gian.",
+          "exampleJa": "あの大きな犬は誰のですか。",
+          "exampleReading": "あのおおきいぬはだれのですか。",
+          "exampleRomaji": "Ano ookii inu wa dare no desu ka.",
+          "exampleVi": "Con chó to lớn kia là của ai vậy?",
+          "notes": "Phủ định là 大きくない (ookikunai). Còn có dạng liên thể từ 大きな (ookina + N).",
+          "synonyms": [
+            "でかい"
+          ],
+          "antonyms": [
+            "小さい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_067",
+          "word": "小さい",
+          "kanji": "小さい",
+          "reading": "ちいさい",
+          "romaji": "chiisai",
+          "meaning": "Nhỏ / Bé",
+          "wordType": "tính từ đuôi い",
+          "usage": "Dùng để miêu tả kích thước nhỏ bé, tầm vóc bé của người hoặc vật.",
+          "exampleJa": "この部屋は少し小さいです。",
+          "exampleReading": "このへやはすこしちいさいです。",
+          "exampleRomaji": "Kono heya wa sukoshi chiisai desu.",
+          "exampleVi": "Căn phòng này hơi nhỏ một chút.",
+          "notes": "Phủ định là 小さくない (chiisaikunai). Dạng liên thể từ: 小さな (chiisana + N).",
+          "synonyms": [],
+          "antonyms": [
+            "大きい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_068",
+          "word": "高い",
+          "kanji": "高い",
+          "reading": "たかい",
+          "romaji": "takai",
+          "meaning": "Cao (chiều cao) / Đắt (giá cả)",
+          "wordType": "tính từ đuôi い",
+          "usage": "Mang hai nghĩa thông dụng: chiều cao (núi cao, tòa nhà cao, người cao) hoặc giá cả đắt đỏ.",
+          "exampleJa": "このカメラは高すぎます。",
+          "exampleReading": "このかめらはたかすぎます。",
+          "exampleRomaji": "Kono kamera wa takasugimasu.",
+          "exampleVi": "Chiếc máy ảnh này đắt quá.",
+          "notes": "Trái nghĩa với chiều cao là 低い (hikui - thấp), trái nghĩa với giá cả là 安い (yasui - rẻ).",
+          "synonyms": [],
+          "antonyms": [
+            "安い",
+            "低い"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_069",
+          "word": "安い",
+          "kanji": "安い",
+          "reading": "やすい",
+          "romaji": "yasui",
+          "meaning": "Rẻ (giá cả)",
+          "wordType": "tính từ đuôi い",
+          "usage": "Chỉ mức giá thấp, phải chăng, tiết kiệm tiền.",
+          "exampleJa": "この店の果物は安くて新鮮です。",
+          "exampleReading": "このみせのくだものはやすくてしんせんです。",
+          "exampleRomaji": "Kono mise no kudamono wa yasukute shinsen desu.",
+          "exampleVi": "Hoa quả ở cửa hàng này vừa rẻ vừa tươi.",
+          "notes": "Phủ định: 安くない (yasukunai). Chữ Hán 安 còn xuất hiện trong 安心 (yên tâm), 安全 (an toàn).",
+          "synonyms": [],
+          "antonyms": [
+            "高い"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_070",
+          "word": "新しい",
+          "kanji": "新しい",
+          "reading": "あたらしい",
+          "romaji": "atarashii",
+          "meaning": "Mới",
+          "wordType": "tính từ đuôi い",
+          "usage": "Chỉ đồ vật mới mua, thông tin mới, sự việc vừa mới xuất hiện.",
+          "exampleJa": "新しい靴を買いました。",
+          "exampleReading": "あたらしいくつをかいました。",
+          "exampleRomaji": "Atarashii kutsu o kaimashita.",
+          "exampleVi": "Tôi đã mua một đôi giày mới.",
+          "notes": "Phủ định: 新しくない (atarashikunai). Quá khứ: 新しかった (atarashikatta).",
+          "synonyms": [],
+          "antonyms": [
+            "古い"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_071",
+          "word": "古い",
+          "kanji": "古い",
+          "reading": "ふるい",
+          "romaji": "furui",
+          "meaning": "Cũ / Cổ kính",
+          "wordType": "tính từ đuôi い",
+          "usage": "Chỉ đồ vật, phong tục, địa điểm đã qua thời gian dài, không còn mới.",
+          "exampleJa": "京都には古いお寺がたくさんあります。",
+          "exampleReading": "きょうとにはふるいおてらがたくさんあります。",
+          "exampleRomaji": "Kyouto ni wa furui otera ga takusan arimasu.",
+          "exampleVi": "Ở Kyoto có rất nhiều ngôi chùa cổ kính.",
+          "notes": "Chỉ dùng cho đồ vật, địa danh, kiến trúc. KHÔNG dùng 古い để tả người già (người già dùng 年寄り hoặc お年寄り).",
+          "synonyms": [],
+          "antonyms": [
+            "新しい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_072",
+          "word": "いい",
+          "kanji": "良い",
+          "reading": "いい / よい",
+          "romaji": "ii / yoi",
+          "meaning": "Tốt / Hay / Đẹp / Được",
+          "wordType": "tính từ đuôi い",
+          "usage": "Tính từ cực kỳ thông dụng chỉ chất lượng tốt, phù hợp, thời tiết đẹp...",
+          "exampleJa": "今日は天気がとてもいいですね。",
+          "exampleReading": "きょうはてんきがとてもいいですね。",
+          "exampleRomaji": "Kyou wa tenki ga totemo ii desu ne.",
+          "exampleVi": "Hôm nay thời tiết rất đẹp nhỉ.",
+          "notes": "Ở thể từ điển dùng いい hoặc よい, nhưng khi chia thể BẮT BUỘC dùng gốc よい: よくない (phủ định), よかった (quá khứ), よくて (thể Te).",
+          "synonyms": [
+            "良好"
+          ],
+          "antonyms": [
+            "悪い"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_073",
+          "word": "悪い",
+          "kanji": "悪い",
+          "reading": "わるい",
+          "romaji": "warui",
+          "meaning": "Xấu / Tồi tệ / Không tốt / Có lỗi",
+          "wordType": "tính từ đuôi い",
+          "usage": "Chỉ chất lượng xấu, hành vi xấu, tâm trạng tồi tệ, hoặc nói 'tôi có lỗi/ngại quá'.",
+          "exampleJa": "気分が悪いです。",
+          "exampleReading": "きぶんがわるいです。",
+          "exampleRomaji": "Kibun ga warui desu.",
+          "exampleVi": "Tôi cảm thấy trong người khó chịu / mệt mỏi.",
+          "notes": "Phủ định: 悪くない (warukunai - không tồi, khá ổn). Trong khẩu ngữ bạn bè, '悪いね' dùng như lời xin lỗi nhẹ nhàng.",
+          "synonyms": [],
+          "antonyms": [
+            "いい",
+            "よい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_074",
+          "word": "美味しい",
+          "kanji": "美味しい",
+          "reading": "おいしい",
+          "romaji": "oishii",
+          "meaning": "Ngon (món ăn, đồ uống)",
+          "wordType": "tính từ đuôi い",
+          "usage": "Khen món ăn hoặc đồ uống có hương vị thơm ngon.",
+          "exampleJa": "日本のラーメンはとても美味しいです。",
+          "exampleReading": "にほんのらーめんはとてもおいしいです。",
+          "exampleRomaji": "Nihon no raamen wa totemo oishii desu.",
+          "exampleVi": "Mì ramen của Nhật Bản rất ngon.",
+          "notes": "Nam giới khi thân mật thường dùng うまい (umai). Phủ định: 美味しくない (oishikunai).",
+          "synonyms": [
+            "うまい"
+          ],
+          "antonyms": [
+            "まずい"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_075",
+          "word": "楽しい",
+          "kanji": "楽しい",
+          "reading": "たのしい",
+          "romaji": "tanoshii",
+          "meaning": "Vui vẻ / Thú vị / Vui tươi",
+          "wordType": "tính từ đuôi い",
+          "usage": "Miêu tả cảm xúc vui sướng, một trải nghiệm hay hoạt động mang lại niềm vui.",
+          "exampleJa": "日本語の勉強はとても楽しいです。",
+          "exampleReading": "にほんごのべんきょうはとてもたのしいです。",
+          "exampleRomaji": "Nihongo no benkyou wa totemo tanoshii desu.",
+          "exampleVi": "Học tiếng Nhật rất vui và thú vị.",
+          "notes": "Phân biệt với 面白い (omoshiroi - thú vị, buồn cười, lôi cuốn): 楽しい nhấn mạnh vào niềm vui, sự sảng khoái của bản thân.",
+          "synonyms": [
+            "面白い"
+          ],
+          "antonyms": [
+            "つまらない"
+          ],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "places",
+      "name": "Nơi chốn",
+      "nameJa": "場所",
+      "words": [
+        {
+          "id": "n5_076",
+          "word": "学校",
+          "kanji": "学校",
+          "reading": "がっこう",
+          "romaji": "gakkou",
+          "meaning": "Trường học",
+          "wordType": "danh từ",
+          "usage": "Chỉ nơi học tập, trường học nói chung từ tiểu học tới đại học.",
+          "exampleJa": "毎朝八時に学校へ行きます。",
+          "exampleReading": "まいあさはちじにがっこうへいきます。",
+          "exampleRomaji": "Maiasa hachi-ji ni gakkou e ikimasu.",
+          "exampleVi": "Mỗi sáng tôi đến trường lúc 8 giờ.",
+          "notes": "Âm ngắt: がっこう (gak-kou, có sokuon っ và trường âm う).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_077",
+          "word": "駅",
+          "kanji": "駅",
+          "reading": "えき",
+          "romaji": "eki",
+          "meaning": "Nhà ga / Ga tàu",
+          "wordType": "danh từ",
+          "usage": "Nơi tàu điện, tàu hỏa dừng đón trả khách. Rất quan trọng trong đời sống Nhật Bản.",
+          "exampleJa": "駅の前で友達を待ちます。",
+          "exampleReading": "えきのまえでともだちをまちます。",
+          "exampleRomaji": "Eki no mae de tomodachi o machimasu.",
+          "exampleVi": "Tôi đợi bạn ở trước cửa nhà ga.",
+          "notes": "Nhân viên nhà ga gọi là 駅員 (えきいん - ekiin). Trước ga tàu gọi là 駅前 (えきまえ - ekimae).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_078",
+          "word": "病院",
+          "kanji": "病院",
+          "reading": "びょういん",
+          "romaji": "byouin",
+          "meaning": "Bệnh viện",
+          "wordType": "danh từ",
+          "usage": "Cơ sở y tế khám chữa bệnh cho người.",
+          "exampleJa": "熱があるので、病院へ行きます。",
+          "exampleReading": "ねつがあるので、びょういんへいきます。",
+          "exampleRomaji": "Netsu ga aru node, byouin e ikimasu.",
+          "exampleVi": "Vì bị sốt nên tôi sẽ đi bệnh viện.",
+          "notes": "Rất dễ nhầm phát âm với 美容院 (びよういん - biyouin: tiệm làm tóc, thẩm mỹ viện). 病院 có âm ghép 'byou', 美容院 phát âm riêng 'bi-you'.",
+          "synonyms": [
+            "医院",
+            "クリニック"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_079",
+          "word": "銀行",
+          "kanji": "銀行",
+          "reading": "ぎんこう",
+          "romaji": "ginkou",
+          "meaning": "Ngân hàng",
+          "wordType": "danh từ",
+          "usage": "Tổ chức tài chính nơi gửi tiền, chuyển khoản, rút tiền.",
+          "exampleJa": "銀行でお金を下ろします。",
+          "exampleReading": "ぎんこうでおかねをおろします。",
+          "exampleRomaji": "Ginkou de okane o oroshimasu.",
+          "exampleVi": "Tôi rút tiền ở ngân hàng.",
+          "notes": "Nhân viên ngân hàng gọi là 銀行員 (ぎんこういん - ginkouin).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_080",
+          "word": "郵便局",
+          "kanji": "郵便局",
+          "reading": "ゆうびんきょく",
+          "romaji": "yuubinkyoku",
+          "meaning": "Bưu điện",
+          "wordType": "danh từ",
+          "usage": "Nơi gửi thư từ, bưu phẩm, mua tem thư hoặc sử dụng dịch vụ bưu chính.",
+          "exampleJa": "郵便局で切手を買いました。",
+          "exampleReading": "ゆうびんきょくできってをかいました。",
+          "exampleRomaji": "Yuubinkyoku de kitte o kaimashita.",
+          "exampleVi": "Tôi đã mua tem ở bưu điện.",
+          "notes": "Biểu tượng bưu điện Nhật Bản là ký hiệu 〒 (chữ Te cách điệu).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_081",
+          "word": "図書館",
+          "kanji": "図書館",
+          "reading": "としょかん",
+          "romaji": "toshokan",
+          "meaning": "Thư viện",
+          "wordType": "danh từ",
+          "usage": "Nơi lưu giữ, cho mượn sách báo và là không gian tự học yên tĩnh.",
+          "exampleJa": "図書館は静かで勉強しやすいです。",
+          "exampleReading": "としょかんはしずかでべんきょうしやすいです。",
+          "exampleRomaji": "Toshokan wa shizuka de benkyoushiyasui desu.",
+          "exampleVi": "Thư viện rất yên tĩnh và dễ học bài.",
+          "notes": "Kanji gồm Đồ (図), Thư (書), Quán (館).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_082",
+          "word": "部屋",
+          "kanji": "部屋",
+          "reading": "へや",
+          "romaji": "heya",
+          "meaning": "Căn phòng",
+          "wordType": "danh từ",
+          "usage": "Chỉ phòng ốc trong một ngôi nhà, căn hộ hay khách sạn.",
+          "exampleJa": "私の部屋は二階にあります。",
+          "exampleReading": "わたしのへやはにかいにあります。",
+          "exampleRomaji": "Watashi no heya wa nikai ni arimasu.",
+          "exampleVi": "Phòng của tôi nằm ở tầng hai.",
+          "notes": "Dọn dẹp phòng là 部屋を掃除する (へやをそうじする - heya o souji suru).",
+          "synonyms": [
+            "室"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_083",
+          "word": "家",
+          "kanji": "家",
+          "reading": "うち / いえ",
+          "romaji": "uchi / ie",
+          "meaning": "Nhà / Mái ấm / Gia đình",
+          "wordType": "danh từ",
+          "usage": "Chỉ ngôi nhà vật chất (いえ) hoặc tổ ấm, gia đình, nhà của mình (うち).",
+          "exampleJa": "早く家へ帰りたいです。",
+          "exampleReading": "はやくいえへかえりたいです。",
+          "exampleRomaji": "Hayaku ie e kaeritai desu.",
+          "exampleVi": "Tôi muốn về nhà sớm.",
+          "notes": "Thường dùng 'うち' khi nói về nhà mình trong giao tiếp thân mật, 'いえ' chỉ công trình kiến trúc ngôi nhà.",
+          "synonyms": [
+            "自宅"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_084",
+          "word": "教室",
+          "kanji": "教室",
+          "reading": "きょうしつ",
+          "romaji": "kyoushitsu",
+          "meaning": "Phòng học / Lớp học",
+          "wordType": "danh từ",
+          "usage": "Căn phòng dùng để giảng dạy và học tập trong trường học hoặc trung tâm.",
+          "exampleJa": "休み時間に教室を出ます。",
+          "exampleReading": "やすみじかんにきょうしつをでます。",
+          "exampleRomaji": "Yasumijikan ni kyoushitsu o demasu.",
+          "exampleVi": "Vào giờ giải lao tôi ra khỏi phòng học.",
+          "notes": "Ngoài ra còn có thể dùng để chỉ 'lớp học năng khiếu' như 料理教室 (lớp dạy nấu ăn), ピアノ教室 (lớp dạy piano).",
+          "synonyms": [],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        },
+        {
+          "id": "n5_085",
+          "word": "レストラン",
+          "kanji": null,
+          "reading": "レストラン",
+          "romaji": "resutoran",
+          "meaning": "Nhà hàng / Quán ăn phong cách phương Tây",
+          "wordType": "danh từ",
+          "usage": "Từ vay mượn tiếng Anh (restaurant) chỉ nhà hàng phục vụ các món ăn (đặc biệt là đồ Âu hoặc nhà hàng sang trọng).",
+          "exampleJa": "家族と一緒にレストランで食事をしました。",
+          "exampleReading": "かぞくといっしょにれすとらんでしょくじをしました。",
+          "exampleRomaji": "Kazoku to issho ni resutoran de shokuji o shimashita.",
+          "exampleVi": "Tôi đã đi dùng bữa tại nhà hàng cùng với gia đình.",
+          "notes": "Quán ăn bình dân kiểu Nhật thường gọi là 食堂 (しょくどう - shokudou) hoặc 居酒屋 (いざかや - izakaya).",
+          "synonyms": [
+            "食堂",
+            "飲食店"
+          ],
+          "antonyms": [],
+          "level": "N5",
+          "verificationStatus": "verified"
+        }
+      ]
+    }
+  ]
+}

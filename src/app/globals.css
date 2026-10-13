@@ -1,26 +1,332 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *, .dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --primary: #dc2626;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #1c1917;
+  --accent: #292524;
+  --accent-foreground: #fafaf9;
+  --muted: #e7e5e4;
+  --muted-foreground: #78716c;
+  --border: #e7e5e4;
+  --ring: #dc2626;
+  --success: #16a34a;
+  --warning: #ea580c;
+  --error: #dc2626;
+  --info: #2563eb;
+  --sakura: #f9a8d4;
+  --indigo-jp: #4f46e5;
+}
+
+:root[data-theme="light"],
+html.light {
+  color-scheme: light;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --primary: #dc2626;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #1c1917;
+  --accent: #292524;
+  --accent-foreground: #fafaf9;
+  --muted: #e7e5e4;
+  --muted-foreground: #78716c;
+  --border: #e7e5e4;
+  --ring: #dc2626;
+  --success: #16a34a;
+  --warning: #ea580c;
+  --error: #dc2626;
+  --info: #2563eb;
+  --sakura: #f9a8d4;
+  --indigo-jp: #4f46e5;
+}
+
+:root[data-theme="dark"],
+html.dark {
+  color-scheme: dark;
+  --background: #0c0a09;
+  --foreground: #f5f5f4;
+  --card: #181513;
+  --card-foreground: #f5f5f4;
+  --primary: #ef4444;
+  --primary-foreground: #ffffff;
+  --secondary: #24201d;
+  --secondary-foreground: #f5f5f4;
+  --accent: #292524;
+  --accent-foreground: #fafaf9;
+  --muted: #24201d;
+  --muted-foreground: #a8a29e;
+  --border: #383431;
+  --ring: #ef4444;
+  --success: #22c55e;
+  --warning: #f97316;
+  --error: #ef4444;
+  --info: #3b82f6;
+  --sakura: #be185d;
+  --indigo-jp: #6366f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.light) {
+    color-scheme: dark;
+    --background: #0c0a09;
+    --foreground: #f5f5f4;
+    --card: #181513;
+    --card-foreground: #f5f5f4;
+    --primary: #ef4444;
+    --primary-foreground: #ffffff;
+    --secondary: #24201d;
+    --secondary-foreground: #f5f5f4;
+    --accent: #292524;
+    --accent-foreground: #fafaf9;
+    --muted: #24201d;
+    --muted-foreground: #a8a29e;
+    --border: #383431;
+    --ring: #ef4444;
+    --success: #22c55e;
+    --warning: #f97316;
+    --error: #ef4444;
+    --info: #3b82f6;
+    --sakura: #be185d;
+    --indigo-jp: #6366f1;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-sakura: var(--sakura);
+  --color-indigo-jp: var(--indigo-jp);
+  --font-sans: var(--font-sans, "Be Vietnam Pro", system-ui, -apple-system, sans-serif);
+  --font-japanese: var(--font-japanese, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, "Be Vietnam Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Japanese text styling */
+.ja-text {
+  font-family: var(--font-japanese, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif);
+  line-height: 1.8;
+}
+
+.ja-large {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.ja-medium {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Kana character display */
+.kana-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--card-foreground);
+  font-family: var(--font-japanese, "Noto Sans JP", sans-serif);
+}
+
+.kana-char:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.18);
+  transform: translateY(-2px);
+}
+
+.kana-char.learned {
+  border-color: var(--success);
+  background: color-mix(in srgb, var(--success) 12%, var(--card));
+}
+
+.kana-char.reviewing {
+  border-color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 12%, var(--card));
+}
+
+/* Flashcard styles */
+.flashcard {
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--card);
+  border: 2px solid var(--border);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+/* Quiz styles */
+.quiz-option {
+  padding: 0.875rem 1.25rem;
+  border: 2px solid var(--border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--card);
+  color: var(--card-foreground);
+}
+
+.quiz-option:hover:not(.selected):not(.correct):not(.incorrect) {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 6%, var(--card));
+}
+
+.quiz-option.selected {
+  border-color: var(--info);
+  background: color-mix(in srgb, var(--info) 12%, var(--card));
+}
+
+.quiz-option.correct {
+  border-color: var(--success);
+  background: color-mix(in srgb, var(--success) 12%, var(--card));
+  color: var(--success);
+}
+
+.quiz-option.incorrect {
+  border-color: var(--error);
+  background: color-mix(in srgb, var(--error) 12%, var(--card));
+  color: var(--error);
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--muted);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+/* Dropdown menu padding bridge so mouse hover doesn't break */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-bridge {
+  padding-top: 0.5rem;
+  margin-top: -0.25rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .flashcard-inner {
+    transition: none;
+  }
+
+  .kana-char:hover {
+    transform: none;
+  }
+}
+
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
 }

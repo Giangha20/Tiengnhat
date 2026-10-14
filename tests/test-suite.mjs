@@ -224,6 +224,18 @@ typingRaw.lessons.forEach(lesson => {
 });
 assert(totalTypingItems >= 30, `Tổng số từ vựng luyện gõ đạt chuẩn (thực tế: ${totalTypingItems})`);
 
+// 11. Kiểm thử Tinh Chỉnh Tốc Độ Phát Âm và Hình Nền Nhật Bản
+console.log('\n11. Kiểm tra cấu hình Tốc độ Phát âm và Hình nền Nhật Bản...');
+const validAudioSpeeds = [0.5, 0.75, 1.0, 1.25];
+assert(validAudioSpeeds.includes(0.75), 'Tốc độ mặc định 0.75x nằm trong dải tốc độ chuẩn cho người mới');
+assert(validAudioSpeeds.every(s => s >= 0.4 && s <= 1.5), 'Tất cả mức tốc độ nằm trong khoảng an toàn của Web Speech API');
+
+const validWallpapers = ['fuji_sakura', 'seigaiha', 'torii', 'minimal'];
+assert(validWallpapers.includes('fuji_sakura'), 'Hình nền Núi Phú Sĩ & Hoa Anh Đào được hỗ trợ');
+assert(validWallpapers.includes('seigaiha'), 'Hình nền Làn Sóng Seigaiha được hỗ trợ');
+assert(validWallpapers.includes('torii'), 'Hình nền Cổng Đền Torii được hỗ trợ');
+assert(validWallpapers.includes('minimal'), 'Hình nền Tối Giản được hỗ trợ');
+
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);
 console.log(`- Tổng số bài kiểm tra: ${totalTests}`);

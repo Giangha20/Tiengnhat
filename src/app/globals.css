@@ -519,4 +519,34 @@ html[data-animation="minimal"] * {
   75% { transform: translateX(3px); }
 }
 
+/* ==========================================================
+   🌸 JAPANESE ATMOSPHERIC BACKDROP & SAKURA ANIMATION
+   ========================================================== */
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate(0, -30px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(90px, 105vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -20px;
+  pointer-events: none;
+  animation: sakura-fall linear infinite;
+  will-change: transform, opacity;
+}
+
+
 

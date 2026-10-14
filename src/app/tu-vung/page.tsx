@@ -5,6 +5,7 @@ import type { VocabularyData, VocabularyTopic, VocabularyWord } from '@/types';
 import rawVocabData from '@/data/vocabulary/n5-vocabulary.json';
 import { speak, isAudioSupported } from '@/lib/audio';
 import { useProgress } from '@/components/providers/ProgressProvider';
+import AudioSpeedControl from '@/components/ui/AudioSpeedControl';
 
 const vocabData = rawVocabData as unknown as VocabularyData;
 const topicsList: VocabularyTopic[] = vocabData.topics;
@@ -386,8 +387,8 @@ export default function TuVungPage() {
           </div>
         </div>
 
-        {/* Count summary */}
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
+        {/* Count summary & Audio Speed Control */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-sm text-muted-foreground pt-1">
           <span>
             Hiển thị <strong className="text-foreground">{filteredWords.length}</strong> / {vocabData.metadata.totalWords} từ vựng
             {selectedTopicId !== 'all' && (
@@ -398,19 +399,23 @@ export default function TuVungPage() {
             )}
           </span>
 
-          {(searchQuery || selectedTopicId !== 'all' || statusFilter !== 'all') && (
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedTopicId('all');
-                setStatusFilter('all');
-                setCurrentPage(1);
-              }}
-              className="text-xs text-primary hover:underline font-medium"
-            >
-              Đặt lại bộ lọc
-            </button>
-          )}
+          <div className="flex items-center gap-3 self-end sm:self-auto">
+            <AudioSpeedControl compact={true} showTestButton={false} />
+
+            {(searchQuery || selectedTopicId !== 'all' || statusFilter !== 'all') && (
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedTopicId('all');
+                  setStatusFilter('all');
+                  setCurrentPage(1);
+                }}
+                className="text-xs text-primary hover:underline font-medium cursor-pointer"
+              >
+                Đặt lại
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

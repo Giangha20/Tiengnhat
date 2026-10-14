@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { speak } from '@/lib/audio';
+import { speak, getDefaultAudioSpeed } from '@/lib/audio';
 
 interface ListeningLesson {
   id: string;
@@ -58,7 +58,11 @@ const LISTENING_LESSONS: ListeningLesson[] = [
 
 export default function LuyenNghePage() {
   const [activeLessonId, setActiveLessonId] = useState(LISTENING_LESSONS[0].id);
-  const [playbackSpeed, setPlaybackSpeed] = useState<number>(0.8);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(0.75);
+
+  useEffect(() => {
+    setPlaybackSpeed(getDefaultAudioSpeed());
+  }, []);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);

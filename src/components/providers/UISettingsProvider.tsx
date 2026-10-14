@@ -13,6 +13,7 @@ export type DeviceMode = 'auto' | 'mobile' | 'desktop';
 export type KanjiSize = 'standard' | 'large' | 'xlarge';
 export type LayoutDensity = 'comfortable' | 'compact';
 export type AnimationMode = 'smooth' | 'minimal';
+export type WallpaperTheme = 'fuji_sakura' | 'seigaiha' | 'torii' | 'minimal';
 
 export interface UISettings {
   deviceMode: DeviceMode;
@@ -23,6 +24,8 @@ export interface UISettings {
   showFurigana: boolean;
   soundEnabled: boolean;
   bottomNavEnabled: boolean;
+  wallpaper: WallpaperTheme;
+  audioSpeed: number;
 }
 
 const DEFAULT_SETTINGS: UISettings = {
@@ -34,6 +37,8 @@ const DEFAULT_SETTINGS: UISettings = {
   showFurigana: true,
   soundEnabled: true,
   bottomNavEnabled: true,
+  wallpaper: 'fuji_sakura',
+  audioSpeed: 0.75,
 };
 
 interface UISettingsContextType {
@@ -92,6 +97,10 @@ export function UISettingsProvider({ children }: { children: React.ReactNode }) 
       root.setAttribute('data-romaji', settings.showRomaji ? 'visible' : 'hidden');
       root.setAttribute('data-device-mode', settings.deviceMode);
       root.setAttribute('data-furigana', settings.showFurigana ? 'visible' : 'hidden');
+      root.setAttribute('data-wallpaper', settings.wallpaper);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('nihongo_audio_speed', settings.audioSpeed.toString());
+      }
     }
   }, [settings]);
 

@@ -8,6 +8,7 @@ import { UISettingsProvider } from "@/components/providers/UISettingsProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import { ProgressProvider } from "@/components/providers/ProgressProvider";
 import BottomNav from "@/components/layout/BottomNav";
+import JapaneseAtmosphereBackdrop from "@/components/layout/JapaneseAtmosphereBackdrop";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <ThemeProvider>
           <UISettingsProvider>
+            <JapaneseAtmosphereBackdrop />
             <AuthProvider>
               <ProgressProvider>
                 <Header />

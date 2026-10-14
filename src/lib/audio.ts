@@ -44,7 +44,35 @@ export function hasJapaneseVoice(): boolean {
   return getJapaneseVoices().length > 0;
 }
 
-export function speak({ text, rate = 0.8, pitch = 1, onEnd, onError }: SpeakOptions): void {
+const AUDIO_SPEED_KEY = 'nihongo_audio_speed';
+
+export function getDefaultAudioSpeed(): number {
+  if (typeof window === 'undefined') return 0.75;
+  try {
+    const saved = localStorage.getItem(AUDIO_SPEED_KEY);
+    if (saved) {
+      const parsed = parseFloat(saved);
+      if (!isNaN(parsed) && parsed >= 0.4 && parsed <= 1.5) {
+        return parsed;
+      }
+    }
+  } catch {
+    // Ignore storage errors
+  }
+  return 0.75; // Default beginner-friendly clear tempo
+}
+
+export function setDefaultAudioSpeed(speed: number): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(AUDIO_SPEED_KEY, speed.toString());
+    window.dispatchEvent(new CustomEvent('nihongo_audio_speed_changed', { detail: speed }));
+  } catch {
+    // Ignore
+  }
+}
+
+export function speak({ text, rate, pitch = 1, onEnd, onError }: SpeakOptions): void {
   if (!isAudioSupported()) {
     onError?.('Trình duyệt không hỗ trợ Web Speech API. Vui lòng sử dụng Chrome, Edge hoặc Safari.');
     return;
@@ -53,9 +81,12 @@ export function speak({ text, rate = 0.8, pitch = 1, onEnd, onError }: SpeakOpti
   // Cancel any ongoing speech
   window.speechSynthesis.cancel();
 
+  // If rate not explicitly specified, use user's saved reading speed preference (default 0.75x)
+  const effectiveRate = typeof rate === 'number' ? rate : getDefaultAudioSpeed();
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'ja-JP';
-  utterance.rate = rate;
+  utterance.rate = effectiveRate;
   utterance.pitch = pitch;
 
   const japaneseVoices = getJapaneseVoices();

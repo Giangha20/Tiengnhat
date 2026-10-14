@@ -5,6 +5,7 @@ import Link from 'next/link';
 import typingDataRaw from '@/data/typing/typing-lessons.json';
 import { useProgress } from '@/components/providers/ProgressProvider';
 import { speak } from '@/lib/audio';
+import AudioSpeedControl from '@/components/ui/AudioSpeedControl';
 import {
   playMechanicalKeyClick,
   playTypingErrorSound,
@@ -335,35 +336,40 @@ export default function LuyenGoPage() {
             </p>
           </div>
 
-          {/* Switch Sound Profile Selector */}
-          <div className="flex items-center gap-2 bg-card border border-border p-1.5 rounded-2xl shadow-xs self-start md:self-auto">
-            <span className="text-xs font-medium text-muted-foreground px-2">Âm phím:</span>
-            {(['blue', 'red', 'brown', 'mute'] as SwitchSoundType[]).map((type) => {
-              const label =
-                type === 'blue'
-                  ? 'Blue (Giòn)'
-                  : type === 'red'
-                  ? 'Red (Êm)'
-                  : type === 'brown'
-                  ? 'Brown (Khấc)'
-                  : 'Tắt tiếng';
-              return (
-                <button
-                  key={type}
-                  onClick={() => {
-                    setSwitchType(type);
-                    if (type !== 'mute') playMechanicalKeyClick(type);
-                  }}
-                  className={`px-2.5 py-1 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
-                    switchType === type
-                      ? 'bg-primary text-primary-foreground shadow-xs'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
+          {/* Controls: Audio Speed & Switch Profile */}
+          <div className="flex flex-wrap items-center gap-2.5 self-start md:self-auto">
+            <AudioSpeedControl compact={true} showTestButton={false} />
+
+            {/* Switch Sound Profile Selector */}
+            <div className="flex items-center gap-1.5 bg-card border border-border p-1 rounded-xl shadow-xs">
+              <span className="text-[11px] font-medium text-muted-foreground px-1.5">Phím:</span>
+              {(['blue', 'red', 'brown', 'mute'] as SwitchSoundType[]).map((type) => {
+                const label =
+                  type === 'blue'
+                    ? 'Blue'
+                    : type === 'red'
+                    ? 'Red'
+                    : type === 'brown'
+                    ? 'Brown'
+                    : 'Tắt';
+                return (
+                  <button
+                    key={type}
+                    onClick={() => {
+                      setSwitchType(type);
+                      if (type !== 'mute') playMechanicalKeyClick(type);
+                    }}
+                    className={`px-2 py-0.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                      switchType === type
+                        ? 'bg-primary text-primary-foreground shadow-xs'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 

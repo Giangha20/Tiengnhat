@@ -2,7 +2,8 @@
 
 import { useTheme } from '@/components/providers/ThemeProvider';
 import { useProgress } from '@/components/providers/ProgressProvider';
-import { useUISettings, type DeviceMode, type KanjiSize, type LayoutDensity, type AnimationMode } from '@/components/providers/UISettingsProvider';
+import { useUISettings, type DeviceMode, type KanjiSize, type LayoutDensity, type AnimationMode, type WallpaperTheme } from '@/components/providers/UISettingsProvider';
+import AudioSpeedControl from '@/components/ui/AudioSpeedControl';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -502,12 +503,57 @@ export default function CaiDatPage() {
               ))}
             </div>
           </section>
+
+          {/* Wallpaper Scenery Theme */}
+          <section className="bg-card rounded-2xl border border-border p-6 space-y-4">
+            <div>
+              <h2 className="font-bold text-base text-foreground flex items-center gap-2">
+                <span>🌸</span>
+                <span>Hình nền phong cảnh Nhật Bản (Japanese Atmosphere)</span>
+              </h2>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Tạo cảm hứng học tập với ảnh nền núi Phú Sĩ, cánh hoa anh đào bay lượn hoặc làn sóng Zen truyền thống.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { value: 'fuji_sakura', label: 'Núi Phú Sĩ & Hoa Anh Đào', icon: '🗻🌸', desc: 'Có núi Phú Sĩ, cổng Torii & cánh hoa rơi' },
+                { value: 'seigaiha', label: 'Làn Sóng Seigaiha', icon: '🌊', desc: 'Họa tiết làn sóng biển thanh bình' },
+                { value: 'torii', label: 'Cổng Đền Torii', icon: '⛩️', desc: 'Cổng đền Thần đạo cổ kính bên rặng thông' },
+                { value: 'minimal', label: 'Nền Tối Giản', icon: '🎨', desc: 'Không họa tiết, tập trung tối đa' },
+              ].map((item) => (
+                <button
+                  key={item.value}
+                  type="button"
+                  onClick={() => {
+                    updateSettings({ wallpaper: item.value as WallpaperTheme });
+                    playTap();
+                  }}
+                  className={`p-4 rounded-2xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between ${
+                    settings.wallpaper === item.value
+                      ? 'border-primary bg-primary/5 shadow-xs'
+                      : 'border-border hover:border-muted-foreground'
+                  }`}
+                >
+                  <div>
+                    <span className="text-2xl block mb-2">{item.icon}</span>
+                    <p className="font-bold text-xs sm:text-sm text-foreground">{item.label}</p>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
+                </button>
+              ))}
+            </div>
+          </section>
         </div>
       )}
 
       {/* TAB 2: READING & STUDY ASSISTS */}
       {activeTab === 'learning' && (
         <div className="space-y-6 animate-in fade-in duration-200">
+          {/* Audio Speech Speed Control with live test */}
+          <AudioSpeedControl />
+
           {/* Romaji Visibility Toggle */}
           <section className="bg-card rounded-2xl border border-border p-6 space-y-4">
             <div className="flex items-center justify-between">

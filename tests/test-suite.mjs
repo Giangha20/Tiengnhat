@@ -207,6 +207,23 @@ assert(validateRegisterInput('Nguyễn An', 'an@gmail.com', '123').valid === fal
 const sessionToken = crypto.randomBytes(32).toString('hex');
 assert(sessionToken.length === 64, 'Khởi tạo token phiên đăng nhập an toàn 64 ký tự hex');
 
+// 10. Kiểm thử Bộ Dữ Liệu Luyện Gõ Tiếng Nhật (typing-lessons.json)
+console.log('\n10. Kiểm tra tính toàn vẹn của Dữ liệu Luyện Gõ (typing-lessons.json)...');
+const typingRaw = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/typing/typing-lessons.json'), 'utf8'));
+assert(typingRaw.metadata.verificationStatus === 'verified', 'Metadata Luyện Gõ verified');
+assert(Array.isArray(typingRaw.lessons) && typingRaw.lessons.length >= 4, 'Đủ tối thiểu 4 chuyên đề luyện gõ');
+
+let totalTypingItems = 0;
+typingRaw.lessons.forEach(lesson => {
+  assert(lesson.id && lesson.name && lesson.items.length > 0, `Chuyên đề ${lesson.name} có đầy đủ ID và danh sách từ`);
+  lesson.items.forEach(item => {
+    totalTypingItems++;
+    assert(item.id && item.japanese && item.hiragana && item.romaji && item.meaning, `Từ gõ ${item.japanese} có đầy đủ Hiragana, Romaji và nghĩa`);
+    assert(/^[a-z]+$/.test(item.romaji.toLowerCase()), `Romaji của ${item.japanese} (${item.romaji}) chỉ chứa ký tự chữ cái alphabet hợp lệ`);
+  });
+});
+assert(totalTypingItems >= 30, `Tổng số từ vựng luyện gõ đạt chuẩn (thực tế: ${totalTypingItems})`);
+
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);
 console.log(`- Tổng số bài kiểm tra: ${totalTests}`);

@@ -456,3 +456,67 @@ html[data-animation="minimal"] * {
   box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--foreground) 8%, transparent);
 }
 
+/* ==========================================================
+   ⌨️ MODERN FLAT KEYBOARD & TYPING STYLING
+   ========================================================== */
+
+/* Flat Clean Stage Card */
+.stage-card-clean {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+/* Modern Flat Keycap (Crisp, highly legible, mobile & PC optimized) */
+.keycap-flat {
+  position: relative;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.08s ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.keycap-flat:hover {
+  background: var(--secondary);
+  border-color: color-mix(in srgb, var(--border) 60%, var(--foreground));
+}
+
+.keycap-flat:active,
+.keycap-flat.pressed {
+  background: color-mix(in srgb, var(--primary) 12%, var(--card)) !important;
+  border-color: var(--primary) !important;
+  transform: scale(0.96) !important;
+}
+
+/* Target Key Guide (Highlights next key to type) */
+.keycap-flat.target-key {
+  border-color: var(--primary) !important;
+  background: color-mix(in srgb, var(--primary) 12%, var(--card)) !important;
+  color: var(--primary) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 25%, transparent), 0 2px 8px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+/* Success Keycap Flash */
+.keycap-flat.success-flash {
+  border-color: var(--success) !important;
+  background: color-mix(in srgb, var(--success) 20%, var(--card)) !important;
+  color: var(--success) !important;
+}
+
+/* Error Keycap Flash */
+.keycap-flat.error-flash {
+  border-color: var(--error) !important;
+  background: color-mix(in srgb, var(--error) 20%, var(--card)) !important;
+  color: var(--error) !important;
+  animation: keycap-shake 0.15s ease-in-out;
+}
+
+@keyframes keycap-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+

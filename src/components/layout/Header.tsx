@@ -46,7 +46,8 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Luyện tập',
     href: '/flashcard',
     children: [
-      { label: 'Flashcard 3D từ vựng', href: '/flashcard', icon: '🃏' },
+      { label: 'Flashcard từ vựng', href: '/flashcard', icon: '🃏' },
+      { label: 'Luyện gõ tiếng Nhật', href: '/luyen-go', icon: '⌨️' },
       { label: 'Ôn tập ngắt quãng (SM-2)', href: '/on-tap', icon: '🔄' },
       { label: 'Bài tập trắc nghiệm', href: '/bai-tap', icon: '✍️' },
       { label: 'Luyện đọc hiểu Dokkai', href: '/luyen-doc', icon: '📑' },

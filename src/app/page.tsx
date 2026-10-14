@@ -53,8 +53,8 @@ const FEATURES = [
   {
     icon: '🃏',
     kanjiBg: '記',
-    title: 'Flashcard 3D & Ôn tập SRS',
-    description: 'Lật thẻ 3 chiều mượt mà, ứng dụng thuật toán lặp lại ngắt quãng SM-2 giúp ghi nhớ sâu vào tiềm thức mà không bị quên.',
+    title: 'Flashcard lật thẻ & Ôn tập SRS',
+    description: 'Lật thẻ học từ vựng nhanh chóng, ứng dụng thuật toán lặp lại ngắt quãng SM-2 giúp ghi nhớ sâu vào tiềm thức mà không bị quên.',
     href: '/flashcard',
     badge: 'Thuật toán SM-2',
     color: 'border-purple-500/20 hover:border-purple-500/50 bg-gradient-to-br from-purple-500/5 to-transparent',
@@ -105,6 +105,13 @@ const SKILL_MODULES = [
     href: '/luyen-viet',
     icon: '✏️',
     tag: 'Ghép câu',
+  },
+  {
+    title: 'Luyện gõ tiếng Nhật',
+    desc: 'Luyện phản xạ gõ Romaji IME với bàn phím trực quan, âm thanh switch tùy chọn và thử thách tốc độ 60s.',
+    href: '/luyen-go',
+    icon: '⌨️',
+    tag: 'Luyện gõ',
   },
   {
     title: 'Thống kê & Hồ sơ',

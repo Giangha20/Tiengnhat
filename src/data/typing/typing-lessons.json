@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "title": "Dữ liệu Luyện Gõ Tiếng Nhật (Japanese Typing Lessons)",
+    "version": "1.0.0",
+    "verificationStatus": "verified",
+    "description": "Bộ từ vựng, bảng chữ cái và câu ngắn chuẩn tiếng Nhật sơ cấp N5 tối ưu cho luyện gõ Romaji IME"
+  },
+  "lessons": [
+    {
+      "id": "vowels",
+      "name": "5 Nguyên Âm Cơ Bản",
+      "description": "Làm quen với 5 nguyên âm cốt lõi: A, I, U, E, O",
+      "icon": "あ",
+      "items": [
+        { "id": "v01", "japanese": "あ", "hiragana": "あ", "romaji": "a", "meaning": "Chữ A (Nguyên âm A)" },
+        { "id": "v02", "japanese": "い", "hiragana": "い", "romaji": "i", "meaning": "Chữ I (Nguyên âm I)" },
+        { "id": "v03", "japanese": "う", "hiragana": "う", "romaji": "u", "meaning": "Chữ U (Nguyên âm U)" },
+        { "id": "v04", "japanese": "え", "hiragana": "え", "romaji": "e", "meaning": "Chữ E (Nguyên âm E)" },
+        { "id": "v05", "japanese": "お", "hiragana": "お", "romaji": "o", "meaning": "Chữ O (Nguyên âm O)" },
+        { "id": "v06", "japanese": "あい", "hiragana": "あい", "romaji": "ai", "meaning": "Tình yêu" },
+        { "id": "v07", "japanese": "いえ", "hiragana": "いえ", "romaji": "ie", "meaning": "Ngôi nhà" },
+        { "id": "v08", "japanese": "あお", "hiragana": "あお", "romaji": "ao", "meaning": "Màu xanh da trời" },
+        { "id": "v09", "japanese": "うえ", "hiragana": "うえ", "romaji": "ue", "meaning": "Phía trên" }
+      ]
+    },
+    {
+      "id": "kana_rows",
+      "name": "Hàng Chữ Kana Phổ Biến",
+      "description": "Luyện gõ các phụ âm ghép K, S, T, N, H, M, Y, R, W",
+      "icon": "か",
+      "items": [
+        { "id": "k01", "japanese": "かさ", "hiragana": "かさ", "romaji": "kasa", "meaning": "Cái ô (dù)" },
+        { "id": "k02", "japanese": "すし", "hiragana": "すし", "romaji": "sushi", "alternatives": ["susi"], "meaning": "Món sushi" },
+        { "id": "k03", "japanese": "つき", "hiragana": "つき", "romaji": "tsuki", "alternatives": ["tuki"], "meaning": "Mặt trăng" },
+        { "id": "k04", "japanese": "はな", "hiragana": "はな", "romaji": "hana", "meaning": "Bông hoa" },
+        { "id": "k05", "japanese": "やま", "hiragana": "やま", "romaji": "yama", "meaning": "Ngọn núi" },
+        { "id": "k06", "japanese": "そら", "hiragana": "そら", "romaji": "sora", "meaning": "Bầu trời" },
+        { "id": "k07", "japanese": "かわ", "hiragana": "かわ", "romaji": "kawa", "meaning": "Dòng sông" },
+        { "id": "k08", "japanese": "さくら", "hiragana": "さくら", "romaji": "sakura", "meaning": "Hoa anh đào" },
+        { "id": "k09", "japanese": "ほし", "hiragana": "ほし", "romaji": "hoshi", "alternatives": ["hosi"], "meaning": "Ngôi sao" },
+        { "id": "k10", "japanese": "とり", "hiragana": "とり", "romaji": "tori", "meaning": "Con chim" }
+      ]
+    },
+    {
+      "id": "n5_words",
+      "name": "Từ Vựng N5 Thiết Yếu",
+      "description": "Các danh từ, động từ và tính từ sơ cấp hay gặp nhất",
+      "icon": "本",
+      "items": [
+        { "id": "w01", "japanese": "猫", "hiragana": "ねこ", "romaji": "neko", "meaning": "Con mèo" },
+        { "id": "w02", "japanese": "犬", "hiragana": "いぬ", "romaji": "inu", "meaning": "Con chó" },
+        { "id": "w03", "japanese": "本", "hiragana": "ほん", "romaji": "hon", "meaning": "Quyển sách" },
+        { "id": "w04", "japanese": "車", "hiragana": "くるま", "romaji": "kuruma", "meaning": "Xe hơi" },
+        { "id": "w05", "japanese": "水", "hiragana": "みず", "romaji": "mizu", "meaning": "Nước uống" },
+        { "id": "w06", "japanese": "学生", "hiragana": "がくせい", "romaji": "gakusei", "meaning": "Học sinh, sinh viên" },
+        { "id": "w07", "japanese": "先生", "hiragana": "せんせい", "romaji": "sensei", "meaning": "Thầy cô giáo" },
+        { "id": "w08", "japanese": "友達", "hiragana": "ともだち", "romaji": "tomodachi", "alternatives": ["tomodati"], "meaning": "Bạn bè" },
+        { "id": "w09", "japanese": "日本語", "hiragana": "にほんご", "romaji": "nihongo", "meaning": "Tiếng Nhật" },
+        { "id": "w10", "japanese": "食べます", "hiragana": "たべます", "romaji": "tabemasu", "meaning": "Ăn" },
+        { "id": "w11", "japanese": "飲みます", "hiragana": "のみます", "romaji": "nomimasu", "meaning": "Uống" },
+        { "id": "w12", "japanese": "行きます", "hiragana": "いきます", "romaji": "ikimasu", "meaning": "Đi" },
+        { "id": "w13", "japanese": "来ます", "hiragana": "きます", "romaji": "kimasu", "meaning": "Đến" },
+        { "id": "w14", "japanese": "見ます", "hiragana": "みます", "romaji": "mimasu", "meaning": "Xem, nhìn" },
+        { "id": "w15", "japanese": "聞きます", "hiragana": "ききます", "romaji": "kikimasu", "meaning": "Nghe" },
+        { "id": "w16", "japanese": "読みます", "hiragana": "よみます", "romaji": "yomimasu", "meaning": "Đọc" },
+        { "id": "w17", "japanese": "書きます", "hiragana": "かきます", "romaji": "kakimasu", "meaning": "Viết" },
+        { "id": "w18", "japanese": "買います", "hiragana": "かいます", "romaji": "kaimasu", "meaning": "Mua" }
+      ]
+    },
+    {
+      "id": "daily_phrases",
+      "name": "Mẫu Câu Chào Hỏi Đời Sống",
+      "description": "Các cụm từ giao tiếp lịch sự hàng ngày của người Nhật",
+      "icon": "💬",
+      "items": [
+        { "id": "p01", "japanese": "ありがとう", "hiragana": "ありがとう", "romaji": "arigatou", "meaning": "Cảm ơn bạn" },
+        { "id": "p02", "japanese": "おはよう", "hiragana": "おはよう", "romaji": "ohayou", "meaning": "Chào buổi sáng" },
+        { "id": "p03", "japanese": "こんにちは", "hiragana": "こんにちは", "romaji": "konnichiwa", "alternatives": ["konnnitiwa"], "meaning": "Xin chào buổi trưa/chiều" },
+        { "id": "p04", "japanese": "こんばんは", "hiragana": "こんばんは", "romaji": "konbanwa", "meaning": "Chào buổi tối" },
+        { "id": "p05", "japanese": "さようなら", "hiragana": "さようなら", "romaji": "sayounara", "meaning": "Tạm biệt" },
+        { "id": "p06", "japanese": "すみません", "hiragana": "すみません", "romaji": "sumimasen", "meaning": "Xin lỗi / Xin làm phiền" },
+        { "id": "p07", "japanese": "いただきます", "hiragana": "いただきます", "romaji": "itadakimasu", "meaning": "Mời dùng bữa (Trước khi ăn)" },
+        { "id": "p08", "japanese": "ごちそうさま", "hiragana": "ごちそうさま", "romaji": "gochisousama", "alternatives": ["gotisousama"], "meaning": "Cảm ơn vì bữa ăn ngon" },
+        { "id": "p09", "japanese": "はじめまして", "hiragana": "はじめまして", "romaji": "hajimemashite", "alternatives": ["hazimemasite"], "meaning": "Rất vui được gặp bạn lần đầu" },
+        { "id": "p10", "japanese": "よろしく", "hiragana": "よろしく", "romaji": "yoroshiku", "alternatives": ["yorosiku"], "meaning": "Rất mong nhận được sự giúp đỡ" }
+      ]
+    }
+  ]
+}

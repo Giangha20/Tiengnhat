@@ -13,7 +13,7 @@ export type DeviceMode = 'auto' | 'mobile' | 'desktop';
 export type KanjiSize = 'standard' | 'large' | 'xlarge';
 export type LayoutDensity = 'comfortable' | 'compact';
 export type AnimationMode = 'smooth' | 'minimal';
-export type WallpaperTheme = 'fuji_sakura' | 'seigaiha' | 'torii' | 'minimal';
+export type WallpaperTheme = 'fuji' | 'kyoto_torii' | 'sakura' | 'tokyo_night' | 'minimal';
 
 export interface UISettings {
   deviceMode: DeviceMode;
@@ -37,7 +37,7 @@ const DEFAULT_SETTINGS: UISettings = {
   showFurigana: true,
   soundEnabled: true,
   bottomNavEnabled: true,
-  wallpaper: 'fuji_sakura',
+  wallpaper: 'fuji',
   audioSpeed: 0.75,
 };
 
@@ -79,6 +79,9 @@ export function UISettingsProvider({ children }: { children: React.ReactNode }) 
       const saved = localStorage.getItem(UI_SETTINGS_KEY);
       if (saved) {
         const parsed = JSON.parse(saved) as Partial<UISettings>;
+        if (parsed.wallpaper === ('fuji_sakura' as unknown)) parsed.wallpaper = 'fuji';
+        if (parsed.wallpaper === ('torii' as unknown)) parsed.wallpaper = 'kyoto_torii';
+        if (parsed.wallpaper === ('seigaiha' as unknown)) parsed.wallpaper = 'fuji';
         setSettings((prev) => ({ ...prev, ...parsed }));
       }
     } catch {

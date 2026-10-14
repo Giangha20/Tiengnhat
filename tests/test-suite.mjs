@@ -230,11 +230,21 @@ const validAudioSpeeds = [0.5, 0.75, 1.0, 1.25];
 assert(validAudioSpeeds.includes(0.75), 'Tốc độ mặc định 0.75x nằm trong dải tốc độ chuẩn cho người mới');
 assert(validAudioSpeeds.every(s => s >= 0.4 && s <= 1.5), 'Tất cả mức tốc độ nằm trong khoảng an toàn của Web Speech API');
 
-const validWallpapers = ['fuji_sakura', 'seigaiha', 'torii', 'minimal'];
-assert(validWallpapers.includes('fuji_sakura'), 'Hình nền Núi Phú Sĩ & Hoa Anh Đào được hỗ trợ');
-assert(validWallpapers.includes('seigaiha'), 'Hình nền Làn Sóng Seigaiha được hỗ trợ');
-assert(validWallpapers.includes('torii'), 'Hình nền Cổng Đền Torii được hỗ trợ');
+const validWallpapers = ['fuji', 'kyoto_torii', 'sakura', 'tokyo_night', 'minimal'];
+assert(validWallpapers.includes('fuji'), 'Hình nền Núi Phú Sĩ (Ảnh thật) được hỗ trợ');
+assert(validWallpapers.includes('kyoto_torii'), 'Hình nền Cổng Torii Kyoto (Ảnh thật) được hỗ trợ');
+assert(validWallpapers.includes('sakura'), 'Hình nền Hoa Anh Đào Sakura (Ảnh thật) được hỗ trợ');
+assert(validWallpapers.includes('tokyo_night'), 'Hình nền Phố Đêm Tokyo (Ảnh thật) được hỗ trợ');
 assert(validWallpapers.includes('minimal'), 'Hình nền Tối Giản được hỗ trợ');
+
+// Kiểm tra 4 file ảnh thật tồn tại trên đĩa trong thư mục public/images/wallpapers/
+const wallpaperDir = path.join(rootDir, 'public/images/wallpapers');
+['fuji.jpg', 'kyoto_torii.jpg', 'sakura.jpg', 'tokyo_night.jpg'].forEach(filename => {
+  const filePath = path.join(wallpaperDir, filename);
+  assert(fs.existsSync(filePath), `File ảnh thật ${filename} tồn tại trong public/images/wallpapers/`);
+  const stats = fs.statSync(filePath);
+  assert(stats.size > 50000, `File ảnh thật ${filename} có kích thước chất lượng cao (${Math.round(stats.size / 1024)} KB)`);
+});
 
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);

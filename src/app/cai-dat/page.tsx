@@ -504,24 +504,28 @@ export default function CaiDatPage() {
             </div>
           </section>
 
-          {/* Wallpaper Scenery Theme */}
+          {/* Real Photography Wallpaper Theme */}
           <section className="bg-card rounded-2xl border border-border p-6 space-y-4">
             <div>
-              <h2 className="font-bold text-base text-foreground flex items-center gap-2">
-                <span>🌸</span>
-                <span>Hình nền phong cảnh Nhật Bản (Japanese Atmosphere)</span>
-              </h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Tạo cảm hứng học tập với ảnh nền núi Phú Sĩ, cánh hoa anh đào bay lượn hoặc làn sóng Zen truyền thống.
+              <div className="flex items-center gap-2">
+                <span className="hanko-stamp">実写</span>
+                <h2 className="font-bold text-base text-foreground flex items-center gap-2">
+                  <span>📷</span>
+                  <span>Ảnh nền chụp thật tại Nhật Bản (Real Japan Photography)</span>
+                </h2>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                Tất cả hình nền đều sử dụng <strong>ảnh chụp thực tế 100%</strong> từ các nhiếp ảnh gia tại Nhật Bản (không dùng tranh vẽ hay ảnh AI mô phỏng).
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
-                { value: 'fuji_sakura', label: 'Núi Phú Sĩ & Hoa Anh Đào', icon: '🗻🌸', desc: 'Có núi Phú Sĩ, cổng Torii & cánh hoa rơi' },
-                { value: 'seigaiha', label: 'Làn Sóng Seigaiha', icon: '🌊', desc: 'Họa tiết làn sóng biển thanh bình' },
-                { value: 'torii', label: 'Cổng Đền Torii', icon: '⛩️', desc: 'Cổng đền Thần đạo cổ kính bên rặng thông' },
-                { value: 'minimal', label: 'Nền Tối Giản', icon: '🎨', desc: 'Không họa tiết, tập trung tối đa' },
+                { value: 'fuji', label: 'Núi Phú Sĩ & Chùa Chureito', icon: '🗻', location: 'Yamanashi, Nhật Bản', desc: 'Ảnh chụp thật ngọn núi Phú Sĩ tuyết phủ và ngôi chùa đỏ' },
+                { value: 'kyoto_torii', label: 'Đền Cổng Torii Fushimi Inari', icon: '⛩️', location: 'Kyoto, Nhật Bản', desc: 'Ảnh chụp thật hàng nghìn cổng Torii đỏ thắm linh thiêng' },
+                { value: 'sakura', label: 'Mùa Hoa Anh Đào Nở Rộ', icon: '🌸', location: 'Tokyo, Nhật Bản', desc: 'Ảnh chụp thật những nhánh hoa Sakura bung nở mùa xuân' },
+                { value: 'tokyo_night', label: 'Phố Đêm Tokyo Rực Rỡ', icon: '🏮', location: 'Shinjuku, Nhật Bản', desc: 'Ảnh chụp thật ánh đèn lồng neon lung linh trên phố đêm' },
+                { value: 'minimal', label: 'Tối Giản (Không Ảnh)', icon: '🎨', location: 'Giao diện trơn', desc: 'Tắt ảnh nền, tập trung tối đa vào văn bản và bài học' },
               ].map((item) => (
                 <button
                   key={item.value}
@@ -537,10 +541,15 @@ export default function CaiDatPage() {
                   }`}
                 >
                   <div>
-                    <span className="text-2xl block mb-2">{item.icon}</span>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-2xl">{item.icon}</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
+                        {item.location}
+                      </span>
+                    </div>
                     <p className="font-bold text-xs sm:text-sm text-foreground">{item.label}</p>
                   </div>
-                  <p className="text-[10px] text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
+                  <p className="text-[11px] text-muted-foreground mt-1.5 leading-relaxed">{item.desc}</p>
                 </button>
               ))}
             </div>

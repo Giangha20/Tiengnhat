@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { speak } from '@/lib/audio';
+import { useUISettings } from '@/components/providers/UISettingsProvider';
 
 const KANA_PREVIEW = [
   { char: 'あ', romaji: 'a', vi: 'a' },
@@ -161,8 +162,10 @@ const LEVELS = [
 
 export default function HomePage() {
   const [playingChar, setPlayingChar] = useState<string | null>(null);
+  const { playTap } = useUISettings();
 
   const playChar = (char: string) => {
+    playTap();
     setPlayingChar(char);
     speak({
       text: char,
@@ -174,7 +177,7 @@ export default function HomePage() {
   return (
     <div className="space-y-16 sm:space-y-24">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-border bg-gradient-to-b from-primary/5 via-background to-background">
+      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-border bg-gradient-to-b from-primary/5 via-background to-background bg-subtle-mesh">
         {/* Decorative Watermark Japanese Characters */}
         <div className="absolute top-6 left-6 text-8xl font-black text-foreground/[0.03] ja-text select-none pointer-events-none hidden md:block">
           日本語
@@ -185,9 +188,9 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-6">
-            {/* Pill Badge */}
+            {/* Pill Badge with Hanko Seal */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-card shadow-sm text-xs font-semibold text-primary">
-              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+              <span className="hanko-stamp">正統</span>
               <span>🌸 Nền tảng học tiếng Nhật 100% chuẩn xác & trung thực</span>
             </div>
 
@@ -205,17 +208,19 @@ export default function HomePage() {
               Được thiết kế tỉ mỉ cho người Việt: nắm vững bảng chữ cái, ngữ pháp logic, phát âm chuẩn nhịp Mora, flashcard thông minh và đề thi thử bấm giờ.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons with Tactile Mechanical Feel */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
               <Link
                 href="/nhap-mon/hiragana"
-                className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-primary/25 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+                onClick={playTap}
+                className="btn-tactile w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-bold text-base hover:opacity-95 flex items-center justify-center gap-2 select-none"
               >
                 <span>🚀 Bắt đầu học Hiragana ngay</span>
               </Link>
               <Link
                 href="/gioi-thieu"
-                className="w-full sm:w-auto px-7 py-4 bg-card border border-border text-foreground rounded-2xl font-bold text-base hover:bg-secondary transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+                onClick={playTap}
+                className="btn-tactile-secondary w-full sm:w-auto px-7 py-4 bg-card border border-border text-foreground rounded-2xl font-bold text-base hover:bg-secondary select-none"
               >
                 Xem lộ trình chi tiết
               </Link>
@@ -231,10 +236,10 @@ export default function HomePage() {
                   <button
                     key={k.char}
                     onClick={() => playChar(k.char)}
-                    className={`w-12 h-14 rounded-xl border flex flex-col items-center justify-center transition-all ${
+                    className={`w-12 h-14 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer ${
                       playingChar === k.char
                         ? 'border-primary bg-primary text-primary-foreground scale-105 shadow-md'
-                        : 'border-border bg-background text-foreground hover:border-primary/50 hover:bg-secondary'
+                        : 'border-border bg-background text-foreground hover:border-primary/50 hover:bg-secondary active:scale-95'
                     }`}
                   >
                     <span className="ja-text text-xl font-bold">{k.char}</span>
@@ -286,7 +291,8 @@ export default function HomePage() {
             <Link
               key={item.href}
               href={item.href}
-              className={`group relative p-7 rounded-3xl border ${item.color} transition-all duration-200 hover:-translate-y-1 hover:shadow-xl overflow-hidden flex flex-col justify-between`}
+              onClick={playTap}
+              className={`card-craft group relative p-7 rounded-3xl border ${item.color} overflow-hidden flex flex-col justify-between`}
             >
               {/* Background Kanji Watermark */}
               <span className="absolute -right-2 -bottom-4 text-7xl font-black text-foreground/[0.03] group-hover:text-primary/[0.06] transition-colors ja-text select-none pointer-events-none">
@@ -342,7 +348,8 @@ export default function HomePage() {
               <Link
                 key={m.href}
                 href={m.href}
-                className="p-5 rounded-2xl border border-border bg-background hover:border-primary/50 transition-all hover:bg-secondary/40 space-y-2 group"
+                onClick={playTap}
+                className="card-craft p-5 rounded-2xl border border-border bg-background hover:border-primary/50 hover:bg-secondary/40 space-y-2 group"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">{m.icon}</span>

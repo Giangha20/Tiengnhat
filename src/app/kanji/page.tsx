@@ -5,6 +5,7 @@ import Link from 'next/link';
 import kanjiDataRaw from '@/data/kanji/n5-kanji.json';
 import { useProgress } from '@/components/providers/ProgressProvider';
 import { speak } from '@/lib/audio';
+import { playTapSound, playCorrectSound, playIncorrectSound } from '@/lib/sound';
 
 interface Compound {
   word: string;
@@ -83,6 +84,7 @@ export default function KanjiPage() {
     const correctOption = `${randomKanji.sinoVietnamese} (${randomKanji.meaning})`;
     const options = [...wrongOptions, correctOption].sort(() => 0.5 - Math.random());
 
+    playTapSound();
     setQuizQuestion({
       kanji: randomKanji,
       options,
@@ -121,7 +123,7 @@ export default function KanjiPage() {
         {/* Quick Quiz Trigger */}
         <button
           onClick={startQuiz}
-          className="px-5 py-2.5 bg-primary text-primary-foreground font-medium rounded-xl hover:opacity-90 transition-opacity shadow text-sm flex items-center justify-center gap-2 self-start md:self-auto"
+          className="px-5 py-2.5 bg-primary text-primary-foreground font-medium rounded-xl btn-tactile text-sm flex items-center justify-center gap-2 self-start md:self-auto cursor-pointer"
         >
           🎯 Thử thách nhận diện Kanji
         </button>
@@ -213,8 +215,11 @@ export default function KanjiPage() {
           return (
             <div
               key={kanji.id}
-              onClick={() => setSelectedKanji(kanji)}
-              className="group relative bg-card border border-border hover:border-primary rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md flex flex-col justify-between"
+              onClick={() => {
+                playTapSound();
+                setSelectedKanji(kanji);
+              }}
+              className="group relative bg-card card-craft border border-border hover:border-primary rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md flex flex-col justify-between"
             >
               {/* Top tags */}
               <div className="flex items-center justify-between text-[11px] mb-2">
@@ -224,7 +229,7 @@ export default function KanjiPage() {
 
               {/* Character display */}
               <div className="text-center py-2">
-                <span className="ja-text text-5xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <span className="ja-text ja-large text-5xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {kanji.character}
                 </span>
                 <p className="text-xs text-muted-foreground mt-2 font-medium line-clamp-1">
@@ -423,7 +428,7 @@ export default function KanjiPage() {
             </div>
 
             <div className="py-4">
-              <span className="ja-text text-7xl font-bold text-foreground">
+              <span className="ja-text ja-large text-7xl font-bold text-foreground">
                 {quizQuestion.kanji.character}
               </span>
             </div>
@@ -434,12 +439,14 @@ export default function KanjiPage() {
                 const isCorrect = opt === quizQuestion.correct;
                 const hasAnswered = quizQuestion.answered !== null;
 
-                let btnStyle = 'border-border bg-background hover:border-primary';
+                let btnStyle = 'border-border bg-background hover:border-primary hover:bg-secondary/40 cursor-pointer';
                 if (hasAnswered) {
                   if (isCorrect) {
-                    btnStyle = 'border-success bg-success/10 text-success font-semibold';
+                    btnStyle = 'border-success bg-success/15 text-success font-semibold';
                   } else if (isSelected) {
-                    btnStyle = 'border-error bg-error/10 text-error';
+                    btnStyle = 'border-error bg-error/15 text-error font-medium';
+                  } else {
+                    btnStyle = 'border-border bg-background/50 text-muted-foreground opacity-60';
                   }
                 }
 
@@ -450,14 +457,17 @@ export default function KanjiPage() {
                     onClick={() => {
                       setQuizQuestion((prev) => (prev ? { ...prev, answered: opt } : null));
                       if (opt === quizQuestion.correct) {
+                        playCorrectSound();
                         markItemLearned(quizQuestion.kanji.id, 'kanji');
+                      } else {
+                        playIncorrectSound();
                       }
                     }}
-                    className={`w-full p-3 rounded-xl border text-sm text-foreground transition-all flex items-center justify-between ${btnStyle}`}
+                    className={`w-full p-3.5 rounded-xl border text-sm text-foreground transition-all flex items-center justify-between ${btnStyle}`}
                   >
                     <span>{opt}</span>
-                    {hasAnswered && isCorrect && <span>✓</span>}
-                    {hasAnswered && isSelected && !isCorrect && <span>✕</span>}
+                    {hasAnswered && isCorrect && <span className="font-bold text-success">✓ Đúng</span>}
+                    {hasAnswered && isSelected && !isCorrect && <span className="font-bold text-error">✕ Sai</span>}
                   </button>
                 );
               })}

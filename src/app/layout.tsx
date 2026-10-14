@@ -4,8 +4,10 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { UISettingsProvider } from "@/components/providers/UISettingsProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import { ProgressProvider } from "@/components/providers/ProgressProvider";
+import BottomNav from "@/components/layout/BottomNav";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-sans",
@@ -49,13 +51,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <ThemeProvider>
-          <AuthProvider>
-            <ProgressProvider>
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </ProgressProvider>
-          </AuthProvider>
+          <UISettingsProvider>
+            <AuthProvider>
+              <ProgressProvider>
+                <Header />
+                <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+                <Footer />
+                <BottomNav />
+              </ProgressProvider>
+            </AuthProvider>
+          </UISettingsProvider>
         </ThemeProvider>
       </body>
     </html>

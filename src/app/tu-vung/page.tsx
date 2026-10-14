@@ -668,7 +668,7 @@ function VocabularyCard({
               <span className="ja-text text-base font-semibold text-primary">
                 {word.reading}
               </span>
-              <span className="text-xs text-muted-foreground font-mono">
+              <span className="text-xs text-muted-foreground font-mono romaji-text">
                 • {word.romaji}
               </span>
               {word.kanji && word.kanji !== word.word && (
@@ -753,7 +753,7 @@ function VocabularyCard({
                   </div>
                 )}
                 {word.exampleRomaji && (
-                  <div className="text-xs text-muted-foreground font-mono">
+                  <div className="text-xs text-muted-foreground font-mono romaji-text">
                     {word.exampleRomaji}
                   </div>
                 )}
@@ -860,7 +860,7 @@ function VocabularyListItem({
               <span className="ja-text text-sm font-semibold text-primary">
                 ({word.reading})
               </span>
-              <span className="text-xs text-muted-foreground font-mono">
+              <span className="text-xs text-muted-foreground font-mono romaji-text">
                 {word.romaji}
               </span>
               <span className="px-1.5 py-0.2 rounded text-[11px] font-medium bg-secondary text-muted-foreground border border-border">
@@ -931,7 +931,7 @@ function VocabularyListItem({
                 </button>
               </div>
               <div className="ja-text text-xs text-primary/90">{word.exampleReading}</div>
-              <div className="text-xs text-muted-foreground font-mono">{word.exampleRomaji}</div>
+              <div className="text-xs text-muted-foreground font-mono romaji-text">{word.exampleRomaji}</div>
               <div className="text-xs font-medium text-foreground pt-1 border-t border-border/40">
                 👉 {word.exampleVi}
               </div>

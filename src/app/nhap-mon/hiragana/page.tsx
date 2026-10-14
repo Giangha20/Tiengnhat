@@ -613,7 +613,7 @@ export default function HiraganaPage() {
                         <div className="py-2 flex items-center justify-center">
                           <span
                             className={`
-                              ja-text text-3xl sm:text-4xl font-normal transition-colors
+                              ja-text kana-char text-3xl sm:text-4xl font-normal transition-colors
                               ${isLearned ? 'text-foreground' : 'text-foreground'}
                               group-hover:text-primary
                             `}
@@ -624,7 +624,7 @@ export default function HiraganaPage() {
 
                         {/* Romaji & Quick Sound */}
                         <div className="w-full flex items-center justify-between pt-1 border-t border-border/40 text-xs">
-                          <span className="font-mono font-medium text-muted-foreground group-hover:text-primary transition-colors">
+                          <span className="font-mono font-medium text-muted-foreground group-hover:text-primary transition-colors romaji-text">
                             {char.romaji}
                           </span>
 

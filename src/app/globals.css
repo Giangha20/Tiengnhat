@@ -330,3 +330,129 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
 }
+
+/* ==========================================================
+   📱 DYNAMIC UI CUSTOMIZATION (Phone & PC Tuning)
+   ========================================================== */
+
+/* 1. Kanji Font Sizing */
+html[data-kanji-size="large"] .ja-large {
+  font-size: 3.25rem;
+}
+html[data-kanji-size="large"] .ja-medium {
+  font-size: 1.85rem;
+}
+html[data-kanji-size="large"] .kana-char {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.35rem;
+}
+
+html[data-kanji-size="xlarge"] .ja-large {
+  font-size: 4rem;
+}
+html[data-kanji-size="xlarge"] .ja-medium {
+  font-size: 2.2rem;
+}
+html[data-kanji-size="xlarge"] .kana-char {
+  width: 5rem;
+  height: 5rem;
+  font-size: 2.75rem;
+}
+
+/* 2. Layout Density */
+html[data-density="compact"] .space-y-16 {
+  row-gap: 2rem;
+}
+html[data-density="compact"] .p-7 {
+  padding: 1.25rem;
+}
+html[data-density="compact"] .p-6 {
+  padding: 1rem;
+}
+
+/* 3. Romaji Visibility Toggle */
+html[data-romaji="hidden"] .romaji-text {
+  display: none !important;
+}
+
+/* 4. Furigana Toggle */
+html[data-furigana="hidden"] rt {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+html[data-furigana="hidden"] ruby:hover rt,
+html[data-furigana="hidden"] ruby:active rt {
+  opacity: 1;
+}
+
+/* 5. Minimal Animation Mode for Battery/Performance */
+html[data-animation="minimal"] * {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* ==========================================================
+   🌸 ARTISAN JAPANESE HUMAN DESIGN TOUCHES
+   ========================================================== */
+
+/* Tactile 3D Button (Feels mechanical & satisfying like Duolingo/Nintendo) */
+.btn-tactile {
+  box-shadow: 0 4px 0 0 color-mix(in srgb, var(--primary) 70%, black);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 0 color-mix(in srgb, var(--primary) 70%, black);
+}
+.btn-tactile:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 color-mix(in srgb, var(--primary) 70%, black);
+}
+
+.btn-tactile-secondary {
+  box-shadow: 0 3px 0 0 var(--border);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-tactile-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 0 var(--border);
+}
+.btn-tactile-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 var(--border);
+}
+
+/* Japanese Hanko (判子) Seal Stamp Badge */
+.hanko-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  font-family: var(--font-japanese, serif);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.75rem;
+  transform: rotate(-3deg);
+  box-shadow: inset 0 0 4px rgba(220, 38, 38, 0.15);
+  user-select: none;
+}
+
+/* Japanese Subtle Seigaiha / Woven Pattern Overlay */
+.bg-subtle-mesh {
+  background-image: radial-gradient(color-mix(in srgb, var(--foreground) 3.5%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Card Elevated Glow on Hover */
+.card-craft {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+.card-craft:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+

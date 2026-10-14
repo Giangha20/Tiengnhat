@@ -719,7 +719,7 @@ export default function KatakanaPage() {
                       </div>
 
                       {/* Main Katakana Character */}
-                      <div className="ja-text text-3xl sm:text-4xl font-bold text-foreground group-hover:text-primary transition-colors my-1">
+                      <div className="ja-text kana-char text-3xl sm:text-4xl font-bold text-foreground group-hover:text-primary transition-colors my-1">
                         {char.character}
                       </div>
 
@@ -737,7 +737,7 @@ export default function KatakanaPage() {
 
                         {/* Romaji */}
                         {showRomaji && (
-                          <span className="font-mono text-xs text-muted-foreground">
+                          <span className="font-mono text-xs text-muted-foreground romaji-text">
                             {char.romaji}
                           </span>
                         )}

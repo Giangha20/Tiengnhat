@@ -1,4 +1,4 @@
-name: Build iOS IPA (xtool / SwiftPM)
+name: Build iOS IPA (Xcode & xtool)
 
 on:
   workflow_dispatch:
@@ -17,43 +17,49 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: ⚙️ Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '15.4'
-
-      - name: 🛠️ Install xtool
+      - name: ⚙️ Install XcodeGen
         run: |
-          brew tap xtool-org/tap || true
-          brew install xtool || true
+          brew install xcodegen || true
 
       - name: 🚀 Build iOS App & Package IPA
         working-directory: ios
         run: |
-          chmod +x build-ipa.sh || true
+          echo "=== 1. Tạo project Xcode từ cấu hình ==="
+          xcodegen generate
           
-          echo "Biên dịch Swift Package cho iOS..."
-          # Build target for arm64 iOS
-          swift build -c release --triple arm64-apple-ios17.0 || swift build -c release
+          echo "=== 2. Biên dịch ứng dụng iOS bằng xcodebuild ==="
+          xcodebuild -project NihongoMaster.xcodeproj \
+            -scheme NihongoMaster \
+            -sdk iphoneos \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            -derivedDataPath build \
+            clean build
+            
+          echo "=== 3. Đóng gói file .ipa chuẩn Payload Apple ==="
+          APP_DIR="build/Build/Products/Release-iphoneos/NihongoMaster.app"
           
-          # Đóng gói chuẩn Payload Apple
-          mkdir -p Payload/NihongoMaster.app
-          
-          # Copy Binary
-          BIN_PATH=$(find .build -name "NihongoMaster" -type f -perm +111 | head -n 1)
-          if [ -n "$BIN_PATH" ]; then
-            cp "$BIN_PATH" Payload/NihongoMaster.app/NihongoMaster
+          if [ ! -d "$APP_DIR" ]; then
+            echo "❌ Không tìm thấy $APP_DIR. Đang tìm kiếm file .app khác..."
+            APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           fi
           
-          # Copy Info.plist và PkgInfo
-          cp Info.plist Payload/NihongoMaster.app/Info.plist
-          echo -n "APPL????" > Payload/NihongoMaster.app/PkgInfo
+          if [ -z "$APP_DIR" ] || [ ! -d "$APP_DIR" ]; then
+            echo "❌ Không tìm thấy thư mục .app sau khi build!"
+            exit 1
+          fi
           
-          # Nén thành file .ipa
+          echo "✓ Đã tìm thấy ứng dụng: $APP_DIR"
+          rm -rf Payload NihongoMaster.ipa
+          mkdir -p Payload
+          cp -r "$APP_DIR" Payload/
           zip -r -q NihongoMaster.ipa Payload
           rm -rf Payload
           
-          echo "✓ File IPA hoàn tất:"
+          echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
           ls -lh NihongoMaster.ipa
 
       - name: 📤 Upload IPA Artifact

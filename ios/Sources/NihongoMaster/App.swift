@@ -12,7 +12,7 @@ struct NihongoMasterApp: App {
 }
 
 struct ContentView: View {
-    @State private var webAppURL: URL = URL(string: "https://tiengnhat.vercel.app") ?? URL(string: "https://nihongomaster.vercel.app")!
+    @State private var webAppURL: URL = URL(string: "https://tiengnhat-giang-3b69.vercel.app") ?? URL(string: "https://giangha20.github.io/Tiengnhat/")!
 
     var body: some View {
         ZStack {

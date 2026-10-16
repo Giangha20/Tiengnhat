@@ -15,6 +15,11 @@ interface ExamQuestion {
   correctAnswer: string;
   explanation: string;
   points: number;
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
 }
 
 const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
@@ -28,7 +33,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["ともだち", "ゆうだち", "どもだち", "ともたち"],
     correctAnswer: "ともだち",
     explanation: "友達 (Hữu Đạt = Bạn bè) có cách đọc chuẩn là ともだち (tomodachi).",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/study_japanese.jpg",
+      alt: "Bạn bè cùng nhau học tập và trò chuyện",
+      caption: "📸 Ảnh thật: Bạn bè (友達 - Tomodachi) cùng nhau"
+    }
   },
   {
     id: "jlpt_02",
@@ -39,7 +49,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["うえ", "まえ", "なか", "した"],
     correctAnswer: "うえ",
     explanation: "机の上 (tsukue no ue = Trên mặt bàn) có nghĩa phù hợp.",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/cat.jpg",
+      alt: "Chú mèo nằm ngoan trên bàn",
+      caption: "📸 Ảnh thật: Chú mèo (猫 - Neko) nằm trên bàn"
+    }
   },
   {
     id: "jlpt_03",
@@ -50,7 +65,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["雨", "雪", "雲", "風"],
     correctAnswer: "雨",
     explanation: "雨 (Vũ = Mưa). Chữ 雪 là tuyết, 雲 là mây, 風 là gió.",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/rain.jpg",
+      alt: "Cơn mưa rơi trên đường phố",
+      caption: "📸 Ảnh thật: Cơn mưa (雨 - Ame) trên đường phố"
+    }
   },
 
   // Phần 2: Ngữ pháp (Bunpou)
@@ -63,7 +83,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["に", "で", "を", "へ"],
     correctAnswer: "に",
     explanation: "Mốc thời gian xác định có số (7 giờ) dùng trợ từ に.",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/meeting.jpg",
+      alt: "Buổi sáng thức dậy bắt đầu ngày làm việc",
+      caption: "📸 Ảnh thật: Bắt đầu ngày mới và công việc (起きます - Okimasu)"
+    }
   },
   {
     id: "jlpt_05",
@@ -74,7 +99,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["話さないで", "話して", "話す", "話しません"],
     correctAnswer: "話さないで",
     explanation: "Ở thư viện không được nói to, dùng cấu trúc cấm chỉ/nhắc nhở lịch sự: V-ないで + ください.",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/library.jpg",
+      alt: "Thư viện yên tĩnh học tập",
+      caption: "📸 Ảnh thật: Thư viện (図書館 - Toshokan) giữ trật tự"
+    }
   },
   {
     id: "jlpt_06",
@@ -85,7 +115,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["辛くないです", "辛いです", "辛いでした", "辛くないでした"],
     correctAnswer: "辛くないです",
     explanation: "全然 (hoàn toàn không) luôn đi với phủ định. Tính từ 辛い (karai - cay) phủ định là 辛くないです.",
-    points: 10
+    points: 10,
+    image: {
+      src: "/images/exercises/ramen_spicy.jpg",
+      alt: "Bát mì ramen cay đậm đà",
+      caption: "📸 Ảnh thật: Món mì ramen cay đậm đà (辛い - Karai)"
+    }
   },
 
   // Phần 3: Đọc hiểu (Dokkai)
@@ -98,7 +133,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["Sách thông thường (ngoại trừ tạp chí)", "Tạp chí (雑誌)", "Đồ dùng học tập, văn phòng phẩm (文房具)", "Tất cả mọi mặt hàng trong tiệm"],
     correctAnswer: "Sách thông thường (ngoại trừ tạp chí)",
     explanation: "Đoạn văn ghi: 本が全品10%オフ (Sách giảm 10%), và câu cuối ghi: ただし、雑誌と文房具は割引になりません (Tuy nhiên tạp chí và văn phòng phẩm không được giảm giá).",
-    points: 20
+    points: 20,
+    image: {
+      src: "/images/exercises/library.jpg",
+      alt: "Giá sách trưng bày các ấn phẩm",
+      caption: "📸 Ảnh thật: Không gian sách và tài liệu đọc (本 - Hon)"
+    }
   },
   {
     id: "jlpt_08",
@@ -109,7 +149,12 @@ const MOCK_EXAM_QUESTIONS: ExamQuestion[] = [
     options: ["Tàu siêu tốc Shinkansen (新幹線)", "Xe buýt (バス)", "Máy bay (飛行機)", "Đi bộ (歩いて)"],
     correctAnswer: "Tàu siêu tốc Shinkansen (新幹線)",
     explanation: "Trong bài đọc có câu rõ ràng: 新幹線で行きました (Chúng tôi đã đi bằng tàu Shinkansen).",
-    points: 20
+    points: 20,
+    image: {
+      src: "/images/exercises/shinkansen.jpg",
+      alt: "Tàu siêu tốc Shinkansen Nhật Bản",
+      caption: "📸 Ảnh thật: Tàu siêu tốc Shinkansen (新幹線) chạy nhanh"
+    }
   }
 ];
 
@@ -344,6 +389,28 @@ export default function LuyenThiPage() {
                   <h3 className="ja-text text-base sm:text-lg font-bold text-foreground whitespace-pre-line">
                     {q.question}
                   </h3>
+
+                  {/* Real Context Photography */}
+                  {q.image && (
+                    <div className="rounded-2xl overflow-hidden border border-border/80 bg-secondary/20 shadow-sm transition-all hover:border-primary/40">
+                      <div className="relative w-full h-44 sm:h-56 bg-muted/30 overflow-hidden group">
+                        <img
+                          src={q.image.src}
+                          alt={q.image.alt}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* Real Photo Authenticity Badge */}
+                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[11px] font-medium shadow-md">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>Ảnh thật • 実写</span>
+                        </div>
+                      </div>
+                      <div className="px-4 py-2 bg-card/90 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
+                        <span className="font-medium text-foreground/90">{q.image.caption}</span>
+                        <span className="text-[11px] hidden sm:inline text-muted-foreground/80">Minh họa thực tế</span>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Options */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">

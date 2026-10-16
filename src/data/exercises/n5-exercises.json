@@ -5,7 +5,10 @@
     "description": "Bộ bài tập trắc nghiệm toàn diện bao gồm trợ từ, chia động từ, từ vựng và Kanji có lời giải thích chi tiết.",
     "totalQuestions": 20,
     "verificationStatus": "verified",
-    "sources": ["JLPT N5 Official Practice Workbook", "Minna no Nihongo Exercises"],
+    "sources": [
+      "JLPT N5 Official Practice Workbook",
+      "Minna no Nihongo Exercises"
+    ],
     "lastUpdated": "2026-10-13"
   },
   "categories": [
@@ -18,50 +21,100 @@
           "category": "particles",
           "question": "Điền trợ từ đúng vào chỗ trống:\n毎朝パン ___ 食べます。",
           "questionReading": "まいあさパン ___ たべます。",
-          "options": ["を", "に", "で", "が"],
+          "options": [
+            "を",
+            "に",
+            "で",
+            "が"
+          ],
           "correctAnswer": "を",
           "explanation": "Bánh mì (パン) là tân ngữ trực tiếp chịu tác động của hành động ăn (食べます), do đó bắt buộc dùng trợ từ を.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/bread.jpg",
+            "alt": "Bánh mì nướng ăn sáng thơm ngon",
+            "caption": "📸 Ảnh thật: Bánh mì (パン) - Bữa sáng phổ biến"
+          }
         },
         {
           "id": "q_p02",
           "category": "particles",
           "question": "Điền trợ từ thích hợp:\n日曜日、友達 ___ 図書館へ行きました。",
           "questionReading": "にちようび、ともだち ___ としょかんへいきました。",
-          "options": ["と", "で", "を", "に"],
+          "options": [
+            "と",
+            "で",
+            "を",
+            "に"
+          ],
           "correctAnswer": "と",
           "explanation": "Cùng thực hiện hành động với ai (cùng với bạn bè: 友達と) dùng trợ từ と.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/library.jpg",
+            "alt": "Thư viện yên tĩnh với các dãy giá sách và bàn tự học",
+            "caption": "📸 Ảnh thật: Thư viện (図書館 - Toshokan) đọc sách cùng bạn bè"
+          }
         },
         {
           "id": "q_p03",
           "category": "particles",
           "question": "Chọn trợ từ đúng:\nわたしは電車 ___ 会社へ行きます。",
           "questionReading": "わたしはでんしゃ ___ かいしゃへいきます。",
-          "options": ["で", "に", "を", "へ"],
+          "options": [
+            "で",
+            "に",
+            "を",
+            "へ"
+          ],
           "correctAnswer": "で",
           "explanation": "Tàu điện (電車) là phương tiện di chuyển, biểu thị công cụ/phương tiện dùng trợ từ で.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/train.jpg",
+            "alt": "Tàu điện Nhật Bản di chuyển đến nhà ga",
+            "caption": "📸 Ảnh thật: Tàu điện (電車 - Densha) đi làm tại Nhật Bản"
+          }
         },
         {
           "id": "q_p04",
           "category": "particles",
           "question": "Điền trợ từ thích hợp:\n田中さんは部屋 ___ います。",
           "questionReading": "たなかさんはへや ___ います。",
-          "options": ["に", "で", "を", "へ"],
+          "options": [
+            "に",
+            "で",
+            "を",
+            "へ"
+          ],
           "correctAnswer": "に",
           "explanation": "Diễn tả nơi tồn tại của người/động vật với động từ います thì vị trí tồn tại đi với trợ từ に.",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/room.jpg",
+            "alt": "Căn phòng ấm cúng bài trí gọn gàng ngăn nắp",
+            "caption": "📸 Ảnh thật: Căn phòng (部屋 - Heya) sinh hoạt của anh Tanaka"
+          }
         },
         {
           "id": "q_p05",
           "category": "particles",
           "question": "Chọn trợ từ:\n会議は9時 ___ 始まります。",
           "questionReading": "かいぎはくじ ___ はじまります。",
-          "options": ["に", "で", "を", "から"],
+          "options": [
+            "に",
+            "で",
+            "を",
+            "から"
+          ],
           "correctAnswer": "に",
           "explanation": "Thời điểm có con số cụ thể xác định (9 giờ) làm mốc hành động bắt đầu dùng trợ từ に.",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/meeting.jpg",
+            "alt": "Phòng họp công sở hiện đại bắt đầu làm việc",
+            "caption": "📸 Ảnh thật: Cuộc họp (会議 - Kaigi) công ty đúng 9 giờ"
+          }
         }
       ]
     },
@@ -74,50 +127,100 @@
           "category": "conjugation",
           "question": "Chọn cách chia đúng của động từ '買う' (mua) khi muốn nói 'Tôi đã mua':",
           "questionReading": "かう",
-          "options": ["買いました", "買います", "買いませんでした", "買ったです"],
+          "options": [
+            "買いました",
+            "買います",
+            "買いませんでした",
+            "買ったです"
+          ],
           "correctAnswer": "買いました",
           "explanation": "Động từ nhóm 1 買う (kau) đổi vần u thành i + ました ở thể quá khứ lịch sự: 買いました.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/shopping.jpg",
+            "alt": "Mua sắm hàng hóa tại siêu thị cửa hàng",
+            "caption": "📸 Ảnh thật: Đã mua đồ (買いました - Kaimashita)"
+          }
         },
         {
           "id": "q_c02",
           "category": "conjugation",
           "question": "Chia thể て của động từ '待つ' (chờ đợi):",
           "questionReading": "まつ",
-          "options": ["待って", "待ちて", "待いで", "待して"],
+          "options": [
+            "待って",
+            "待ちて",
+            "待いで",
+            "待して"
+          ],
           "correctAnswer": "待って",
           "explanation": "Động từ nhóm 1 có đuôi つ (tsu) khi chia sang thể て sẽ biến thành âm ngắt: って -> 待って (matte).",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/waiting.jpg",
+            "alt": "Hành khách đứng chờ tàu tại ke ga nhà ga",
+            "caption": "📸 Ảnh thật: Chờ đợi (待つ / 待って - Matte) tại sân ga"
+          }
         },
         {
           "id": "q_c03",
           "category": "conjugation",
           "question": "Phủ định của tính từ '寒い' (lạnh) là gì?",
           "questionReading": "さむい",
-          "options": ["寒くないです", "寒いじゃないです", "寒いですではありません", "寒かったない"],
+          "options": [
+            "寒くないです",
+            "寒いじゃないです",
+            "寒いですではありません",
+            "寒かったない"
+          ],
           "correctAnswer": "寒くないです",
           "explanation": "Tính từ đuôi い khi phủ định sẽ bỏ [い] và thêm [くないです]: 寒くないです.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/winter_snow.jpg",
+            "alt": "Mùa đông tuyết rơi phủ trắng xóa phong cảnh",
+            "caption": "📸 Ảnh thật: Mùa đông giá lạnh (寒い - Samui)"
+          }
         },
         {
           "id": "q_c04",
           "category": "conjugation",
           "question": "Chọn thể đúng để điền vào câu xin phép/nhờ vả:\nちょっと ___ ください。(Xin hãy nói chậm lại)",
           "questionReading": "ちょっと ___ ください。",
-          "options": ["話して", "話す", "話します", "話しない"],
+          "options": [
+            "話して",
+            "話す",
+            "話します",
+            "話しない"
+          ],
           "correctAnswer": "話して",
           "explanation": "Cấu trúc nhờ vả lịch sự yêu cầu động từ chia về thể て: V-て + ください. 話す -> 話して.",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/conversation.jpg",
+            "alt": "Hai người đang trò chuyện và đối thoại thân mật",
+            "caption": "📸 Ảnh thật: Xin hãy nói chậm lại (話してください - Hanashite kudasai)"
+          }
         },
         {
           "id": "q_c05",
           "category": "conjugation",
           "question": "Muốn nói 'Tôi muốn uống nước', câu nào đúng ngữ pháp?",
           "questionReading": "みずを ___ 。",
-          "options": ["水が飲みたいです", "水を飲むたいです", "水を飲みたいでした", "水が飲むたいです"],
+          "options": [
+            "水が飲みたいです",
+            "水を飲むたいです",
+            "水を飲みたいでした",
+            "水が飲むたいです"
+          ],
           "correctAnswer": "水が飲みたいです",
           "explanation": "Động từ chia thể たい: bỏ ます thêm たいです (飲みます -> 飲みたいです). Tân ngữ có thể đi với trợ từ が hoặc を.",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/water_glass.jpg",
+            "alt": "Ly nước lọc trong lành tinh khiết giải khát",
+            "caption": "📸 Ảnh thật: Muốn uống nước (水が飲みたいです - Mizu ga nomitai desu)"
+          }
         }
       ]
     },
@@ -130,50 +233,100 @@
           "category": "kanji_reading",
           "question": "Chữ Hán trong ngoặc có cách đọc là gì?\n毎朝【新聞】を読みます。",
           "questionReading": "まいあさ【しんぶん】をよみます。",
-          "options": ["しんぶん", "しんもん", "きんぶん", "ちんぶん"],
+          "options": [
+            "しんぶん",
+            "しんもん",
+            "きんぶん",
+            "ちんぶん"
+          ],
           "correctAnswer": "しんぶん",
           "explanation": "新聞 (Tân Văn = Báo chí) có cách đọc chuẩn là しんぶん (shinbun).",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/newspaper.jpg",
+            "alt": "Tờ báo in tin tức buổi sáng",
+            "caption": "📸 Ảnh thật: Tờ báo in (新聞 - Shinbun) mỗi sáng"
+          }
         },
         {
           "id": "q_k02",
           "category": "kanji_reading",
           "question": "Cách đọc của chữ trong ngoặc:\n駅の【出口】はどちらですか。",
           "questionReading": "えきの【でぐち】はどちらですか。",
-          "options": ["でぐち", "いりぐち", "でくち", "いりくち"],
+          "options": [
+            "でぐち",
+            "いりぐち",
+            "でくち",
+            "いりくち"
+          ],
           "correctAnswer": "でぐち",
           "explanation": "出口 (Xuất Khẩu = Cửa ra) đọc là でぐち (deguchi).",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/station_exit.jpg",
+            "alt": "Biển báo Lối Ra Exit chỉ dẫn tại nhà ga",
+            "caption": "📸 Ảnh thật: Cửa ra / Lối ra nhà ga (出口 - Deguchi)"
+          }
         },
         {
           "id": "q_k03",
           "category": "kanji_reading",
           "question": "Cách đọc của chữ Hán:\n田中さんは【先生】です。",
           "questionReading": "たなかさんは【せんせい】です。",
-          "options": ["せんせい", "がくせい", "いしゃ", "かいしゃいん"],
+          "options": [
+            "せんせい",
+            "がくせい",
+            "いしゃ",
+            "かいしゃいん"
+          ],
           "correctAnswer": "せんせい",
           "explanation": "先生 (Tiên Sinh = Thầy cô giáo) đọc là せんせい (sensei).",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/teacher.jpg",
+            "alt": "Thầy giáo đứng lớp giảng bài trước bảng lớp học",
+            "caption": "📸 Ảnh thật: Thầy giáo (先生 - Sensei) trong lớp học"
+          }
         },
         {
           "id": "q_k04",
           "category": "kanji_reading",
           "question": "Cách đọc của chữ Hán:\n休みに【富士山】に登りました。",
           "questionReading": "やすみに【ふじさん】にのぼりました。",
-          "options": ["ふじさん", "ふじやま", "ふじざん", "ふじせん"],
+          "options": [
+            "ふじさん",
+            "ふじやま",
+            "ふじざん",
+            "ふじせん"
+          ],
           "correctAnswer": "ふじさん",
           "explanation": "富士山 (Núi Phú Sĩ) đọc là ふじさん (Fujisan).",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/fujisan.jpg",
+            "alt": "Núi Phú Sĩ kỳ vĩ sừng sững tuyết phủ đỉnh núi",
+            "caption": "📸 Ảnh thật: Núi Phú Sĩ (富士山 - Fujisan) hùng vĩ"
+          }
         },
         {
           "id": "q_k05",
           "category": "kanji_reading",
           "question": "Cách đọc của chữ Hán:\n明日【午後】雨が降ります。",
           "questionReading": "あした【ごご】あめがふります。",
-          "options": ["ごご", "ごぜん", "ごうご", "ごごう"],
+          "options": [
+            "ごご",
+            "ごぜん",
+            "ごうご",
+            "ごごう"
+          ],
           "correctAnswer": "ごご",
           "explanation": "午後 (Ngọ Hậu = Buổi chiều/PM) đọc là ごご (gogo).",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/rain.jpg",
+            "alt": "Đường phố chiều mưa với những chiếc ô che mưa",
+            "caption": "📸 Ảnh thật: Buổi chiều trời mưa (午後雨が降ります - Gogo ame ga furimasu)"
+          }
         }
       ]
     },
@@ -186,50 +339,100 @@
           "category": "sentence_reorder",
           "question": "Sắp xếp các từ thành câu đúng nghĩa 'Hôm qua tôi đã không xem tivi':\n(1) 昨日は (2) 見ませんでした (3) テレビを (4) わたしは",
           "questionReading": "kinou wa / mimasen deshita / terebi o / watashi wa",
-          "options": ["(4) - (1) - (3) - (2)", "(1) - (2) - (3) - (4)", "(3) - (1) - (4) - (2)", "(4) - (3) - (2) - (1)"],
+          "options": [
+            "(4) - (1) - (3) - (2)",
+            "(1) - (2) - (3) - (4)",
+            "(3) - (1) - (4) - (2)",
+            "(4) - (3) - (2) - (1)"
+          ],
           "correctAnswer": "(4) - (1) - (3) - (2)",
           "explanation": "Cấu trúc chuẩn: [Chủ ngữ: わたしは] + [Thời gian: 昨日は] + [Tân ngữ: テレビを] + [Động từ cuối câu: 見ませんでした].",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/television.jpg",
+            "alt": "Màn hình tivi trong phòng khách gia đình",
+            "caption": "📸 Ảnh thật: Màn hình tivi (テレビ - Terebi) phòng khách"
+          }
         },
         {
           "id": "q_s02",
           "category": "sentence_reorder",
           "question": "Khi muốn nói 'Tôi có thể nói được tiếng Nhật', trật tự đúng là:",
           "questionReading": "Nihongo o hanasu koto ga dekimasu",
-          "options": ["日本語を話すことができます", "日本語を話しますことができます", "日本語が話すことができます", "日本語の話すことができました"],
+          "options": [
+            "日本語を話すことができます",
+            "日本語を話しますことができます",
+            "日本語が話すことができます",
+            "日本語の話すことができました"
+          ],
           "correctAnswer": "日本語を話すことができます",
           "explanation": "Cấu trúc thể khả năng N5: V (thể từ điển) + ことができます. 話す + ことができます.",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/study_japanese.jpg",
+            "alt": "Nhóm sinh viên cùng nhau học tập và luyện nói ngoại ngữ",
+            "caption": "📸 Ảnh thật: Luyện nói tiếng Nhật (日本語を話す - Nihongo o hanasu)"
+          }
         },
         {
           "id": "q_s03",
           "category": "sentence_reorder",
           "question": "Chọn câu đối thoại thích hợp nhất:\nA: 「どうぞ、お上がりください。」 (Xin mời vào nhà)\nB: 「_____。」",
           "questionReading": "Douzo, oagari kudasai",
-          "options": ["お邪魔します (Ojamashimasu)", "いただきます (Itadakimasu)", "ごちそうさまでした", "ただいま"],
+          "options": [
+            "お邪魔します (Ojamashimasu)",
+            "いただきます (Itadakimasu)",
+            "ごちそうさまでした",
+            "ただいま"
+          ],
           "correctAnswer": "お邪魔します (Ojamashimasu)",
           "explanation": "Khi bước vào nhà của người khác tại Nhật Bản, câu chào lịch sự chuẩn mực là お邪魔します (Ojamashimasu - Xin phép làm phiền gia đình ạ).",
-          "difficulty": "medium"
+          "difficulty": "medium",
+          "image": {
+            "src": "/images/exercises/genkan.jpg",
+            "alt": "Lối vào thềm cửa Genkan truyền thống Nhật Bản",
+            "caption": "📸 Ảnh thật: Thềm cửa vào nhà (玄関 - Genkan): お邪魔します"
+          }
         },
         {
           "id": "q_s04",
           "category": "sentence_reorder",
           "question": "Trước khi dùng bữa cơm, người Nhật luôn nói câu gì?",
           "questionReading": "Trước bữa ăn",
-          "options": ["いただきます (Itadakimasu)", "ごちそうさまでした", "いってきます", "おやすみなさい"],
+          "options": [
+            "いただきます (Itadakimasu)",
+            "ごちそうさまでした",
+            "いってきます",
+            "おやすみなさい"
+          ],
           "correctAnswer": "いただきます (Itadakimasu)",
           "explanation": "いただきます (Itadakimasu) thể hiện lòng biết ơn thiên nhiên và người nấu trước khi bắt đầu ăn.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/washoku_meal.jpg",
+            "alt": "Mâm cơm truyền thống Washoku với cơm, canh miso, đũa xếp ngang",
+            "caption": "📸 Ảnh thật: Mâm cơm Nhật (和食 - Washoku) nói lời いただきます"
+          }
         },
         {
           "id": "q_s05",
           "category": "sentence_reorder",
           "question": "Khi làm phiền hoặc xin phép đi qua trước mặt người khác, ta nói:",
           "questionReading": "Xin lỗi / làm phiền",
-          "options": ["すみません (Sumimasen)", "どういたしまして", "さようなら", "はじめまして"],
+          "options": [
+            "すみません (Sumimasen)",
+            "どういたしまして",
+            "さようなら",
+            "はじめまして"
+          ],
           "correctAnswer": "すみません (Sumimasen)",
           "explanation": "すみません (Sumimasen) dùng để xin lỗi, cảm ơn khi được nhường lối, hoặc gọi nhân viên phục vụ.",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "image": {
+            "src": "/images/exercises/ojigi_bow.jpg",
+            "alt": "Cúi đầu chào lịch sự chuẩn mực văn hóa ứng xử Nhật",
+            "caption": "📸 Ảnh thật: Cúi chào lịch sự (お辞儀 - Ojigi): すみません"
+          }
         }
       ]
     }

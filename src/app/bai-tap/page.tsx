@@ -14,6 +14,11 @@ interface Question {
   correctAnswer: string;
   explanation: string;
   difficulty: string;
+  image?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
 }
 
 interface UserAnswerState {
@@ -215,6 +220,31 @@ export default function BaiTapPage() {
               )}
             </div>
 
+            {/* Real Context Photography */}
+            {currentQ.image && (
+              <div className="rounded-2xl overflow-hidden border border-border/80 bg-secondary/20 shadow-sm transition-all hover:border-primary/40">
+                <div className="relative w-full h-48 sm:h-64 bg-muted/30 overflow-hidden group">
+                  <img
+                    src={currentQ.image.src}
+                    alt={currentQ.image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Real Photo Authenticity Badge */}
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[11px] font-medium shadow-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Ảnh thật • 実写</span>
+                  </div>
+                  <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-white/95 text-[10px] font-medium">
+                    Ngữ cảnh thực tế
+                  </div>
+                </div>
+                <div className="px-4 py-2.5 bg-card/90 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground/90">{currentQ.image.caption}</span>
+                  <span className="text-[11px] hidden sm:inline text-muted-foreground/80">Hình ảnh đúng với nội dung câu hỏi</span>
+                </div>
+              </div>
+            )}
+
             {/* Options */}
             <div className="space-y-3 pt-2">
               {currentQ.options.map((opt, optIndex) => {
@@ -375,6 +405,79 @@ export default function BaiTapPage() {
             >
               Xem thống kê cá nhân
             </Link>
+          </div>
+
+          {/* Detailed Question Review List with Real Photos */}
+          <div className="text-left space-y-4 pt-6 border-t border-border">
+            <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+              <span>📸</span> Chi tiết câu hỏi & Minh họa thực tế ({questions.length} câu)
+            </h3>
+            <div className="space-y-3">
+              {questions.map((q, idx) => {
+                const ans = answers[q.id];
+                const isCorrect = ans?.isCorrect;
+                return (
+                  <div
+                    key={q.id}
+                    className={`p-4 rounded-2xl border transition-all ${
+                      isCorrect ? 'border-success/30 bg-success/5' : 'border-error/30 bg-error/5'
+                    }`}
+                  >
+                    <div className="flex flex-col sm:flex-row gap-4 items-start">
+                      {q.image && (
+                        <div className="relative w-full sm:w-32 sm:h-24 h-40 rounded-xl overflow-hidden shrink-0 border border-border/70 bg-muted/40">
+                          <img
+                            src={q.image.src}
+                            alt={q.image.alt}
+                            className="w-full h-full object-cover"
+                          />
+                          <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 text-white text-[9px] font-medium">
+                            実写
+                          </span>
+                        </div>
+                      )}
+                      <div className="flex-1 space-y-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-xs font-semibold text-muted-foreground">
+                            Câu {idx + 1} • {q.id}
+                          </span>
+                          <span
+                            className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
+                              isCorrect
+                                ? 'bg-success/15 text-success'
+                                : 'bg-error/15 text-error'
+                            }`}
+                          >
+                            {isCorrect ? '✓ Trả lời đúng' : '✕ Chưa chính xác'}
+                          </span>
+                        </div>
+                        <p className="ja-text text-sm font-bold text-foreground whitespace-pre-line leading-snug">
+                          {q.question}
+                        </p>
+                        {q.image && (
+                          <p className="text-xs text-primary/90 font-medium">
+                            {q.image.caption}
+                          </p>
+                        )}
+                        <div className="text-xs flex flex-wrap gap-x-4 gap-y-1 pt-1">
+                          <span className="text-muted-foreground">
+                            Bạn chọn: <strong className={isCorrect ? 'text-success' : 'text-error'}>{ans?.selectedOption || '(Chưa làm)'}</strong>
+                          </span>
+                          {!isCorrect && (
+                            <span className="text-foreground">
+                              Đáp án chuẩn: <strong className="text-success">{q.correctAnswer}</strong>
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs text-muted-foreground pt-1.5 border-t border-border/40">
+                          💡 <strong>Giải thích:</strong> {q.explanation}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

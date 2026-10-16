@@ -246,6 +246,62 @@ const wallpaperDir = path.join(rootDir, 'public/images/wallpapers');
   assert(stats.size > 50000, `File ảnh thật ${filename} có kích thước chất lượng cao (${Math.round(stats.size / 1024)} KB)`);
 });
 
+// 12. Kiểm thử Ảnh Thật Ngữ Cảnh Chuẩn Xác Cho Từng Bài Tập (n5-exercises.json)
+console.log('\n12. Kiểm tra ảnh thật ngữ cảnh bài tập (n5-exercises.json)...');
+const exercisesRaw = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/exercises/n5-exercises.json'), 'utf8'));
+
+let exercisePhotoCount = 0;
+exercisesRaw.categories.forEach(cat => {
+  cat.questions.forEach(q => {
+    assert(q.image && q.image.src && q.image.alt && q.image.caption, `Câu hỏi ${q.id} có đầy đủ metadata ảnh thật (src, alt, caption)`);
+    assert(q.image.caption.includes('📸 Ảnh thật:'), `Caption của câu hỏi ${q.id} gắn nhãn xác nhận ảnh chụp thật`);
+    
+    // Kiểm tra file ảnh vật lý trên đĩa
+    const relativeImagePath = q.image.src.replace(/^\//, '');
+    const diskPath = path.join(rootDir, 'public', relativeImagePath);
+    assert(fs.existsSync(diskPath), `File ảnh thật ${q.image.src} của câu ${q.id} tồn tại trên đĩa`);
+    
+    const imgStat = fs.statSync(diskPath);
+    assert(imgStat.size > 30000, `File ảnh thật ${q.image.src} có kích thước ảnh chụp thật độ phân giải cao (${Math.round(imgStat.size / 1024)} KB)`);
+    exercisePhotoCount++;
+  });
+});
+assert(exercisePhotoCount === 20, `Tất cả 20 câu hỏi bài tập đều có ảnh thật tương ứng (thực tế: ${exercisePhotoCount})`);
+
+// Kiểm thử tính chính xác về mặt ngữ nghĩa giữa câu hỏi và ảnh minh họa
+const questionSemanticChecks = [
+  { id: 'q_p01', keyword: 'bread.jpg', semantic: 'Bánh mì nướng ăn sáng' },
+  { id: 'q_p02', keyword: 'library.jpg', semantic: 'Thư viện đọc sách học tập' },
+  { id: 'q_p03', keyword: 'train.jpg', semantic: 'Tàu điện đi làm tại Nhật' },
+  { id: 'q_p04', keyword: 'room.jpg', semantic: 'Căn phòng sinh hoạt của Tanaka' },
+  { id: 'q_p05', keyword: 'meeting.jpg', semantic: 'Cuộc họp công ty lúc 9 giờ' },
+  { id: 'q_c01', keyword: 'shopping.jpg', semantic: 'Mua sắm hàng hóa (買いました)' },
+  { id: 'q_c02', keyword: 'waiting.jpg', semantic: 'Đứng chờ tàu tại sân ga (待って)' },
+  { id: 'q_c03', keyword: 'winter_snow.jpg', semantic: 'Thời tiết lạnh tuyết rơi (寒い)' },
+  { id: 'q_c04', keyword: 'conversation.jpg', semantic: 'Nói chuyện đàm thoại (話して)' },
+  { id: 'q_c05', keyword: 'water_glass.jpg', semantic: 'Ly nước lọc giải khát (水が飲みたい)' },
+  { id: 'q_k01', keyword: 'newspaper.jpg', semantic: 'Tờ báo in đọc buổi sáng (新聞)' },
+  { id: 'q_k02', keyword: 'station_exit.jpg', semantic: 'Lối ra nhà ga (出口)' },
+  { id: 'q_k03', keyword: 'teacher.jpg', semantic: 'Thầy giáo trong lớp học (先生)' },
+  { id: 'q_k04', keyword: 'fujisan.jpg', semantic: 'Núi Phú Sĩ kỳ vĩ (富士山)' },
+  { id: 'q_k05', keyword: 'rain.jpg', semantic: 'Cơn mưa chiều trên phố (午後雨が降ります)' },
+  { id: 'q_s01', keyword: 'television.jpg', semantic: 'Màn hình tivi phòng khách (テレビ)' },
+  { id: 'q_s02', keyword: 'study_japanese.jpg', semantic: 'Luyện nói tiếng Nhật cùng nhau' },
+  { id: 'q_s03', keyword: 'genkan.jpg', semantic: 'Thềm cửa vào nhà kiểu Nhật (玄関)' },
+  { id: 'q_s04', keyword: 'washoku_meal.jpg', semantic: 'Mâm cơm truyền thống Nhật Bản (いただきます)' },
+  { id: 'q_s05', keyword: 'ojigi_bow.jpg', semantic: 'Cúi chào lịch sự xin lỗi/cảm ơn (すみません)' }
+];
+
+questionSemanticChecks.forEach(check => {
+  let matchedQ = null;
+  exercisesRaw.categories.forEach(cat => {
+    const found = cat.questions.find(q => q.id === check.id);
+    if (found) matchedQ = found;
+  });
+  assert(matchedQ !== null, `Tìm thấy câu hỏi ${check.id}`);
+  assert(matchedQ.image.src.includes(check.keyword), `Ảnh của câu ${check.id} (${matchedQ.image.src}) đúng chính xác với ngữ nghĩa '${check.semantic}'`);
+});
+
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);
 console.log(`- Tổng số bài kiểm tra: ${totalTests}`);

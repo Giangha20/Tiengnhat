@@ -19,15 +19,19 @@ jobs:
 
       - name: ⚙️ Install XcodeGen
         run: |
-          brew install xcodegen || true
+          brew install xcodegen
 
       - name: 🚀 Build iOS App & Package IPA
         working-directory: ios
         run: |
-          echo "=== 1. Tạo project Xcode từ cấu hình ==="
-          xcodegen generate
+          set -e
+          echo "=== 1. Tạo project Xcode từ cấu hình XcodeGen ==="
+          xcodegen generate --spec project.yml
           
-          echo "=== 2. Biên dịch ứng dụng iOS bằng xcodebuild ==="
+          echo "=== 2. Kiểm tra các scheme có sẵn ==="
+          xcodebuild -project NihongoMaster.xcodeproj -list
+          
+          echo "=== 3. Biên dịch ứng dụng iOS bằng xcodebuild ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
@@ -37,18 +41,18 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             -derivedDataPath build \
-            clean build
+            clean build | tee /tmp/xcodebuild.log || {
+              echo "❌ Xcodebuild gặp lỗi! Log chi tiết:"
+              tail -n 100 /tmp/xcodebuild.log
+              exit 1
+            }
             
-          echo "=== 3. Đóng gói file .ipa chuẩn Payload Apple ==="
-          APP_DIR="build/Build/Products/Release-iphoneos/NihongoMaster.app"
-          
-          if [ ! -d "$APP_DIR" ]; then
-            echo "❌ Không tìm thấy $APP_DIR. Đang tìm kiếm file .app khác..."
-            APP_DIR=$(find build -name "*.app" -type d | head -n 1)
-          fi
+          echo "=== 4. Đóng gói file .ipa chuẩn Payload Apple ==="
+          APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
           if [ -z "$APP_DIR" ] || [ ! -d "$APP_DIR" ]; then
             echo "❌ Không tìm thấy thư mục .app sau khi build!"
+            ls -la build/
             exit 1
           fi
           
@@ -63,8 +67,17 @@ jobs:
           ls -lh NihongoMaster.ipa
 
       - name: 📤 Upload IPA Artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
+
+      - name: 📤 Upload Build Logs (If Error)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-Debug-Log
+          path: /tmp/xcodebuild.log
+          retention-days: 7

@@ -1,17 +1,22 @@
 name: NihongoMaster
+
 options:
   bundleIdPrefix: com.nihongomaster
+  deploymentTarget:
+    iOS: "16.0"
+
 targets:
   NihongoMaster:
     type: application
     platform: iOS
-    deploymentTarget: "17.0"
     sources:
-      - Sources/NihongoMaster
+      - path: Sources/NihongoMaster
     info:
       path: Info.plist
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.nihongomaster.app
-      CODE_SIGNING_ALLOWED: NO
-      CODE_SIGNING_REQUIRED: NO
-      CODE_SIGN_IDENTITY: ""
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.nihongomaster.app
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGN_IDENTITY: ""
+        SWIFT_VERSION: "5.0"

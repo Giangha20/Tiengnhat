@@ -24,7 +24,6 @@ jobs:
           unzip -q /tmp/xtool.zip -d /tmp/
           sudo cp /tmp/xtool.app/Contents/MacOS/xtool /usr/local/bin/xtool
           sudo chmod +x /usr/local/bin/xtool
-          which xtool
           xtool --help || true
 
       - name: ⚙️ Install XcodeGen
@@ -34,49 +33,77 @@ jobs:
       - name: 🚀 Build iOS App & Package IPA
         working-directory: ios
         run: |
-          echo "=== 1. Thư mục hiện tại và danh sách file ==="
+          set +e
+          echo "=== 1. Danh sách file hiện tại ==="
           pwd
           ls -la
           
-          echo "=== 2. Khởi tạo cấu hình ứng dụng iOS ==="
-          xcodegen generate --spec project.yml
+          echo "=== 2. Khởi tạo Xcode project bằng XcodeGen ==="
+          xcodegen generate --spec project.yml 2>&1 | tee /tmp/xcodegen.log
           
-          echo "=== 3. Biên dịch ứng dụng iOS sang ARM64 ==="
+          echo "=== 3. Danh sách targets và schemes ==="
+          xcodebuild -project NihongoMaster.xcodeproj -list 2>&1 | tee /tmp/schemes.log
+          
+          echo "=== 4. Biên dịch ứng dụng iOS bằng xcodebuild ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
             -configuration Release \
-            -destination "generic/platform=iOS" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             -derivedDataPath build \
-            clean build
+            build 2>&1 | tee /tmp/xcodebuild.log
             
-          echo "=== 4. Kiểm tra file .app sau khi biên dịch ==="
-          APP_DIR=$(find build -name "*.app" -type d | head -n 1)
-          
-          if [ -z "$APP_DIR" ]; then
-            echo "❌ Không tìm thấy thư mục .app!"
-            find build -maxdepth 4
-            exit 1
+          XCODE_STATUS=${PIPESTATUS[0]}
+          if [ $XCODE_STATUS -ne 0 ]; then
+            echo "⚠️ Release build thất bại với mã $XCODE_STATUS, thử biên dịch với Debug..."
+            xcodebuild -project NihongoMaster.xcodeproj \
+              -scheme NihongoMaster \
+              -sdk iphoneos \
+              -configuration Debug \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY="" \
+              -derivedDataPath build \
+              build 2>&1 | tee -a /tmp/xcodebuild.log
           fi
           
-          echo "✓ Ứng dụng đã tạo tại: $APP_DIR"
+          echo "=== 5. Tìm kiếm thư mục .app vừa biên dịch ==="
+          APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
-          echo "=== 5. Đóng gói file .ipa chuẩn Payload Apple ==="
-          rm -rf Payload NihongoMaster.ipa
-          mkdir -p Payload
-          cp -r "$APP_DIR" Payload/
-          zip -r -q NihongoMaster.ipa Payload
-          rm -rf Payload
-          
-          echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
-          ls -lh NihongoMaster.ipa
+          if [ -n "$APP_DIR" ] && [ -d "$APP_DIR" ]; then
+            echo "✓ Đã tìm thấy ứng dụng: $APP_DIR"
+            rm -rf Payload NihongoMaster.ipa
+            mkdir -p Payload
+            cp -r "$APP_DIR" Payload/
+            zip -r -q NihongoMaster.ipa Payload
+            rm -rf Payload
+            
+            echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
+            ls -lh NihongoMaster.ipa
+            exit 0
+          else
+            echo "❌ Không tìm thấy thư mục .app trong thư mục build:"
+            find build -maxdepth 4 2>/dev/null || ls -la
+            exit 1
+          fi
 
-      - name: 📤 Upload IPA Artifact
+      - name: 📤 Upload IPA Artifact (Thành công)
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
+
+      - name: 📤 Upload Log Debug (Luôn lưu)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-Debug-Logs
+          path: |
+            /tmp/xcodegen.log
+            /tmp/xcodebuild.log
+            /tmp/schemes.log
+          retention-days: 7

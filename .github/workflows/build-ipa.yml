@@ -13,6 +13,8 @@ jobs:
   build-ios-ipa:
     name: Build & Package NihongoMaster.ipa
     runs-on: macos-14
+    permissions:
+      contents: write
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
@@ -80,3 +82,21 @@ jobs:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
+
+      - name: 🚀 Publish Direct Download Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: v1.0.0
+          name: "NihongoMaster iOS v1.0.0"
+          body: |
+            📲 Tải ứng dụng NihongoMaster cho iOS (.ipa)
+            - File cài đặt Native IPA chính thức
+            - AppIcon chuẩn 1024x1024
+            - Bộ 12 Avatar học viên phong cách Nhật Bản
+            - Đồng bộ tài khoản đám mây & tiến độ học tập
+          files: ios/NihongoMaster.ipa
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

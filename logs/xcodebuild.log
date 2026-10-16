@@ -1,0 +1,36 @@
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -project NihongoMaster.xcodeproj -scheme NihongoMaster -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= -derivedDataPath build build
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/runner/work/Tiengnhat/Tiengnhat/ios/build
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    SDKROOT = iphoneos17.5
+
+2026-10-16 16:46:41.842 xcodebuild[3160:12965] Writing error result bundle to /var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ResultBundle_2026-16-10_16-46-0041.xcresult
+xcodebuild: error: Unable to read project 'NihongoMaster.xcodeproj'.
+	Reason: The project ‘NihongoMaster’ cannot be opened because it is in a future Xcode project file format (77). Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.
+
+
+Command line invocation:
+    /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -project NihongoMaster.xcodeproj -scheme NihongoMaster -sdk iphoneos -configuration Debug CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= -derivedDataPath build build
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/runner/work/Tiengnhat/Tiengnhat/ios/build
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    SDKROOT = iphoneos17.5
+
+2026-10-16 16:46:44.491 xcodebuild[3326:13690] Writing error result bundle to /var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/ResultBundle_2026-16-10_16-46-0044.xcresult
+xcodebuild: error: Unable to read project 'NihongoMaster.xcodeproj'.
+	Reason: The project ‘NihongoMaster’ cannot be opened because it is in a future Xcode project file format (77). Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.
+
+

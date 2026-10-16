@@ -8,6 +8,11 @@ on:
     paths:
       - 'ios/**'
       - '.github/workflows/build-ipa.yml'
+    paths-ignore:
+      - 'logs/**'
+
+permissions:
+  contents: write
 
 jobs:
   build-ios-ipa:
@@ -34,14 +39,10 @@ jobs:
         working-directory: ios
         run: |
           set +e
-          echo "=== 1. Danh sách file hiện tại ==="
-          pwd
-          ls -la
-          
-          echo "=== 2. Khởi tạo Xcode project bằng XcodeGen ==="
+          echo "=== 1. Tạo project Xcode ==="
           xcodegen generate --spec project.yml 2>&1 | tee /tmp/xcodegen.log
           
-          echo "=== 3. Biên dịch ứng dụng iOS bằng xcodebuild ==="
+          echo "=== 2. Biên dịch Release ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
@@ -54,7 +55,7 @@ jobs:
             
           XCODE_STATUS=${PIPESTATUS[0]}
           if [ $XCODE_STATUS -ne 0 ]; then
-            echo "⚠️ Release build trả về $XCODE_STATUS, thử biên dịch với Debug..."
+            echo "=== 3. Fallback sang Debug ==="
             xcodebuild -project NihongoMaster.xcodeproj \
               -scheme NihongoMaster \
               -sdk iphoneos \
@@ -66,47 +67,45 @@ jobs:
               build 2>&1 | tee -a /tmp/xcodebuild.log
           fi
           
-          # Đưa log ra GitHub Step Summary để người dùng xem trực tiếp trên GitHub web
-          echo "### 📋 Kết Quả Biên Dịch iOS Build Log" >> $GITHUB_STEP_SUMMARY
-          echo '```text' >> $GITHUB_STEP_SUMMARY
-          tail -n 80 /tmp/xcodebuild.log >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          
-          echo "=== 4. Tìm kiếm file .app sau khi biên dịch ==="
+          echo "=== 4. Tìm kiếm thư mục .app ==="
           APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
           if [ -n "$APP_DIR" ] && [ -d "$APP_DIR" ]; then
-            echo "✓ Đã tìm thấy ứng dụng: $APP_DIR"
+            echo "✓ Đã tìm thấy: $APP_DIR"
             rm -rf Payload NihongoMaster.ipa
             mkdir -p Payload
             cp -r "$APP_DIR" Payload/
             zip -r -q NihongoMaster.ipa Payload
             rm -rf Payload
-            
-            echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
             ls -lh NihongoMaster.ipa
-            echo "✅ **Đã đóng gói thành công file NihongoMaster.ipa!**" >> $GITHUB_STEP_SUMMARY
-            exit 0
+            echo "BUILD_OK=true" >> $GITHUB_ENV
           else
-            echo "❌ Không tìm thấy thư mục .app trong thư mục build!"
-            echo "❌ Không tìm thấy file .app để đóng gói!" >> $GITHUB_STEP_SUMMARY
-            exit 1
+            echo "❌ Không tìm thấy file .app!"
+            echo "BUILD_OK=false" >> $GITHUB_ENV
           fi
 
       - name: 📤 Upload IPA Artifact (Thành công)
-        if: success()
+        if: env.BUILD_OK == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
 
-      - name: 📤 Upload Log Debug
+      - name: 📝 Auto Push Debug Logs to Git
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Build-Debug-Logs
-          path: |
-            /tmp/xcodegen.log
-            /tmp/xcodebuild.log
-          retention-days: 7
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p logs
+          cp /tmp/xcodegen.log logs/xcodegen.log 2>/dev/null || true
+          cp /tmp/xcodebuild.log logs/xcodebuild.log 2>/dev/null || true
+          git add logs/
+          git commit -m "ci: capture xcodebuild logs for debugging [skip ci]" || true
+          git push origin main || true
+
+      - name: ⚠️ Fail Step if Build Failed
+        if: env.BUILD_OK != 'true'
+        run: |
+          echo "Build không thành công. Kiểm tra logs đã được ghi lại."
+          exit 1

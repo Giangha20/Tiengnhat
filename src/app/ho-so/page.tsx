@@ -4,15 +4,19 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useProgress } from '@/components/providers/ProgressProvider';
 import { useAuth } from '@/components/providers/AuthProvider';
+import { JAPAN_AVATARS, DEFAULT_AVATAR } from '@/lib/avatars';
 import type { JLPTLevel } from '@/types';
 
 export default function HoSoPage() {
   const { progress, updateProgress, isLoaded } = useProgress();
-  const { user, isAuthenticated, logout, syncWithAccount } = useAuth();
+  const { user, isAuthenticated, logout, syncWithAccount, updateAvatar } = useAuth();
   const [editingGoal, setEditingGoal] = useState(false);
   const [goalInput, setGoalInput] = useState(progress.dailyGoal);
   const [mounted, setMounted] = useState(false);
   const [syncStatus, setSyncStatus] = useState<string | null>(null);
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
+  const [avatarNotice, setAvatarNotice] = useState<string | null>(null);
+  const [isUpdatingAvatar, setIsUpdatingAvatar] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -25,6 +29,32 @@ export default function HoSoPage() {
       </div>
     );
   }
+
+  const currentAvatar = user?.avatar || progress.avatar || DEFAULT_AVATAR;
+  const currentAvatarObj = JAPAN_AVATARS.find((a) => a.src === currentAvatar) || JAPAN_AVATARS[0];
+
+  const handleSelectAvatar = async (avatarSrc: string) => {
+    setIsUpdatingAvatar(true);
+    const chosen = JAPAN_AVATARS.find((a) => a.src === avatarSrc) || JAPAN_AVATARS[0];
+    try {
+      // 1. Cập nhật tiến độ local
+      updateProgress({ avatar: avatarSrc });
+
+      // 2. Cập nhật tài khoản server nếu đã đăng nhập
+      if (isAuthenticated) {
+        await updateAvatar(avatarSrc);
+        await syncWithAccount({ ...progress, avatar: avatarSrc });
+      }
+
+      setAvatarNotice(`✓ Đã đổi ảnh đại diện sang "${chosen.name}" thành công!`);
+      setShowAvatarModal(false);
+    } catch (err) {
+      console.error('Lỗi cập nhật ảnh đại diện:', err);
+    } finally {
+      setIsUpdatingAvatar(false);
+      setTimeout(() => setAvatarNotice(null), 3500);
+    }
+  };
 
   const handleSaveGoal = () => {
     updateProgress({ dailyGoal: Math.max(1, Math.min(100, goalInput)) });
@@ -58,36 +88,61 @@ export default function HoSoPage() {
       {/* Profile Header */}
       <div className="bg-card border border-border rounded-3xl p-6 sm:p-8 mb-8 shadow-sm">
         <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-          {/* Avatar Icon */}
-          <div className="w-24 h-24 rounded-3xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center text-5xl flex-shrink-0">
-            {isAuthenticated && user ? user.name.charAt(0).toUpperCase() : '🌸'}
+          {/* Avatar Container with Edit Badge */}
+          <div className="relative group shrink-0">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden bg-primary/10 border-2 border-primary/30 p-1 shadow-md shadow-primary/10 transition-transform group-hover:scale-105">
+              <img
+                src={currentAvatar}
+                alt={currentAvatarObj.name}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
+            <button
+              onClick={() => setShowAvatarModal(true)}
+              className="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-xl bg-card border border-border shadow-md text-xs font-bold text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all flex items-center gap-1 cursor-pointer"
+              title="Đổi ảnh đại diện phong cách Nhật Bản"
+              type="button"
+            >
+              <span>✏️</span>
+              <span className="text-[11px]">Đổi avatar</span>
+            </button>
           </div>
 
           <div className="space-y-1.5 flex-1">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                {isAuthenticated && user ? user.name : 'Học Viên Tiếng Nhật'}
-              </h1>
+              <div>
+                <h1 className="text-2xl sm:text-3xl font-bold text-foreground flex items-center gap-2 justify-center sm:justify-start">
+                  <span>{isAuthenticated && user ? user.name : 'Học Viên Tiếng Nhật'}</span>
+                  <span className="text-base" title={currentAvatarObj.nameJa}>
+                    {currentAvatarObj.emoji}
+                  </span>
+                </h1>
+                <p className="text-xs text-primary font-medium mt-0.5">
+                  Biểu tượng: {currentAvatarObj.name} ({currentAvatarObj.nameJa})
+                </p>
+              </div>
               {isAuthenticated && user ? (
                 <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20 self-center sm:self-auto">
-                  ☁️ Tài khoản Đám mây (Đồng bộ nhiều máy)
+                  ☁️ Đã kết nối tài khoản đám mây
                 </span>
               ) : (
                 <span className="text-xs px-3 py-1 rounded-full bg-secondary text-muted-foreground font-semibold self-center sm:self-auto">
-                  Thiết bị này (Chưa liên kết tài khoản)
+                  Thiết bị này
                 </span>
               )}
             </div>
+
             {isAuthenticated && user && (
               <p className="text-xs font-mono text-muted-foreground">
                 Email: {user.email} • Thành viên từ {new Date(user.createdAt).toLocaleDateString('vi-VN')}
               </p>
             )}
+
             <p className="text-xs text-muted-foreground">
               Mục tiêu học tập hiện tại: <strong>JLPT {progress.currentLevel}</strong>
             </p>
 
-            <div className="pt-3 flex flex-wrap items-center gap-2.5">
+            <div className="pt-3 flex flex-wrap items-center gap-2.5 justify-center sm:justify-start">
               {isAuthenticated ? (
                 <>
                   <button
@@ -122,6 +177,13 @@ export default function HoSoPage() {
                 </>
               )}
 
+              <button
+                onClick={() => setShowAvatarModal(true)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground text-xs font-bold transition-colors cursor-pointer"
+              >
+                <span>🎨 Chọn avatar Nhật Bản</span>
+              </button>
+
               <Link
                 href="/cai-dat"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-secondary text-muted-foreground hover:text-foreground text-xs font-medium transition-colors"
@@ -130,12 +192,147 @@ export default function HoSoPage() {
               </Link>
             </div>
 
+            {avatarNotice && (
+              <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 pt-1 animate-fade-in">{avatarNotice}</p>
+            )}
+
             {syncStatus && (
               <p className="text-xs font-semibold text-primary pt-1 animate-fade-in">{syncStatus}</p>
             )}
           </div>
         </div>
       </div>
+
+      {/* Avatar Selection Card */}
+      <div className="bg-card border border-border rounded-3xl p-6 sm:p-8 mb-8 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div>
+            <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
+              <span>🌸</span>
+              <span>Bộ Sưu Tập Avatar Học Viên Đậm Chất Nhật Bản</span>
+            </h2>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Chọn linh vật hoặc biểu tượng yêu thích của bạn để đồng hành suốt chặng đường học tiếng Nhật.
+            </p>
+          </div>
+          <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-bold w-fit">
+            12 Avatar Tuyển Chọn
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 pt-2">
+          {JAPAN_AVATARS.map((avatar) => {
+            const isSelected = currentAvatar === avatar.src;
+            return (
+              <button
+                key={avatar.id}
+                type="button"
+                onClick={() => handleSelectAvatar(avatar.src)}
+                disabled={isUpdatingAvatar}
+                className={`group relative p-3 rounded-2xl border text-center transition-all flex flex-col items-center gap-2 cursor-pointer ${
+                  isSelected
+                    ? 'border-primary bg-primary/10 shadow-md ring-2 ring-primary/30'
+                    : 'border-border bg-background/50 hover:bg-secondary/60 hover:border-primary/40'
+                }`}
+              >
+                <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl overflow-hidden bg-primary/5 p-1 border border-border/80 group-hover:scale-105 transition-transform">
+                  <img
+                    src={avatar.src}
+                    alt={avatar.name}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
+                <div className="w-full">
+                  <p className="text-xs font-bold text-foreground truncate">{avatar.name}</p>
+                  <p className="text-[10px] text-muted-foreground truncate">{avatar.nameJa}</p>
+                </div>
+                {isSelected && (
+                  <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-primary text-primary-foreground shadow-2xs">
+                    ✓ Đang dùng
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Avatar Modal Popup */}
+      {showAvatarModal && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setShowAvatarModal(false)}
+        >
+          <div
+            className="bg-card border border-border rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-5 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-border pb-4">
+              <div>
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <span>🎨</span>
+                  <span>Chọn Ảnh Đại Diện Nhật Bản</span>
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Bấm vào một biểu tượng bên dưới để đổi ảnh đại diện
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowAvatarModal(false)}
+                className="w-8 h-8 rounded-full bg-secondary hover:bg-border text-foreground flex items-center justify-center text-sm font-bold cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {JAPAN_AVATARS.map((avatar) => {
+                const isSelected = currentAvatar === avatar.src;
+                return (
+                  <button
+                    key={avatar.id}
+                    type="button"
+                    onClick={() => handleSelectAvatar(avatar.src)}
+                    className={`p-3 rounded-2xl border text-center transition-all flex flex-col items-center gap-2 cursor-pointer ${
+                      isSelected
+                        ? 'border-primary bg-primary/10 shadow-md ring-2 ring-primary/30'
+                        : 'border-border bg-background hover:bg-secondary hover:border-primary/40'
+                    }`}
+                  >
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden bg-primary/5 p-1 border border-border/80">
+                      <img
+                        src={avatar.src}
+                        alt={avatar.name}
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-foreground">{avatar.name}</p>
+                      <p className="text-[10px] text-muted-foreground">{avatar.nameJa}</p>
+                    </div>
+                    {isSelected && (
+                      <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-primary text-primary-foreground">
+                        ✓ Đang dùng
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex justify-end pt-2 border-t border-border">
+              <button
+                type="button"
+                onClick={() => setShowAvatarModal(false)}
+                className="px-4 py-2 rounded-xl bg-secondary text-foreground text-xs font-bold hover:bg-border transition-colors cursor-pointer"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Left Column: Learning Target */}

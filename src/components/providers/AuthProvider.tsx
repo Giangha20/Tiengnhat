@@ -15,6 +15,7 @@ interface AuthContextType {
   logout: () => Promise<void>;
   syncWithAccount: (progress: UserProgress) => Promise<{ success: boolean; message?: string }>;
   getAccountProgress: () => Promise<UserProgress | null>;
+  updateAvatar: (avatar: string) => Promise<{ success: boolean; error?: string }>;
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -27,6 +28,7 @@ const AuthContext = createContext<AuthContextType>({
   logout: async () => {},
   syncWithAccount: async () => ({ success: false }),
   getAccountProgress: async () => null,
+  updateAvatar: async () => ({ success: false }),
 });
 
 export function useAuth() {
@@ -204,6 +206,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [user, token]);
 
+  const updateAvatar = useCallback(
+    async (avatar: string): Promise<{ success: boolean; error?: string }> => {
+      try {
+        const headers: HeadersInit = { 'Content-Type': 'application/json' };
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+
+        const res = await fetch('/api/user/avatar', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ avatar }),
+        });
+
+        const data = await res.json();
+        if (res.ok && data.success && data.user) {
+          setUser(data.user);
+          return { success: true };
+        }
+        return { success: false, error: data.error || 'Không thể cập nhật avatar.' };
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Lỗi mạng khi cập nhật avatar.';
+        return { success: false, error: message };
+      }
+    },
+    [token]
+  );
+
   // Client-side Strict Auth Gate Enforcement
   const isAuthPage = pathname === '/dang-nhap' || pathname === '/dang-ky';
 
@@ -247,6 +275,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         logout,
         syncWithAccount,
         getAccountProgress,
+        updateAvatar,
       }}
     >
       {children}

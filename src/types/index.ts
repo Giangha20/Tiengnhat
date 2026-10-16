@@ -239,6 +239,7 @@ export interface UserProgress {
   hiraganaProgress: number; // 0-100
   katakanaProgress: number; // 0-100
   currentLevel: JLPTLevel;
+  avatar?: string;
   currentStreak: number;
   longestStreak: number;
   totalStudyTime: number; // minutes

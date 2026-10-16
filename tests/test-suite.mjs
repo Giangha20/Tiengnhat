@@ -312,7 +312,8 @@ const {
   registerUser,
   getUserFromSession,
   saveAccountProgress,
-  getAccountProgress
+  getAccountProgress,
+  updateUserAvatar,
 } = authModule;
 
 // 11.1 Kiểm thử JWT Stateless Tokens
@@ -425,6 +426,49 @@ assert(fetchedProgressData && fetchedProgressData.progress.currentStreak === 5, 
 assert(fetchedProgressData && fetchedProgressData.progress.exerciseResults.length === 1, 'Kết quả bài tập N5 được lưu trữ nguyên vẹn trên máy chủ');
 assert(fetchedProgressData && fetchedProgressData.progress.reviewQueue.length === 1, 'Hàng đợi ôn tập SRS được lưu trữ chuẩn xác trên máy chủ');
 assert(fetchedProgressData && typeof fetchedProgressData.updatedAt === 'string', 'Thời gian đồng bộ máy chủ (updatedAt) được cập nhật chuẩn xác');
+
+// 12. Kiểm thử Bộ Icon Ứng Dụng (App Icon iOS, Favicon, Touch Icon) & Bộ 12 Avatar Nhật Bản
+console.log('\n12. Kiểm tra Bộ Icon iOS, Web Favicon và Bộ 12 Avatar Nhật Bản...');
+const avatarModule = await import('../src/lib/avatars.ts');
+const { JAPAN_AVATARS, DEFAULT_AVATAR } = avatarModule;
+
+// 12.1 Kiểm tra file App Icon cho iOS
+const iosAppIconPath = path.join(rootDir, 'ios/Assets.xcassets/AppIcon.appiconset/app-icon-1024.png');
+assert(fs.existsSync(iosAppIconPath), 'File AppIcon iOS kích thước chuẩn 1024x1024 tồn tại');
+assert(fs.statSync(iosAppIconPath).size > 10000, 'AppIcon iOS có kích thước dữ liệu hợp lệ (> 10KB)');
+
+const iosContentsJson = path.join(rootDir, 'ios/Assets.xcassets/AppIcon.appiconset/Contents.json');
+assert(fs.existsSync(iosContentsJson), 'File Contents.json cấu hình Xcode Asset Catalog tồn tại');
+
+// 12.2 Kiểm tra file Web Icons & Manifest
+const webIcon512 = path.join(rootDir, 'public/icon-512.png');
+const webIcon192 = path.join(rootDir, 'public/icon-192.png');
+const appleTouchIcon = path.join(rootDir, 'public/apple-touch-icon.png');
+const faviconIco = path.join(rootDir, 'public/favicon.ico');
+const faviconPng = path.join(rootDir, 'public/favicon.png');
+const manifestJson = path.join(rootDir, 'public/manifest.json');
+
+assert(fs.existsSync(webIcon512), 'Icon Web PWA 512x512 tồn tại');
+assert(fs.existsSync(webIcon192), 'Icon Web PWA 192x192 tồn tại');
+assert(fs.existsSync(appleTouchIcon), 'Icon Apple Touch Icon cho iOS Safari tồn tại');
+assert(fs.existsSync(faviconIco), 'Favicon .ico tồn tại');
+assert(fs.existsSync(faviconPng), 'Favicon .png tồn tại');
+assert(fs.existsSync(manifestJson), 'File Web App Manifest manifest.json tồn tại');
+
+// 12.3 Kiểm tra Bộ 12 Avatar Nhật Bản
+assert(Array.isArray(JAPAN_AVATARS) && JAPAN_AVATARS.length === 12, 'Bộ sưu tập có đủ 12 Avatar văn hóa Nhật Bản');
+JAPAN_AVATARS.forEach((avatar) => {
+  const avatarDiskPath = path.join(rootDir, 'public', avatar.src);
+  assert(fs.existsSync(avatarDiskPath), `File ảnh avatar ${avatar.name} (${avatar.src}) tồn tại trên đĩa`);
+  assert(fs.statSync(avatarDiskPath).size > 1000, `Ảnh avatar ${avatar.name} có kích thước dữ liệu hợp lệ`);
+  assert(typeof avatar.nameJa === 'string' && avatar.nameJa.length > 0, `Avatar ${avatar.name} có nhãn tiếng Nhật: ${avatar.nameJa}`);
+  assert(typeof avatar.emoji === 'string' && avatar.emoji.length > 0, `Avatar ${avatar.name} có emoji biểu trưng: ${avatar.emoji}`);
+});
+
+// 12.4 Kiểm tra cập nhật Avatar cho tài khoản người dùng
+const updateAvatarResult = await updateUserAvatar(regValid.user.id, '/images/avatars/ninja.png');
+assert(updateAvatarResult.success === true, 'Cập nhật ảnh đại diện người dùng trên máy chủ thành công');
+assert(updateAvatarResult.user && updateAvatarResult.user.avatar === '/images/avatars/ninja.png', 'Ảnh đại diện người dùng đã được đổi sang avatar Ninja');
 
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);

@@ -18,6 +18,7 @@ const DEFAULT_PROGRESS: UserProgress = {
   hiraganaProgress: 0,
   katakanaProgress: 0,
   currentLevel: 'N5',
+  avatar: '/images/avatars/sakura.png',
   currentStreak: 0,
   longestStreak: 0,
   totalStudyTime: 0,

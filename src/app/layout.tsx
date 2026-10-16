@@ -37,6 +37,22 @@ export const metadata: Metadata = {
   },
   description:
     "Nền tảng học tiếng Nhật miễn phí dành cho người Việt Nam. Học từ con số 0 với Hiragana, Katakana, từ vựng, ngữ pháp, Kanji và luyện thi JLPT N5-N1.",
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'NihongoMaster',
+  },
   keywords: [
     "học tiếng Nhật",
     "tiếng Nhật cho người Việt",

@@ -11,6 +11,7 @@ export interface AuthUser {
   name: string;
   role: string;
   currentLevel: string;
+  avatar?: string;
   createdAt: string;
 }
 
@@ -31,6 +32,7 @@ interface JWTPayload {
   name: string;
   role: string;
   currentLevel: string;
+  avatar?: string;
   createdAt: string;
   iat: number;
   exp: number;
@@ -83,6 +85,7 @@ export function createJWT(user: AuthUser, expiresInDays: number = 30): string {
     name: user.name,
     role: user.role || 'USER',
     currentLevel: user.currentLevel || 'N5',
+    avatar: user.avatar || '/images/avatars/sakura.png',
     createdAt: user.createdAt,
     iat: now,
     exp,
@@ -277,6 +280,7 @@ export async function registerUser(
     name: cleanName,
     role: 'USER',
     currentLevel: 'N5',
+    avatar: '/images/avatars/sakura.png',
     passwordHash,
     createdAt: new Date().toISOString(),
   };
@@ -369,6 +373,7 @@ export async function getUserFromSession(token: string): Promise<AuthUser | null
       name: jwtPayload.name,
       role: jwtPayload.role,
       currentLevel: jwtPayload.currentLevel,
+      avatar: jwtPayload.avatar || '/images/avatars/sakura.png',
       createdAt: jwtPayload.createdAt,
     };
 
@@ -397,6 +402,9 @@ export async function getUserFromSession(token: string): Promise<AuthUser | null
   if (!user) return null;
 
   const { passwordHash: _, ...safeUser } = user;
+  if (!safeUser.avatar) {
+    safeUser.avatar = '/images/avatars/sakura.png';
+  }
   return safeUser;
 }
 
@@ -426,4 +434,34 @@ export async function getAccountProgress(
 ): Promise<{ progress: UserProgress; updatedAt: string } | null> {
   const storage = loadStorage();
   return storage.progress.get(userId) || null;
+}
+
+// 9. Update user avatar
+export async function updateUserAvatar(
+  userId: string,
+  avatar: string
+): Promise<{ success: boolean; user?: AuthUser; token?: string; error?: string }> {
+  const storage = loadStorage();
+  const user = storage.usersById.get(userId);
+  if (!user) {
+    return { success: false, error: 'Không tìm thấy tài khoản người dùng.' };
+  }
+
+  user.avatar = avatar;
+  storage.users.set(user.email, user);
+  storage.usersById.set(user.id, user);
+
+  const { passwordHash: _, ...safeUser } = user;
+  const token = createJWT(safeUser, 30);
+  const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
+
+  storage.sessions.set(token, {
+    token,
+    userId: user.id,
+    createdAt: new Date().toISOString(),
+    expiresAt,
+  });
+
+  persistStorage(storage);
+  return { success: true, user: safeUser, token };
 }

@@ -116,19 +116,19 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-xs transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16" ref={navRef}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 gap-2" ref={navRef}>
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 text-xl font-bold text-primary hover:opacity-90 transition-opacity select-none"
+            className="flex items-center gap-2 text-base sm:text-xl font-bold text-primary hover:opacity-90 transition-opacity select-none shrink-0"
           >
-            <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg ja-text shadow-sm shadow-primary/30">
+            <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-red-500 to-rose-600 text-white flex items-center justify-center font-bold text-base sm:text-lg ja-text shadow-sm shadow-primary/30">
               日
             </span>
             <span className="font-extrabold tracking-tight text-foreground flex items-center gap-1">
-              <span>NihongoMaster</span>
-              <span className="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-sm bg-primary/10 text-primary">
+              <span>Nihongo<span className="text-primary">Master</span></span>
+              <span className="hidden sm:inline-block text-[9px] uppercase font-black px-1.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
                 PRO
               </span>
             </span>
@@ -226,11 +226,11 @@ export default function Header() {
           </nav>
 
           {/* Right side actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all shadow-2xs cursor-pointer flex items-center justify-center"
+              className="p-2 sm:p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all shadow-2xs cursor-pointer flex items-center justify-center shrink-0"
               aria-label={resolvedTheme === 'dark' ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'}
               title={resolvedTheme === 'dark' ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối'}
             >
@@ -258,7 +258,7 @@ export default function Header() {
             {/* Quick UI Settings */}
             <Link
               href="/cai-dat"
-              className="p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all shadow-2xs flex items-center justify-center group cursor-pointer"
+              className="hidden sm:flex p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all shadow-2xs items-center justify-center group cursor-pointer shrink-0"
               aria-label="Cài đặt giao diện & hệ thống"
               title="Cài đặt giao diện Điện thoại, PC & Âm thanh"
             >
@@ -287,7 +287,7 @@ export default function Header() {
             {isAuthenticated && user ? (
               <Link
                 href="/ho-so"
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-foreground transition-all text-xs font-bold"
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-foreground transition-all text-xs font-bold shrink-0"
                 title="Hồ sơ học tập của bạn"
               >
                 <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-black">
@@ -296,7 +296,7 @@ export default function Header() {
                 <span className="max-w-[90px] truncate">{user.name}</span>
               </Link>
             ) : (
-              <div className="hidden sm:flex items-center gap-1.5">
+              <div className="hidden sm:flex items-center gap-1.5 shrink-0">
                 <Link
                   href="/dang-nhap"
                   className="px-3 py-1.5 rounded-xl text-xs font-semibold text-foreground/85 hover:text-foreground hover:bg-secondary transition-all"
@@ -315,7 +315,7 @@ export default function Header() {
             {/* Mobile menu hamburger toggle button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-colors cursor-pointer"
+              className="lg:hidden p-2 sm:p-2.5 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition-all cursor-pointer flex items-center justify-center shrink-0"
               aria-label={isMobileMenuOpen ? 'Đóng menu' : 'Mở menu'}
               aria-expanded={isMobileMenuOpen}
             >

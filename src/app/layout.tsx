@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Be_Vietnam_Pro, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -9,6 +9,12 @@ import { AuthProvider } from "@/components/providers/AuthProvider";
 import { ProgressProvider } from "@/components/providers/ProgressProvider";
 import BottomNav from "@/components/layout/BottomNav";
 import JapaneseAtmosphereBackdrop from "@/components/layout/JapaneseAtmosphereBackdrop";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-sans",
@@ -47,17 +53,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="vi"
-      className={`${beVietnamPro.variable} ${notoSansJP.variable} h-full antialiased`}
+      className={`${beVietnamPro.variable} ${notoSansJP.variable} h-full antialiased overflow-x-hidden`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans overflow-x-hidden w-full max-w-full">
         <ThemeProvider>
           <UISettingsProvider>
             <JapaneseAtmosphereBackdrop />
             <AuthProvider>
               <ProgressProvider>
                 <Header />
-                <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+                <main className="flex-1 pb-16 lg:pb-0 w-full max-w-full overflow-x-hidden">{children}</main>
                 <Footer />
                 <BottomNav />
               </ProgressProvider>

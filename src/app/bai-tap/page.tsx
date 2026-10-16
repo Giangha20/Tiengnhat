@@ -122,30 +122,30 @@ export default function BaiTapPage() {
   const correctCount = Object.values(answers).filter((a) => a.isCorrect && a.isSubmitted).length;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12 overflow-x-hidden w-full max-w-full">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+      <nav className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
         <Link href="/" className="hover:text-primary transition-colors">Trang chủ</Link>
         <span>/</span>
         <span className="text-foreground font-medium">Bài tập thực hành N5</span>
       </nav>
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
         <div>
           <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold mb-2">
             Thực hành • JLPT N5
           </div>
-          <h1 className="text-3xl font-bold text-foreground">
+          <h1 className="text-xl sm:text-3xl font-black text-foreground break-words leading-tight">
             Ngân Hàng Bài Tập Tự Động Chấm Điểm
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Luyện tập trợ từ, chia động từ, chữ Hán và sắp xếp câu với lời giải thích chi tiết.
+          <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+            Luyện tập trợ từ, chia động từ, chữ Hán và sắp xếp câu với lời giải thích chi tiết & ảnh thật.
           </p>
         </div>
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 max-w-full">
           <button
             onClick={() => {
               setSelectedCategory('all');
@@ -197,150 +197,153 @@ export default function BaiTapPage() {
             />
           </div>
 
-          {/* Question Card */}
-          <div className="bg-card border border-border rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-secondary text-muted-foreground">
-                Độ khó: {currentQ.difficulty === 'easy' ? 'Cơ bản' : 'Trung bình'}
+          {/* Question Card with Responsive 2-Column Layout */}
+          <div className="bg-card/95 backdrop-blur-md border border-border rounded-3xl p-5 sm:p-8 shadow-sm space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-border/50 text-xs">
+              <span className="font-bold px-3 py-1 rounded-full bg-primary/10 text-primary">
+                Độ khó: {currentQ.difficulty === 'easy' ? '🌱 Cơ bản' : '⚡ Trung bình'}
               </span>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground font-mono">
                 Mã: {currentQ.id}
               </span>
             </div>
 
-            {/* Question Text */}
-            <div className="space-y-2">
-              <h2 className="ja-text text-xl sm:text-2xl font-bold text-foreground whitespace-pre-line leading-relaxed">
-                {currentQ.question}
-              </h2>
-              {currentQ.questionReading && (
-                <p className="ja-text text-sm text-muted-foreground">
-                  {currentQ.questionReading}
-                </p>
-              )}
-            </div>
-
-            {/* Real Context Photography */}
-            {currentQ.image && (
-              <div className="rounded-2xl overflow-hidden border border-border/80 bg-secondary/20 shadow-sm transition-all hover:border-primary/40">
-                <div className="relative w-full h-48 sm:h-64 bg-muted/30 overflow-hidden group">
-                  <img
-                    src={currentQ.image.src}
-                    alt={currentQ.image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Real Photo Authenticity Badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[11px] font-medium shadow-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Ảnh thật • 実写</span>
-                  </div>
-                  <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-white/95 text-[10px] font-medium">
-                    Ngữ cảnh thực tế
-                  </div>
-                </div>
-                <div className="px-4 py-2.5 bg-card/90 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
-                  <span className="font-medium text-foreground/90">{currentQ.image.caption}</span>
-                  <span className="text-[11px] hidden sm:inline text-muted-foreground/80">Hình ảnh đúng với nội dung câu hỏi</span>
-                </div>
-              </div>
-            )}
-
-            {/* Options */}
-            <div className="space-y-3 pt-2">
-              {currentQ.options.map((opt, optIndex) => {
-                const isSelected = currentAnswer?.selectedOption === opt;
-                const isSubmitted = currentAnswer?.isSubmitted;
-                const isCorrect = opt === currentQ.correctAnswer;
-
-                let style = 'border-border bg-background hover:border-primary/50';
-                if (isSubmitted) {
-                  if (isCorrect) {
-                    style = 'border-success bg-success/10 text-success font-semibold';
-                  } else if (isSelected && !isCorrect) {
-                    style = 'border-error bg-error/10 text-error';
-                  } else {
-                    style = 'border-border bg-background opacity-50';
-                  }
-                } else if (isSelected) {
-                  style = 'border-primary bg-primary/5 ring-2 ring-primary/20';
-                }
-
-                return (
-                  <button
-                    key={opt}
-                    disabled={isSubmitted}
-                    onClick={() => handleSelectOption(opt)}
-                    className={`w-full p-4 rounded-2xl border text-left text-sm transition-all flex items-center justify-between ${style}`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="w-6 h-6 rounded-full border border-border flex items-center justify-center text-xs font-semibold text-muted-foreground">
-                        {String.fromCharCode(65 + optIndex)}
-                      </span>
-                      <span className="ja-text font-medium text-base">{opt}</span>
-                    </div>
-
-                    {isSubmitted && isCorrect && <span className="text-success font-bold text-lg">✓</span>}
-                    {isSubmitted && isSelected && !isCorrect && <span className="text-error font-bold text-lg">✕</span>}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Explanation box after submit */}
-            {currentAnswer?.isSubmitted && (
-              <div
-                className={`p-4 rounded-2xl border text-xs sm:text-sm leading-relaxed space-y-2 animate-in fade-in duration-200 ${
-                  currentAnswer.isCorrect
-                    ? 'border-success/30 bg-success/5'
-                    : 'border-error/30 bg-error/5'
-                }`}
-              >
-                <div className="flex items-center gap-2 font-bold">
-                  {currentAnswer.isCorrect ? (
-                    <span className="text-success">🎉 Chính xác!</span>
-                  ) : (
-                    <span className="text-error">
-                      ❌ Chưa chính xác! Đáp án đúng: <strong>{currentQ.correctAnswer}</strong>
-                    </span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* Left Column (5 cols): Question & Real Photo */}
+              <div className="lg:col-span-5 space-y-4">
+                <div className="space-y-1.5">
+                  <h2 className="ja-text text-xl sm:text-2xl font-black text-foreground whitespace-pre-line leading-snug">
+                    {currentQ.question}
+                  </h2>
+                  {currentQ.questionReading && (
+                    <p className="ja-text text-xs sm:text-sm text-primary font-medium">
+                      {currentQ.questionReading}
+                    </p>
                   )}
                 </div>
-                <p className="text-muted-foreground">{currentQ.explanation}</p>
+
+                {/* Real Context Photography */}
+                {currentQ.image && (
+                  <div className="rounded-2xl overflow-hidden border border-border/80 bg-secondary/30 shadow-xs transition-all hover:border-primary/40 group">
+                    <div className="relative w-full h-44 sm:h-52 overflow-hidden bg-muted/40">
+                      <img
+                        src={currentQ.image.src}
+                        alt={currentQ.image.alt}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Real Photo Authenticity Badge */}
+                      <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-medium shadow-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span>Ảnh thật • 実写</span>
+                      </div>
+                    </div>
+                    <div className="px-3.5 py-2 bg-card/95 border-t border-border/50 text-xs text-foreground/90 font-medium">
+                      {currentQ.image.caption}
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
 
-            {/* Action buttons */}
-            <div className="pt-4 border-t border-border flex items-center justify-between gap-3">
-              <button
-                disabled={currentIdx === 0}
-                onClick={() => setCurrentIdx((prev) => prev - 1)}
-                className="px-4 py-2 bg-secondary text-foreground rounded-xl text-xs font-semibold hover:bg-muted disabled:opacity-40"
-              >
-                ← Câu trước
-              </button>
+              {/* Right Column (7 cols): Options & Feedback */}
+              <div className="lg:col-span-7 space-y-3">
+                <span className="text-xs font-bold text-muted-foreground block mb-1">
+                  Chọn 1 đáp án chính xác:
+                </span>
+                {currentQ.options.map((opt, optIndex) => {
+                  const isSelected = currentAnswer?.selectedOption === opt;
+                  const isSubmitted = currentAnswer?.isSubmitted;
+                  const isCorrect = opt === currentQ.correctAnswer;
 
-              {!currentAnswer?.isSubmitted ? (
-                <button
-                  disabled={!currentAnswer?.selectedOption}
-                  onClick={handleSubmitCurrent}
-                  className="px-6 py-2.5 bg-primary text-primary-foreground rounded-xl text-xs font-semibold hover:opacity-90 disabled:opacity-40 shadow"
-                >
-                  Kiểm tra đáp án
-                </button>
-              ) : currentIdx < questions.length - 1 ? (
-                <button
-                  onClick={() => setCurrentIdx((prev) => prev + 1)}
-                  className="px-6 py-2.5 bg-primary text-primary-foreground rounded-xl text-xs font-semibold hover:opacity-90 shadow"
-                >
-                  Câu tiếp theo →
-                </button>
-              ) : (
-                <button
-                  onClick={handleFinishTest}
-                  className="px-6 py-2.5 bg-success text-white rounded-xl text-xs font-semibold hover:opacity-90 shadow"
-                >
-                  Xem kết quả tổng kết 🏆
-                </button>
-              )}
+                  let style = 'border-border bg-background hover:border-primary/50';
+                  if (isSubmitted) {
+                    if (isCorrect) {
+                      style = 'border-success bg-success/10 text-success font-semibold';
+                    } else if (isSelected && !isCorrect) {
+                      style = 'border-error bg-error/10 text-error';
+                    } else {
+                      style = 'border-border bg-background opacity-50';
+                    }
+                  } else if (isSelected) {
+                    style = 'border-primary bg-primary/5 ring-2 ring-primary/20';
+                  }
+
+                  return (
+                    <button
+                      key={opt}
+                      disabled={isSubmitted}
+                      onClick={() => handleSelectOption(opt)}
+                      className={`w-full p-3.5 sm:p-4 rounded-2xl border text-left text-sm transition-all flex items-center justify-between cursor-pointer ${style}`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="w-6 h-6 rounded-full border border-border flex items-center justify-center text-xs font-semibold text-muted-foreground">
+                          {String.fromCharCode(65 + optIndex)}
+                        </span>
+                        <span className="ja-text font-medium text-base">{opt}</span>
+                      </div>
+
+                      {isSubmitted && isCorrect && <span className="text-success font-bold text-lg">✓</span>}
+                      {isSubmitted && isSelected && !isCorrect && <span className="text-error font-bold text-lg">✕</span>}
+                    </button>
+                  );
+                })}
+
+                {/* Explanation box after submit */}
+                {currentAnswer?.isSubmitted && (
+                  <div
+                    className={`p-4 rounded-2xl border text-xs sm:text-sm leading-relaxed space-y-1.5 animate-in fade-in duration-200 ${
+                      currentAnswer.isCorrect
+                        ? 'border-success/30 bg-success/5'
+                        : 'border-error/30 bg-error/5'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 font-bold">
+                      {currentAnswer.isCorrect ? (
+                        <span className="text-success">🎉 Chính xác!</span>
+                      ) : (
+                        <span className="text-error">
+                          ❌ Chưa chính xác! Đáp án đúng: <strong>{currentQ.correctAnswer}</strong>
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-muted-foreground">{currentQ.explanation}</p>
+                  </div>
+                )}
+
+                {/* Action buttons */}
+                <div className="pt-3 border-t border-border flex items-center justify-between gap-3">
+                  <button
+                    disabled={currentIdx === 0}
+                    onClick={() => setCurrentIdx((prev) => prev - 1)}
+                    className="px-4 py-2 bg-secondary text-foreground rounded-xl text-xs font-semibold hover:bg-muted disabled:opacity-40 cursor-pointer"
+                  >
+                    ← Câu trước
+                  </button>
+
+                  {!currentAnswer?.isSubmitted ? (
+                    <button
+                      disabled={!currentAnswer?.selectedOption}
+                      onClick={handleSubmitCurrent}
+                      className="px-6 py-2.5 bg-primary text-primary-foreground rounded-xl text-xs font-bold hover:opacity-90 disabled:opacity-40 shadow-sm cursor-pointer"
+                    >
+                      Kiểm tra đáp án
+                    </button>
+                  ) : currentIdx < questions.length - 1 ? (
+                    <button
+                      onClick={() => setCurrentIdx((prev) => prev + 1)}
+                      className="px-6 py-2.5 bg-primary text-primary-foreground rounded-xl text-xs font-bold hover:opacity-90 shadow-sm cursor-pointer"
+                    >
+                      Câu tiếp theo →
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleFinishTest}
+                      className="px-6 py-2.5 bg-success text-white rounded-xl text-xs font-bold hover:opacity-90 shadow-sm cursor-pointer"
+                    >
+                      Xem kết quả tổng kết 🏆
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
 

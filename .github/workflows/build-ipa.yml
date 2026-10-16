@@ -8,10 +8,6 @@ on:
     paths:
       - 'ios/**'
       - '.github/workflows/build-ipa.yml'
-      - '!logs/**'
-
-permissions:
-  contents: write
 
 jobs:
   build-ios-ipa:
@@ -21,9 +17,14 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
+      - name: ⚙️ Select Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '^16'
+
       - name: 🛠️ Install xtool CLI
         run: |
-          echo "Tải xtool phiên bản mới nhất từ GitHub Releases..."
+          echo "Tải xtool 1.22.2 từ GitHub Releases..."
           curl -fL "https://github.com/xtool-org/xtool/releases/download/1.22.2/xtool.app.zip" -o /tmp/xtool.zip
           unzip -q /tmp/xtool.zip -d /tmp/
           sudo cp /tmp/xtool.app/Contents/MacOS/xtool /usr/local/bin/xtool
@@ -37,11 +38,14 @@ jobs:
       - name: 🚀 Build iOS App & Package IPA
         working-directory: ios
         run: |
-          set +e
-          echo "=== 1. Tạo project Xcode từ XcodeGen ==="
-          xcodegen generate --spec project.yml 2>&1 | tee /tmp/xcodegen.log
+          set -e
+          echo "=== 1. Phiên bản Xcode hiện tại ==="
+          xcodebuild -version
           
-          echo "=== 2. Biên dịch Release với xcodebuild ==="
+          echo "=== 2. Khởi tạo Xcode project bằng XcodeGen ==="
+          xcodegen generate --spec project.yml
+          
+          echo "=== 3. Biên dịch ứng dụng iOS với xcodebuild ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
@@ -50,61 +54,29 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             -derivedDataPath build \
-            build 2>&1 | tee /tmp/xcodebuild.log
-            
-          XCODE_STATUS=${PIPESTATUS[0]}
-          if [ $XCODE_STATUS -ne 0 ]; then
-            echo "=== 3. Fallback sang Debug ==="
-            xcodebuild -project NihongoMaster.xcodeproj \
-              -scheme NihongoMaster \
-              -sdk iphoneos \
-              -configuration Debug \
-              CODE_SIGNING_ALLOWED=NO \
-              CODE_SIGNING_REQUIRED=NO \
-              CODE_SIGN_IDENTITY="" \
-              -derivedDataPath build \
-              build 2>&1 | tee -a /tmp/xcodebuild.log
-          fi
+            build
           
           echo "=== 4. Tìm kiếm file .app sau khi biên dịch ==="
           APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
           if [ -n "$APP_DIR" ] && [ -d "$APP_DIR" ]; then
-            echo "✓ Đã tìm thấy ứng dụng: $APP_DIR"
+            echo "✓ Đã tìm thấy ứng dụng tại: $APP_DIR"
             rm -rf Payload NihongoMaster.ipa
             mkdir -p Payload
             cp -r "$APP_DIR" Payload/
             zip -r -q NihongoMaster.ipa Payload
             rm -rf Payload
+            
+            echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
             ls -lh NihongoMaster.ipa
-            echo "BUILD_OK=true" >> $GITHUB_ENV
           else
             echo "❌ Không tìm thấy thư mục .app!"
-            echo "BUILD_OK=false" >> $GITHUB_ENV
+            exit 1
           fi
 
       - name: 📤 Upload IPA Artifact (Thành công)
-        if: env.BUILD_OK == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
-
-      - name: 📝 Auto Push Debug Logs to Git
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          mkdir -p logs
-          cp /tmp/xcodegen.log logs/xcodegen.log 2>/dev/null || true
-          cp /tmp/xcodebuild.log logs/xcodebuild.log 2>/dev/null || true
-          git add logs/
-          git commit -m "ci: capture xcodebuild logs for debugging [skip ci]" || true
-          git push origin main || true
-
-      - name: ⚠️ Verify Build Status
-        if: env.BUILD_OK != 'true'
-        run: |
-          echo "Biên dịch chưa thành công, log đã được lưu vào thư mục logs/ trong repo."
-          exit 1

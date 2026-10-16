@@ -44,3 +44,7 @@ next-env.d.ts
 
 *.db
 prisma/*.db
+logs/
+ios/build/
+ios/Payload/
+

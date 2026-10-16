@@ -41,10 +41,7 @@ jobs:
           echo "=== 2. Khởi tạo Xcode project bằng XcodeGen ==="
           xcodegen generate --spec project.yml 2>&1 | tee /tmp/xcodegen.log
           
-          echo "=== 3. Danh sách targets và schemes ==="
-          xcodebuild -project NihongoMaster.xcodeproj -list 2>&1 | tee /tmp/schemes.log
-          
-          echo "=== 4. Biên dịch ứng dụng iOS bằng xcodebuild ==="
+          echo "=== 3. Biên dịch ứng dụng iOS bằng xcodebuild ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
@@ -57,7 +54,7 @@ jobs:
             
           XCODE_STATUS=${PIPESTATUS[0]}
           if [ $XCODE_STATUS -ne 0 ]; then
-            echo "⚠️ Release build thất bại với mã $XCODE_STATUS, thử biên dịch với Debug..."
+            echo "⚠️ Release build trả về $XCODE_STATUS, thử biên dịch với Debug..."
             xcodebuild -project NihongoMaster.xcodeproj \
               -scheme NihongoMaster \
               -sdk iphoneos \
@@ -69,7 +66,13 @@ jobs:
               build 2>&1 | tee -a /tmp/xcodebuild.log
           fi
           
-          echo "=== 5. Tìm kiếm thư mục .app vừa biên dịch ==="
+          # Đưa log ra GitHub Step Summary để người dùng xem trực tiếp trên GitHub web
+          echo "### 📋 Kết Quả Biên Dịch iOS Build Log" >> $GITHUB_STEP_SUMMARY
+          echo '```text' >> $GITHUB_STEP_SUMMARY
+          tail -n 80 /tmp/xcodebuild.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          echo "=== 4. Tìm kiếm file .app sau khi biên dịch ==="
           APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
           if [ -n "$APP_DIR" ] && [ -d "$APP_DIR" ]; then
@@ -82,10 +85,11 @@ jobs:
             
             echo "🎉 ĐÓNG GÓI THÀNH CÔNG NIHONGOMASTER.IPA:"
             ls -lh NihongoMaster.ipa
+            echo "✅ **Đã đóng gói thành công file NihongoMaster.ipa!**" >> $GITHUB_STEP_SUMMARY
             exit 0
           else
-            echo "❌ Không tìm thấy thư mục .app trong thư mục build:"
-            find build -maxdepth 4 2>/dev/null || ls -la
+            echo "❌ Không tìm thấy thư mục .app trong thư mục build!"
+            echo "❌ Không tìm thấy file .app để đóng gói!" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
 
@@ -97,7 +101,7 @@ jobs:
           path: ios/NihongoMaster.ipa
           retention-days: 14
 
-      - name: 📤 Upload Log Debug (Luôn lưu)
+      - name: 📤 Upload Log Debug
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -105,5 +109,4 @@ jobs:
           path: |
             /tmp/xcodegen.log
             /tmp/xcodebuild.log
-            /tmp/schemes.log
           retention-days: 7

@@ -7,18 +7,16 @@ struct NihongoMasterApp: App {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.dark)
-                .background(Color(red: 12/255, green: 10/255, blue: 9/255))
         }
     }
 }
 
 struct ContentView: View {
-    // URL ứng dụng web NihongoMaster
     @State private var webAppURL: URL = URL(string: "https://tiengnhat.vercel.app") ?? URL(string: "https://nihongomaster.vercel.app")!
 
     var body: some View {
         ZStack {
-            Color(red: 12/255, green: 10/255, blue: 9/255)
+            Color.black
                 .ignoresSafeArea()
 
             NihongoWebView(url: webAppURL)
@@ -41,8 +39,8 @@ struct NihongoWebView: UIViewRepresentable {
 
         let webView = WKWebView(frame: .zero, configuration: config)
         webView.isOpaque = false
-        webView.backgroundColor = UIColor(red: 12/255, green: 10/255, blue: 9/255, alpha: 1.0)
-        webView.scrollView.backgroundColor = UIColor(red: 12/255, green: 10/255, blue: 9/255, alpha: 1.0)
+        webView.backgroundColor = .black
+        webView.scrollView.backgroundColor = .black
         webView.scrollView.bounces = true
         webView.allowsBackForwardNavigationGestures = true
 

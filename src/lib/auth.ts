@@ -154,17 +154,6 @@ function getStorageDirectory(): string {
 
 const getFilePath = (name: string) => path.join(getStorageDirectory(), `nihongo_${name}.json`);
 
-// Pre-seeded Demo user for instant 1-click testing
-const DEMO_USER: StoredUser = {
-  id: 'usr_demo_nihongo',
-  email: 'demo@nihongomaster.com',
-  name: 'Học Viên Demo (NihongoMaster)',
-  role: 'USER',
-  currentLevel: 'N5',
-  passwordHash: bcrypt.hashSync('123456', 10),
-  createdAt: '2026-01-01T00:00:00.000Z',
-};
-
 function loadStorage(): AuthStorage {
   if (globalThis.__nihongoAuth) {
     return globalThis.__nihongoAuth;
@@ -176,10 +165,6 @@ function loadStorage(): AuthStorage {
     sessions: new Map(),
     progress: new Map(),
   };
-
-  // Always seed demo user
-  storage.users.set(DEMO_USER.email.toLowerCase(), DEMO_USER);
-  storage.usersById.set(DEMO_USER.id, DEMO_USER);
 
   try {
     const usersFile = getFilePath('users');
@@ -317,7 +302,7 @@ export async function registerUser(
   return { success: true, user: safeUser, token };
 }
 
-// 4. Login user (supporting normal and demo credentials)
+// 4. Login user with registered credentials
 export async function loginUser(
   email: string,
   password: string
@@ -325,9 +310,27 @@ export async function loginUser(
   const cleanEmail = email.trim().toLowerCase();
   const storage = loadStorage();
 
-  const user = storage.users.get(cleanEmail);
+  let user = storage.users.get(cleanEmail);
   if (!user) {
-    return { success: false, error: 'Tài khoản không tồn tại. Vui lòng kiểm tra email hoặc đăng ký tài khoản mới.' };
+    // Try reloading fresh users from disk
+    try {
+      const usersFile = getFilePath('users');
+      if (fs.existsSync(usersFile)) {
+        const data = JSON.parse(fs.readFileSync(usersFile, 'utf-8')) as StoredUser[];
+        for (const u of data) {
+          storage.users.set(u.email.toLowerCase(), u);
+          storage.usersById.set(u.id, u);
+        }
+        user = storage.users.get(cleanEmail);
+      }
+    } catch {}
+  }
+
+  if (!user) {
+    return {
+      success: false,
+      error: 'Tài khoản chưa được đăng ký trên hệ thống. Vui lòng bấm vào "Tạo tài khoản mới" bên dưới để đăng ký trước khi đăng nhập!',
+    };
   }
 
   const isValidPassword = bcrypt.compareSync(password, user.passwordHash);

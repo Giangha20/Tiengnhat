@@ -336,14 +336,21 @@ const tamperedToken = token.slice(0, -4) + 'abcd';
 const failedVerify = verifyJWT(tamperedToken);
 assert(failedVerify === null, 'Từ chối token giả mạo khi bị sửa chữ ký cryptographic HMAC-SHA256');
 
-// 11.2 Kiểm thử Tài khoản Demo
-const demoLoginSuccess = await loginUser('demo@nihongomaster.com', '123456');
-assert(demoLoginSuccess.success === true, 'Đăng nhập thành công với tài khoản Demo mặc định (demo@nihongomaster.com / 123456)');
-assert(demoLoginSuccess.user && demoLoginSuccess.user.email === 'demo@nihongomaster.com', 'Thông tin tài khoản Demo trả về chính xác');
-assert(demoLoginSuccess.token && demoLoginSuccess.token.length > 20, 'Tài khoản Demo tạo ra token session an toàn');
+// 11.2 Kiểm thử Đăng ký và Đăng nhập với tài khoản người dùng thực tế
+const realEmail = `hocvien_${Date.now()}@nihongomaster.com`;
+const regPreUser = await registerUser('Học Viên Tiếng Nhật', realEmail, 'matkhau123');
+assert(regPreUser.success === true, 'Đăng ký tài khoản người dùng mới thành công');
 
-const demoLoginWrongPass = await loginUser('demo@nihongomaster.com', 'wrong_password_999');
-assert(demoLoginWrongPass.success === false, 'Từ chối đăng nhập khi nhập sai mật khẩu tài khoản Demo');
+const userLoginSuccess = await loginUser(realEmail, 'matkhau123');
+assert(userLoginSuccess.success === true, 'Đăng nhập thành công với tài khoản người dùng vừa đăng ký');
+assert(userLoginSuccess.user && userLoginSuccess.user.email === realEmail, 'Thông tin tài khoản đăng nhập trả về chính xác');
+assert(userLoginSuccess.token && userLoginSuccess.token.length > 20, 'Tài khoản đăng nhập tạo ra token session an toàn');
+
+const userLoginWrongPass = await loginUser(realEmail, 'wrong_password_999');
+assert(userLoginWrongPass.success === false, 'Từ chối đăng nhập khi nhập sai mật khẩu');
+
+const userUnregistered = await loginUser('chua_dang_ky_12345@gmail.com', '123456');
+assert(userUnregistered.success === false, 'Từ chối đăng nhập khi tài khoản chưa được đăng ký trên hệ thống');
 
 // 11.3 Kiểm thử Đăng ký tài khoản mới & Validation
 const regShortName = await registerUser('A', 'valid@gmail.com', '123456');

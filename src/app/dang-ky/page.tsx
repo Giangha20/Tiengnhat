@@ -2,12 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/providers/AuthProvider';
 
 export default function DangKyPage() {
-  const router = useRouter();
-  const { register, login } = useAuth();
+  const { register } = useAuth();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,7 +14,6 @@ export default function DangKyPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isDemoLoading, setIsDemoLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
@@ -51,33 +48,16 @@ export default function DangKyPage() {
     setIsLoading(true);
 
     const res = await register(cleanName, cleanEmail, password);
-    setIsLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Tạo tài khoản thành công! Đang vào trang chủ học tập...');
+      setSuccessMsg('Tạo tài khoản thành công! Đang chuyển hướng vào trang chủ học tập...');
+      // Chuyển hướng hard navigation để nạp đầy đủ cookies và session trên mọi thiết bị iOS & Web
       setTimeout(() => {
-        router.push('/');
-      }, 700);
+        window.location.href = '/';
+      }, 300);
     } else {
+      setIsLoading(false);
       setErrorMsg(res.error || 'Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.');
-    }
-  };
-
-  const handleQuickDemoLogin = async () => {
-    setErrorMsg(null);
-    setSuccessMsg(null);
-    setIsDemoLoading(true);
-
-    const res = await login('demo@nihongomaster.com', '123456');
-    setIsDemoLoading(false);
-
-    if (res.success) {
-      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang vào trang chủ học tập...');
-      setTimeout(() => {
-        router.push('/');
-      }, 600);
-    } else {
-      setErrorMsg('Không thể đăng nhập tài khoản dùng thử lúc này.');
     }
   };
 
@@ -90,30 +70,31 @@ export default function DangKyPage() {
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <Link href="/" className="inline-flex items-center gap-2.5 text-primary font-bold text-lg mb-1">
-            <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-black text-base shadow-sm ja-text">
+          <div className="inline-flex items-center gap-2.5 text-primary font-bold text-lg mb-1">
+            <span className="w-10 h-10 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-white flex items-center justify-center font-black text-lg shadow-sm ja-text">
               日
             </span>
             <span className="text-foreground tracking-tight text-xl font-extrabold">NihongoMaster</span>
-          </Link>
+          </div>
           <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
             Tạo Tài Khoản Mới
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Lưu trữ tiến độ và học tập đồng bộ trên máy tính, iPhone và iPad.
+            Đăng ký để mở khóa trang chủ và lưu trữ tiến độ học tập trên đám mây.
           </p>
         </div>
 
-        {/* Benefits banner */}
-        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-3.5 text-xs text-foreground space-y-1.5">
-          <p className="font-bold text-primary flex items-center gap-1.5">
-            <span>✨</span> Lợi ích của tài khoản NihongoMaster:
-          </p>
-          <ul className="text-muted-foreground space-y-1 pl-4 list-disc text-[11px]">
-            <li>Lưu bài tập N5, từ vựng, flashcard an toàn trên máy chủ đám mây</li>
-            <li>Đăng nhập trên nhiều thiết bị không lo bị mất bài học</li>
-            <li>Hoàn toàn miễn phí 100%, tự động đồng bộ thời gian thực</li>
-          </ul>
+        {/* Switch Tabs (Đăng Nhập / Đăng Ký) */}
+        <div className="grid grid-cols-2 p-1 bg-secondary rounded-2xl border border-border text-xs font-bold">
+          <Link
+            href="/dang-nhap"
+            className="py-2.5 text-center rounded-xl text-muted-foreground hover:text-foreground transition-colors"
+          >
+            🔑 Đăng Nhập
+          </Link>
+          <span className="py-2.5 text-center rounded-xl bg-card text-foreground shadow-xs">
+            ✨ Tạo Tài Khoản
+          </span>
         </div>
 
         {/* Error / Success Notifications */}
@@ -141,6 +122,7 @@ export default function DangKyPage() {
               id="full-name"
               type="text"
               required
+              autoComplete="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="VD: Nguyễn Văn An"
@@ -156,6 +138,7 @@ export default function DangKyPage() {
               id="email-address"
               type="email"
               required
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tenban@gmail.com"
@@ -172,6 +155,7 @@ export default function DangKyPage() {
                 id="password-input"
                 type={showPassword ? 'text' : 'password'}
                 required
+                autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
@@ -180,7 +164,7 @@ export default function DangKyPage() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1 cursor-pointer"
                 title={showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
               >
                 {showPassword ? '🙈' : '👁️'}
@@ -196,6 +180,7 @@ export default function DangKyPage() {
               id="confirm-password"
               type={showPassword ? 'text' : 'password'}
               required
+              autoComplete="new-password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="••••••••"
@@ -205,31 +190,19 @@ export default function DangKyPage() {
 
           <button
             type="submit"
-            disabled={isLoading || isDemoLoading}
+            disabled={isLoading}
             className="w-full py-3.5 px-4 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 mt-1"
           >
             {isLoading ? (
               <>
                 <span className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
-                <span>Đang khởi tạo tài khoản trên máy chủ...</span>
+                <span>Đang khởi tạo tài khoản & vào trang chủ...</span>
               </>
             ) : (
-              <span>🚀 Tạo Tài Khoản Ngay (Tự Động Đăng Nhập)</span>
+              <span>🚀 Tạo Tài Khoản & Vào Học Ngay</span>
             )}
           </button>
         </form>
-
-        {/* Quick Demo Option */}
-        <div className="pt-2 text-center">
-          <button
-            type="button"
-            onClick={handleQuickDemoLogin}
-            disabled={isDemoLoading || isLoading}
-            className="text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
-          >
-            <span>⚡ Không muốn tạo tài khoản? Dùng thử ngay với tài khoản Demo</span>
-          </button>
-        </div>
 
         {/* Footer Link */}
         <div className="text-center pt-3 border-t border-border/60">

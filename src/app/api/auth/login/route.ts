@@ -44,8 +44,7 @@ export async function POST(request: Request) {
 
     if (result.token) {
       response.cookies.set('nihongo_session', result.token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        httpOnly: false,
         sameSite: 'lax',
         path: '/',
         maxAge: 30 * 24 * 60 * 60, // 30 days

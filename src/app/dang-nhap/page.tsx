@@ -2,11 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/providers/AuthProvider';
 
 export default function DangNhapPage() {
-  const router = useRouter();
   const { login } = useAuth();
 
   const [email, setEmail] = useState('');
@@ -14,7 +12,6 @@ export default function DangNhapPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isDemoLoading, setIsDemoLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
@@ -23,49 +20,30 @@ export default function DangNhapPage() {
     setErrorMsg(null);
     setSuccessMsg(null);
 
-    if (!email.trim() || !email.includes('@')) {
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !cleanEmail.includes('@')) {
       setErrorMsg('Vui lòng nhập địa chỉ email hợp lệ.');
       return;
     }
 
     if (!password) {
-      setErrorMsg('Vui lòng nhập mật khẩu.');
+      setErrorMsg('Vui lòng nhập mật khẩu của bạn.');
       return;
     }
 
     setIsLoading(true);
 
-    const res = await login(email, password);
-    setIsLoading(false);
+    const res = await login(cleanEmail, password);
 
     if (res.success) {
-      setSuccessMsg('Đăng nhập thành công! Đang vào trang chủ học tập...');
+      setSuccessMsg('Đăng nhập thành công! Đang chuyển hướng vào trang chủ học tập...');
+      // Chuyển hướng hard navigation để nạp đầy đủ cookies và session trên mọi thiết bị iOS & Web
       setTimeout(() => {
-        router.push('/');
-      }, 700);
+        window.location.href = '/';
+      }, 300);
     } else {
+      setIsLoading(false);
       setErrorMsg(res.error || 'Email hoặc mật khẩu không chính xác.');
-    }
-  };
-
-  const handleQuickDemoLogin = async () => {
-    setErrorMsg(null);
-    setSuccessMsg(null);
-    setIsDemoLoading(true);
-
-    setEmail('demo@nihongomaster.com');
-    setPassword('123456');
-
-    const res = await login('demo@nihongomaster.com', '123456');
-    setIsDemoLoading(false);
-
-    if (res.success) {
-      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang vào trang chủ học tập...');
-      setTimeout(() => {
-        router.push('/');
-      }, 600);
-    } else {
-      setErrorMsg(res.error || 'Không thể đăng nhập tài khoản dùng thử lúc này.');
     }
   };
 
@@ -78,53 +56,31 @@ export default function DangNhapPage() {
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <Link href="/" className="inline-flex items-center gap-2.5 text-primary font-bold text-lg mb-1">
-            <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-black text-base shadow-sm ja-text">
+          <div className="inline-flex items-center gap-2.5 text-primary font-bold text-lg mb-1">
+            <span className="w-10 h-10 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-white flex items-center justify-center font-black text-lg shadow-sm ja-text">
               日
             </span>
             <span className="text-foreground tracking-tight text-xl font-extrabold">NihongoMaster</span>
-          </Link>
+          </div>
           <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
             Đăng Nhập Tài Khoản
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Đăng nhập để tự động lưu và đồng bộ toàn bộ bài học trên mọi thiết bị.
+            Đăng nhập để vào trang chủ và tự động lưu tiến độ học tập trên máy chủ.
           </p>
         </div>
 
-        {/* Quick Demo Button (cực kỳ tiện dụng trên điện thoại/app) */}
-        <div className="p-3.5 bg-gradient-to-r from-primary/15 via-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
-          <div className="flex items-center justify-between gap-3 mb-2">
-            <div className="flex items-center gap-2">
-              <span className="text-lg">⚡</span>
-              <span className="text-xs font-bold text-foreground">Bạn muốn trải nghiệm ngay?</span>
-            </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-semibold">
-              Khuyên dùng
-            </span>
-          </div>
-          <button
-            type="button"
-            onClick={handleQuickDemoLogin}
-            disabled={isDemoLoading || isLoading}
-            className="w-full py-2.5 px-3 bg-primary text-primary-foreground font-bold text-xs rounded-xl hover:opacity-90 transition-all shadow-sm hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
-          >
-            {isDemoLoading ? (
-              <>
-                <span className="w-3.5 h-3.5 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
-                <span>Đang vào tài khoản Demo...</span>
-              </>
-            ) : (
-              <span>1 Chạm Đăng Nhập Dùng Thử Ngay (Demo)</span>
-            )}
-          </button>
-        </div>
-
-        <div className="relative flex items-center justify-center">
-          <div className="border-t border-border w-full" />
-          <span className="bg-card px-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider absolute">
-            Hoặc đăng nhập bằng email
+        {/* Switch Tabs (Đăng Nhập / Đăng Ký) */}
+        <div className="grid grid-cols-2 p-1 bg-secondary rounded-2xl border border-border text-xs font-bold">
+          <span className="py-2.5 text-center rounded-xl bg-card text-foreground shadow-xs">
+            🔑 Đăng Nhập
           </span>
+          <Link
+            href="/dang-ky"
+            className="py-2.5 text-center rounded-xl text-muted-foreground hover:text-foreground transition-colors"
+          >
+            ✨ Tạo Tài Khoản
+          </Link>
         </div>
 
         {/* Error / Success Notifications */}
@@ -152,6 +108,7 @@ export default function DangNhapPage() {
               id="login-email"
               type="email"
               required
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tenban@gmail.com"
@@ -170,6 +127,7 @@ export default function DangNhapPage() {
                 id="login-password"
                 type={showPassword ? 'text' : 'password'}
                 required
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
@@ -178,7 +136,7 @@ export default function DangNhapPage() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1.5"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1.5 cursor-pointer"
                 title={showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
               >
                 {showPassword ? '🙈' : '👁️'}
@@ -188,16 +146,16 @@ export default function DangNhapPage() {
 
           <button
             type="submit"
-            disabled={isLoading || isDemoLoading}
+            disabled={isLoading}
             className="w-full py-3.5 px-4 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 mt-2"
           >
             {isLoading ? (
               <>
                 <span className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
-                <span>Đang kiểm tra tài khoản...</span>
+                <span>Đang xác thực & vào trang chủ...</span>
               </>
             ) : (
-              <span>🔑 Đăng Nhập</span>
+              <span>🔑 Đăng Nhập & Vào Học Ngay</span>
             )}
           </button>
         </form>
@@ -207,11 +165,11 @@ export default function DangNhapPage() {
           <p className="text-xs text-muted-foreground">
             Chưa có tài khoản?{' '}
             <Link href="/dang-ky" className="font-bold text-primary hover:underline">
-              Tạo tài khoản mới miễn phí →
+              Bấm vào đây để tạo tài khoản mới miễn phí →
             </Link>
           </p>
           <p className="text-[11px] text-muted-foreground">
-            💡 Tiến độ làm bài và flashcard được lưu trữ bảo mật trên máy chủ đám mây.
+            🔒 Toàn bộ dữ liệu bài học và flashcard của bạn được bảo mật trên máy chủ đám mây.
           </p>
         </div>
       </div>

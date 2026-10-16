@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import type { AuthUser } from '@/lib/auth';
 import type { UserProgress } from '@/types';
 
@@ -36,7 +36,6 @@ export function useAuth() {
 const TOKEN_KEY = 'nihongo_auth_token';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
   const pathname = usePathname();
 
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -50,6 +49,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const savedToken = typeof window !== 'undefined' ? localStorage.getItem(TOKEN_KEY) : null;
         if (savedToken) {
           setToken(savedToken);
+          // Đồng bộ cookie ngay lập tức để middleware không chặn nhầm
+          document.cookie = `nihongo_session=${savedToken}; path=/; max-age=2592000; SameSite=Lax`;
         }
 
         const headers: HeadersInit = {};
@@ -68,7 +69,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setUser(data.user);
           } else {
             setUser(null);
-            if (savedToken) localStorage.removeItem(TOKEN_KEY);
+            if (savedToken && typeof window !== 'undefined') {
+              localStorage.removeItem(TOKEN_KEY);
+              document.cookie = 'nihongo_session=; path=/; max-age=0; SameSite=Lax';
+            }
           }
         } else {
           setUser(null);
@@ -96,7 +100,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(data.user);
         if (data.token) {
           setToken(data.token);
-          localStorage.setItem(TOKEN_KEY, data.token);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem(TOKEN_KEY, data.token);
+            document.cookie = `nihongo_session=${data.token}; path=/; max-age=2592000; SameSite=Lax`;
+          }
         }
         return { success: true };
       }
@@ -119,7 +126,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(data.user);
         if (data.token) {
           setToken(data.token);
-          localStorage.setItem(TOKEN_KEY, data.token);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem(TOKEN_KEY, data.token);
+            document.cookie = `nihongo_session=${data.token}; path=/; max-age=2592000; SameSite=Lax`;
+          }
         }
         return { success: true };
       }
@@ -145,10 +155,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setToken(null);
       if (typeof window !== 'undefined') {
         localStorage.removeItem(TOKEN_KEY);
+        document.cookie = 'nihongo_session=; path=/; max-age=0; SameSite=Lax';
+        window.location.href = '/dang-nhap';
       }
-      router.replace('/dang-nhap');
     }
-  }, [token, router]);
+  }, [token]);
 
   const syncWithAccount = useCallback(
     async (progress: UserProgress) => {
@@ -197,28 +208,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAuthPage = pathname === '/dang-nhap' || pathname === '/dang-ky';
 
   useEffect(() => {
-    if (!isLoading) {
-      if (!user && !isAuthPage) {
-        // Enforce: User cannot access homepage or any learning page without logging in
-        router.replace('/dang-nhap');
-      } else if (user && isAuthPage) {
-        // Logged-in users should not see login/register pages
-        router.replace('/');
-      }
+    if (!isLoading && !user && !isAuthPage) {
+      // Bắt buộc phải đăng ký / đăng nhập mới được vào trang chủ hoặc bài học
+      window.location.href = '/dang-nhap';
     }
-  }, [user, isLoading, isAuthPage, router]);
+  }, [user, isLoading, isAuthPage]);
 
   // Prevent flashing content if user is unauthenticated and attempting to view protected pages
   if (!isLoading && !user && !isAuthPage) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background px-4">
         <div className="text-center space-y-4 max-w-sm p-6 bg-card border border-border rounded-3xl shadow-lg">
-          <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary mx-auto flex items-center justify-center text-3xl font-black ja-text shadow-sm animate-pulse">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-white mx-auto flex items-center justify-center text-3xl font-black ja-text shadow-sm animate-pulse">
             日
           </div>
           <h2 className="text-lg font-black text-foreground">Yêu Cầu Đăng Nhập</h2>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Hệ thống yêu cầu đăng ký hoặc đăng nhập tài khoản trước khi vào trang chủ và bắt đầu học tập.
+            Bạn cần tạo tài khoản hoặc đăng nhập trước khi có thể vào trang chủ và bắt đầu học tập.
           </p>
           <div className="flex items-center justify-center gap-2 pt-2 text-xs text-primary font-bold">
             <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />

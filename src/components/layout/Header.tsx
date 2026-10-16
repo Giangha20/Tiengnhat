@@ -287,25 +287,26 @@ export default function Header() {
             {isAuthenticated && user ? (
               <Link
                 href="/ho-so"
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-foreground transition-all text-xs font-bold shrink-0"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-foreground transition-all text-xs font-bold shrink-0"
                 title="Hồ sơ học tập của bạn"
               >
                 <span className="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[10px] font-black">
                   {user.name.charAt(0).toUpperCase()}
                 </span>
-                <span className="max-w-[90px] truncate">{user.name}</span>
+                <span className="hidden sm:inline max-w-[90px] truncate">{user.name}</span>
               </Link>
             ) : (
-              <div className="hidden sm:flex items-center gap-1.5 shrink-0">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <Link
                   href="/dang-nhap"
-                  className="px-3 py-1.5 rounded-xl text-xs font-semibold text-foreground/85 hover:text-foreground hover:bg-secondary transition-all"
+                  className="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold bg-primary/10 text-primary hover:bg-primary/20 transition-all flex items-center gap-1"
                 >
-                  Đăng nhập
+                  <span>🔑</span>
+                  <span className="hidden sm:inline">Đăng nhập</span>
                 </Link>
                 <Link
                   href="/dang-ky"
-                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-xs flex items-center gap-1"
+                  className="hidden sm:flex px-3 py-1.5 rounded-xl text-xs font-bold bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-xs items-center gap-1"
                 >
                   <span>Tạo tài khoản</span>
                 </Link>

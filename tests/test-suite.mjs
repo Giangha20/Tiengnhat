@@ -302,6 +302,123 @@ questionSemanticChecks.forEach(check => {
   assert(matchedQ.image.src.includes(check.keyword), `Ảnh của câu ${check.id} (${matchedQ.image.src}) đúng chính xác với ngữ nghĩa '${check.semantic}'`);
 });
 
+// 11. Kiểm thử Toàn diện Hệ thống Xác thực (Authentication) & Lưu bài học trên Server (Server Sync)
+console.log('\n11. Kiểm tra Hệ thống Xác thực (JWT, Đăng ký, Đăng nhập Demo) & Lưu tiến độ Server...');
+const authModule = await import('../src/lib/auth.ts');
+const {
+  createJWT,
+  verifyJWT,
+  loginUser,
+  registerUser,
+  getUserFromSession,
+  saveAccountProgress,
+  getAccountProgress
+} = authModule;
+
+// 11.1 Kiểm thử JWT Stateless Tokens
+const testUser = {
+  id: 'usr_test_auth_123',
+  email: 'test@nihongomaster.com',
+  name: 'Test Learner',
+  role: 'USER',
+  currentLevel: 'N5',
+  createdAt: new Date().toISOString(),
+};
+const token = createJWT(testUser, 7);
+assert(typeof token === 'string' && token.split('.').length === 3, 'Tạo token JWT stateless hợp lệ (3 phần ngăn cách bởi dấu chấm)');
+
+const verifiedPayload = verifyJWT(token);
+assert(verifiedPayload !== null, 'Xác thực chữ ký JWT hợp lệ thành công');
+assert(verifiedPayload && verifiedPayload.email === 'test@nihongomaster.com', 'Payload JWT giải mã chính xác địa chỉ email');
+assert(verifiedPayload && verifiedPayload.id === 'usr_test_auth_123', 'Payload JWT giải mã chính xác ID người dùng');
+
+const tamperedToken = token.slice(0, -4) + 'abcd';
+const failedVerify = verifyJWT(tamperedToken);
+assert(failedVerify === null, 'Từ chối token giả mạo khi bị sửa chữ ký cryptographic HMAC-SHA256');
+
+// 11.2 Kiểm thử Tài khoản Demo
+const demoLoginSuccess = await loginUser('demo@nihongomaster.com', '123456');
+assert(demoLoginSuccess.success === true, 'Đăng nhập thành công với tài khoản Demo mặc định (demo@nihongomaster.com / 123456)');
+assert(demoLoginSuccess.user && demoLoginSuccess.user.email === 'demo@nihongomaster.com', 'Thông tin tài khoản Demo trả về chính xác');
+assert(demoLoginSuccess.token && demoLoginSuccess.token.length > 20, 'Tài khoản Demo tạo ra token session an toàn');
+
+const demoLoginWrongPass = await loginUser('demo@nihongomaster.com', 'wrong_password_999');
+assert(demoLoginWrongPass.success === false, 'Từ chối đăng nhập khi nhập sai mật khẩu tài khoản Demo');
+
+// 11.3 Kiểm thử Đăng ký tài khoản mới & Validation
+const regShortName = await registerUser('A', 'valid@gmail.com', '123456');
+assert(regShortName.success === false, 'Validation bắt lỗi khi họ tên dưới 2 ký tự');
+
+const regInvalidEmail = await registerUser('Nguyễn Văn B', 'invalid-email-format', '123456');
+assert(regInvalidEmail.success === false, 'Validation bắt lỗi khi email sai định dạng');
+
+const regShortPass = await registerUser('Nguyễn Văn B', 'nguyenvanb@gmail.com', '123');
+assert(regShortPass.success === false, 'Validation bắt lỗi khi mật khẩu dưới 6 ký tự');
+
+const uniqueTestEmail = `user_${Date.now()}@gmail.com`;
+const regValid = await registerUser('Nguyễn Văn B', uniqueTestEmail, 'password123');
+assert(regValid.success === true, 'Đăng ký tài khoản mới hợp lệ thành công');
+assert(regValid.user && regValid.user.email === uniqueTestEmail, 'Tài khoản mới tạo lưu đúng email');
+assert(regValid.token && regValid.token.length > 20, 'Đăng ký thành công tự động cấp token JWT phiên làm việc');
+
+const regDuplicate = await registerUser('Nguyễn Văn B', uniqueTestEmail, 'password123');
+assert(regDuplicate.success === false, 'Từ chối đăng ký khi email đã tồn tại trên hệ thống');
+
+// 11.4 Kiểm thử Khôi phục phiên làm việc (Session Recovery)
+const recoveredUser = await getUserFromSession(regValid.token);
+assert(recoveredUser !== null, 'Khôi phục thông tin người dùng từ token thành công');
+assert(recoveredUser && recoveredUser.email === uniqueTestEmail, 'Thông tin người dùng khôi phục từ token khớp với dữ liệu đăng ký');
+
+// 11.5 Kiểm thử Lưu trữ & Đồng bộ Tiến độ học tập lên Server (Server Progress Sync)
+const sampleProgress = {
+  totalWordsLearned: 45,
+  totalKanjiLearned: 18,
+  totalGrammarLearned: 12,
+  hiraganaProgress: 100,
+  katakanaProgress: 100,
+  currentLevel: 'N5',
+  currentStreak: 5,
+  longestStreak: 7,
+  totalStudyTime: 1200,
+  dailyGoal: 15,
+  todayItemsLearned: 10,
+  todayItemsReviewed: 8,
+  todayCorrectRate: 92,
+  lastStudyDate: new Date().toISOString(),
+  exerciseResults: [
+    {
+      exerciseId: 'practice_grammar_01',
+      score: 10,
+      totalQuestions: 10,
+      completedAt: new Date().toISOString(),
+    }
+  ],
+  reviewQueue: [
+    {
+      itemId: 'n5_v_001',
+      itemType: 'vocabulary',
+      status: 'learning',
+      easeFactor: 2.5,
+      interval: 1,
+      repetitions: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      lastReviewedAt: new Date().toISOString(),
+      nextReviewAt: new Date(Date.now() + 86400000).toISOString(),
+    }
+  ],
+};
+
+await saveAccountProgress(regValid.user.id, sampleProgress);
+const fetchedProgressData = await getAccountProgress(regValid.user.id);
+assert(fetchedProgressData !== null, 'Máy chủ lưu trữ và truy xuất tiến độ bài học thành công');
+assert(fetchedProgressData && fetchedProgressData.progress.totalWordsLearned === 45, 'Số từ vựng đã học (45 từ) được lưu chuẩn xác trên máy chủ');
+assert(fetchedProgressData && fetchedProgressData.progress.totalKanjiLearned === 18, 'Số Kanji đã học (18 chữ) được lưu chuẩn xác trên máy chủ');
+assert(fetchedProgressData && fetchedProgressData.progress.currentStreak === 5, 'Chuỗi ngày học liên tục (5 ngày) được lưu chuẩn xác trên máy chủ');
+assert(fetchedProgressData && fetchedProgressData.progress.exerciseResults.length === 1, 'Kết quả bài tập N5 được lưu trữ nguyên vẹn trên máy chủ');
+assert(fetchedProgressData && fetchedProgressData.progress.reviewQueue.length === 1, 'Hàng đợi ôn tập SRS được lưu trữ chuẩn xác trên máy chủ');
+assert(fetchedProgressData && typeof fetchedProgressData.updatedAt === 'string', 'Thời gian đồng bộ máy chủ (updatedAt) được cập nhật chuẩn xác');
+
 console.log('\n==================================================');
 console.log(`📊 TỔNG KẾT KẾT QUẢ KIỂM THỬ:`);
 console.log(`- Tổng số bài kiểm tra: ${totalTests}`);

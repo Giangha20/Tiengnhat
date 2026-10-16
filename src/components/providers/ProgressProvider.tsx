@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
 import type { UserProgress, SRSItem, LearningStatus } from '@/types';
 import {
   exportProgressToFile,
@@ -38,6 +38,7 @@ interface ProgressContextType {
   getItemStatus: (itemId: string, itemType: SRSItem['itemType']) => LearningStatus;
   resetProgress: () => void;
   isLoaded: boolean;
+  isServerSyncing: boolean;
   // File & Online Sync methods
   exportToFile: () => { filename: string; sizeKb: number };
   importFromFile: (file: File) => Promise<{ success: boolean; error?: string }>;
@@ -56,6 +57,7 @@ const ProgressContext = createContext<ProgressContextType>({
   getItemStatus: () => 'new',
   resetProgress: () => {},
   isLoaded: false,
+  isServerSyncing: false,
   exportToFile: () => ({ filename: '', sizeKb: 0 }),
   importFromFile: async () => ({ success: false }),
   saveToCloud: async () => ({ success: false, message: '' }),
@@ -134,23 +136,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [syncCode, setSyncCodeState] = useState<string>('');
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  // Auto-sync with server account when logged in across devices
-  useEffect(() => {
-    if (user && isLoaded) {
-      getAccountProgress().then((cloudProgress) => {
-        if (cloudProgress) {
-          if ((cloudProgress.totalWordsLearned || 0) >= (progress.totalWordsLearned || 0)) {
-            setProgress(cloudProgress);
-          } else {
-            syncWithAccount(progress);
-          }
-        } else {
-          syncWithAccount(progress);
-        }
-      });
-    }
-  }, [user, isLoaded]);
+  const [isServerSyncing, setIsServerSyncing] = useState(false);
+  const isFirstSyncDone = useRef(false);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -199,6 +186,72 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
     }
   }, [progress, isLoaded]);
+
+  // Initial account sync when user logs in
+  useEffect(() => {
+    if (user && isLoaded && !isFirstSyncDone.current) {
+      isFirstSyncDone.current = true;
+      setIsServerSyncing(true);
+      getAccountProgress()
+        .then((cloudProgress) => {
+          if (cloudProgress) {
+            const cloudScore =
+              (cloudProgress.totalWordsLearned || 0) +
+              (cloudProgress.totalKanjiLearned || 0) +
+              (cloudProgress.totalGrammarLearned || 0) +
+              (cloudProgress.exerciseResults?.length || 0);
+
+            const localScore =
+              (progress.totalWordsLearned || 0) +
+              (progress.totalKanjiLearned || 0) +
+              (progress.totalGrammarLearned || 0) +
+              (progress.exerciseResults?.length || 0);
+
+            if (cloudScore >= localScore && cloudScore > 0) {
+              setProgress(cloudProgress);
+            } else {
+              // Local has newer or more lessons completed -> push to server account
+              syncWithAccount(progress);
+            }
+          } else {
+            // First time login with this account -> save current progress to server
+            syncWithAccount(progress);
+          }
+        })
+        .finally(() => {
+          setIsServerSyncing(false);
+        });
+    }
+
+    if (!user) {
+      isFirstSyncDone.current = false;
+    }
+  }, [user, isLoaded, getAccountProgress, syncWithAccount, progress]);
+
+  // Real-time Debounced Auto-Sync to server (1.5s after user finishes learning an item or exercise)
+  useEffect(() => {
+    if (!isLoaded || !user) return;
+
+    const timer = setTimeout(async () => {
+      try {
+        setIsServerSyncing(true);
+        const res = await syncWithAccount(progress);
+        if (res.success) {
+          const now = new Date().toISOString();
+          setLastSyncedAt(now);
+          try {
+            localStorage.setItem(LAST_SYNC_KEY, now);
+          } catch {}
+        }
+      } catch (err) {
+        console.warn('Lỗi tự động lưu bài học lên server:', err);
+      } finally {
+        setIsServerSyncing(false);
+      }
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [progress, user, isLoaded, syncWithAccount]);
 
   const updateProgress = useCallback((updates: Partial<UserProgress>) => {
     setProgress((prev) => ({ ...prev, ...updates }));
@@ -398,6 +451,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         getItemStatus,
         resetProgress,
         isLoaded,
+        isServerSyncing,
         exportToFile,
         importFromFile,
         saveToCloud,

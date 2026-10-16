@@ -14,10 +14,11 @@ export default function DangNhapPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isDemoLoading, setIsDemoLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg(null);
     setSuccessMsg(null);
@@ -38,54 +39,111 @@ export default function DangNhapPage() {
     setIsLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Đăng nhập thành công! Đang đồng bộ dữ liệu...');
+      setSuccessMsg('Đăng nhập thành công! Đang kết nối máy chủ và đồng bộ bài học...');
       setTimeout(() => {
         router.push('/ho-so');
-      }, 1200);
+      }, 1000);
     } else {
       setErrorMsg(res.error || 'Email hoặc mật khẩu không chính xác.');
     }
   };
 
+  const handleQuickDemoLogin = async () => {
+    setErrorMsg(null);
+    setSuccessMsg(null);
+    setIsDemoLoading(true);
+
+    setEmail('demo@nihongomaster.com');
+    setPassword('123456');
+
+    const res = await login('demo@nihongomaster.com', '123456');
+    setIsDemoLoading(false);
+
+    if (res.success) {
+      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang tải bài học...');
+      setTimeout(() => {
+        router.push('/ho-so');
+      }, 900);
+    } else {
+      setErrorMsg(res.error || 'Không thể đăng nhập tài khoản dùng thử lúc này.');
+    }
+  };
+
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-md w-full space-y-8 bg-card border border-border p-8 sm:p-10 rounded-3xl shadow-lg relative overflow-hidden">
+    <div className="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="max-w-md w-full space-y-6 bg-card border border-border p-6 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
         {/* Glow decoration */}
-        <div className="absolute top-0 right-0 w-36 h-36 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-44 h-44 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-36 h-36 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <Link href="/" className="inline-flex items-center gap-2 text-primary font-bold text-lg mb-2">
-            <span className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm ja-text">
+          <Link href="/" className="inline-flex items-center gap-2.5 text-primary font-bold text-lg mb-1">
+            <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-black text-base shadow-sm ja-text">
               日
             </span>
-            <span className="text-foreground tracking-tight">NihongoMaster</span>
+            <span className="text-foreground tracking-tight text-xl font-extrabold">NihongoMaster</span>
           </Link>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
             Đăng Nhập Tài Khoản
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Đăng nhập để đồng bộ tiến độ học tập trên mọi thiết bị của bạn.
+            Đăng nhập để tự động lưu và đồng bộ toàn bộ bài học trên mọi thiết bị.
           </p>
+        </div>
+
+        {/* Quick Demo Button (cực kỳ tiện dụng trên điện thoại/app) */}
+        <div className="p-3.5 bg-gradient-to-r from-primary/15 via-primary/10 to-primary/5 border border-primary/30 rounded-2xl">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">⚡</span>
+              <span className="text-xs font-bold text-foreground">Bạn muốn trải nghiệm ngay?</span>
+            </div>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-semibold">
+              Khuyên dùng
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={handleQuickDemoLogin}
+            disabled={isDemoLoading || isLoading}
+            className="w-full py-2.5 px-3 bg-primary text-primary-foreground font-bold text-xs rounded-xl hover:opacity-90 transition-all shadow-sm hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
+          >
+            {isDemoLoading ? (
+              <>
+                <span className="w-3.5 h-3.5 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
+                <span>Đang vào tài khoản Demo...</span>
+              </>
+            ) : (
+              <span>1 Chạm Đăng Nhập Dùng Thử Ngay (Demo)</span>
+            )}
+          </button>
+        </div>
+
+        <div className="relative flex items-center justify-center">
+          <div className="border-t border-border w-full" />
+          <span className="bg-card px-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider absolute">
+            Hoặc đăng nhập bằng email
+          </span>
         </div>
 
         {/* Error / Success Notifications */}
         {errorMsg && (
-          <div className="p-3.5 rounded-xl bg-error/10 border border-error/30 text-error text-xs font-semibold flex items-center gap-2">
-            <span>⚠️</span>
+          <div className="p-3.5 rounded-xl bg-error/10 border border-error/30 text-error text-xs font-semibold flex items-center gap-2 animate-in fade-in">
+            <span className="text-base flex-shrink-0">⚠️</span>
             <span>{errorMsg}</span>
           </div>
         )}
 
         {successMsg && (
-          <div className="p-3.5 rounded-xl bg-success/10 border border-success/30 text-success text-xs font-semibold flex items-center gap-2">
-            <span>🎉</span>
+          <div className="p-3.5 rounded-xl bg-success/10 border border-success/30 text-success text-xs font-semibold flex items-center gap-2 animate-in fade-in">
+            <span className="text-base flex-shrink-0">🎉</span>
             <span>{successMsg}</span>
           </div>
         )}
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleLoginSubmit} className="space-y-4">
           <div>
             <label className="block text-xs font-semibold text-foreground mb-1.5" htmlFor="login-email">
               Địa chỉ Email
@@ -97,7 +155,7 @@ export default function DangNhapPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tenban@gmail.com"
-              className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-hidden focus:ring-2 focus:ring-primary/40 transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-hidden focus:ring-2 focus:ring-primary/40 transition-all placeholder:text-muted-foreground/60"
             />
           </div>
 
@@ -115,12 +173,12 @@ export default function DangNhapPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-hidden focus:ring-2 focus:ring-primary/40 transition-all pr-10"
+                className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-hidden focus:ring-2 focus:ring-primary/40 transition-all pr-12 placeholder:text-muted-foreground/60"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-foreground p-1.5"
                 title={showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
               >
                 {showPassword ? '🙈' : '👁️'}
@@ -130,8 +188,8 @@ export default function DangNhapPage() {
 
           <button
             type="submit"
-            disabled={isLoading}
-            className="w-full py-3 px-4 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 mt-2"
+            disabled={isLoading || isDemoLoading}
+            className="w-full py-3.5 px-4 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 mt-2"
           >
             {isLoading ? (
               <>
@@ -139,13 +197,13 @@ export default function DangNhapPage() {
                 <span>Đang kiểm tra tài khoản...</span>
               </>
             ) : (
-              <span>🔑 Đăng Nhập Ngay</span>
+              <span>🔑 Đăng Nhập</span>
             )}
           </button>
         </form>
 
         {/* Footer Link */}
-        <div className="text-center pt-2 border-t border-border/60 space-y-2">
+        <div className="text-center pt-3 border-t border-border/60 space-y-2">
           <p className="text-xs text-muted-foreground">
             Chưa có tài khoản?{' '}
             <Link href="/dang-ky" className="font-bold text-primary hover:underline">
@@ -153,7 +211,7 @@ export default function DangNhapPage() {
             </Link>
           </p>
           <p className="text-[11px] text-muted-foreground">
-            Bạn cũng có thể học không cần tài khoản với dữ liệu lưu trên thiết bị này.
+            💡 Tiến độ làm bài và flashcard được lưu trữ bảo mật trên máy chủ đám mây.
           </p>
         </div>
       </div>

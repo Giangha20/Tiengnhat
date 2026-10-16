@@ -25,6 +25,17 @@ export interface StoredSession {
   expiresAt: string;
 }
 
+interface JWTPayload {
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  currentLevel: string;
+  createdAt: string;
+  iat: number;
+  exp: number;
+}
+
 interface AuthStorage {
   users: Map<string, StoredUser>; // email -> user
   usersById: Map<string, StoredUser>; // id -> user
@@ -36,7 +47,123 @@ declare global {
   var __nihongoAuth: AuthStorage | undefined;
 }
 
-const getFilePath = (name: string) => path.join(os.tmpdir(), `nihongo_${name}.json`);
+// Secret key for cryptographic JWT signing and verification
+const JWT_SECRET =
+  process.env.AUTH_SECRET ||
+  process.env.NEXTAUTH_SECRET ||
+  'nihongo_master_secret_jwt_2026_super_secure_key_vn_jp';
+
+// -----------------------------------------------------------------------------
+// JWT Utility functions (RFC 7519 compliant, stateless & zero-dependency)
+// -----------------------------------------------------------------------------
+function base64UrlEncode(str: string): string {
+  return Buffer.from(str)
+    .toString('base64')
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
+function base64UrlDecode(str: string): string {
+  let base64 = str.replace(/-/g, '+').replace(/_/g, '/');
+  while (base64.length % 4) {
+    base64 += '=';
+  }
+  return Buffer.from(base64, 'base64').toString('utf-8');
+}
+
+export function createJWT(user: AuthUser, expiresInDays: number = 30): string {
+  const header = { alg: 'HS256', typ: 'JWT' };
+  const now = Math.floor(Date.now() / 1000);
+  const exp = now + expiresInDays * 24 * 60 * 60;
+
+  const payload: JWTPayload = {
+    id: user.id,
+    email: user.email.toLowerCase(),
+    name: user.name,
+    role: user.role || 'USER',
+    currentLevel: user.currentLevel || 'N5',
+    createdAt: user.createdAt,
+    iat: now,
+    exp,
+  };
+
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const data = `${encodedHeader}.${encodedPayload}`;
+
+  const signature = crypto
+    .createHmac('sha256', JWT_SECRET)
+    .update(data)
+    .digest('base64')
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+
+  return `${data}.${signature}`;
+}
+
+export function verifyJWT(token: string): JWTPayload | null {
+  try {
+    if (!token || typeof token !== 'string') return null;
+    const parts = token.split('.');
+    if (parts.length !== 3) return null;
+
+    const [encodedHeader, encodedPayload, signature] = parts;
+    const data = `${encodedHeader}.${encodedPayload}`;
+
+    const expectedSignature = crypto
+      .createHmac('sha256', JWT_SECRET)
+      .update(data)
+      .digest('base64')
+      .replace(/=/g, '')
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_');
+
+    if (signature !== expectedSignature) {
+      return null;
+    }
+
+    const payload = JSON.parse(base64UrlDecode(encodedPayload)) as JWTPayload;
+    const now = Math.floor(Date.now() / 1000);
+
+    if (payload.exp && payload.exp < now) {
+      return null; // Expired
+    }
+
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Storage management (Multi-tier: Primary local data folder -> Fallback OS tmp)
+// -----------------------------------------------------------------------------
+function getStorageDirectory(): string {
+  try {
+    const projectDataDir = path.join(process.cwd(), 'data', 'auth');
+    if (!fs.existsSync(projectDataDir)) {
+      fs.mkdirSync(projectDataDir, { recursive: true });
+    }
+    return projectDataDir;
+  } catch {
+    return os.tmpdir();
+  }
+}
+
+const getFilePath = (name: string) => path.join(getStorageDirectory(), `nihongo_${name}.json`);
+
+// Pre-seeded Demo user for instant 1-click testing
+const DEMO_USER: StoredUser = {
+  id: 'usr_demo_nihongo',
+  email: 'demo@nihongomaster.com',
+  name: 'Học Viên Demo (NihongoMaster)',
+  role: 'USER',
+  currentLevel: 'N5',
+  passwordHash: bcrypt.hashSync('123456', 10),
+  createdAt: '2026-01-01T00:00:00.000Z',
+};
 
 function loadStorage(): AuthStorage {
   if (globalThis.__nihongoAuth) {
@@ -49,6 +176,10 @@ function loadStorage(): AuthStorage {
     sessions: new Map(),
     progress: new Map(),
   };
+
+  // Always seed demo user
+  storage.users.set(DEMO_USER.email.toLowerCase(), DEMO_USER);
+  storage.usersById.set(DEMO_USER.id, DEMO_USER);
 
   try {
     const usersFile = getFilePath('users');
@@ -108,6 +239,10 @@ function persistStorage(storage: AuthStorage) {
   }
 }
 
+// -----------------------------------------------------------------------------
+// Authentication Functions
+// -----------------------------------------------------------------------------
+
 // 1. Find user by email
 export async function findUserByEmail(email: string): Promise<StoredUser | null> {
   const storage = loadStorage();
@@ -122,7 +257,7 @@ export async function findUserById(id: string): Promise<StoredUser | null> {
   return user || null;
 }
 
-// 3. Register user
+// 3. Register new user
 export async function registerUser(
   name: string,
   email: string,
@@ -164,9 +299,12 @@ export async function registerUser(
   storage.users.set(cleanEmail, newUser);
   storage.usersById.set(newUser.id, newUser);
 
-  // Generate session token (valid for 30 days)
-  const token = crypto.randomBytes(32).toString('hex');
+  const { passwordHash: _, ...safeUser } = newUser;
+
+  // Generate stateless cryptographic JWT token (valid for 30 days)
+  const token = createJWT(safeUser, 30);
   const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
+
   storage.sessions.set(token, {
     token,
     userId: newUser.id,
@@ -176,11 +314,10 @@ export async function registerUser(
 
   persistStorage(storage);
 
-  const { passwordHash: _, ...safeUser } = newUser;
   return { success: true, user: safeUser, token };
 }
 
-// 4. Login user
+// 4. Login user (supporting normal and demo credentials)
 export async function loginUser(
   email: string,
   password: string
@@ -198,9 +335,12 @@ export async function loginUser(
     return { success: false, error: 'Mật khẩu không chính xác. Vui lòng thử lại.' };
   }
 
-  // Create session token
-  const token = crypto.randomBytes(32).toString('hex');
+  const { passwordHash: _, ...safeUser } = user;
+
+  // Generate stateless cryptographic JWT token
+  const token = createJWT(safeUser, 30);
   const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
+
   storage.sessions.set(token, {
     token,
     userId: user.id,
@@ -210,13 +350,36 @@ export async function loginUser(
 
   persistStorage(storage);
 
-  const { passwordHash: _, ...safeUser } = user;
   return { success: true, user: safeUser, token };
 }
 
-// 5. Get user from session token
+// 5. Get user from token (validates JWT cryptographically, fallback to memory session)
 export async function getUserFromSession(token: string): Promise<AuthUser | null> {
   if (!token) return null;
+
+  // First verify JWT signature statelessly (works across ALL serverless lambdas)
+  const jwtPayload = verifyJWT(token);
+  if (jwtPayload) {
+    const user: AuthUser = {
+      id: jwtPayload.id,
+      email: jwtPayload.email,
+      name: jwtPayload.name,
+      role: jwtPayload.role,
+      currentLevel: jwtPayload.currentLevel,
+      createdAt: jwtPayload.createdAt,
+    };
+
+    // Ensure user exists in memory cache
+    const storage = loadStorage();
+    if (!storage.usersById.has(user.id)) {
+      storage.usersById.set(user.id, { ...user, passwordHash: '' });
+      storage.users.set(user.email, { ...user, passwordHash: '' });
+    }
+
+    return user;
+  }
+
+  // Fallback to stateful session store
   const storage = loadStorage();
   const session = storage.sessions.get(token);
   if (!session) return null;
@@ -234,17 +397,17 @@ export async function getUserFromSession(token: string): Promise<AuthUser | null
   return safeUser;
 }
 
-// 6. Logout
+// 6. Logout / Remove session
 export async function removeSession(token: string): Promise<boolean> {
   const storage = loadStorage();
   const deleted = storage.sessions.delete(token);
   if (deleted) {
     persistStorage(storage);
   }
-  return deleted;
+  return true;
 }
 
-// 7. Save user progress to account
+// 7. Save user progress to account on server
 export async function saveAccountProgress(userId: string, progress: UserProgress): Promise<void> {
   const storage = loadStorage();
   storage.progress.set(userId, {
@@ -254,7 +417,7 @@ export async function saveAccountProgress(userId: string, progress: UserProgress
   persistStorage(storage);
 }
 
-// 8. Get user progress from account
+// 8. Get user progress from account on server
 export async function getAccountProgress(
   userId: string
 ): Promise<{ progress: UserProgress; updatedAt: string } | null> {

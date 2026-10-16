@@ -1,0 +1,64 @@
+name: Build iOS IPA (xtool / SwiftPM)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ios/**'
+      - '.github/workflows/build-ipa.yml'
+
+jobs:
+  build-ios-ipa:
+    name: Build & Package NihongoMaster.ipa
+    runs-on: macos-14
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4'
+
+      - name: 🛠️ Install xtool
+        run: |
+          brew tap xtool-org/tap || true
+          brew install xtool || true
+
+      - name: 🚀 Build iOS App & Package IPA
+        working-directory: ios
+        run: |
+          chmod +x build-ipa.sh || true
+          
+          echo "Biên dịch Swift Package cho iOS..."
+          # Build target for arm64 iOS
+          swift build -c release --triple arm64-apple-ios17.0 || swift build -c release
+          
+          # Đóng gói chuẩn Payload Apple
+          mkdir -p Payload/NihongoMaster.app
+          
+          # Copy Binary
+          BIN_PATH=$(find .build -name "NihongoMaster" -type f -perm +111 | head -n 1)
+          if [ -n "$BIN_PATH" ]; then
+            cp "$BIN_PATH" Payload/NihongoMaster.app/NihongoMaster
+          fi
+          
+          # Copy Info.plist và PkgInfo
+          cp Info.plist Payload/NihongoMaster.app/Info.plist
+          echo -n "APPL????" > Payload/NihongoMaster.app/PkgInfo
+          
+          # Nén thành file .ipa
+          zip -r -q NihongoMaster.ipa Payload
+          rm -rf Payload
+          
+          echo "✓ File IPA hoàn tất:"
+          ls -lh NihongoMaster.ipa
+
+      - name: 📤 Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NihongoMaster-iOS-IPA
+          path: ios/NihongoMaster.ipa
+          retention-days: 14

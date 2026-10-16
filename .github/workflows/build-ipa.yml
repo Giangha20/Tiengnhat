@@ -1,4 +1,4 @@
-name: Build iOS IPA (Xcode & xtool)
+name: Build iOS IPA (xtool & Xcode)
 
 on:
   workflow_dispatch:
@@ -17,21 +17,31 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
+      - name: 🛠️ Install xtool CLI
+        run: |
+          echo "Tải xtool phiên bản mới nhất từ GitHub Releases..."
+          curl -fL "https://github.com/xtool-org/xtool/releases/download/1.22.2/xtool.app.zip" -o /tmp/xtool.zip
+          unzip -q /tmp/xtool.zip -d /tmp/
+          sudo cp /tmp/xtool.app/Contents/MacOS/xtool /usr/local/bin/xtool
+          sudo chmod +x /usr/local/bin/xtool
+          which xtool
+          xtool --help || true
+
       - name: ⚙️ Install XcodeGen
         run: |
-          brew install xcodegen
+          brew install xcodegen || true
 
       - name: 🚀 Build iOS App & Package IPA
         working-directory: ios
         run: |
-          set -e
-          echo "=== 1. Tạo project Xcode từ cấu hình XcodeGen ==="
+          echo "=== 1. Thư mục hiện tại và danh sách file ==="
+          pwd
+          ls -la
+          
+          echo "=== 2. Khởi tạo cấu hình ứng dụng iOS ==="
           xcodegen generate --spec project.yml
           
-          echo "=== 2. Kiểm tra các scheme có sẵn ==="
-          xcodebuild -project NihongoMaster.xcodeproj -list
-          
-          echo "=== 3. Biên dịch ứng dụng iOS bằng xcodebuild ==="
+          echo "=== 3. Biên dịch ứng dụng iOS sang ARM64 ==="
           xcodebuild -project NihongoMaster.xcodeproj \
             -scheme NihongoMaster \
             -sdk iphoneos \
@@ -41,22 +51,20 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             -derivedDataPath build \
-            clean build | tee /tmp/xcodebuild.log || {
-              echo "❌ Xcodebuild gặp lỗi! Log chi tiết:"
-              tail -n 100 /tmp/xcodebuild.log
-              exit 1
-            }
+            clean build
             
-          echo "=== 4. Đóng gói file .ipa chuẩn Payload Apple ==="
+          echo "=== 4. Kiểm tra file .app sau khi biên dịch ==="
           APP_DIR=$(find build -name "*.app" -type d | head -n 1)
           
-          if [ -z "$APP_DIR" ] || [ ! -d "$APP_DIR" ]; then
-            echo "❌ Không tìm thấy thư mục .app sau khi build!"
-            ls -la build/
+          if [ -z "$APP_DIR" ]; then
+            echo "❌ Không tìm thấy thư mục .app!"
+            find build -maxdepth 4
             exit 1
           fi
           
-          echo "✓ Đã tìm thấy ứng dụng: $APP_DIR"
+          echo "✓ Ứng dụng đã tạo tại: $APP_DIR"
+          
+          echo "=== 5. Đóng gói file .ipa chuẩn Payload Apple ==="
           rm -rf Payload NihongoMaster.ipa
           mkdir -p Payload
           cp -r "$APP_DIR" Payload/
@@ -67,17 +75,8 @@ jobs:
           ls -lh NihongoMaster.ipa
 
       - name: 📤 Upload IPA Artifact
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: NihongoMaster-iOS-IPA
           path: ios/NihongoMaster.ipa
           retention-days: 14
-
-      - name: 📤 Upload Build Logs (If Error)
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Build-Debug-Log
-          path: /tmp/xcodebuild.log
-          retention-days: 7

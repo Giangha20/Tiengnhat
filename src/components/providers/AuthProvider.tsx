@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import type { AuthUser } from '@/lib/auth';
 import type { UserProgress } from '@/types';
 
@@ -35,6 +36,9 @@ export function useAuth() {
 const TOKEN_KEY = 'nihongo_auth_token';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [user, setUser] = useState<AuthUser | null>(null);
   const [token, setToken] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -66,6 +70,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setUser(null);
             if (savedToken) localStorage.removeItem(TOKEN_KEY);
           }
+        } else {
+          setUser(null);
         }
       } catch (err) {
         console.warn('Lỗi kiểm tra phiên đăng nhập:', err);
@@ -140,8 +146,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (typeof window !== 'undefined') {
         localStorage.removeItem(TOKEN_KEY);
       }
+      router.replace('/dang-nhap');
     }
-  }, [token]);
+  }, [token, router]);
 
   const syncWithAccount = useCallback(
     async (progress: UserProgress) => {
@@ -158,7 +165,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
         const data = await res.json();
         return { success: res.ok && data.success, message: data.message || data.error };
-      } catch (err) {
+      } catch {
         return { success: false, message: 'Không thể đồng bộ vào tài khoản.' };
       }
     },
@@ -185,6 +192,42 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return null;
     }
   }, [user, token]);
+
+  // Client-side Strict Auth Gate Enforcement
+  const isAuthPage = pathname === '/dang-nhap' || pathname === '/dang-ky';
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (!user && !isAuthPage) {
+        // Enforce: User cannot access homepage or any learning page without logging in
+        router.replace('/dang-nhap');
+      } else if (user && isAuthPage) {
+        // Logged-in users should not see login/register pages
+        router.replace('/');
+      }
+    }
+  }, [user, isLoading, isAuthPage, router]);
+
+  // Prevent flashing content if user is unauthenticated and attempting to view protected pages
+  if (!isLoading && !user && !isAuthPage) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background px-4">
+        <div className="text-center space-y-4 max-w-sm p-6 bg-card border border-border rounded-3xl shadow-lg">
+          <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary mx-auto flex items-center justify-center text-3xl font-black ja-text shadow-sm animate-pulse">
+            日
+          </div>
+          <h2 className="text-lg font-black text-foreground">Yêu Cầu Đăng Nhập</h2>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Hệ thống yêu cầu đăng ký hoặc đăng nhập tài khoản trước khi vào trang chủ và bắt đầu học tập.
+          </p>
+          <div className="flex items-center justify-center gap-2 pt-2 text-xs text-primary font-bold">
+            <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+            <span>Đang chuyển hướng đến trang đăng nhập...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <AuthContext.Provider

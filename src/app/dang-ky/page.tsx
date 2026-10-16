@@ -54,10 +54,10 @@ export default function DangKyPage() {
     setIsLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Tạo tài khoản thành công! Toàn bộ bài học của bạn đã được kết nối lên máy chủ.');
+      setSuccessMsg('Tạo tài khoản thành công! Đang vào trang chủ học tập...');
       setTimeout(() => {
-        router.push('/ho-so');
-      }, 1200);
+        router.push('/');
+      }, 700);
     } else {
       setErrorMsg(res.error || 'Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.');
     }
@@ -72,10 +72,10 @@ export default function DangKyPage() {
     setIsDemoLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang chuyển hướng...');
+      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang vào trang chủ học tập...');
       setTimeout(() => {
-        router.push('/ho-so');
-      }, 800);
+        router.push('/');
+      }, 600);
     } else {
       setErrorMsg('Không thể đăng nhập tài khoản dùng thử lúc này.');
     }

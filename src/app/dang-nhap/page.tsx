@@ -39,10 +39,10 @@ export default function DangNhapPage() {
     setIsLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Đăng nhập thành công! Đang kết nối máy chủ và đồng bộ bài học...');
+      setSuccessMsg('Đăng nhập thành công! Đang vào trang chủ học tập...');
       setTimeout(() => {
-        router.push('/ho-so');
-      }, 1000);
+        router.push('/');
+      }, 700);
     } else {
       setErrorMsg(res.error || 'Email hoặc mật khẩu không chính xác.');
     }
@@ -60,10 +60,10 @@ export default function DangNhapPage() {
     setIsDemoLoading(false);
 
     if (res.success) {
-      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang tải bài học...');
+      setSuccessMsg('Đăng nhập tài khoản dùng thử thành công! Đang vào trang chủ học tập...');
       setTimeout(() => {
-        router.push('/ho-so');
-      }, 900);
+        router.push('/');
+      }, 600);
     } else {
       setErrorMsg(res.error || 'Không thể đăng nhập tài khoản dùng thử lúc này.');
     }

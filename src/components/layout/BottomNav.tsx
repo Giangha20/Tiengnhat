@@ -93,7 +93,7 @@ export default function BottomNav() {
   const pathname = usePathname();
   const { settings, playTap } = useUISettings();
 
-  if (!settings.bottomNavEnabled) return null;
+  if (!settings.bottomNavEnabled || pathname === '/dang-nhap' || pathname === '/dang-ky') return null;
 
   return (
     <nav
